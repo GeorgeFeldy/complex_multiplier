@@ -1,0 +1,135 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Facultate\SECI_1\LDH\Complex_multiplier\debug\sim
+T_opt
+Z1 V[;?NmG8[flI7@_9Q8@W>31
+Z2 04 14 4 work comp_mult_test fast 0
+Z3 =1-ec5c68afc300-625c1917-154-6294
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 n@_opt
+Z6 OE;O;6.6d;45
+Z7 dD:\Facultate\SECI_1\LDH\Complex_multiplier\debug\sim
+T_opt1
+Z8 VdZdDlA^UB`_JC3JOiM8zX0
+R2
+Z9 =1-ec5c68afc300-625c7c34-1ad-24b0
+R4
+Z10 n@_opt1
+R6
+R7
+T_opt2
+Z11 Vh^DgTQNCkGSIDIV43_CdT1
+R2
+Z12 =1-ec5c68afc300-625c1fed-1ba-464c
+R4
+Z13 n@_opt2
+R6
+R7
+T_opt3
+Z14 VHIP4eK>0g2JITV<>e>5bg0
+R2
+Z15 =1-ec5c68afc300-625c82c5-2b3-3218
+R4
+Z16 n@_opt3
+R6
+R7
+vclk_rst_tb
+Z17 IMh2Ch6]]2=Pa3^:oH0RA^1
+Z18 VmTRlZ_^X=7HBh9U><<KSM0
+R7
+Z19 w1647453165
+Z20 8../deb_src/clk_rst_tb.v
+Z21 F../deb_src/clk_rst_tb.v
+L0 1
+Z22 OE;L;6.6d;45
+r1
+31
+Z23 o-L mtiAvm -L mtiOvm -L mtiUPF
+Z24 !s100 XO>2U<JQ:Qc_3cX12XO;R0
+!s85 0
+vcomp_mult_1
+Z25 IiPPVXMBjne`f1KocTmFUN3
+Z26 Vh`9Tbhg8<ROk0i<m:z:F=0
+R7
+Z27 w1647191262
+Z28 8../../hdl/comp_mult_1.v
+Z29 F../../hdl/comp_mult_1.v
+L0 10
+R22
+r1
+31
+R23
+Z30 !s100 I76@X>0NL48SmL:2`>A5A1
+!s85 0
+vcomp_mult_2
+Z31 IFmcUKIlAj8Ah9fmQ^:f0T1
+Z32 Vm3foECaV1`TbC5z6NLY511
+R7
+Z33 w1649894643
+Z34 8../../hdl/comp_mult_2.v
+Z35 F../../hdl/comp_mult_2.v
+L0 10
+R22
+r1
+31
+R23
+Z36 !s100 <VJjCUKTSejU2M]he3i6h1
+!s85 0
+vcomp_mult_4
+Z37 I7ZeVbYkTOcU6C]dg88_al1
+Z38 VR_>jZNZd?@KFfHjO^X>g^1
+R7
+Z39 w1650229944
+Z40 8../../hdl/comp_mult_4.v
+Z41 F../../hdl/comp_mult_4.v
+L0 10
+R22
+r1
+31
+R23
+Z42 !s100 YXecGXWJd_?K]1gW1Gi:71
+!s85 0
+vcomp_mult_test
+Z43 I87bYhe<EeY95c@?];HV__3
+Z44 VkXNM1L:MzOo^0M2?koBzl1
+R7
+Z45 w1650229785
+Z46 8../deb_src/comp_mult_test.v
+Z47 F../deb_src/comp_mult_test.v
+L0 1
+R22
+r1
+31
+R23
+Z48 !s100 0]HOilhHPNaEn]:=7ZV1?2
+!s85 0
+vcomp_mult_wrapper
+Z49 IPiC88YF5M0eE@C`W`GQ5^0
+Z50 VgXZ9?i4FB7U4dbWGGElWN0
+R7
+Z51 w1649894909
+Z52 8../../hdl/comp_mult_wrapper.v
+Z53 F../../hdl/comp_mult_wrapper.v
+L0 11
+R22
+r1
+31
+R23
+Z54 !s100 ON_N`Hd`Pzo=Bzeb;WcM?3
+!s85 0
+vuint8_mult
+Z55 I@znonNQ[S67]N53?_VD<a1
+Z56 VJ9;g@Yo3lNL^C[UQn[bT12
+R7
+Z57 w1647184496
+Z58 8../../hdl/uint8_mult.v
+Z59 F../../hdl/uint8_mult.v
+L0 10
+R22
+r1
+31
+R23
+Z60 !s100 Ih_1gGZl@?T4nZf^AH`Pa0
+!s85 0

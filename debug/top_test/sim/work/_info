@@ -1,0 +1,161 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Facultate\SECI_1\LDH\complex_multiplier\debug\sys_test\sim
+T_opt
+V4lj6Cm^iVn<K84EEMTN^d1
+Z1 04 18 4 work comp_mult_top_test fast 0
+=1-ec5c68afc300-62696bdf-fb-4910
+Z2 o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z3 OE;O;6.6d;45
+Z4 dD:\Facultate\SECI_1\LDH\complex_multiplier\debug\sys_test\sim
+T_opt1
+Vf?eohYPCJHW0EWblY<]B`0
+R1
+=1-ec5c68afc300-62699491-237-3030
+R2
+n@_opt1
+R3
+R4
+vclk_rst_tb
+VmTRlZ_^X=7HBh9U><<KSM0
+r1
+31
+I9:N^ezib>G`ka[QQX<GXk0
+Z5 dD:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim
+w1647453165
+8../deb_src/clk_rst_tb.v
+F../deb_src/clk_rst_tb.v
+L0 1
+Z6 OE;L;6.6d;45
+Z7 o-work work -L mtiAvm -L mtiOvm -L mtiUPF
+!s85 0
+!s100 XO>2U<JQ:Qc_3cX12XO;R0
+vcomp_mult_1
+IYIFD88cgL;g?[E^;^AfQ]3
+Vh`9Tbhg8<ROk0i<m:z:F=0
+R5
+w1650895057
+8../../../hdl/comp_mult_1.v
+F../../../hdl/comp_mult_1.v
+L0 10
+R6
+r1
+31
+R7
+!s100 =jR@Ti?l>a:GOI7<hn;aK0
+!s85 0
+vcomp_mult_2
+I:eB`EN6lW46U;3VV4aV^=3
+Vm3foECaV1`TbC5z6NLY511
+R5
+w1650891399
+8../../../hdl/comp_mult_2.v
+F../../../hdl/comp_mult_2.v
+L0 10
+R6
+r1
+31
+R7
+!s100 >QzVER15HUUl?Z=@l:L951
+!s85 0
+vcomp_mult_4
+VR_>jZNZd?@KFfHjO^X>g^1
+r1
+31
+IU<>AUjX=k8[XTEl2:mZU_2
+R5
+w1650892033
+8../../../hdl/comp_mult_4.v
+F../../../hdl/comp_mult_4.v
+L0 10
+R6
+R7
+!s85 0
+!s100 d]Zi;F2dIEgIHZWPLYnD?3
+vcomp_mult_ref_model
+Ioc=]aOigGXPj3@b<>1>DL3
+V=FPKDQ^D06WKOkW]>N3fo0
+R5
+w1650895886
+8../deb_src/comp_mult_ref_model.v
+F../deb_src/comp_mult_ref_model.v
+L0 10
+R6
+r1
+31
+R7
+!s100 6=De74;6<YJVTgDPaBZY80
+!s85 0
+vcomp_mult_top
+VOQHClC;IWWWHAhT^^QLm;0
+r1
+31
+IQlmgbl3j;8Y40[o2YUVdm3
+R5
+w1651096072
+8../../../hdl/comp_mult_top.v
+F../../../hdl/comp_mult_top.v
+L0 10
+R6
+R7
+!s85 0
+!s100 f@ZRC@b;MVAQJDJWKdG0Z1
+vcomp_mult_top_test
+VWHYTJ<X5kIfL1[<LbA2?S1
+r1
+31
+Im[b0GjQUz4gBQ6N>UaIOU3
+R5
+w1651095995
+8../deb_src/comp_mult_top_test.v
+F../deb_src/comp_mult_top_test.v
+L0 9
+R6
+R7
+!s85 0
+!s100 @7?J`>B?8SW<8GTCJXSdR3
+vcomp_mult_wrapper
+VgXZ9?i4FB7U4dbWGGElWN0
+r1
+31
+IQ7Eb8SD=lS[i2XVY:bg222
+R5
+w1650888611
+8../../../hdl/comp_mult_wrapper.v
+F../../../hdl/comp_mult_wrapper.v
+L0 11
+R6
+R7
+!s85 0
+!s100 g`_ESIHhonzT8J]@XkEio3
+vmem_1rw
+Vgba]lmHO_KB[NM_DZ14MG2
+r1
+31
+IbTG<NY3df15G@RH?1==H10
+R5
+w1651096250
+8../deb_src/mem_1rw.v
+F../deb_src/mem_1rw.v
+L0 15
+R6
+R7
+!s85 0
+!s100 E2i@X62A6]nRg@DRHFMP03
+vuint8_mult
+VJ9;g@Yo3lNL^C[UQn[bT12
+r1
+!s85 0
+31
+IQR`@UzafQ[HWLGNk@Xj]l1
+R5
+w1647184496
+8../../../hdl/uint8_mult.v
+F../../../hdl/uint8_mult.v
+L0 10
+R6
+R7
+!s100 Ih_1gGZl@?T4nZf^AH`Pa0

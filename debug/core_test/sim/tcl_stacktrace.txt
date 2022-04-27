@@ -1,0 +1,17 @@
+Sun Apr 17 18:40:46 GTB Daylight Time 2022
+Trace back: can't read "_moveKind": no such variable
+    while executing
+"if {$_moveKind eq "slide"} {
+		chain $x $y
+	} else {
+		set current_label [tabcget [getSelected] -label]
+		if { ![info exists panedwindows($current_lab..."
+    (object "::.main_pane.cs.47.ts" method "::mtiwidgets::DraggableTabset::_endMove" body line 2)
+    invoked from within
+"::.main_pane.cs.47.ts _endMove 893 771"
+    (in namespace inscope "::mtiwidgets::Tabset" script line 1)
+    invoked from within
+"namespace inscope ::mtiwidgets::Tabset {::.main_pane.cs.47.ts _endMove 893 771}"
+    (command bound to event)
+  <2: ::tkerror {can't read "_moveKind": no such variable}
+  <1: ::bgerror {can't read "_moveKind": no such variable}

@@ -1,0 +1,127 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Facultate\SECI_1\LDH\Complex_multiplier\debug\sim
+T_opt
+Z1 V[;?NmG8[flI7@_9Q8@W>31
+Z2 04 14 4 work comp_mult_test fast 0
+Z3 =1-ec5c68afc300-625c1917-154-6294
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 n@_opt
+Z6 OE;O;6.6d;45
+Z7 dD:\Facultate\SECI_1\LDH\Complex_multiplier\debug\sim
+T_opt1
+Z8 VaWRdH=hM];AJ]lVfR1LOH1
+R2
+Z9 =1-ec5c68afc300-625c1eed-260-497c
+Z10 o-quiet -auto_acc_if_foreign -work work +acc
+Z11 n@_opt1
+R6
+R7
+T_opt2
+Z12 Vh^DgTQNCkGSIDIV43_CdT1
+R2
+Z13 =1-ec5c68afc300-625c1fed-1ba-464c
+R4
+Z14 n@_opt2
+R6
+R7
+vclk_rst_tb
+Z15 IMh2Ch6]]2=Pa3^:oH0RA^1
+Z16 VmTRlZ_^X=7HBh9U><<KSM0
+R7
+Z17 w1647453165
+Z18 8../deb_src/clk_rst_tb.v
+Z19 F../deb_src/clk_rst_tb.v
+L0 1
+Z20 OE;L;6.6d;45
+r1
+31
+Z21 o-L mtiAvm -L mtiOvm -L mtiUPF
+Z22 !s100 XO>2U<JQ:Qc_3cX12XO;R0
+!s85 0
+vcomp_mult_1
+Z23 IiPPVXMBjne`f1KocTmFUN3
+Z24 Vh`9Tbhg8<ROk0i<m:z:F=0
+R7
+Z25 w1647191262
+Z26 8../../hdl/comp_mult_1.v
+Z27 F../../hdl/comp_mult_1.v
+L0 10
+R20
+r1
+31
+R21
+Z28 !s100 I76@X>0NL48SmL:2`>A5A1
+!s85 0
+vcomp_mult_2
+Z29 IFmcUKIlAj8Ah9fmQ^:f0T1
+Z30 Vm3foECaV1`TbC5z6NLY511
+R7
+Z31 w1649894643
+Z32 8../../hdl/comp_mult_2.v
+Z33 F../../hdl/comp_mult_2.v
+L0 10
+R20
+r1
+31
+R21
+Z34 !s100 <VJjCUKTSejU2M]he3i6h1
+!s85 0
+vcomp_mult_4
+Z35 IbR?77^K`=62D=kK1e;X2D0
+Z36 VR_>jZNZd?@KFfHjO^X>g^1
+R7
+Z37 w1650203144
+Z38 8../../hdl/comp_mult_4.v
+Z39 F../../hdl/comp_mult_4.v
+L0 10
+R20
+r1
+31
+R21
+Z40 !s100 @cEW=7^IEFM5=HkR<TD]Q0
+!s85 0
+vcomp_mult_test
+Z41 IjMRU29@_`@lO7NY3IogGc0
+Z42 VkXNM1L:MzOo^0M2?koBzl1
+R7
+Z43 w1650204609
+Z44 8../deb_src/comp_mult_test.v
+Z45 F../deb_src/comp_mult_test.v
+L0 1
+R20
+r1
+31
+R21
+Z46 !s100 k@94K;Mo5ckUTBzfh:bL11
+!s85 0
+vcomp_mult_wrapper
+Z47 IPiC88YF5M0eE@C`W`GQ5^0
+Z48 VgXZ9?i4FB7U4dbWGGElWN0
+R7
+Z49 w1649894909
+Z50 8../../hdl/comp_mult_wrapper.v
+Z51 F../../hdl/comp_mult_wrapper.v
+L0 11
+R20
+r1
+31
+R21
+Z52 !s100 ON_N`Hd`Pzo=Bzeb;WcM?3
+!s85 0
+vuint8_mult
+Z53 I@znonNQ[S67]N53?_VD<a1
+Z54 VJ9;g@Yo3lNL^C[UQn[bT12
+R7
+Z55 w1647184496
+Z56 8../../hdl/uint8_mult.v
+Z57 F../../hdl/uint8_mult.v
+L0 10
+R20
+r1
+31
+R21
+Z58 !s100 Ih_1gGZl@?T4nZf^AH`Pa0
+!s85 0
