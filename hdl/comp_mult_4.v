@@ -62,8 +62,8 @@ reg  [2*DWIDTH-1:0] yr ; // stores x1 * y2 + x2 * y1, ignores overflow
 // ----------------------------------- control path  ------------------------------
 
 always @(posedge clk or negedge rst_n)
-if(~rst_n)            op_rdy <= 1'b0 ; else
-if(sw_rst)            op_rdy <= 1'b0 ; else
+if(~rst_n)            op_rdy <= 1'b1 ; else
+if(sw_rst)            op_rdy <= 1'b1 ; else
 if(op_val & op_rdy)   op_rdy <= 1'b0 ; else 
 if(res_rdy)           op_rdy <= 1'b1 ; 
   

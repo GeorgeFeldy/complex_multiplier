@@ -9,1383 +9,6 @@
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
 # do sim.do 
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftmggfr1".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftmggfr1
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0X != f6
-# OP 0 ----- FAILED, 0 != bd
-# OP 0 ----- OK, 0 == 0
-# OP 0 ----- FAILED, 1 != 23
-# OP 0 ----- FAILED, 0 != bb
-# OP 1 ----- FAILED, 1 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != 42
-# OP 1 ----- FAILED, 1 != 3
-# OP 1 ----- FAILED, 1 != fd
-# OP 1 ----- FAILED, 1 != f4
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 1 != fa
-# OP 2 ----- FAILED, 1 != ce
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 0 != d6
-# OP 2 ----- FAILED, 0 != c5
-# OP 3 ----- OK, 0 == 0
-# OP 3 ----- FAILED, 0 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- OK, 0 == 0
-# OP 3 ----- FAILED, 0 != 5
-# OP 3 ----- FAILED, 0 != 64
-# OP 4 ----- FAILED, 0 != 3
-# OP 4 ----- FAILED, 0 != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- OK, 0 == 0
-# OP 4 ----- FAILED, 0 != 6
-# OP 4 ----- FAILED, 0 != 84
-# OP 5 ----- OK, 0 == 0
-# OP 5 ----- FAILED, 0 != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- OK, 0 == 0
-# OP 5 ----- FAILED, 0 != 1b
-# OP 5 ----- FAILED, 0 != 2c
-# OP 6 ----- OK, 0 == 0
-# OP 6 ----- FAILED, 0 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 0 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- OK, 0 == 0
-# OP 7 ----- FAILED, 0 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 0 != 3
-# OP 7 ----- FAILED, 0 != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- OK, 0 == 0
-# OP 8 ----- FAILED, 0 != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- OK, 0 == 0
-# OP 8 ----- FAILED, 0 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- OK, 0 == 0
-# OP 9 ----- FAILED, 0 != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- OK, 0 == 0
-# OP 9 ----- FAILED, 0 != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftkgk45q".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftkgk45q
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0X != bd
-# OP 0 ----- OK, 0 == 0
-# OP 0 ----- FAILED, 0 != 23
-# OP 0 ----- FAILED, 0 != bb
-# OP 1 ----- FAILED, 1 != 3
-# OP 1 ----- FAILED, 0X != fd
-# OP 1 ----- FAILED, 0X != 42
-# OP 1 ----- FAILED, 0X != 3
-# OP 1 ----- FAILED, 1 != fd
-# OP 1 ----- FAILED, 1 != f4
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 1 != fa
-# OP 2 ----- FAILED, 1 != ce
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 0 != d6
-# OP 2 ----- FAILED, 0 != c5
-# OP 3 ----- OK, 0 == 0
-# OP 3 ----- FAILED, 0 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- OK, 0 == 0
-# OP 3 ----- FAILED, 0 != 5
-# OP 3 ----- FAILED, 0 != 64
-# OP 4 ----- FAILED, 0 != 3
-# OP 4 ----- FAILED, 0 != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- OK, 0 == 0
-# OP 4 ----- FAILED, 0 != 6
-# OP 4 ----- FAILED, 0 != 84
-# OP 5 ----- OK, 0 == 0
-# OP 5 ----- FAILED, 0 != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- OK, 0 == 0
-# OP 5 ----- FAILED, 0 != 1b
-# OP 5 ----- FAILED, 0 != 2c
-# OP 6 ----- OK, 0 == 0
-# OP 6 ----- FAILED, 0 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 0 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- OK, 0 == 0
-# OP 7 ----- FAILED, 0 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 0 != 3
-# OP 7 ----- FAILED, 0 != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- OK, 0 == 0
-# OP 8 ----- FAILED, 0 != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- OK, 0 == 0
-# OP 8 ----- FAILED, 0 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- OK, 0 == 0
-# OP 9 ----- FAILED, 0 != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- OK, 0 == 0
-# OP 9 ----- FAILED, 0 != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftvw1in6".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftvw1in6
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0X != bd
-# OP 0 ----- FAILED, 0X != 0
-# OP 0 ----- FAILED, 0X != 23
-# OP 0 ----- FAILED, 0X != bb
-# OP 1 ----- FAILED, 0X != 3
-# OP 1 ----- FAILED, 0X != fd
-# OP 1 ----- FAILED, 0X != 42
-# OP 1 ----- FAILED, 0X != 3
-# OP 1 ----- FAILED, 0X != fd
-# OP 1 ----- FAILED, 0X != f4
-# OP 2 ----- FAILED, 0X != 3
-# OP 2 ----- FAILED, 0X != fa
-# OP 2 ----- FAILED, 0X != ce
-# OP 2 ----- FAILED, 0X != 3
-# OP 2 ----- FAILED, 0 != d6
-# OP 2 ----- FAILED, 0 != c5
-# OP 3 ----- OK, 0 == 0
-# OP 3 ----- FAILED, 0 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- OK, 0 == 0
-# OP 3 ----- FAILED, 0 != 5
-# OP 3 ----- FAILED, 0 != 64
-# OP 4 ----- FAILED, 0 != 3
-# OP 4 ----- FAILED, 0 != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- OK, 0 == 0
-# OP 4 ----- FAILED, 0 != 6
-# OP 4 ----- FAILED, 0 != 84
-# OP 5 ----- OK, 0 == 0
-# OP 5 ----- FAILED, 0 != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- OK, 0 == 0
-# OP 5 ----- FAILED, 0 != 1b
-# OP 5 ----- FAILED, 0 != 2c
-# OP 6 ----- OK, 0 == 0
-# OP 6 ----- FAILED, 0 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 0 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- OK, 0 == 0
-# OP 7 ----- FAILED, 0 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 0 != 3
-# OP 7 ----- FAILED, 0 != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- OK, 0 == 0
-# OP 8 ----- FAILED, 0 != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- OK, 0 == 0
-# OP 8 ----- FAILED, 0 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- OK, 0 == 0
-# OP 9 ----- FAILED, 0 != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- OK, 0 == 0
-# OP 9 ----- FAILED, 0 != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlfth7vsyg".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfth7vsyg
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0 != bd
-# OP 0 ----- FAILED, 0X != 0
-# OP 0 ----- FAILED, 0X != 23
-# OP 0 ----- FAILED, 0X != bb
-# OP 1 ----- FAILED, 0X != 3
-# OP 1 ----- FAILED, 0X != fd
-# OP 1 ----- FAILED, 0X != 42
-# OP 1 ----- FAILED, 0X != 3
-# OP 1 ----- FAILED, 0X != fd
-# OP 1 ----- FAILED, 0X != f4
-# OP 2 ----- FAILED, 0X != 3
-# OP 2 ----- FAILED, 0X != fa
-# OP 2 ----- FAILED, 0X != ce
-# OP 2 ----- FAILED, 0X != 3
-# OP 2 ----- FAILED, 0X != d6
-# OP 2 ----- FAILED, 0 != c5
-# OP 3 ----- OK, 0 == 0
-# OP 3 ----- FAILED, 0 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- OK, 0 == 0
-# OP 3 ----- FAILED, 0 != 5
-# OP 3 ----- FAILED, 0 != 64
-# OP 4 ----- FAILED, 0 != 3
-# OP 4 ----- FAILED, 0 != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- OK, 0 == 0
-# OP 4 ----- FAILED, 0 != 6
-# OP 4 ----- FAILED, 0 != 84
-# OP 5 ----- OK, 0 == 0
-# OP 5 ----- FAILED, 0 != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- OK, 0 == 0
-# OP 5 ----- FAILED, 0 != 1b
-# OP 5 ----- FAILED, 0 != 2c
-# OP 6 ----- OK, 0 == 0
-# OP 6 ----- FAILED, 0 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 0 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- OK, 0 == 0
-# OP 7 ----- FAILED, 0 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 0 != 3
-# OP 7 ----- FAILED, 0 != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- OK, 0 == 0
-# OP 8 ----- FAILED, 0 != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- OK, 0 == 0
-# OP 8 ----- FAILED, 0 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- OK, 0 == 0
-# OP 9 ----- FAILED, 0 != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- OK, 0 == 0
-# OP 9 ----- FAILED, 0 != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# ** Error: ../../../hdl/comp_mult_top.v(244): near "always": syntax error, unexpected "always"
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# ** Error: D:/Programe/modeltech6.6/win32/vlog failed.
-# Error in macro ./sim.do line 6
-# D:/Programe/modeltech6.6/win32/vlog failed.
-#     while executing
-# "vlog -reportprogress 300 -work work ../../../hdl/*.v"
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlfth8zyyy".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfth8zyyy
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftdg1kzm".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftdg1kzm
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# ** Error: ../../../hdl/comp_mult_top.v(259): near "always": syntax error, unexpected "always"
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# ** Error: D:/Programe/modeltech6.6/win32/vlog failed.
-# Error in macro ./sim.do line 6
-# D:/Programe/modeltech6.6/win32/vlog failed.
-#     while executing
-# "vlog -reportprogress 300 -work work ../../../hdl/*.v"
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlft1qivv5".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft1qivv5
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlft01cbhw".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft01cbhw
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# ** Error: ../../../hdl/comp_mult_top.v(240): near ")": syntax error, unexpected ')', expecting ';' or ','
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# ** Error: D:/Programe/modeltech6.6/win32/vlog failed.
-# Error in macro ./sim.do line 6
-# D:/Programe/modeltech6.6/win32/vlog failed.
-#     while executing
-# "vlog -reportprogress 300 -work work ../../../hdl/*.v"
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlfthd9i98".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfthd9i98
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0 != bd
-# OP 0 ----- OK, 0 == 0
-# OP 0 ----- FAILED, 0 != 23
-# OP 0 ----- FAILED, 0 != bb
-# OP 1 ----- FAILED, 1 != 3
-# OP 1 ----- FAILED, 1 != fd
-# OP 1 ----- FAILED, 0 != 42
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != f4
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 0 != fa
-# OP 2 ----- FAILED, 1 != ce
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 0 != d6
-# OP 2 ----- FAILED, 0 != c5
-# OP 3 ----- OK, 0 == 0
-# OP 3 ----- FAILED, 0 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- OK, 0 == 0
-# OP 3 ----- FAILED, 0 != 5
-# OP 3 ----- FAILED, 0 != 64
-# OP 4 ----- FAILED, 0 != 3
-# OP 4 ----- FAILED, 0 != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- OK, 0 == 0
-# OP 4 ----- FAILED, 0 != 6
-# OP 4 ----- FAILED, 0 != 84
-# OP 5 ----- OK, 0 == 0
-# OP 5 ----- FAILED, 0 != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- OK, 0 == 0
-# OP 5 ----- FAILED, 0 != 1b
-# OP 5 ----- FAILED, 0 != 2c
-# OP 6 ----- OK, 0 == 0
-# OP 6 ----- FAILED, 0 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 0 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- OK, 0 == 0
-# OP 7 ----- FAILED, 0 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 0 != 3
-# OP 7 ----- FAILED, 0 != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- OK, 0 == 0
-# OP 8 ----- FAILED, 0 != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- OK, 0 == 0
-# OP 8 ----- FAILED, 0 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- OK, 0 == 0
-# OP 9 ----- FAILED, 0 != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- OK, 0 == 0
-# OP 9 ----- FAILED, 0 != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftg9kxw1".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftg9kxw1
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0 != bd
-# OP 0 ----- OK    , 0 == 0
-# OP 0 ----- FAILED, 0 != 23
-# OP 0 ----- FAILED, 0 != bb
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != 42
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != f4
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 0 != fa
-# OP 2 ----- FAILED, 0 != ce
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 1 != d6
-# OP 2 ----- FAILED, 0 != c5
-# OP 3 ----- OK    , 0 == 0
-# OP 3 ----- FAILED, 1 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- FAILED, 1 != 0
-# OP 3 ----- FAILED, 0 != 5
-# OP 3 ----- FAILED, 1 != 64
-# OP 4 ----- FAILED, 1 != 3
-# OP 4 ----- FAILED, 0 != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- FAILED, 1 != 0
-# OP 4 ----- FAILED, 1 != 6
-# OP 4 ----- FAILED, 1 != 84
-# OP 5 ----- OK    , 0 == 0
-# OP 5 ----- FAILED, 1 != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- OK    , 0 == 0
-# OP 5 ----- FAILED, 0 != 1b
-# OP 5 ----- FAILED, 1 != 2c
-# OP 6 ----- OK    , 0 == 0
-# OP 6 ----- FAILED, 0 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 1 != 3
-# OP 6 ----- FAILED, 1 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- OK    , 0 == 0
-# OP 7 ----- FAILED, 1 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 1 != 3
-# OP 7 ----- FAILED, 0 != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- OK    , 0 == 0
-# OP 8 ----- FAILED, 0 != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- FAILED, 1 != 0
-# OP 8 ----- FAILED, 1 != 9
-# OP 8 ----- FAILED, 1 != 16
-# OP 9 ----- OK    , 0 == 0
-# OP 9 ----- FAILED, 1 != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- OK    , 0 == 0
-# OP 9 ----- FAILED, 1 != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftqw81y3".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftqw81y3
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0 != bd
-# OP 0 ----- OK    , 0 == 0
-# OP 0 ----- FAILED, 0 != 23
-# OP 0 ----- FAILED, 0 != bb
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != 42
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != f4
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 1 != fa
-# OP 2 ----- FAILED, 0 != ce
-# OP 2 ----- FAILED, 1 != 3
-# OP 2 ----- FAILED, 1 != d6
-# OP 2 ----- FAILED, 1 != c5
-# OP 3 ----- OK    , 0 == 0
-# OP 3 ----- FAILED, 1 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- FAILED, 1 != 0
-# OP 3 ----- FAILED, 0 != 5
-# OP 3 ----- FAILED, 1 != 64
-# OP 4 ----- FAILED, 1 != 3
-# OP 4 ----- FAILED, 1 != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- OK    , 0 == 0
-# OP 4 ----- FAILED, 1 != 6
-# OP 4 ----- FAILED, 1 != 84
-# OP 5 ----- OK    , 0 == 0
-# OP 5 ----- FAILED, 1 != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- OK    , 0 == 0
-# OP 5 ----- FAILED, 1 != 1b
-# OP 5 ----- FAILED, 1 != 2c
-# OP 6 ----- OK    , 0 == 0
-# OP 6 ----- FAILED, 1 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 0 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- FAILED, 1 != 0
-# OP 7 ----- FAILED, 0 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 1 != 3
-# OP 7 ----- FAILED, 0 != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- OK    , 0 == 0
-# OP 8 ----- FAILED, 0 != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- FAILED, 1 != 0
-# OP 8 ----- FAILED, 0 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- FAILED, 1 != 0
-# OP 9 ----- FAILED, 0 != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- OK    , 0 == 0
-# OP 9 ----- FAILED, 1 != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-run
-
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlfte00xbk".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfte00xbk
-# ** Warning: (vsim-3015) ../deb_src/comp_mult_top_test.v(139): [PCDPC] - Port size (1 or 1) does not match connection size (8) for port 'be'. The port definition is at: ../deb_src/mem_1rw.v(25).
-#         Region: /comp_mult_top_test/i_mem_1rw
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0 != bd
-# OP 0 ----- OK    , 0 == 0
-# OP 0 ----- FAILED, 0 != 23
-# OP 0 ----- FAILED, 0 != bb
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != 42
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != f4
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 1 != fa
-# OP 2 ----- FAILED, 0 != ce
-# OP 2 ----- FAILED, 1 != 3
-# OP 2 ----- FAILED, 1 != d6
-# OP 2 ----- FAILED, 1 != c5
-# OP 3 ----- OK    , 0 == 0
-# OP 3 ----- FAILED, 1 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- FAILED, 1 != 0
-# OP 3 ----- FAILED, 0 != 5
-# OP 3 ----- FAILED, 1 != 64
-# OP 4 ----- FAILED, 1 != 3
-# OP 4 ----- FAILED, 1 != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- OK    , 0 == 0
-# OP 4 ----- FAILED, 1 != 6
-# OP 4 ----- FAILED, 1 != 84
-# OP 5 ----- OK    , 0 == 0
-# OP 5 ----- FAILED, 1 != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- OK    , 0 == 0
-# OP 5 ----- FAILED, 1 != 1b
-# OP 5 ----- FAILED, 1 != 2c
-# OP 6 ----- OK    , 0 == 0
-# OP 6 ----- FAILED, 1 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 0 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- FAILED, 1 != 0
-# OP 7 ----- FAILED, 0 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 1 != 3
-# OP 7 ----- FAILED, 0 != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- OK    , 0 == 0
-# OP 8 ----- FAILED, 0 != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- FAILED, 1 != 0
-# OP 8 ----- FAILED, 0 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- FAILED, 1 != 0
-# OP 9 ----- FAILED, 0 != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- OK    , 0 == 0
-# OP 9 ----- FAILED, 1 != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftf8jd5n".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftf8jd5n
-# ** Warning: (vsim-3015) ../deb_src/comp_mult_top_test.v(139): [PCDPC] - Port size (1 or 1) does not match connection size (8) for port 'be'. The port definition is at: ../deb_src/mem_1rw.v(25).
-#         Region: /comp_mult_top_test/i_mem_1rw
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0 != bd
-# OP 0 ----- OK    , 0 == 0
-# OP 0 ----- FAILED, 0 != 23
-# OP 0 ----- FAILED, 0 != bb
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != 42
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != f4
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 1 != fa
-# OP 2 ----- FAILED, 0 != ce
-# OP 2 ----- FAILED, 1 != 3
-# OP 2 ----- FAILED, 1 != d6
-# OP 2 ----- FAILED, 1 != c5
-# OP 3 ----- OK    , 0 == 0
-# OP 3 ----- FAILED, 1 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- FAILED, 1 != 0
-# OP 3 ----- FAILED, 0 != 5
-# OP 3 ----- FAILED, 1 != 64
-# OP 4 ----- FAILED, 1 != 3
-# OP 4 ----- FAILED, 1 != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- OK    , 0 == 0
-# OP 4 ----- FAILED, 1 != 6
-# OP 4 ----- FAILED, 1 != 84
-# OP 5 ----- OK    , 0 == 0
-# OP 5 ----- FAILED, 1 != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- OK    , 0 == 0
-# OP 5 ----- FAILED, 1 != 1b
-# OP 5 ----- FAILED, 1 != 2c
-# OP 6 ----- OK    , 0 == 0
-# OP 6 ----- FAILED, 1 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 0 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- FAILED, 1 != 0
-# OP 7 ----- FAILED, 0 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 1 != 3
-# OP 7 ----- FAILED, 0 != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- OK    , 0 == 0
-# OP 8 ----- FAILED, 0 != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- FAILED, 1 != 0
-# OP 8 ----- FAILED, 0 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- FAILED, 1 != 0
-# OP 9 ----- FAILED, 0 != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- OK    , 0 == 0
-# OP 9 ----- FAILED, 1 != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-add wave sim:/comp_mult_top_test/i_mem_1rw/*
-restart
-# ** Warning: (vsim-3015) ../deb_src/comp_mult_top_test.v(139): [PCDPC] - Port size (1 or 1) does not match connection size (8) for port 'be'. The port definition is at: ../deb_src/mem_1rw.v(25).
-#         Region: /comp_mult_top_test/i_mem_1rw
-run -all
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0 != bd
-# OP 0 ----- OK    , 0 == 0
-# OP 0 ----- FAILED, 0 != 23
-# OP 0 ----- FAILED, 0 != bb
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != 42
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 0 != fd
-# OP 1 ----- FAILED, 0 != f4
-# OP 2 ----- FAILED, 0 != 3
-# OP 2 ----- FAILED, 1 != fa
-# OP 2 ----- FAILED, 0 != ce
-# OP 2 ----- FAILED, 1 != 3
-# OP 2 ----- FAILED, 1 != d6
-# OP 2 ----- FAILED, 1 != c5
-# OP 3 ----- OK    , 0 == 0
-# OP 3 ----- FAILED, 1 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- FAILED, 1 != 0
-# OP 3 ----- FAILED, 0 != 5
-# OP 3 ----- FAILED, 1 != 64
-# OP 4 ----- FAILED, 1 != 3
-# OP 4 ----- FAILED, 1 != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- OK    , 0 == 0
-# OP 4 ----- FAILED, 1 != 6
-# OP 4 ----- FAILED, 1 != 84
-# OP 5 ----- OK    , 0 == 0
-# OP 5 ----- FAILED, 1 != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- OK    , 0 == 0
-# OP 5 ----- FAILED, 1 != 1b
-# OP 5 ----- FAILED, 1 != 2c
-# OP 6 ----- OK    , 0 == 0
-# OP 6 ----- FAILED, 1 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 0 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- FAILED, 1 != 0
-# OP 7 ----- FAILED, 0 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 1 != 3
-# OP 7 ----- FAILED, 0 != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- OK    , 0 == 0
-# OP 8 ----- FAILED, 0 != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- FAILED, 1 != 0
-# OP 8 ----- FAILED, 0 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- FAILED, 1 != 0
-# OP 9 ----- FAILED, 0 != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- OK    , 0 == 0
-# OP 9 ----- FAILED, 1 != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_ref_model
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftgk6cby".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftgk6cby
-# ** Warning: (vsim-3015) ../deb_src/comp_mult_top_test.v(139): [PCDPC] - Port size (1 or 1) does not match connection size (8) for port 'be'. The port definition is at: ../deb_src/mem_1rw.v(26).
-#         Region: /comp_mult_top_test/i_mem_1rw
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0 != bd
-# OP 0 ----- OK    , 0 == 0
-# OP 0 ----- FAILED, 0 != 23
-# OP 0 ----- FAILED, 0 != bb
-# OP 1 ----- FAILED, 60 != 3
-# OP 1 ----- FAILED, 12 != fd
-# OP 1 ----- FAILED, 0 != 42
-# OP 1 ----- FAILED, 90 != 3
-# OP 1 ----- FAILED, 12 != fd
-# OP 1 ----- FAILED, 0 != f4
-# OP 2 ----- FAILED, 64 != 3
-# OP 2 ----- FAILED, 1f != fa
-# OP 2 ----- FAILED, 0 != ce
-# OP 2 ----- FAILED, d != 3
-# OP 2 ----- FAILED, f9 != d6
-# OP 2 ----- FAILED, 3 != c5
-# OP 3 ----- FAILED, a0 != 0
-# OP 3 ----- FAILED, 27 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- FAILED, a5 != 0
-# OP 3 ----- FAILED, fe != 5
-# OP 3 ----- FAILED, 3 != 64
-# OP 4 ----- FAILED, 7d != 3
-# OP 4 ----- FAILED, 1d != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- FAILED, e != 0
-# OP 4 ----- FAILED, f5 != 6
-# OP 4 ----- FAILED, 3 != 84
-# OP 5 ----- FAILED, fa != 0
-# OP 5 ----- FAILED, 3b != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- FAILED, 6e != 0
-# OP 5 ----- FAILED, ed != 1b
-# OP 5 ----- FAILED, 3 != 2c
-# OP 6 ----- FAILED, c4 != 0
-# OP 6 ----- FAILED, 13 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 30 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- FAILED, 2b != 0
-# OP 7 ----- FAILED, 22 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 75 != 3
-# OP 7 ----- FAILED, a != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- FAILED, c8 != 0
-# OP 8 ----- FAILED, 3a != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- FAILED, 5d != 0
-# OP 8 ----- FAILED, 12 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- FAILED, cf != 0
-# OP 9 ----- FAILED, 2a != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- FAILED, da != 0
-# OP 9 ----- FAILED, 1b != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Modifying modelsim.ini
 # Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
@@ -1425,534 +48,9 @@ do sim.do
 # Loading work.uint8_mult
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftzgqs7h".
+#           Attempting to use alternate WLF file "./wlftqezad3".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftzgqs7h
-# ** Warning: (vsim-3015) ../deb_src/comp_mult_top_test.v(139): [PCDPC] - Port size (1 or 1) does not match connection size (8) for port 'be'. The port definition is at: ../deb_src/mem_1rw.v(26).
-#         Region: /comp_mult_top_test/i_mem_1rw
-# comp_mult_top_test.i_comp_mult_ref_model 225 GOOD: (99 + 98i) * (48 + 0i) = (4752 + 4704i), same as expected (4752 + 4704i)
-# comp_mult_top_test.i_comp_mult_ref_model 345 GOOD: (57 + 100i) * (53 + 48i) = (-1779 + 8036i), same as expected (-1779 + 8036i)
-# comp_mult_top_test.i_comp_mult_ref_model 465 GOOD: (98 + 99i) * (50 + 53i) = (-347 + 10144i), same as expected (-347 + 10144i)
-# comp_mult_top_test.i_comp_mult_ref_model 585 GOOD: (50 + 101i) * (49 + 52i) = (-2802 + 7549i), same as expected (-2802 + 7549i)
-# comp_mult_top_test.i_comp_mult_ref_model 705 GOOD: (99 + 101i) * (54 + 100i) = (-4754 + 15354i), same as expected (-4754 + 15354i)
-# comp_mult_top_test.i_comp_mult_ref_model 825 GOOD: (53 + 48i) * (48 + 52i) = (48 + 5060i), same as expected (48 + 5060i)
-# comp_mult_top_test.i_comp_mult_ref_model 945 GOOD: (101 + 56i) * (57 + 55i) = (2677 + 8747i), same as expected (2677 + 8747i)
-# comp_mult_top_test.i_comp_mult_ref_model 1065 GOOD: (99 + 102i) * (99 + 50i) = (4701 + 15048i), same as expected (4701 + 15048i)
-# comp_mult_top_test.i_comp_mult_ref_model 1185 GOOD: (99 + 56i) * (102 + 53i) = (7130 + 10959i), same as expected (7130 + 10959i)
-# comp_mult_top_test.i_comp_mult_ref_model 1305 GOOD: (56 + 54i) * (0 + 57i) = (-3078 + 3192i), same as expected (-3078 + 3192i)
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != f6
-# OP 0 ----- FAILED, 0 != bd
-# OP 0 ----- OK    , 0 == 0
-# OP 0 ----- FAILED, 0 != 23
-# OP 0 ----- FAILED, 0 != bb
-# OP 1 ----- FAILED, 60 != 3
-# OP 1 ----- FAILED, 12 != fd
-# OP 1 ----- FAILED, 0 != 42
-# OP 1 ----- FAILED, 90 != 3
-# OP 1 ----- FAILED, 12 != fd
-# OP 1 ----- FAILED, 0 != f4
-# OP 2 ----- FAILED, 64 != 3
-# OP 2 ----- FAILED, 1f != fa
-# OP 2 ----- FAILED, 0 != ce
-# OP 2 ----- FAILED, d != 3
-# OP 2 ----- FAILED, f9 != d6
-# OP 2 ----- FAILED, 3 != c5
-# OP 3 ----- FAILED, a0 != 0
-# OP 3 ----- FAILED, 27 != d
-# OP 3 ----- FAILED, 0 != a
-# OP 3 ----- FAILED, a5 != 0
-# OP 3 ----- FAILED, fe != 5
-# OP 3 ----- FAILED, 3 != 64
-# OP 4 ----- FAILED, 7d != 3
-# OP 4 ----- FAILED, 1d != f5
-# OP 4 ----- FAILED, 0 != ce
-# OP 4 ----- FAILED, e != 0
-# OP 4 ----- FAILED, f5 != 6
-# OP 4 ----- FAILED, 3 != 84
-# OP 5 ----- FAILED, fa != 0
-# OP 5 ----- FAILED, 3b != 25
-# OP 5 ----- FAILED, 0 != d2
-# OP 5 ----- FAILED, 6e != 0
-# OP 5 ----- FAILED, ed != 1b
-# OP 5 ----- FAILED, 3 != 2c
-# OP 6 ----- FAILED, c4 != 0
-# OP 6 ----- FAILED, 13 != 35
-# OP 6 ----- FAILED, 0 != 2e
-# OP 6 ----- FAILED, 30 != 3
-# OP 6 ----- FAILED, 0 != ea
-# OP 6 ----- FAILED, 0 != e9
-# OP 7 ----- FAILED, 2b != 0
-# OP 7 ----- FAILED, 22 != 17
-# OP 7 ----- FAILED, 0 != 43
-# OP 7 ----- FAILED, 75 != 3
-# OP 7 ----- FAILED, a != f8
-# OP 7 ----- FAILED, 0 != 1
-# OP 8 ----- FAILED, c8 != 0
-# OP 8 ----- FAILED, 3a != 35
-# OP 8 ----- FAILED, 0 != 66
-# OP 8 ----- FAILED, 5d != 0
-# OP 8 ----- FAILED, 12 != 9
-# OP 8 ----- FAILED, 0 != 16
-# OP 9 ----- FAILED, cf != 0
-# OP 9 ----- FAILED, 2a != 2d
-# OP 9 ----- FAILED, 0 != e9
-# OP 9 ----- FAILED, da != 0
-# OP 9 ----- FAILED, 1b != 32
-# OP 9 ----- FAILED, 0 != 6e
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 99
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftzqys0e".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftzqys0e
-# ** Warning: (vsim-3015) ../deb_src/comp_mult_top_test.v(141): [PCDPC] - Port size (1 or 1) does not match connection size (8) for port 'be'. The port definition is at: ../deb_src/mem_1rw.v(26).
-#         Region: /comp_mult_top_test/i_mem_1rw
-# comp_mult_top_test.i_comp_mult_ref_model 235 GOOD: (48 + 53i) * (101 + 48i) = (2304 + 7657i), same as expected (2304 + 7657i)
-# comp_mult_top_test.i_comp_mult_ref_model 365 GOOD: (100 + 50i) * (101 + 49i) = (7650 + 9950i), same as expected (7650 + 9950i)
-# comp_mult_top_test.i_comp_mult_ref_model 495 GOOD: (57 + 97i) * (48 + 99i) = (-6867 + 10299i), same as expected (-6867 + 10299i)
-# comp_mult_top_test.i_comp_mult_ref_model 625 GOOD: (49 + 100i) * (50 + 53i) = (-2850 + 7597i), same as expected (-2850 + 7597i)
-# comp_mult_top_test.i_comp_mult_ref_model 755 GOOD: (102 + 100i) * (56 + 51i) = (612 + 10802i), same as expected (612 + 10802i)
-# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (54 + 101i) * (57 + 55i) = (-2477 + 8727i), same as expected (-2477 + 8727i)
-# comp_mult_top_test.i_comp_mult_ref_model 1015 GOOD: (101 + 54i) * (51 + 55i) = (2181 + 8309i), same as expected (2181 + 8309i)
-# comp_mult_top_test.i_comp_mult_ref_model 1145 GOOD: (49 + 100i) * (102 + 49i) = (98 + 12601i), same as expected (98 + 12601i)
-# comp_mult_top_test.i_comp_mult_ref_model 1275 GOOD: (57 + 50i) * (49 + 100i) = (-2207 + 8150i), same as expected (-2207 + 8150i)
-# comp_mult_top_test.i_comp_mult_ref_model 1405 GOOD: (53 + 101i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != db
-# OP 0 ----- FAILED, 0 != 49
-# OP 0 ----- OK    , 0 == 0
-# OP 0 ----- FAILED, 0 != 7
-# OP 0 ----- FAILED, 0 != f
-# OP 1 ----- FAILED, e9 != 0
-# OP 1 ----- FAILED, 1d != 3
-# OP 1 ----- FAILED, 0 != 86
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 9 != fa
-# OP 1 ----- FAILED, 0 != ec
-# OP 2 ----- FAILED, de != 0
-# OP 2 ----- FAILED, 26 != 15
-# OP 2 ----- FAILED, 0 != d
-# OP 2 ----- FAILED, e2 != 3
-# OP 2 ----- FAILED, 1d != fc
-# OP 2 ----- FAILED, 0 != 9d
-# OP 3 ----- FAILED, 3b != 3
-# OP 3 ----- FAILED, 28 != f6
-# OP 3 ----- FAILED, 0 != ca
-# OP 3 ----- FAILED, 2d != 3
-# OP 3 ----- FAILED, e5 != f7
-# OP 3 ----- FAILED, 3 != 5d
-# OP 4 ----- FAILED, ad != 0
-# OP 4 ----- FAILED, 1d != 8
-# OP 4 ----- FAILED, 0 != fb
-# OP 4 ----- FAILED, de != 3
-# OP 4 ----- FAILED, f4 != f5
-# OP 4 ----- FAILED, 3 != e9
-# OP 5 ----- FAILED, 32 != 3
-# OP 5 ----- FAILED, 2a != d3
-# OP 5 ----- FAILED, 0 != e6
-# OP 5 ----- FAILED, 64 != 0
-# OP 5 ----- FAILED, 2 != 1c
-# OP 5 ----- FAILED, 0 != 50
-# OP 6 ----- FAILED, 17 != 3
-# OP 6 ----- FAILED, 22 != d8
-# OP 6 ----- FAILED, 0 != 16
-# OP 6 ----- FAILED, 53 != 3
-# OP 6 ----- FAILED, f6 != c8
-# OP 6 ----- FAILED, 3 != 14
-# OP 7 ----- FAILED, 75 != 0
-# OP 7 ----- FAILED, 20 != 17
-# OP 7 ----- FAILED, 0 != 70
-# OP 7 ----- FAILED, 85 != 0
-# OP 7 ----- FAILED, 8 != 6
-# OP 7 ----- FAILED, 0 != 8c
-# OP 8 ----- FAILED, 39 != 0
-# OP 8 ----- FAILED, 31 != 1
-# OP 8 ----- FAILED, 0 != c1
-# OP 8 ----- FAILED, 62 != 3
-# OP 8 ----- FAILED, 0 != f4
-# OP 8 ----- FAILED, 0 != 66
-# OP 9 ----- FAILED, d6 != 0
-# OP 9 ----- FAILED, 1f != 2
-# OP 9 ----- FAILED, 0 != db
-# OP 9 ----- FAILED, 61 != 3
-# OP 9 ----- FAILED, f7 != f3
-# OP 9 ----- FAILED, 3 != 37
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 101
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 101
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftg8305f".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftg8305f
-# ** Warning: (vsim-3015) ../deb_src/comp_mult_top_test.v(141): [PCDPC] - Port size (1 or 1) does not match connection size (8) for port 'be'. The port definition is at: ../deb_src/mem_1rw.v(26).
-#         Region: /comp_mult_top_test/i_mem_1rw
-# comp_mult_top_test.i_comp_mult_ref_model 235 GOOD: (48 + 53i) * (101 + 48i) = (2304 + 7657i), same as expected (2304 + 7657i)
-# comp_mult_top_test.i_comp_mult_ref_model 365 GOOD: (100 + 50i) * (101 + 49i) = (7650 + 9950i), same as expected (7650 + 9950i)
-# comp_mult_top_test.i_comp_mult_ref_model 495 GOOD: (57 + 97i) * (48 + 99i) = (-6867 + 10299i), same as expected (-6867 + 10299i)
-# comp_mult_top_test.i_comp_mult_ref_model 625 GOOD: (49 + 100i) * (50 + 53i) = (-2850 + 7597i), same as expected (-2850 + 7597i)
-# comp_mult_top_test.i_comp_mult_ref_model 755 GOOD: (102 + 100i) * (56 + 51i) = (612 + 10802i), same as expected (612 + 10802i)
-# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (54 + 101i) * (57 + 55i) = (-2477 + 8727i), same as expected (-2477 + 8727i)
-# comp_mult_top_test.i_comp_mult_ref_model 1015 GOOD: (101 + 54i) * (51 + 55i) = (2181 + 8309i), same as expected (2181 + 8309i)
-# comp_mult_top_test.i_comp_mult_ref_model 1145 GOOD: (49 + 100i) * (102 + 49i) = (98 + 12601i), same as expected (98 + 12601i)
-# comp_mult_top_test.i_comp_mult_ref_model 1275 GOOD: (57 + 50i) * (49 + 100i) = (-2207 + 8150i), same as expected (-2207 + 8150i)
-# comp_mult_top_test.i_comp_mult_ref_model 1405 GOOD: (53 + 101i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != db
-# OP 0 ----- FAILED, 0 != 49
-# OP 0 ----- OK    , 0 == 0
-# OP 0 ----- FAILED, 0 != 7
-# OP 0 ----- FAILED, 0 != f
-# OP 1 ----- FAILED, e9 != 0
-# OP 1 ----- FAILED, 1d != 3
-# OP 1 ----- FAILED, 0 != 86
-# OP 1 ----- FAILED, 0 != 3
-# OP 1 ----- FAILED, 9 != fa
-# OP 1 ----- FAILED, 0 != ec
-# OP 2 ----- FAILED, de != 0
-# OP 2 ----- FAILED, 26 != 15
-# OP 2 ----- FAILED, 0 != d
-# OP 2 ----- FAILED, e2 != 3
-# OP 2 ----- FAILED, 1d != fc
-# OP 2 ----- FAILED, 0 != 9d
-# OP 3 ----- FAILED, 3b != 3
-# OP 3 ----- FAILED, 28 != f6
-# OP 3 ----- FAILED, 0 != ca
-# OP 3 ----- FAILED, 2d != 3
-# OP 3 ----- FAILED, e5 != f7
-# OP 3 ----- FAILED, 3 != 5d
-# OP 4 ----- FAILED, ad != 0
-# OP 4 ----- FAILED, 1d != 8
-# OP 4 ----- FAILED, 0 != fb
-# OP 4 ----- FAILED, de != 3
-# OP 4 ----- FAILED, f4 != f5
-# OP 4 ----- FAILED, 3 != e9
-# OP 5 ----- FAILED, 32 != 3
-# OP 5 ----- FAILED, 2a != d3
-# OP 5 ----- FAILED, 0 != e6
-# OP 5 ----- FAILED, 64 != 0
-# OP 5 ----- FAILED, 2 != 1c
-# OP 5 ----- FAILED, 0 != 50
-# OP 6 ----- FAILED, 17 != 3
-# OP 6 ----- FAILED, 22 != d8
-# OP 6 ----- FAILED, 0 != 16
-# OP 6 ----- FAILED, 53 != 3
-# OP 6 ----- FAILED, f6 != c8
-# OP 6 ----- FAILED, 3 != 14
-# OP 7 ----- FAILED, 75 != 0
-# OP 7 ----- FAILED, 20 != 17
-# OP 7 ----- FAILED, 0 != 70
-# OP 7 ----- FAILED, 85 != 0
-# OP 7 ----- FAILED, 8 != 6
-# OP 7 ----- FAILED, 0 != 8c
-# OP 8 ----- FAILED, 39 != 0
-# OP 8 ----- FAILED, 31 != 1
-# OP 8 ----- FAILED, 0 != c1
-# OP 8 ----- FAILED, 62 != 3
-# OP 8 ----- FAILED, 0 != f4
-# OP 8 ----- FAILED, 0 != 66
-# OP 9 ----- FAILED, d6 != 0
-# OP 9 ----- FAILED, 1f != 2
-# OP 9 ----- FAILED, 0 != db
-# OP 9 ----- FAILED, 61 != 3
-# OP 9 ----- FAILED, f7 != f3
-# OP 9 ----- FAILED, 3 != 37
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 101
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 101
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# ** Error: ../../../hdl/comp_mult_top.v(268): Undefined variable: byte_rd_done_d.
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# ** Error: D:/Programe/modeltech6.6/win32/vlog failed.
-# Error in macro ./sim.do line 6
-# D:/Programe/modeltech6.6/win32/vlog failed.
-#     while executing
-# "vlog -reportprogress 300 -work work ../../../hdl/*.v"
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# ** Error: ../../../hdl/comp_mult_top.v(285): (vlog-2110) Illegal reference to net "op_data".
-# ** Error: ../../../hdl/comp_mult_top.v(286): (vlog-2110) Illegal reference to net "op_data".
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# ** Error: D:/Programe/modeltech6.6/win32/vlog failed.
-# Error in macro ./sim.do line 6
-# D:/Programe/modeltech6.6/win32/vlog failed.
-#     while executing
-# "vlog -reportprogress 300 -work work ../../../hdl/*.v"
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlfts4iart".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfts4iart
-# ** Warning: (vsim-3015) ../deb_src/comp_mult_top_test.v(141): [PCDPC] - Port size (1 or 1) does not match connection size (8) for port 'be'. The port definition is at: ../deb_src/mem_1rw.v(26).
-#         Region: /comp_mult_top_test/i_mem_1rw
-# comp_mult_top_test.i_comp_mult_ref_model 225 GOOD: (53 + 101i) * (0 + 48i) = (-4848 + 2544i), same as expected (-4848 + 2544i)
-# comp_mult_top_test.i_comp_mult_ref_model 345 GOOD: (50 + 101i) * (0 + 49i) = (-4949 + 2450i), same as expected (-4949 + 2450i)
-# comp_mult_top_test.i_comp_mult_ref_model 465 GOOD: (97 + 48i) * (0 + 99i) = (-4752 + 9603i), same as expected (-4752 + 9603i)
-# comp_mult_top_test.i_comp_mult_ref_model 585 GOOD: (100 + 50i) * (0 + 53i) = (-2650 + 5300i), same as expected (-2650 + 5300i)
-# comp_mult_top_test.i_comp_mult_ref_model 705 GOOD: (100 + 56i) * (0 + 51i) = (-2856 + 5100i), same as expected (-2856 + 5100i)
-# comp_mult_top_test.i_comp_mult_ref_model 825 GOOD: (101 + 57i) * (0 + 55i) = (-3135 + 5555i), same as expected (-3135 + 5555i)
-# comp_mult_top_test.i_comp_mult_ref_model 945 GOOD: (54 + 51i) * (0 + 55i) = (-2805 + 2970i), same as expected (-2805 + 2970i)
-# comp_mult_top_test.i_comp_mult_ref_model 1065 GOOD: (100 + 102i) * (0 + 49i) = (-4998 + 4900i), same as expected (-4998 + 4900i)
-# comp_mult_top_test.i_comp_mult_ref_model 1185 GOOD: (50 + 49i) * (0 + 100i) = (-4900 + 5000i), same as expected (-4900 + 5000i)
-# comp_mult_top_test.i_comp_mult_ref_model 1305 GOOD: (101 + 0i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
-# OP 0 ----- FAILED, 0 != 3
-# OP 0 ----- FAILED, 0 != db
-# OP 0 ----- FAILED, 0 != 49
-# OP 0 ----- OK    , 0 == 0
-# OP 0 ----- FAILED, 0 != 7
-# OP 0 ----- FAILED, 0 != f
-# OP 1 ----- FAILED, f0 != 0
-# OP 1 ----- FAILED, 9 != 3
-# OP 1 ----- FAILED, 0 != 86
-# OP 1 ----- FAILED, 10 != 3
-# OP 1 ----- FAILED, ed != fa
-# OP 1 ----- FAILED, 3 != ec
-# OP 2 ----- FAILED, 92 != 0
-# OP 2 ----- FAILED, 9 != 15
-# OP 2 ----- FAILED, 0 != d
-# OP 2 ----- FAILED, ab != 3
-# OP 2 ----- FAILED, ec != fc
-# OP 2 ----- FAILED, 3 != 9d
-# OP 3 ----- FAILED, 83 != 3
-# OP 3 ----- FAILED, 25 != f6
-# OP 3 ----- FAILED, 0 != ca
-# OP 3 ----- FAILED, 70 != 3
-# OP 3 ----- FAILED, ed != f7
-# OP 3 ----- FAILED, 3 != 5d
-# OP 4 ----- FAILED, b4 != 0
-# OP 4 ----- FAILED, 14 != 8
-# OP 4 ----- FAILED, 0 != fb
-# OP 4 ----- FAILED, a6 != 3
-# OP 4 ----- OK    , f5 == f5
-# OP 4 ----- FAILED, 3 != e9
-# OP 5 ----- FAILED, ec != 3
-# OP 5 ----- FAILED, 13 != d3
-# OP 5 ----- FAILED, 0 != e6
-# OP 5 ----- FAILED, d8 != 0
-# OP 5 ----- FAILED, f4 != 1c
-# OP 5 ----- FAILED, 3 != 50
-# OP 6 ----- FAILED, b3 != 3
-# OP 6 ----- FAILED, 15 != d8
-# OP 6 ----- FAILED, 0 != 16
-# OP 6 ----- FAILED, c1 != 3
-# OP 6 ----- FAILED, f3 != c8
-# OP 6 ----- FAILED, 3 != 14
-# OP 7 ----- FAILED, 9a != 0
-# OP 7 ----- FAILED, b != 17
-# OP 7 ----- FAILED, 0 != 70
-# OP 7 ----- FAILED, b != 0
-# OP 7 ----- FAILED, f5 != 6
-# OP 7 ----- FAILED, 3 != 8c
-# OP 8 ----- FAILED, 24 != 0
-# OP 8 ----- FAILED, 13 != 1
-# OP 8 ----- FAILED, 0 != c1
-# OP 8 ----- FAILED, 7a != 3
-# OP 8 ----- FAILED, ec != f4
-# OP 8 ----- FAILED, 3 != 66
-# OP 9 ----- FAILED, 88 != 0
-# OP 9 ----- FAILED, 13 != 2
-# OP 9 ----- FAILED, 0 != db
-# OP 9 ----- FAILED, dc != 3
-# OP 9 ----- FAILED, ec != f3
-# OP 9 ----- FAILED, 3 != 37
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 101
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 101
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftkkyf8n".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftkkyf8n
+#           Using alternate file: ./wlftqezad3
 # ** Warning: (vsim-3015) ../deb_src/comp_mult_top_test.v(141): [PCDPC] - Port size (1 or 1) does not match connection size (8) for port 'be'. The port definition is at: ../deb_src/mem_1rw.v(26).
 #         Region: /comp_mult_top_test/i_mem_1rw
 # comp_mult_top_test.i_comp_mult_ref_model 225 GOOD: (48 + 53i) * (101 + 48i) = (2304 + 7657i), same as expected (2304 + 7657i)
@@ -2036,49 +134,43 @@ do sim.do
 # -- Compiling module clk_rst_tb
 # -- Compiling module comp_mult_ref_model
 # -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
+# ** Error: ../deb_src/comp_mult_top_test.v(96): Undefined variable: fb.
+# ** Error: ../deb_src/comp_mult_top_test.v(103): near "end": syntax error, unexpected "end", expecting ';'
+# ** Error: ../deb_src/comp_mult_top_test.v(112): Undefined variable: comp_mult_top.
+# ** Error: ../deb_src/comp_mult_top_test.v(112): near "#": syntax error, unexpected '#'
+# ** Error: ../deb_src/comp_mult_top_test.v(134): Undefined variable: mem_1rw.
+# ** Error: ../deb_src/comp_mult_top_test.v(148): Undefined variable: comp_mult_ref_model.
+# ** Error: ../deb_src/comp_mult_top_test.v(165): Undefined variable: clk_rst_tb.
+# ** Error: ../deb_src/mem_1rw.v(30): Undefined variable: WORD_BYTES.
+# ** Error: ../deb_src/mem_1rw.v(30): Undefined variable: MEM_DEPTH.
+# ** Error: ../deb_src/mem_1rw.v(30): Declarations not allowed in unnamed block.
+# ** Error: ../deb_src/mem_1rw.v(33): Illegal declaration after the statement near line '28'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: ../deb_src/mem_1rw.v(35): Undefined variable: ext_be.
+# ** Error: ../deb_src/mem_1rw.v(35): Undefined variable: be.
+# ** Error: ../deb_src/mem_1rw.v(35): LHS in procedural continuous assignment may not be a net: ext_be.
+# ** Error: ../deb_src/mem_1rw.v(38): near "always": syntax error, unexpected "always"
+# ** Error: ../deb_src/mem_1rw.v(49): Declarations not allowed in unnamed block.
+# ** Error: ../deb_src/mem_1rw.v(50): Illegal declaration after the statement near line '46'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: ../deb_src/mem_1rw.v(59): near "$display": syntax error, unexpected "SYSTEM_IDENTIFIER"
+# ** Error: D:/Programe/modeltech6.6/win32/vlog failed.
+# Error in macro ./sim.do line 4
+# D:/Programe/modeltech6.6/win32/vlog failed.
+#     while executing
+# "vlog -reportprogress 300 -work work ../deb_src/*.v"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
 # Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlft9ksb3j".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft9ksb3j
-# ** Fatal: (vsim-3373) ../../../hdl/comp_mult_top.v(291): Range of part-select into 'data_reg' is reversed.
-#    Time: 0 ns  Iteration: 0  Instance: /comp_mult_top_test/DUT_comp_mult_top File: ../../../hdl/comp_mult_top.v
-# FATAL ERROR while loading design
-# Error loading design
-# Error: Error loading design 
-#        Pausing macro execution 
-# MACRO ./sim.do PAUSED at line 8
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# ** Error: ../deb_src/comp_mult_top_test.v(96): Undefined variable: fb.
+# -- Compiling module mem_1rw
+# ** Error: D:/Programe/modeltech6.6/win32/vlog failed.
+# Error in macro ./sim.do line 4
+# D:/Programe/modeltech6.6/win32/vlog failed.
+#     while executing
+# "vlog -reportprogress 300 -work work ../deb_src/*.v"
 do sim.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Modifying modelsim.ini
@@ -2119,8 +211,2030 @@ do sim.do
 # Loading work.uint8_mult
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlft758vdn".
+#           Attempting to use alternate WLF file "./wlfthqwf6f".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft758vdn
-# ** Warning: (vsim-3015) ../deb_src/comp_mult_top_test.v(141): [PCDPC] - Port size (1 or 1) does not match connection size (8) for port 'be'. The port definition is at: ../deb_src/mem_1rw.v(26).
-#         Region: /comp_mult_top_test/i_mem_1rw
+#           Using alternate file: ./wlfthqwf6f
+# ** Warning: (vsim-PLI-3691) ../deb_src/comp_mult_top_test.v(98): Expected a system task, not a system function '$fseek'.
+#         Region: /comp_mult_top_test
+# comp_mult_top_test.i_comp_mult_ref_model 225 GOOD: (48 + 53i) * (101 + 48i) = (2304 + 7657i), same as expected (2304 + 7657i)
+# comp_mult_top_test.i_comp_mult_ref_model 345 GOOD: (100 + 50i) * (101 + 49i) = (7650 + 9950i), same as expected (7650 + 9950i)
+# comp_mult_top_test.i_comp_mult_ref_model 465 GOOD: (57 + 97i) * (48 + 99i) = (-6867 + 10299i), same as expected (-6867 + 10299i)
+# comp_mult_top_test.i_comp_mult_ref_model 585 GOOD: (49 + 100i) * (50 + 53i) = (-2850 + 7597i), same as expected (-2850 + 7597i)
+# comp_mult_top_test.i_comp_mult_ref_model 705 GOOD: (102 + 100i) * (56 + 51i) = (612 + 10802i), same as expected (612 + 10802i)
+# comp_mult_top_test.i_comp_mult_ref_model 825 GOOD: (54 + 101i) * (57 + 55i) = (-2477 + 8727i), same as expected (-2477 + 8727i)
+# comp_mult_top_test.i_comp_mult_ref_model 945 GOOD: (101 + 54i) * (51 + 55i) = (2181 + 8309i), same as expected (2181 + 8309i)
+# comp_mult_top_test.i_comp_mult_ref_model 1065 GOOD: (49 + 100i) * (102 + 49i) = (98 + 12601i), same as expected (98 + 12601i)
+# comp_mult_top_test.i_comp_mult_ref_model 1185 GOOD: (57 + 50i) * (49 + 100i) = (-2207 + 8150i), same as expected (-2207 + 8150i)
+# comp_mult_top_test.i_comp_mult_ref_model 1305 GOOD: (53 + 101i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# OP 0 ----- FAILED, 0 != 3
+# OP 0 ----- FAILED, 0 != db
+# OP 0 ----- FAILED, 0 != 49
+# OP 0 ----- OK    , 0 == 0
+# OP 0 ----- FAILED, 0 != 7
+# OP 0 ----- FAILED, 0 != f
+# OP 1 ----- FAILED, e9 != 0
+# OP 1 ----- FAILED, 1d != 3
+# OP 1 ----- FAILED, 0 != 86
+# OP 1 ----- FAILED, 0 != 3
+# OP 1 ----- FAILED, 9 != fa
+# OP 1 ----- FAILED, 0 != ec
+# OP 2 ----- FAILED, de != 0
+# OP 2 ----- FAILED, 26 != 15
+# OP 2 ----- FAILED, 0 != d
+# OP 2 ----- FAILED, e2 != 3
+# OP 2 ----- FAILED, 1d != fc
+# OP 2 ----- FAILED, 0 != 9d
+# OP 3 ----- FAILED, 3b != 3
+# OP 3 ----- FAILED, 28 != f6
+# OP 3 ----- FAILED, 0 != ca
+# OP 3 ----- FAILED, 2d != 3
+# OP 3 ----- FAILED, e5 != f7
+# OP 3 ----- FAILED, 3 != 5d
+# OP 4 ----- FAILED, ad != 0
+# OP 4 ----- FAILED, 1d != 8
+# OP 4 ----- FAILED, 0 != fb
+# OP 4 ----- FAILED, de != 3
+# OP 4 ----- FAILED, f4 != f5
+# OP 4 ----- FAILED, 3 != e9
+# OP 5 ----- FAILED, 32 != 3
+# OP 5 ----- FAILED, 2a != d3
+# OP 5 ----- FAILED, 0 != e6
+# OP 5 ----- FAILED, 64 != 0
+# OP 5 ----- FAILED, 2 != 1c
+# OP 5 ----- FAILED, 0 != 50
+# OP 6 ----- FAILED, 17 != 3
+# OP 6 ----- FAILED, 22 != d8
+# OP 6 ----- FAILED, 0 != 16
+# OP 6 ----- FAILED, 53 != 3
+# OP 6 ----- FAILED, f6 != c8
+# OP 6 ----- FAILED, 3 != 14
+# OP 7 ----- FAILED, 75 != 0
+# OP 7 ----- FAILED, 20 != 17
+# OP 7 ----- FAILED, 0 != 70
+# OP 7 ----- FAILED, 85 != 0
+# OP 7 ----- FAILED, 8 != 6
+# OP 7 ----- FAILED, 0 != 8c
+# OP 8 ----- FAILED, 39 != 0
+# OP 8 ----- FAILED, 31 != 1
+# OP 8 ----- FAILED, 0 != c1
+# OP 8 ----- FAILED, 62 != 3
+# OP 8 ----- FAILED, 0 != f4
+# OP 8 ----- FAILED, 0 != 66
+# OP 9 ----- FAILED, d6 != 0
+# OP 9 ----- FAILED, 1f != 2
+# OP 9 ----- FAILED, 0 != db
+# OP 9 ----- FAILED, 61 != 3
+# OP 9 ----- FAILED, f7 != f3
+# OP 9 ----- FAILED, 3 != 37
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 107
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 107
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftmk6zvh".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftmk6zvh
+# ** Warning: (vsim-PLI-3691) ../deb_src/comp_mult_top_test.v(98): Expected a system task, not a system function '$fseek'.
+#         Region: /comp_mult_top_test
+# comp_mult_top_test.i_comp_mult_ref_model 225 GOOD: (48 + 53i) * (101 + 48i) = (2304 + 7657i), same as expected (2304 + 7657i)
+# comp_mult_top_test.i_comp_mult_ref_model 345 GOOD: (100 + 50i) * (101 + 49i) = (7650 + 9950i), same as expected (7650 + 9950i)
+# comp_mult_top_test.i_comp_mult_ref_model 465 GOOD: (57 + 97i) * (48 + 99i) = (-6867 + 10299i), same as expected (-6867 + 10299i)
+# comp_mult_top_test.i_comp_mult_ref_model 585 GOOD: (49 + 100i) * (50 + 53i) = (-2850 + 7597i), same as expected (-2850 + 7597i)
+# comp_mult_top_test.i_comp_mult_ref_model 705 GOOD: (102 + 100i) * (56 + 51i) = (612 + 10802i), same as expected (612 + 10802i)
+# comp_mult_top_test.i_comp_mult_ref_model 825 GOOD: (54 + 101i) * (57 + 55i) = (-2477 + 8727i), same as expected (-2477 + 8727i)
+# comp_mult_top_test.i_comp_mult_ref_model 945 GOOD: (101 + 54i) * (51 + 55i) = (2181 + 8309i), same as expected (2181 + 8309i)
+# comp_mult_top_test.i_comp_mult_ref_model 1065 GOOD: (49 + 100i) * (102 + 49i) = (98 + 12601i), same as expected (98 + 12601i)
+# comp_mult_top_test.i_comp_mult_ref_model 1185 GOOD: (57 + 50i) * (49 + 100i) = (-2207 + 8150i), same as expected (-2207 + 8150i)
+# comp_mult_top_test.i_comp_mult_ref_model 1305 GOOD: (53 + 101i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# OP 0 ----- FAILED, 0 != 3
+# OP 0 ----- FAILED, 0 != db
+# OP 0 ----- FAILED, 0 != 49
+# OP 0 ----- OK    , 0 == 0
+# OP 0 ----- FAILED, 0 != 7
+# OP 0 ----- FAILED, 0 != f
+# OP 1 ----- FAILED, e9 != 0
+# OP 1 ----- FAILED, 1d != 3
+# OP 1 ----- FAILED, 0 != 86
+# OP 1 ----- FAILED, 0 != 3
+# OP 1 ----- FAILED, 9 != fa
+# OP 1 ----- FAILED, 0 != ec
+# OP 2 ----- FAILED, de != 0
+# OP 2 ----- FAILED, 26 != 15
+# OP 2 ----- FAILED, 0 != d
+# OP 2 ----- FAILED, e2 != 3
+# OP 2 ----- FAILED, 1d != fc
+# OP 2 ----- FAILED, 0 != 9d
+# OP 3 ----- FAILED, 3b != 3
+# OP 3 ----- FAILED, 28 != f6
+# OP 3 ----- FAILED, 0 != ca
+# OP 3 ----- FAILED, 2d != 3
+# OP 3 ----- FAILED, e5 != f7
+# OP 3 ----- FAILED, 3 != 5d
+# OP 4 ----- FAILED, ad != 0
+# OP 4 ----- FAILED, 1d != 8
+# OP 4 ----- FAILED, 0 != fb
+# OP 4 ----- FAILED, de != 3
+# OP 4 ----- FAILED, f4 != f5
+# OP 4 ----- FAILED, 3 != e9
+# OP 5 ----- FAILED, 32 != 3
+# OP 5 ----- FAILED, 2a != d3
+# OP 5 ----- FAILED, 0 != e6
+# OP 5 ----- FAILED, 64 != 0
+# OP 5 ----- FAILED, 2 != 1c
+# OP 5 ----- FAILED, 0 != 50
+# OP 6 ----- FAILED, 17 != 3
+# OP 6 ----- FAILED, 22 != d8
+# OP 6 ----- FAILED, 0 != 16
+# OP 6 ----- FAILED, 53 != 3
+# OP 6 ----- FAILED, f6 != c8
+# OP 6 ----- FAILED, 3 != 14
+# OP 7 ----- FAILED, 75 != 0
+# OP 7 ----- FAILED, 20 != 17
+# OP 7 ----- FAILED, 0 != 70
+# OP 7 ----- FAILED, 85 != 0
+# OP 7 ----- FAILED, 8 != 6
+# OP 7 ----- FAILED, 0 != 8c
+# OP 8 ----- FAILED, 39 != 0
+# OP 8 ----- FAILED, 31 != 1
+# OP 8 ----- FAILED, 0 != c1
+# OP 8 ----- FAILED, 62 != 3
+# OP 8 ----- FAILED, 0 != f4
+# OP 8 ----- FAILED, 0 != 66
+# OP 9 ----- FAILED, d6 != 0
+# OP 9 ----- FAILED, 1f != 2
+# OP 9 ----- FAILED, 0 != db
+# OP 9 ----- FAILED, 61 != 3
+# OP 9 ----- FAILED, f7 != f3
+# OP 9 ----- FAILED, 3 != 37
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 107
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 107
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlfthsifga".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfthsifga
+# comp_mult_top_test.i_comp_mult_ref_model 225 GOOD: (48 + 53i) * (101 + 48i) = (2304 + 7657i), same as expected (2304 + 7657i)
+# comp_mult_top_test.i_comp_mult_ref_model 345 GOOD: (100 + 50i) * (101 + 49i) = (7650 + 9950i), same as expected (7650 + 9950i)
+# comp_mult_top_test.i_comp_mult_ref_model 465 GOOD: (57 + 97i) * (48 + 99i) = (-6867 + 10299i), same as expected (-6867 + 10299i)
+# comp_mult_top_test.i_comp_mult_ref_model 585 GOOD: (49 + 100i) * (50 + 53i) = (-2850 + 7597i), same as expected (-2850 + 7597i)
+# comp_mult_top_test.i_comp_mult_ref_model 705 GOOD: (102 + 100i) * (56 + 51i) = (612 + 10802i), same as expected (612 + 10802i)
+# comp_mult_top_test.i_comp_mult_ref_model 825 GOOD: (54 + 101i) * (57 + 55i) = (-2477 + 8727i), same as expected (-2477 + 8727i)
+# comp_mult_top_test.i_comp_mult_ref_model 945 GOOD: (101 + 54i) * (51 + 55i) = (2181 + 8309i), same as expected (2181 + 8309i)
+# comp_mult_top_test.i_comp_mult_ref_model 1065 GOOD: (49 + 100i) * (102 + 49i) = (98 + 12601i), same as expected (98 + 12601i)
+# comp_mult_top_test.i_comp_mult_ref_model 1185 GOOD: (57 + 50i) * (49 + 100i) = (-2207 + 8150i), same as expected (-2207 + 8150i)
+# comp_mult_top_test.i_comp_mult_ref_model 1305 GOOD: (53 + 101i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# OP 0 ----- FAILED, 0 != 3
+# OP 0 ----- FAILED, 0 != db
+# OP 0 ----- FAILED, 0 != 49
+# OP 0 ----- OK    , 0 == 0
+# OP 0 ----- FAILED, 0 != 7
+# OP 0 ----- FAILED, 0 != f
+# OP 1 ----- FAILED, e9 != 0
+# OP 1 ----- FAILED, 1d != 3
+# OP 1 ----- FAILED, 0 != 86
+# OP 1 ----- FAILED, 0 != 3
+# OP 1 ----- FAILED, 9 != fa
+# OP 1 ----- FAILED, 0 != ec
+# OP 2 ----- FAILED, de != 0
+# OP 2 ----- FAILED, 26 != 15
+# OP 2 ----- FAILED, 0 != d
+# OP 2 ----- FAILED, e2 != 3
+# OP 2 ----- FAILED, 1d != fc
+# OP 2 ----- FAILED, 0 != 9d
+# OP 3 ----- FAILED, 3b != 3
+# OP 3 ----- FAILED, 28 != f6
+# OP 3 ----- FAILED, 0 != ca
+# OP 3 ----- FAILED, 2d != 3
+# OP 3 ----- FAILED, e5 != f7
+# OP 3 ----- FAILED, 3 != 5d
+# OP 4 ----- FAILED, ad != 0
+# OP 4 ----- FAILED, 1d != 8
+# OP 4 ----- FAILED, 0 != fb
+# OP 4 ----- FAILED, de != 3
+# OP 4 ----- FAILED, f4 != f5
+# OP 4 ----- FAILED, 3 != e9
+# OP 5 ----- FAILED, 32 != 3
+# OP 5 ----- FAILED, 2a != d3
+# OP 5 ----- FAILED, 0 != e6
+# OP 5 ----- FAILED, 64 != 0
+# OP 5 ----- FAILED, 2 != 1c
+# OP 5 ----- FAILED, 0 != 50
+# OP 6 ----- FAILED, 17 != 3
+# OP 6 ----- FAILED, 22 != d8
+# OP 6 ----- FAILED, 0 != 16
+# OP 6 ----- FAILED, 53 != 3
+# OP 6 ----- FAILED, f6 != c8
+# OP 6 ----- FAILED, 3 != 14
+# OP 7 ----- FAILED, 75 != 0
+# OP 7 ----- FAILED, 20 != 17
+# OP 7 ----- FAILED, 0 != 70
+# OP 7 ----- FAILED, 85 != 0
+# OP 7 ----- FAILED, 8 != 6
+# OP 7 ----- FAILED, 0 != 8c
+# OP 8 ----- FAILED, 39 != 0
+# OP 8 ----- FAILED, 31 != 1
+# OP 8 ----- FAILED, 0 != c1
+# OP 8 ----- FAILED, 62 != 3
+# OP 8 ----- FAILED, 0 != f4
+# OP 8 ----- FAILED, 0 != 66
+# OP 9 ----- FAILED, d6 != 0
+# OP 9 ----- FAILED, 1f != 2
+# OP 9 ----- FAILED, 0 != db
+# OP 9 ----- FAILED, 61 != 3
+# OP 9 ----- FAILED, f7 != f3
+# OP 9 ----- FAILED, 3 != 37
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 108
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 108
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlft4f2qjt".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft4f2qjt
+# comp_mult_top_test.i_comp_mult_ref_model 225 GOOD: (48 + 53i) * (101 + 48i) = (2304 + 7657i), same as expected (2304 + 7657i)
+# comp_mult_top_test.i_comp_mult_ref_model 345 GOOD: (100 + 50i) * (101 + 49i) = (7650 + 9950i), same as expected (7650 + 9950i)
+# comp_mult_top_test.i_comp_mult_ref_model 465 GOOD: (57 + 97i) * (48 + 99i) = (-6867 + 10299i), same as expected (-6867 + 10299i)
+# comp_mult_top_test.i_comp_mult_ref_model 585 GOOD: (49 + 100i) * (50 + 53i) = (-2850 + 7597i), same as expected (-2850 + 7597i)
+# comp_mult_top_test.i_comp_mult_ref_model 705 GOOD: (102 + 100i) * (56 + 51i) = (612 + 10802i), same as expected (612 + 10802i)
+# comp_mult_top_test.i_comp_mult_ref_model 825 GOOD: (54 + 101i) * (57 + 55i) = (-2477 + 8727i), same as expected (-2477 + 8727i)
+# comp_mult_top_test.i_comp_mult_ref_model 945 GOOD: (101 + 54i) * (51 + 55i) = (2181 + 8309i), same as expected (2181 + 8309i)
+# comp_mult_top_test.i_comp_mult_ref_model 1065 GOOD: (49 + 100i) * (102 + 49i) = (98 + 12601i), same as expected (98 + 12601i)
+# comp_mult_top_test.i_comp_mult_ref_model 1185 GOOD: (57 + 50i) * (49 + 100i) = (-2207 + 8150i), same as expected (-2207 + 8150i)
+# comp_mult_top_test.i_comp_mult_ref_model 1305 GOOD: (53 + 101i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# OP 0 ----- FAILED, 0 != 3
+# OP 0 ----- FAILED, 0 != db
+# OP 0 ----- FAILED, 0 != 49
+# OP 0 ----- OK    , 0 == 0
+# OP 0 ----- FAILED, 0 != 7
+# OP 0 ----- FAILED, 0 != f
+# OP 1 ----- FAILED, e9 != 0
+# OP 1 ----- FAILED, 1d != 3
+# OP 1 ----- FAILED, 0 != 86
+# OP 1 ----- FAILED, 0 != 3
+# OP 1 ----- FAILED, 9 != fa
+# OP 1 ----- FAILED, 0 != ec
+# OP 2 ----- FAILED, de != 0
+# OP 2 ----- FAILED, 26 != 15
+# OP 2 ----- FAILED, 0 != d
+# OP 2 ----- FAILED, e2 != 3
+# OP 2 ----- FAILED, 1d != fc
+# OP 2 ----- FAILED, 0 != 9d
+# OP 3 ----- FAILED, 3b != 3
+# OP 3 ----- FAILED, 28 != f6
+# OP 3 ----- FAILED, 0 != ca
+# OP 3 ----- FAILED, 2d != 3
+# OP 3 ----- FAILED, e5 != f7
+# OP 3 ----- FAILED, 3 != 5d
+# OP 4 ----- FAILED, ad != 0
+# OP 4 ----- FAILED, 1d != 8
+# OP 4 ----- FAILED, 0 != fb
+# OP 4 ----- FAILED, de != 3
+# OP 4 ----- FAILED, f4 != f5
+# OP 4 ----- FAILED, 3 != e9
+# OP 5 ----- FAILED, 32 != 3
+# OP 5 ----- FAILED, 2a != d3
+# OP 5 ----- FAILED, 0 != e6
+# OP 5 ----- FAILED, 64 != 0
+# OP 5 ----- FAILED, 2 != 1c
+# OP 5 ----- FAILED, 0 != 50
+# OP 6 ----- FAILED, 17 != 3
+# OP 6 ----- FAILED, 22 != d8
+# OP 6 ----- FAILED, 0 != 16
+# OP 6 ----- FAILED, 53 != 3
+# OP 6 ----- FAILED, f6 != c8
+# OP 6 ----- FAILED, 3 != 14
+# OP 7 ----- FAILED, 75 != 0
+# OP 7 ----- FAILED, 20 != 17
+# OP 7 ----- FAILED, 0 != 70
+# OP 7 ----- FAILED, 85 != 0
+# OP 7 ----- FAILED, 8 != 6
+# OP 7 ----- FAILED, 0 != 8c
+# OP 8 ----- FAILED, 39 != 0
+# OP 8 ----- FAILED, 31 != 1
+# OP 8 ----- FAILED, 0 != c1
+# OP 8 ----- FAILED, 62 != 3
+# OP 8 ----- FAILED, 0 != f4
+# OP 8 ----- FAILED, 0 != 66
+# OP 9 ----- FAILED, d6 != 0
+# OP 9 ----- FAILED, 1f != 2
+# OP 9 ----- FAILED, 0 != db
+# OP 9 ----- FAILED, 61 != 3
+# OP 9 ----- FAILED, f7 != f3
+# OP 9 ----- FAILED, 3 != 37
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 108
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 108
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlft28x7f5".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft28x7f5
+# comp_mult_top_test.i_comp_mult_ref_model 225 GOOD: (100 + 51i) * (50 + 99i) = (-49 + 12450i), same as expected (-49 + 12450i)
+# comp_mult_top_test.i_comp_mult_ref_model 345 GOOD: (49 + 54i) * (50 + 57i) = (-628 + 5493i), same as expected (-628 + 5493i)
+# comp_mult_top_test.i_comp_mult_ref_model 465 GOOD: (53 + 101i) * (48 + 57i) = (-3213 + 7869i), same as expected (-3213 + 7869i)
+# comp_mult_top_test.i_comp_mult_ref_model 585 GOOD: (50 + 49i) * (99 + 55i) = (2255 + 7601i), same as expected (2255 + 7601i)
+# comp_mult_top_test.i_comp_mult_ref_model 705 GOOD: (54 + 100i) * (53 + 56i) = (-2738 + 8324i), same as expected (-2738 + 8324i)
+# comp_mult_top_test.i_comp_mult_ref_model 825 GOOD: (56 + 52i) * (53 + 57i) = (4 + 5948i), same as expected (4 + 5948i)
+# comp_mult_top_test.i_comp_mult_ref_model 945 GOOD: (57 + 97i) * (97 + 52i) = (485 + 12373i), same as expected (485 + 12373i)
+# comp_mult_top_test.i_comp_mult_ref_model 1065 GOOD: (52 + 54i) * (97 + 101i) = (-410 + 10490i), same as expected (-410 + 10490i)
+# comp_mult_top_test.i_comp_mult_ref_model 1185 GOOD: (49 + 100i) * (55 + 50i) = (-2305 + 7950i), same as expected (-2305 + 7950i)
+# comp_mult_top_test.i_comp_mult_ref_model 1305 GOOD: (50 + 56i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# OP 0 ----- FAILED, 0 != 3
+# OP 0 ----- FAILED, 0 != d7
+# OP 0 ----- FAILED, 0 != a0
+# OP 0 ----- FAILED, 0 != 3
+# OP 0 ----- FAILED, 0 != fd
+# OP 0 ----- FAILED, 0 != 20
+# OP 1 ----- FAILED, a2 != 0
+# OP 1 ----- FAILED, 30 != 1b
+# OP 1 ----- FAILED, 0 != 9
+# OP 1 ----- FAILED, cf != 0
+# OP 1 ----- FAILED, ff != a
+# OP 1 ----- FAILED, 3 != 44
+# OP 2 ----- FAILED, 75 != 0
+# OP 2 ----- FAILED, 15 != 2
+# OP 2 ----- FAILED, 0 != 28
+# OP 2 ----- FAILED, 8c != 3
+# OP 2 ----- FAILED, fd != d8
+# OP 2 ----- FAILED, 3 != 8c
+# OP 3 ----- FAILED, bd != 0
+# OP 3 ----- FAILED, 1e != 8
+# OP 3 ----- FAILED, 0 != f1
+# OP 3 ----- FAILED, 73 != 3
+# OP 3 ----- FAILED, f3 != ee
+# OP 3 ----- FAILED, 3 != 1e
+# OP 4 ----- FAILED, b1 != 3
+# OP 4 ----- FAILED, 1d != fb
+# OP 4 ----- FAILED, 0 != 13
+# OP 4 ----- FAILED, cf != 0
+# OP 4 ----- FAILED, 8 != 3b
+# OP 4 ----- FAILED, 0 != c5
+# OP 5 ----- FAILED, 84 != 3
+# OP 5 ----- FAILED, 20 != f6
+# OP 5 ----- FAILED, 0 != 98
+# OP 5 ----- FAILED, 4e != 0
+# OP 5 ----- FAILED, f5 != 51
+# OP 5 ----- FAILED, 3 != 44
+# OP 6 ----- FAILED, 3c != 3
+# OP 6 ----- FAILED, 17 != bd
+# OP 6 ----- FAILED, 0 != 1d
+# OP 6 ----- FAILED, 4 != 0
+# OP 6 ----- FAILED, 0 != 10
+# OP 6 ----- FAILED, 0 != 2d
+# OP 7 ----- FAILED, 55 != 3
+# OP 7 ----- FAILED, 30 != c8
+# OP 7 ----- FAILED, 0 != 95
+# OP 7 ----- FAILED, e5 != 3
+# OP 7 ----- FAILED, 1 != f6
+# OP 7 ----- FAILED, 0 != d6
+# OP 8 ----- FAILED, fa != 3
+# OP 8 ----- FAILED, 28 != f6
+# OP 8 ----- FAILED, 0 != f2
+# OP 8 ----- FAILED, 66 != 0
+# OP 8 ----- FAILED, fe != b
+# OP 8 ----- FAILED, 3 != e4
+# OP 9 ----- FAILED, e != 0
+# OP 9 ----- FAILED, 1f != 22
+# OP 9 ----- FAILED, 0 != 48
+# OP 9 ----- FAILED, ff != 3
+# OP 9 ----- FAILED, f6 != d0
+# OP 9 ----- FAILED, 3 != 68
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 108
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 108
+# MACRO ./wave.do PAUSED at line 2
+quit -sim
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlft5whbij".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft5whbij
+# comp_mult_top_test.i_comp_mult_ref_model 225 GOOD: (100 + 51i) * (50 + 99i) = (-49 + 12450i), same as expected (-49 + 12450i)
+# comp_mult_top_test.i_comp_mult_ref_model 345 GOOD: (49 + 54i) * (50 + 57i) = (-628 + 5493i), same as expected (-628 + 5493i)
+# comp_mult_top_test.i_comp_mult_ref_model 465 GOOD: (53 + 101i) * (48 + 57i) = (-3213 + 7869i), same as expected (-3213 + 7869i)
+# comp_mult_top_test.i_comp_mult_ref_model 585 GOOD: (50 + 49i) * (99 + 55i) = (2255 + 7601i), same as expected (2255 + 7601i)
+# comp_mult_top_test.i_comp_mult_ref_model 705 GOOD: (54 + 100i) * (53 + 56i) = (-2738 + 8324i), same as expected (-2738 + 8324i)
+# comp_mult_top_test.i_comp_mult_ref_model 825 GOOD: (56 + 52i) * (53 + 57i) = (4 + 5948i), same as expected (4 + 5948i)
+# comp_mult_top_test.i_comp_mult_ref_model 945 GOOD: (57 + 97i) * (97 + 52i) = (485 + 12373i), same as expected (485 + 12373i)
+# comp_mult_top_test.i_comp_mult_ref_model 1065 GOOD: (52 + 54i) * (97 + 101i) = (-410 + 10490i), same as expected (-410 + 10490i)
+# comp_mult_top_test.i_comp_mult_ref_model 1185 GOOD: (49 + 100i) * (55 + 50i) = (-2305 + 7950i), same as expected (-2305 + 7950i)
+# comp_mult_top_test.i_comp_mult_ref_model 1305 GOOD: (50 + 56i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# OP 0 ----- FAILED, 0 != 3
+# OP 0 ----- FAILED, 0 != d7
+# OP 0 ----- FAILED, 0 != a0
+# OP 0 ----- FAILED, 0 != 3
+# OP 0 ----- FAILED, 0 != fd
+# OP 0 ----- FAILED, 0 != 20
+# OP 1 ----- FAILED, a2 != 0
+# OP 1 ----- FAILED, 30 != 1b
+# OP 1 ----- FAILED, 0 != 9
+# OP 1 ----- FAILED, cf != 0
+# OP 1 ----- FAILED, ff != a
+# OP 1 ----- FAILED, 3 != 44
+# OP 2 ----- FAILED, 75 != 0
+# OP 2 ----- FAILED, 15 != 2
+# OP 2 ----- FAILED, 0 != 28
+# OP 2 ----- FAILED, 8c != 3
+# OP 2 ----- FAILED, fd != d8
+# OP 2 ----- FAILED, 3 != 8c
+# OP 3 ----- FAILED, bd != 0
+# OP 3 ----- FAILED, 1e != 8
+# OP 3 ----- FAILED, 0 != f1
+# OP 3 ----- FAILED, 73 != 3
+# OP 3 ----- FAILED, f3 != ee
+# OP 3 ----- FAILED, 3 != 1e
+# OP 4 ----- FAILED, b1 != 3
+# OP 4 ----- FAILED, 1d != fb
+# OP 4 ----- FAILED, 0 != 13
+# OP 4 ----- FAILED, cf != 0
+# OP 4 ----- FAILED, 8 != 3b
+# OP 4 ----- FAILED, 0 != c5
+# OP 5 ----- FAILED, 84 != 3
+# OP 5 ----- FAILED, 20 != f6
+# OP 5 ----- FAILED, 0 != 98
+# OP 5 ----- FAILED, 4e != 0
+# OP 5 ----- FAILED, f5 != 51
+# OP 5 ----- FAILED, 3 != 44
+# OP 6 ----- FAILED, 3c != 3
+# OP 6 ----- FAILED, 17 != bd
+# OP 6 ----- FAILED, 0 != 1d
+# OP 6 ----- FAILED, 4 != 0
+# OP 6 ----- FAILED, 0 != 10
+# OP 6 ----- FAILED, 0 != 2d
+# OP 7 ----- FAILED, 55 != 3
+# OP 7 ----- FAILED, 30 != c8
+# OP 7 ----- FAILED, 0 != 95
+# OP 7 ----- FAILED, e5 != 3
+# OP 7 ----- FAILED, 1 != f6
+# OP 7 ----- FAILED, 0 != d6
+# OP 8 ----- FAILED, fa != 3
+# OP 8 ----- FAILED, 28 != f6
+# OP 8 ----- FAILED, 0 != f2
+# OP 8 ----- FAILED, 66 != 0
+# OP 8 ----- FAILED, fe != b
+# OP 8 ----- FAILED, 3 != e4
+# OP 9 ----- FAILED, e != 0
+# OP 9 ----- FAILED, 1f != 22
+# OP 9 ----- FAILED, 0 != 48
+# OP 9 ----- FAILED, ff != 3
+# OP 9 ----- FAILED, f6 != d0
+# OP 9 ----- FAILED, 3 != 68
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftzdfqd3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftzdfqd3
+# comp_mult_top_test.i_comp_mult_ref_model 225 GOOD: (100 + 51i) * (50 + 99i) = (-49 + 12450i), same as expected (-49 + 12450i)
+# comp_mult_top_test.i_comp_mult_ref_model 345 GOOD: (49 + 54i) * (50 + 57i) = (-628 + 5493i), same as expected (-628 + 5493i)
+# comp_mult_top_test.i_comp_mult_ref_model 465 GOOD: (53 + 101i) * (48 + 57i) = (-3213 + 7869i), same as expected (-3213 + 7869i)
+# comp_mult_top_test.i_comp_mult_ref_model 585 GOOD: (50 + 49i) * (99 + 55i) = (2255 + 7601i), same as expected (2255 + 7601i)
+# comp_mult_top_test.i_comp_mult_ref_model 705 GOOD: (54 + 100i) * (53 + 56i) = (-2738 + 8324i), same as expected (-2738 + 8324i)
+# comp_mult_top_test.i_comp_mult_ref_model 825 GOOD: (56 + 52i) * (53 + 57i) = (4 + 5948i), same as expected (4 + 5948i)
+# comp_mult_top_test.i_comp_mult_ref_model 945 GOOD: (57 + 97i) * (97 + 52i) = (485 + 12373i), same as expected (485 + 12373i)
+# comp_mult_top_test.i_comp_mult_ref_model 1065 GOOD: (52 + 54i) * (97 + 101i) = (-410 + 10490i), same as expected (-410 + 10490i)
+# comp_mult_top_test.i_comp_mult_ref_model 1185 GOOD: (49 + 100i) * (55 + 50i) = (-2305 + 7950i), same as expected (-2305 + 7950i)
+# comp_mult_top_test.i_comp_mult_ref_model 1305 GOOD: (50 + 56i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# OP 0 ----- FAILED, a2 != 3
+# OP 0 ----- FAILED, 30 != d7
+# OP 0 ----- FAILED, 0 != a0
+# OP 0 ----- FAILED, cf != 3
+# OP 0 ----- FAILED, ff != fd
+# OP 0 ----- FAILED, 3 != 20
+# OP 1 ----- FAILED, 75 != 0
+# OP 1 ----- FAILED, 15 != 1b
+# OP 1 ----- FAILED, 0 != 9
+# OP 1 ----- FAILED, 8c != 0
+# OP 1 ----- FAILED, fd != a
+# OP 1 ----- FAILED, 3 != 44
+# OP 2 ----- FAILED, bd != 0
+# OP 2 ----- FAILED, 1e != 2
+# OP 2 ----- FAILED, 0 != 28
+# OP 2 ----- FAILED, 73 != 3
+# OP 2 ----- FAILED, f3 != d8
+# OP 2 ----- FAILED, 3 != 8c
+# OP 3 ----- FAILED, b1 != 0
+# OP 3 ----- FAILED, 1d != 8
+# OP 3 ----- FAILED, 0 != f1
+# OP 3 ----- FAILED, cf != 3
+# OP 3 ----- FAILED, 8 != ee
+# OP 3 ----- FAILED, 0 != 1e
+# OP 4 ----- FAILED, 84 != 3
+# OP 4 ----- FAILED, 20 != fb
+# OP 4 ----- FAILED, 0 != 13
+# OP 4 ----- FAILED, 4e != 0
+# OP 4 ----- FAILED, f5 != 3b
+# OP 4 ----- FAILED, 3 != c5
+# OP 5 ----- FAILED, 3c != 3
+# OP 5 ----- FAILED, 17 != f6
+# OP 5 ----- FAILED, 0 != 98
+# OP 5 ----- FAILED, 4 != 0
+# OP 5 ----- FAILED, 0 != 51
+# OP 5 ----- FAILED, 0 != 44
+# OP 6 ----- FAILED, 55 != 3
+# OP 6 ----- FAILED, 30 != bd
+# OP 6 ----- FAILED, 0 != 1d
+# OP 6 ----- FAILED, e5 != 0
+# OP 6 ----- FAILED, 1 != 10
+# OP 6 ----- FAILED, 0 != 2d
+# OP 7 ----- FAILED, fa != 3
+# OP 7 ----- FAILED, 28 != c8
+# OP 7 ----- FAILED, 0 != 95
+# OP 7 ----- FAILED, 66 != 3
+# OP 7 ----- FAILED, fe != f6
+# OP 7 ----- FAILED, 3 != d6
+# OP 8 ----- FAILED, e != 3
+# OP 8 ----- FAILED, 1f != f6
+# OP 8 ----- FAILED, 0 != f2
+# OP 8 ----- FAILED, ff != 0
+# OP 8 ----- FAILED, f6 != b
+# OP 8 ----- FAILED, 3 != e4
+# OP 9 ----- OK    , 0 == 0
+# OP 9 ----- FAILED, 0 != 22
+# OP 9 ----- FAILED, 0 != 48
+# OP 9 ----- FAILED, 0 != 3
+# OP 9 ----- FAILED, 0 != d0
+# OP 9 ----- FAILED, 0 != 68
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftvesmd5".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftvesmd5
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftraatia".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftraatia
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (100 + 51i) * (53 + 55i) = (2495 + 8203i), same as expected (2495 + 8203i)
+# comp_mult_top_test.i_comp_mult_ref_model 345 GOOD: (49 + 54i) * (50 + 99i) = (-2896 + 7551i), same as expected (-2896 + 7551i)
+# comp_mult_top_test.i_comp_mult_ref_model 465 GOOD: (53 + 101i) * (50 + 57i) = (-3107 + 8071i), same as expected (-3107 + 8071i)
+# comp_mult_top_test.i_comp_mult_ref_model 585 GOOD: (50 + 49i) * (48 + 57i) = (-393 + 5202i), same as expected (-393 + 5202i)
+# comp_mult_top_test.i_comp_mult_ref_model 705 GOOD: (54 + 100i) * (99 + 55i) = (-154 + 12870i), same as expected (-154 + 12870i)
+# comp_mult_top_test.i_comp_mult_ref_model 825 GOOD: (56 + 52i) * (53 + 56i) = (56 + 5892i), same as expected (56 + 5892i)
+# comp_mult_top_test.i_comp_mult_ref_model 945 GOOD: (57 + 97i) * (53 + 57i) = (-2508 + 8390i), same as expected (-2508 + 8390i)
+# comp_mult_top_test.i_comp_mult_ref_model 1065 GOOD: (52 + 54i) * (97 + 52i) = (2236 + 7942i), same as expected (2236 + 7942i)
+# comp_mult_top_test.i_comp_mult_ref_model 1185 GOOD: (49 + 100i) * (97 + 101i) = (-5347 + 14649i), same as expected (-5347 + 14649i)
+# comp_mult_top_test.i_comp_mult_ref_model 1305 GOOD: (50 + 56i) * (55 + 50i) = (-50 + 5580i), same as expected (-50 + 5580i)
+# OP 0 ----- FAILED, b != 3
+# OP 0 ----- FAILED, 20 != d7
+# OP 0 ----- FAILED, 0 != a0
+# OP 0 ----- FAILED, bf != 3
+# OP 0 ----- FAILED, 9 != fd
+# OP 0 ----- FAILED, 0 != 20
+# OP 1 ----- FAILED, 7f != 0
+# OP 1 ----- FAILED, 1d != 1b
+# OP 1 ----- FAILED, 0 != 9
+# OP 1 ----- FAILED, b0 != 0
+# OP 1 ----- FAILED, f4 != a
+# OP 1 ----- FAILED, 3 != 44
+# OP 2 ----- FAILED, 87 != 0
+# OP 2 ----- FAILED, 1f != 2
+# OP 2 ----- FAILED, 0 != 28
+# OP 2 ----- FAILED, dd != 3
+# OP 2 ----- FAILED, f3 != d8
+# OP 2 ----- FAILED, 3 != 8c
+# OP 3 ----- FAILED, 52 != 0
+# OP 3 ----- FAILED, 14 != 8
+# OP 3 ----- FAILED, 0 != f1
+# OP 3 ----- FAILED, 77 != 3
+# OP 3 ----- FAILED, fe != ee
+# OP 3 ----- FAILED, 3 != 1e
+# OP 4 ----- FAILED, 46 != 3
+# OP 4 ----- FAILED, 32 != fb
+# OP 4 ----- FAILED, 0 != 13
+# OP 4 ----- FAILED, 66 != 0
+# OP 4 ----- FAILED, ff != 3b
+# OP 4 ----- FAILED, 3 != c5
+# OP 5 ----- FAILED, 4 != 3
+# OP 5 ----- FAILED, 17 != f6
+# OP 5 ----- FAILED, 0 != 98
+# OP 5 ----- FAILED, 38 != 0
+# OP 5 ----- FAILED, 0 != 51
+# OP 5 ----- FAILED, 0 != 44
+# OP 6 ----- FAILED, c6 != 3
+# OP 6 ----- FAILED, 20 != bd
+# OP 6 ----- FAILED, 0 != 1d
+# OP 6 ----- FAILED, 34 != 0
+# OP 6 ----- FAILED, f6 != 10
+# OP 6 ----- FAILED, 3 != 2d
+# OP 7 ----- FAILED, 6 != 3
+# OP 7 ----- FAILED, 1f != c8
+# OP 7 ----- FAILED, 0 != 95
+# OP 7 ----- FAILED, bc != 3
+# OP 7 ----- FAILED, 8 != f6
+# OP 7 ----- FAILED, 0 != d6
+# OP 8 ----- FAILED, 39 != 3
+# OP 8 ----- FAILED, 39 != f6
+# OP 8 ----- FAILED, 0 != f2
+# OP 8 ----- FAILED, 1d != 0
+# OP 8 ----- FAILED, eb != b
+# OP 8 ----- FAILED, 3 != e4
+# OP 9 ----- FAILED, cc != 0
+# OP 9 ----- FAILED, 15 != 22
+# OP 9 ----- FAILED, 0 != 48
+# OP 9 ----- FAILED, ce != 3
+# OP 9 ----- FAILED, ff != d0
+# OP 9 ----- FAILED, 3 != 68
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftfbady0".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfbady0
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (100 + 51i) * (53 + 55i) = (2495 + 8203i), same as expected (2495 + 8203i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (49 + 54i) * (50 + 99i) = (-2896 + 7551i), same as expected (-2896 + 7551i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (53 + 101i) * (50 + 57i) = (-3107 + 8071i), same as expected (-3107 + 8071i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (50 + 49i) * (48 + 57i) = (-393 + 5202i), same as expected (-393 + 5202i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (54 + 100i) * (99 + 55i) = (-154 + 12870i), same as expected (-154 + 12870i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (56 + 52i) * (53 + 56i) = (56 + 5892i), same as expected (56 + 5892i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (57 + 97i) * (53 + 57i) = (-2508 + 8390i), same as expected (-2508 + 8390i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (52 + 54i) * (97 + 52i) = (2236 + 7942i), same as expected (2236 + 7942i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (49 + 100i) * (97 + 101i) = (-5347 + 14649i), same as expected (-5347 + 14649i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (50 + 56i) * (55 + 50i) = (-50 + 5580i), same as expected (-50 + 5580i)
+# OP 0 ----- FAILED, b != 3
+# OP 0 ----- FAILED, 20 != d7
+# OP 0 ----- FAILED, 0 != a0
+# OP 0 ----- FAILED, bf != 3
+# OP 0 ----- FAILED, 9 != fd
+# OP 0 ----- FAILED, 0 != 20
+# OP 1 ----- FAILED, 7f != 0
+# OP 1 ----- FAILED, 1d != 1b
+# OP 1 ----- FAILED, 0 != 9
+# OP 1 ----- FAILED, b0 != 0
+# OP 1 ----- FAILED, f4 != a
+# OP 1 ----- FAILED, 3 != 44
+# OP 2 ----- FAILED, 87 != 0
+# OP 2 ----- FAILED, 1f != 2
+# OP 2 ----- FAILED, 0 != 28
+# OP 2 ----- FAILED, dd != 3
+# OP 2 ----- FAILED, f3 != d8
+# OP 2 ----- FAILED, 3 != 8c
+# OP 3 ----- FAILED, 52 != 0
+# OP 3 ----- FAILED, 14 != 8
+# OP 3 ----- FAILED, 0 != f1
+# OP 3 ----- FAILED, 77 != 3
+# OP 3 ----- FAILED, fe != ee
+# OP 3 ----- FAILED, 3 != 1e
+# OP 4 ----- FAILED, 46 != 3
+# OP 4 ----- FAILED, 32 != fb
+# OP 4 ----- FAILED, 0 != 13
+# OP 4 ----- FAILED, 66 != 0
+# OP 4 ----- FAILED, ff != 3b
+# OP 4 ----- FAILED, 3 != c5
+# OP 5 ----- FAILED, 4 != 3
+# OP 5 ----- FAILED, 17 != f6
+# OP 5 ----- FAILED, 0 != 98
+# OP 5 ----- FAILED, 38 != 0
+# OP 5 ----- FAILED, 0 != 51
+# OP 5 ----- FAILED, 0 != 44
+# OP 6 ----- FAILED, c6 != 3
+# OP 6 ----- FAILED, 20 != bd
+# OP 6 ----- FAILED, 0 != 1d
+# OP 6 ----- FAILED, 34 != 0
+# OP 6 ----- FAILED, f6 != 10
+# OP 6 ----- FAILED, 3 != 2d
+# OP 7 ----- FAILED, 6 != 3
+# OP 7 ----- FAILED, 1f != c8
+# OP 7 ----- FAILED, 0 != 95
+# OP 7 ----- FAILED, bc != 3
+# OP 7 ----- FAILED, 8 != f6
+# OP 7 ----- FAILED, 0 != d6
+# OP 8 ----- FAILED, 39 != 3
+# OP 8 ----- FAILED, 39 != f6
+# OP 8 ----- FAILED, 0 != f2
+# OP 8 ----- FAILED, 1d != 0
+# OP 8 ----- FAILED, eb != b
+# OP 8 ----- FAILED, 3 != e4
+# OP 9 ----- FAILED, cc != 0
+# OP 9 ----- FAILED, 15 != 22
+# OP 9 ----- FAILED, 0 != 48
+# OP 9 ----- FAILED, ce != 3
+# OP 9 ----- FAILED, ff != d0
+# OP 9 ----- FAILED, 3 != 68
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftv3ya7k".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftv3ya7k
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (100 + 51i) * (53 + 55i) = (2495 + 8203i), same as expected (2495 + 8203i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (49 + 54i) * (50 + 99i) = (-2896 + 7551i), same as expected (-2896 + 7551i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (53 + 101i) * (50 + 57i) = (-3107 + 8071i), same as expected (-3107 + 8071i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (50 + 49i) * (48 + 57i) = (-393 + 5202i), same as expected (-393 + 5202i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (54 + 100i) * (99 + 55i) = (-154 + 12870i), same as expected (-154 + 12870i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (56 + 52i) * (53 + 56i) = (56 + 5892i), same as expected (56 + 5892i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (57 + 97i) * (53 + 57i) = (-2508 + 8390i), same as expected (-2508 + 8390i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (52 + 54i) * (97 + 52i) = (2236 + 7942i), same as expected (2236 + 7942i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (49 + 100i) * (97 + 101i) = (-5347 + 14649i), same as expected (-5347 + 14649i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (50 + 56i) * (55 + 50i) = (-50 + 5580i), same as expected (-50 + 5580i)
+# OP 0 ----- FAILED, b != 3
+# OP 0 ----- FAILED, 20 != d7
+# OP 0 ----- FAILED, 0 != a0
+# OP 0 ----- FAILED, bf != 3
+# OP 0 ----- FAILED, 9 != fd
+# OP 0 ----- FAILED, 0 != 20
+# OP 1 ----- FAILED, 7f != 0
+# OP 1 ----- FAILED, 1d != 1b
+# OP 1 ----- FAILED, 0 != 9
+# OP 1 ----- FAILED, b0 != 0
+# OP 1 ----- FAILED, f4 != a
+# OP 1 ----- FAILED, 3 != 44
+# OP 2 ----- FAILED, 87 != 0
+# OP 2 ----- FAILED, 1f != 2
+# OP 2 ----- FAILED, 0 != 28
+# OP 2 ----- FAILED, dd != 3
+# OP 2 ----- FAILED, f3 != d8
+# OP 2 ----- FAILED, 3 != 8c
+# OP 3 ----- FAILED, 52 != 0
+# OP 3 ----- FAILED, 14 != 8
+# OP 3 ----- FAILED, 0 != f1
+# OP 3 ----- FAILED, 77 != 3
+# OP 3 ----- FAILED, fe != ee
+# OP 3 ----- FAILED, 3 != 1e
+# OP 4 ----- FAILED, 46 != 3
+# OP 4 ----- FAILED, 32 != fb
+# OP 4 ----- FAILED, 0 != 13
+# OP 4 ----- FAILED, 66 != 0
+# OP 4 ----- FAILED, ff != 3b
+# OP 4 ----- FAILED, 3 != c5
+# OP 5 ----- FAILED, 4 != 3
+# OP 5 ----- FAILED, 17 != f6
+# OP 5 ----- FAILED, 0 != 98
+# OP 5 ----- FAILED, 38 != 0
+# OP 5 ----- FAILED, 0 != 51
+# OP 5 ----- FAILED, 0 != 44
+# OP 6 ----- FAILED, c6 != 3
+# OP 6 ----- FAILED, 20 != bd
+# OP 6 ----- FAILED, 0 != 1d
+# OP 6 ----- FAILED, 34 != 0
+# OP 6 ----- FAILED, f6 != 10
+# OP 6 ----- FAILED, 3 != 2d
+# OP 7 ----- FAILED, 6 != 3
+# OP 7 ----- FAILED, 1f != c8
+# OP 7 ----- FAILED, 0 != 95
+# OP 7 ----- FAILED, bc != 3
+# OP 7 ----- FAILED, 8 != f6
+# OP 7 ----- FAILED, 0 != d6
+# OP 8 ----- FAILED, 39 != 3
+# OP 8 ----- FAILED, 39 != f6
+# OP 8 ----- FAILED, 0 != f2
+# OP 8 ----- FAILED, 1d != 0
+# OP 8 ----- FAILED, eb != b
+# OP 8 ----- FAILED, 3 != e4
+# OP 9 ----- FAILED, cc != 0
+# OP 9 ----- FAILED, 15 != 22
+# OP 9 ----- FAILED, 0 != 48
+# OP 9 ----- FAILED, ce != 3
+# OP 9 ----- FAILED, ff != d0
+# OP 9 ----- FAILED, 3 != 68
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# ** Error: ../../../hdl/comp_mult_top.v(129): Undefined variable: res_val_rdy.
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# ** Error: D:/Programe/modeltech6.6/win32/vlog failed.
+# Error in macro ./sim.do line 6
+# D:/Programe/modeltech6.6/win32/vlog failed.
+#     while executing
+# "vlog -reportprogress 300 -work work ../../../hdl/*.v"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftftj58g".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftftj58g
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (100 + 51i) * (53 + 55i) = (2495 + 8203i), same as expected (2495 + 8203i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (49 + 54i) * (50 + 99i) = (-2896 + 7551i), same as expected (-2896 + 7551i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (53 + 101i) * (50 + 57i) = (-3107 + 8071i), same as expected (-3107 + 8071i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (50 + 49i) * (48 + 57i) = (-393 + 5202i), same as expected (-393 + 5202i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (54 + 100i) * (99 + 55i) = (-154 + 12870i), same as expected (-154 + 12870i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (56 + 52i) * (53 + 56i) = (56 + 5892i), same as expected (56 + 5892i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (57 + 97i) * (53 + 57i) = (-2508 + 8390i), same as expected (-2508 + 8390i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (52 + 54i) * (97 + 52i) = (2236 + 7942i), same as expected (2236 + 7942i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (49 + 100i) * (97 + 101i) = (-5347 + 14649i), same as expected (-5347 + 14649i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (50 + 56i) * (55 + 50i) = (-50 + 5580i), same as expected (-50 + 5580i)
+# OP 0 ----- FAILED, b != 3
+# OP 0 ----- FAILED, 20 != d7
+# OP 0 ----- FAILED, 0 != a0
+# OP 0 ----- FAILED, bf != 3
+# OP 0 ----- FAILED, 9 != fd
+# OP 0 ----- FAILED, 0 != 20
+# OP 1 ----- FAILED, 7f != 0
+# OP 1 ----- FAILED, 1d != 1b
+# OP 1 ----- FAILED, 0 != 9
+# OP 1 ----- FAILED, b0 != 0
+# OP 1 ----- FAILED, f4 != a
+# OP 1 ----- FAILED, 3 != 44
+# OP 2 ----- FAILED, 87 != 0
+# OP 2 ----- FAILED, 1f != 2
+# OP 2 ----- FAILED, 0 != 28
+# OP 2 ----- FAILED, dd != 3
+# OP 2 ----- FAILED, f3 != d8
+# OP 2 ----- FAILED, 3 != 8c
+# OP 3 ----- FAILED, 52 != 0
+# OP 3 ----- FAILED, 14 != 8
+# OP 3 ----- FAILED, 0 != f1
+# OP 3 ----- FAILED, 77 != 3
+# OP 3 ----- FAILED, fe != ee
+# OP 3 ----- FAILED, 3 != 1e
+# OP 4 ----- FAILED, 46 != 3
+# OP 4 ----- FAILED, 32 != fb
+# OP 4 ----- FAILED, 0 != 13
+# OP 4 ----- FAILED, 66 != 0
+# OP 4 ----- FAILED, ff != 3b
+# OP 4 ----- FAILED, 3 != c5
+# OP 5 ----- FAILED, 4 != 3
+# OP 5 ----- FAILED, 17 != f6
+# OP 5 ----- FAILED, 0 != 98
+# OP 5 ----- FAILED, 38 != 0
+# OP 5 ----- FAILED, 0 != 51
+# OP 5 ----- FAILED, 0 != 44
+# OP 6 ----- FAILED, c6 != 3
+# OP 6 ----- FAILED, 20 != bd
+# OP 6 ----- FAILED, 0 != 1d
+# OP 6 ----- FAILED, 34 != 0
+# OP 6 ----- FAILED, f6 != 10
+# OP 6 ----- FAILED, 3 != 2d
+# OP 7 ----- FAILED, 6 != 3
+# OP 7 ----- FAILED, 1f != c8
+# OP 7 ----- FAILED, 0 != 95
+# OP 7 ----- FAILED, bc != 3
+# OP 7 ----- FAILED, 8 != f6
+# OP 7 ----- FAILED, 0 != d6
+# OP 8 ----- FAILED, 39 != 3
+# OP 8 ----- FAILED, 39 != f6
+# OP 8 ----- FAILED, 0 != f2
+# OP 8 ----- FAILED, 1d != 0
+# OP 8 ----- FAILED, eb != b
+# OP 8 ----- FAILED, 3 != e4
+# OP 9 ----- FAILED, cc != 0
+# OP 9 ----- FAILED, 15 != 22
+# OP 9 ----- FAILED, 0 != 48
+# OP 9 ----- FAILED, ce != 3
+# OP 9 ----- FAILED, ff != d0
+# OP 9 ----- FAILED, 3 != 68
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlfttmm8kq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttmm8kq
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
+# OP 0 ----- FAILED, cc != 0
+# OP 0 ----- FAILED, 2 != 11
+# OP 0 ----- FAILED, 0 != e
+# OP 0 ----- FAILED, e != 0
+# OP 0 ----- FAILED, 11 != 2
+# OP 0 ----- FAILED, 0 != cc
+# OP 1 ----- FAILED, 1c != 0
+# OP 1 ----- FAILED, f6 != 16
+# OP 1 ----- FAILED, 3 != 20
+# OP 1 ----- FAILED, 20 != 3
+# OP 1 ----- FAILED, 16 != f6
+# OP 1 ----- FAILED, 0 != 1c
+# OP 2 ----- FAILED, fd != 0
+# OP 2 ----- FAILED, f4 != b
+# OP 2 ----- FAILED, 3 != 97
+# OP 2 ----- FAILED, 97 != 3
+# OP 2 ----- FAILED, b != f4
+# OP 2 ----- FAILED, 0 != fd
+# OP 3 ----- FAILED, a != 3
+# OP 3 ----- FAILED, b2 != fe
+# OP 3 ----- FAILED, 3 != e4
+# OP 3 ----- FAILED, e4 != 3
+# OP 3 ----- FAILED, fe != b2
+# OP 3 ----- FAILED, 3 != a
+# OP 4 ----- FAILED, fc != 3
+# OP 4 ----- FAILED, fc != f8
+# OP 4 ----- FAILED, 3 != 56
+# OP 4 ----- FAILED, 56 != 3
+# OP 4 ----- FAILED, f8 != fc
+# OP 4 ----- FAILED, 3 != fc
+# OP 5 ----- FAILED, 9d != 3
+# OP 5 ----- FAILED, c0 != fa
+# OP 5 ----- FAILED, 3 != 91
+# OP 5 ----- FAILED, 91 != 3
+# OP 5 ----- FAILED, fa != c0
+# OP 5 ----- FAILED, 3 != 9d
+# OP 6 ----- FAILED, f2 != 0
+# OP 6 ----- FAILED, f9 != 4
+# OP 6 ----- FAILED, 3 != 1
+# OP 6 ----- FAILED, 1 != 3
+# OP 6 ----- FAILED, 4 != f9
+# OP 6 ----- FAILED, 0 != f2
+# OP 7 ----- FAILED, 24 != 0
+# OP 7 ----- FAILED, ed != 2
+# OP 7 ----- FAILED, 3 != 4a
+# OP 7 ----- FAILED, 4a != 3
+# OP 7 ----- FAILED, 2 != ed
+# OP 7 ----- FAILED, 0 != 24
+# OP 8 ----- FAILED, f8 != 3
+# OP 8 ----- FAILED, 5 != f8
+# OP 8 ----- FAILED, 0 != b8
+# OP 8 ----- FAILED, b8 != 0
+# OP 8 ----- FAILED, f8 != 5
+# OP 8 ----- FAILED, 3 != f8
+# OP 9 ----- FAILED, 66 != 0
+# OP 9 ----- FAILED, e9 != 2a
+# OP 9 ----- FAILED, 3 != a2
+# OP 9 ----- FAILED, a2 != 3
+# OP 9 ----- FAILED, 2a != e9
+# OP 9 ----- FAILED, 0 != 66
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftsx8d48".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftsx8d48
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
+# OP 0 ----- FAILED, cc != 0
+# OP 0 ----- FAILED, 2 != 11
+# OP 0 ----- FAILED, 0 != e
+# OP 0 ----- FAILED, e != 0
+# OP 0 ----- FAILED, 11 != 2
+# OP 0 ----- FAILED, 0 != cc
+# OP 1 ----- FAILED, 1c != 0
+# OP 1 ----- FAILED, f6 != 16
+# OP 1 ----- FAILED, 3 != 20
+# OP 1 ----- FAILED, 20 != 3
+# OP 1 ----- FAILED, 16 != f6
+# OP 1 ----- FAILED, 0 != 1c
+# OP 2 ----- FAILED, fd != 0
+# OP 2 ----- FAILED, f4 != b
+# OP 2 ----- FAILED, 3 != 97
+# OP 2 ----- FAILED, 97 != 3
+# OP 2 ----- FAILED, b != f4
+# OP 2 ----- FAILED, 0 != fd
+# OP 3 ----- FAILED, a != 3
+# OP 3 ----- FAILED, b2 != fe
+# OP 3 ----- FAILED, 3 != e4
+# OP 3 ----- FAILED, e4 != 3
+# OP 3 ----- FAILED, fe != b2
+# OP 3 ----- FAILED, 3 != a
+# OP 4 ----- FAILED, fc != 3
+# OP 4 ----- FAILED, fc != f8
+# OP 4 ----- FAILED, 3 != 56
+# OP 4 ----- FAILED, 56 != 3
+# OP 4 ----- FAILED, f8 != fc
+# OP 4 ----- FAILED, 3 != fc
+# OP 5 ----- FAILED, 9d != 3
+# OP 5 ----- FAILED, c0 != fa
+# OP 5 ----- FAILED, 3 != 91
+# OP 5 ----- FAILED, 91 != 3
+# OP 5 ----- FAILED, fa != c0
+# OP 5 ----- FAILED, 3 != 9d
+# OP 6 ----- FAILED, f2 != 0
+# OP 6 ----- FAILED, f9 != 4
+# OP 6 ----- FAILED, 3 != 1
+# OP 6 ----- FAILED, 1 != 3
+# OP 6 ----- FAILED, 4 != f9
+# OP 6 ----- FAILED, 0 != f2
+# OP 7 ----- FAILED, 24 != 0
+# OP 7 ----- FAILED, ed != 2
+# OP 7 ----- FAILED, 3 != 4a
+# OP 7 ----- FAILED, 4a != 3
+# OP 7 ----- FAILED, 2 != ed
+# OP 7 ----- FAILED, 0 != 24
+# OP 8 ----- FAILED, f8 != 3
+# OP 8 ----- FAILED, 5 != f8
+# OP 8 ----- FAILED, 0 != b8
+# OP 8 ----- FAILED, b8 != 0
+# OP 8 ----- FAILED, f8 != 5
+# OP 8 ----- FAILED, 3 != f8
+# OP 9 ----- FAILED, 66 != 0
+# OP 9 ----- FAILED, e9 != 2a
+# OP 9 ----- FAILED, 3 != a2
+# OP 9 ----- FAILED, a2 != 3
+# OP 9 ----- FAILED, 2a != e9
+# OP 9 ----- FAILED, 0 != 66
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+cls
+# 
+clc
+# invalid command name "clc"
+cls
+# 
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlft1n5wg3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft1n5wg3
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
+# OP 0 ----- FAILED, cc != e
+# OP 0 ----- FAILED, 2 != 11
+# OP 0 ----- OK    , 0 == 0
+# OP 0 ----- FAILED, e != cc
+# OP 0 ----- FAILED, 11 != 0
+# OP 0 ----- FAILED, 0 != 2
+# OP 1 ----- FAILED, 1c != 20
+# OP 1 ----- FAILED, f6 != 16
+# OP 1 ----- FAILED, 3 != 0
+# OP 1 ----- FAILED, 20 != 1c
+# OP 1 ----- FAILED, 16 != 0
+# OP 1 ----- FAILED, 0 != f6
+# OP 2 ----- FAILED, fd != 97
+# OP 2 ----- FAILED, f4 != b
+# OP 2 ----- FAILED, 3 != 0
+# OP 2 ----- FAILED, 97 != fd
+# OP 2 ----- FAILED, b != 0
+# OP 2 ----- FAILED, 0 != f4
+# OP 3 ----- FAILED, a != e4
+# OP 3 ----- FAILED, b2 != fe
+# OP 3 ----- OK    , 3 == 3
+# OP 3 ----- FAILED, e4 != a
+# OP 3 ----- FAILED, fe != 0
+# OP 3 ----- FAILED, 3 != b2
+# OP 4 ----- FAILED, fc != 56
+# OP 4 ----- FAILED, fc != f8
+# OP 4 ----- OK    , 3 == 3
+# OP 4 ----- FAILED, 56 != fc
+# OP 4 ----- FAILED, f8 != 0
+# OP 4 ----- FAILED, 3 != fc
+# OP 5 ----- FAILED, 9d != 91
+# OP 5 ----- FAILED, c0 != fa
+# OP 5 ----- OK    , 3 == 3
+# OP 5 ----- FAILED, 91 != 9d
+# OP 5 ----- FAILED, fa != 0
+# OP 5 ----- FAILED, 3 != c0
+# OP 6 ----- FAILED, f2 != 1
+# OP 6 ----- FAILED, f9 != 4
+# OP 6 ----- FAILED, 3 != 0
+# OP 6 ----- FAILED, 1 != f2
+# OP 6 ----- FAILED, 4 != 0
+# OP 6 ----- FAILED, 0 != f9
+# OP 7 ----- FAILED, 24 != 4a
+# OP 7 ----- FAILED, ed != 2
+# OP 7 ----- FAILED, 3 != 0
+# OP 7 ----- FAILED, 4a != 24
+# OP 7 ----- FAILED, 2 != 0
+# OP 7 ----- FAILED, 0 != ed
+# OP 8 ----- FAILED, f8 != b8
+# OP 8 ----- FAILED, 5 != f8
+# OP 8 ----- FAILED, 0 != 3
+# OP 8 ----- FAILED, b8 != f8
+# OP 8 ----- FAILED, f8 != 0
+# OP 8 ----- FAILED, 3 != 5
+# OP 9 ----- FAILED, 66 != a2
+# OP 9 ----- FAILED, e9 != 2a
+# OP 9 ----- FAILED, 3 != 0
+# OP 9 ----- FAILED, a2 != 66
+# OP 9 ----- FAILED, 2a != 0
+# OP 9 ----- FAILED, 0 != e9
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftee59j8".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftee59j8
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
+# OP 0 ----- FAILED, cc != e
+# OP 0 ----- FAILED, 2 != 11
+# OP 0 ----- OK    , 0 == 0
+# OP 0 ----- FAILED, e != cc
+# OP 0 ----- FAILED, 11 != 0
+# OP 0 ----- FAILED, 0 != 2
+# OP 1 ----- FAILED, 1c != 20
+# OP 1 ----- FAILED, f6 != 16
+# OP 1 ----- FAILED, 3 != 0
+# OP 1 ----- FAILED, 20 != 1c
+# OP 1 ----- FAILED, 16 != 0
+# OP 1 ----- FAILED, 0 != f6
+# OP 2 ----- FAILED, fd != 97
+# OP 2 ----- FAILED, f4 != b
+# OP 2 ----- FAILED, 3 != 0
+# OP 2 ----- FAILED, 97 != fd
+# OP 2 ----- FAILED, b != 0
+# OP 2 ----- FAILED, 0 != f4
+# OP 3 ----- FAILED, a != e4
+# OP 3 ----- FAILED, b2 != fe
+# OP 3 ----- OK    , 3 == 3
+# OP 3 ----- FAILED, e4 != a
+# OP 3 ----- FAILED, fe != 0
+# OP 3 ----- FAILED, 3 != b2
+# OP 4 ----- FAILED, fc != 56
+# OP 4 ----- FAILED, fc != f8
+# OP 4 ----- OK    , 3 == 3
+# OP 4 ----- FAILED, 56 != fc
+# OP 4 ----- FAILED, f8 != 0
+# OP 4 ----- FAILED, 3 != fc
+# OP 5 ----- FAILED, 9d != 91
+# OP 5 ----- FAILED, c0 != fa
+# OP 5 ----- OK    , 3 == 3
+# OP 5 ----- FAILED, 91 != 9d
+# OP 5 ----- FAILED, fa != 0
+# OP 5 ----- FAILED, 3 != c0
+# OP 6 ----- FAILED, f2 != 1
+# OP 6 ----- FAILED, f9 != 4
+# OP 6 ----- FAILED, 3 != 0
+# OP 6 ----- FAILED, 1 != f2
+# OP 6 ----- FAILED, 4 != 0
+# OP 6 ----- FAILED, 0 != f9
+# OP 7 ----- FAILED, 24 != 4a
+# OP 7 ----- FAILED, ed != 2
+# OP 7 ----- FAILED, 3 != 0
+# OP 7 ----- FAILED, 4a != 24
+# OP 7 ----- FAILED, 2 != 0
+# OP 7 ----- FAILED, 0 != ed
+# OP 8 ----- FAILED, f8 != b8
+# OP 8 ----- FAILED, 5 != f8
+# OP 8 ----- FAILED, 0 != 3
+# OP 8 ----- FAILED, b8 != f8
+# OP 8 ----- FAILED, f8 != 0
+# OP 8 ----- FAILED, 3 != 5
+# OP 9 ----- FAILED, 66 != a2
+# OP 9 ----- FAILED, e9 != 2a
+# OP 9 ----- FAILED, 3 != 0
+# OP 9 ----- FAILED, a2 != 66
+# OP 9 ----- FAILED, 2a != 0
+# OP 9 ----- FAILED, 0 != e9
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftt861ne".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftt861ne
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
+# OP 0 ----- FAILED, cc != e
+# OP 0 ----- FAILED, 2 != 11
+# OP 0 ----- OK    , 0 == 0
+# OP 0 ----- FAILED, e != cc
+# OP 0 ----- FAILED, 11 != 0
+# OP 0 ----- FAILED, 0 != 2
+# OP 1 ----- FAILED, 1c != 20
+# OP 1 ----- FAILED, f6 != 16
+# OP 1 ----- FAILED, 3 != 0
+# OP 1 ----- FAILED, 20 != 1c
+# OP 1 ----- FAILED, 16 != 0
+# OP 1 ----- FAILED, 0 != f6
+# OP 2 ----- FAILED, fd != 97
+# OP 2 ----- FAILED, f4 != b
+# OP 2 ----- FAILED, 3 != 0
+# OP 2 ----- FAILED, 97 != fd
+# OP 2 ----- FAILED, b != 0
+# OP 2 ----- FAILED, 0 != f4
+# OP 3 ----- FAILED, a != e4
+# OP 3 ----- FAILED, b2 != fe
+# OP 3 ----- OK    , 3 == 3
+# OP 3 ----- FAILED, e4 != a
+# OP 3 ----- FAILED, fe != 0
+# OP 3 ----- FAILED, 3 != b2
+# OP 4 ----- FAILED, fc != 56
+# OP 4 ----- FAILED, fc != f8
+# OP 4 ----- OK    , 3 == 3
+# OP 4 ----- FAILED, 56 != fc
+# OP 4 ----- FAILED, f8 != 0
+# OP 4 ----- FAILED, 3 != fc
+# OP 5 ----- FAILED, 9d != 91
+# OP 5 ----- FAILED, c0 != fa
+# OP 5 ----- OK    , 3 == 3
+# OP 5 ----- FAILED, 91 != 9d
+# OP 5 ----- FAILED, fa != 0
+# OP 5 ----- FAILED, 3 != c0
+# OP 6 ----- FAILED, f2 != 1
+# OP 6 ----- FAILED, f9 != 4
+# OP 6 ----- FAILED, 3 != 0
+# OP 6 ----- FAILED, 1 != f2
+# OP 6 ----- FAILED, 4 != 0
+# OP 6 ----- FAILED, 0 != f9
+# OP 7 ----- FAILED, 24 != 4a
+# OP 7 ----- FAILED, ed != 2
+# OP 7 ----- FAILED, 3 != 0
+# OP 7 ----- FAILED, 4a != 24
+# OP 7 ----- FAILED, 2 != 0
+# OP 7 ----- FAILED, 0 != ed
+# OP 8 ----- FAILED, f8 != b8
+# OP 8 ----- FAILED, 5 != f8
+# OP 8 ----- FAILED, 0 != 3
+# OP 8 ----- FAILED, b8 != f8
+# OP 8 ----- FAILED, f8 != 0
+# OP 8 ----- FAILED, 3 != 5
+# OP 9 ----- FAILED, 66 != a2
+# OP 9 ----- FAILED, e9 != 2a
+# OP 9 ----- FAILED, 3 != 0
+# OP 9 ----- FAILED, a2 != 66
+# OP 9 ----- FAILED, 2a != 0
+# OP 9 ----- FAILED, 0 != e9
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftjwqxz0".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftjwqxz0
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
+# OP 0 ----- OK    , e == e
+# OP 0 ----- OK    , 11 == 11
+# OP 0 ----- OK    , 0 == 0
+# OP 0 ----- OK    , cc == cc
+# OP 0 ----- OK    , 2 == 2
+# OP 0 ----- OK    , 0 == 0
+# OP 1 ----- OK    , 20 == 20
+# OP 1 ----- OK    , 16 == 16
+# OP 1 ----- OK    , 0 == 0
+# OP 1 ----- OK    , 1c == 1c
+# OP 1 ----- OK    , f6 == f6
+# OP 1 ----- OK    , 3 == 3
+# OP 2 ----- OK    , 97 == 97
+# OP 2 ----- OK    , b == b
+# OP 2 ----- OK    , 0 == 0
+# OP 2 ----- OK    , fd == fd
+# OP 2 ----- OK    , f4 == f4
+# OP 2 ----- OK    , 3 == 3
+# OP 3 ----- OK    , e4 == e4
+# OP 3 ----- OK    , fe == fe
+# OP 3 ----- OK    , 3 == 3
+# OP 3 ----- OK    , a == a
+# OP 3 ----- OK    , b2 == b2
+# OP 3 ----- OK    , 3 == 3
+# OP 4 ----- OK    , 56 == 56
+# OP 4 ----- OK    , f8 == f8
+# OP 4 ----- OK    , 3 == 3
+# OP 4 ----- OK    , fc == fc
+# OP 4 ----- OK    , fc == fc
+# OP 4 ----- OK    , 3 == 3
+# OP 5 ----- OK    , 91 == 91
+# OP 5 ----- OK    , fa == fa
+# OP 5 ----- OK    , 3 == 3
+# OP 5 ----- OK    , 9d == 9d
+# OP 5 ----- OK    , c0 == c0
+# OP 5 ----- OK    , 3 == 3
+# OP 6 ----- OK    , 1 == 1
+# OP 6 ----- OK    , 4 == 4
+# OP 6 ----- OK    , 0 == 0
+# OP 6 ----- OK    , f2 == f2
+# OP 6 ----- OK    , f9 == f9
+# OP 6 ----- OK    , 3 == 3
+# OP 7 ----- OK    , 4a == 4a
+# OP 7 ----- OK    , 2 == 2
+# OP 7 ----- OK    , 0 == 0
+# OP 7 ----- OK    , 24 == 24
+# OP 7 ----- OK    , ed == ed
+# OP 7 ----- OK    , 3 == 3
+# OP 8 ----- OK    , b8 == b8
+# OP 8 ----- OK    , f8 == f8
+# OP 8 ----- OK    , 3 == 3
+# OP 8 ----- OK    , f8 == f8
+# OP 8 ----- OK    , 5 == 5
+# OP 8 ----- OK    , 0 == 0
+# OP 9 ----- OK    , a2 == a2
+# OP 9 ----- OK    , 2a == 2a
+# OP 9 ----- OK    , 0 == 0
+# OP 9 ----- OK    , 66 == 66
+# OP 9 ----- OK    , e9 == e9
+# OP 9 ----- OK    , 3 == 3
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 111
+# MACRO ./wave.do PAUSED at line 2

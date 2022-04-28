@@ -1,4 +1,8 @@
 ./debug/core_test/sim/work/*
-./debug/core_test/sim/wlf*
+./debug/core_test/sim/*
+./debug/core_test/sim/!*/
+./debug/core_test/sim/!*.*
 ./debug/top_test/sim/work/*
-./debug/top_test/sim/wlf*
+./debug/top_test/sim/*
+./debug/top_test/sim/!*/
+./debug/top_test/sim/!*.*

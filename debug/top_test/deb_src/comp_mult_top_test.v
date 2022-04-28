@@ -36,7 +36,8 @@ wire  [SYS_AW -1:0] mem_addr    ; // adresa
 wire  [DWIDTH -1:0] mem_wr_data ; // date scrise 
 wire  [DWIDTH -1:0] mem_rd_data ; // date citite 
 
-integer i;
+integer i;  // iter idx 
+integer fb; // file binary
 
 
 initial begin 
@@ -87,15 +88,24 @@ initial begin
     @(posedge rf_sts[0]);
     
     for(i = 0; i < NR_OP*6; i = i + 1) begin 
-    
         if(i_mem_1rw.mem[RES_BA + i] == i_mem_1rw.mem[EXP_RES_BA + i])
             $display("OP %0d ----- OK    , %0h == %0h", i/6, i_mem_1rw.mem[RES_BA + i], i_mem_1rw.mem[EXP_RES_BA + i]);
         else 
             $display("OP %0d ----- FAILED, %0h != %0h", i/6, i_mem_1rw.mem[RES_BA + i], i_mem_1rw.mem[EXP_RES_BA + i]);
-        
     end 
     
+    fb = $fopen("../deb_src/mem.raw", "rb+");
+    if($fseek(fb, RES_BA, 0) == -1) $display("ERROR: fseek");
     
+    
+    for(i = RES_BA; i < RES_BA + NR_OP*6; i = i + 1) begin 
+        
+        $fwrite(fb, "%c", i_mem_1rw.mem[i]);
+    
+    end 
+
+    
+    $fclose(fb);
     
     $display("END SIM");
     $stop;
@@ -136,7 +146,7 @@ mem_1rw #(
 .we          (mem_we      ), // write enable (activ 1)
 .addr        (mem_addr    ), // adresa
 .wr_data     (mem_wr_data ), // date scrise
-.be          (8'hFF       ), // byte enable, (activ 1)
+.be          (1'b1        ), // byte enable, (activ 1)
 .rd_data     (mem_rd_data )  // date citite
 );
 
