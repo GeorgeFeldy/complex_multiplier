@@ -1,0 +1,145 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim
+vclk_rst_tb
+VmTRlZ_^X=7HBh9U><<KSM0
+r1
+31
+I9:N^ezib>G`ka[QQX<GXk0
+Z1 dD:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim
+w1647453165
+8../deb_src/clk_rst_tb.v
+F../deb_src/clk_rst_tb.v
+L0 1
+Z2 OE;L;6.6d;45
+Z3 o-work work -L mtiAvm -L mtiOvm -L mtiUPF
+!s85 0
+!s100 XO>2U<JQ:Qc_3cX12XO;R0
+vcomp_mult_1
+IYIFD88cgL;g?[E^;^AfQ]3
+Vh`9Tbhg8<ROk0i<m:z:F=0
+R1
+w1650895057
+8../../../hdl/comp_mult_1.v
+F../../../hdl/comp_mult_1.v
+L0 10
+R2
+r1
+31
+R3
+!s100 =jR@Ti?l>a:GOI7<hn;aK0
+!s85 0
+vcomp_mult_2
+I:eB`EN6lW46U;3VV4aV^=3
+Vm3foECaV1`TbC5z6NLY511
+R1
+w1650891399
+8../../../hdl/comp_mult_2.v
+F../../../hdl/comp_mult_2.v
+L0 10
+R2
+r1
+31
+R3
+!s100 >QzVER15HUUl?Z=@l:L951
+!s85 0
+vcomp_mult_4
+VR_>jZNZd?@KFfHjO^X>g^1
+r1
+31
+IU<>AUjX=k8[XTEl2:mZU_2
+R1
+w1650892033
+8../../../hdl/comp_mult_4.v
+F../../../hdl/comp_mult_4.v
+L0 10
+R2
+R3
+!s85 0
+!s100 d]Zi;F2dIEgIHZWPLYnD?3
+vcomp_mult_ref_model
+V=L>6@b>K7EA@nZ3PnURiZ0
+r1
+31
+IKS4=IAdgR6hPYTV>_58?F1
+R1
+w1651104480
+8../deb_src/comp_mult_ref_model.v
+F../deb_src/comp_mult_ref_model.v
+L0 10
+R2
+R3
+!s85 0
+!s100 D9U?f;79H4S`3AR5Qn`321
+vcomp_mult_top
+VOQHClC;IWWWHAhT^^QLm;0
+r1
+31
+IAXJ7gZdndDk[H>Z?enf4L1
+R1
+w1651105966
+8../../../hdl/comp_mult_top.v
+F../../../hdl/comp_mult_top.v
+L0 10
+R2
+R3
+!s85 0
+!s100 oHmm3YUPR[TIPhQMJG7nz3
+vcomp_mult_top_test
+VWHYTJ<X5kIfL1[<LbA2?S1
+r1
+31
+I1B=CY1`HdgV37V3d5z1>[2
+R1
+w1651104753
+8../deb_src/comp_mult_top_test.v
+F../deb_src/comp_mult_top_test.v
+L0 9
+R2
+R3
+!s85 0
+!s100 BlaBeOoAaDELdHDak<36W0
+vcomp_mult_wrapper
+VgXZ9?i4FB7U4dbWGGElWN0
+r1
+31
+IQ7Eb8SD=lS[i2XVY:bg222
+R1
+w1650888611
+8../../../hdl/comp_mult_wrapper.v
+F../../../hdl/comp_mult_wrapper.v
+L0 11
+R2
+R3
+!s85 0
+!s100 g`_ESIHhonzT8J]@XkEio3
+vmem_1rw
+Vgba]lmHO_KB[NM_DZ14MG2
+r1
+31
+IbK3YnzAh=dYzdYPPd9ami1
+R1
+w1651104059
+8../deb_src/mem_1rw.v
+F../deb_src/mem_1rw.v
+L0 16
+R2
+R3
+!s85 0
+!s100 RCRRbYE1PTOab?A`KU;lh3
+vuint8_mult
+VJ9;g@Yo3lNL^C[UQn[bT12
+r1
+!s85 0
+31
+IQR`@UzafQ[HWLGNk@Xj]l1
+R1
+w1647184496
+8../../../hdl/uint8_mult.v
+F../../../hdl/uint8_mult.v
+L0 10
+R2
+R3
+!s100 Ih_1gGZl@?T4nZf^AH`Pa0

@@ -21,6 +21,8 @@ localparam NR_OP    = 10  ;
                     
 localparam EXP_RES_BA = 400;
 
+localparam VERBOSE = 1;
+
 wire                clk         ; // system clock 
 wire                rst_n       ; // hw async reset, active low 
 reg                 sw_rst      ; // sw  sync reset, active high                
@@ -87,7 +89,7 @@ initial begin
     for(i = 0; i < NR_OP*6; i = i + 1) begin 
     
         if(i_mem_1rw.mem[RES_BA + i] == i_mem_1rw.mem[EXP_RES_BA + i])
-            $display("OP %0d ----- OK, %0h == %0h", i/6, i_mem_1rw.mem[RES_BA + i], i_mem_1rw.mem[EXP_RES_BA + i]);
+            $display("OP %0d ----- OK    , %0h == %0h", i/6, i_mem_1rw.mem[RES_BA + i], i_mem_1rw.mem[EXP_RES_BA + i]);
         else 
             $display("OP %0d ----- FAILED, %0h != %0h", i/6, i_mem_1rw.mem[RES_BA + i], i_mem_1rw.mem[EXP_RES_BA + i]);
         
@@ -134,10 +136,26 @@ mem_1rw #(
 .we          (mem_we      ), // write enable (activ 1)
 .addr        (mem_addr    ), // adresa
 .wr_data     (mem_wr_data ), // date scrise
-.be          (1'b1        ), // byte enable, (activ 1)
+.be          (8'hFF       ), // byte enable, (activ 1)
 .rd_data     (mem_rd_data )  // date citite
 );
 
+comp_mult_ref_model #(
+.DWIDTH  (DWIDTH  ), // data width
+.VERBOSE (VERBOSE )  // display passed 
+) i_comp_mult_ref_model (
+// system IF 
+.clk          (clk                                            ), // [i] system clock 
+.rst_n        (rst_n                                          ), // [i] hw async reset, active low 
+.sw_rst       (sw_rst                                         ), // [i] sw  sync reset, active high  
+.op_val       (DUT_comp_mult_top.i_comp_mult_wrapper.op_val   ), // [i] input operands valid 
+.op_rdy       (DUT_comp_mult_top.i_comp_mult_wrapper.op_rdy   ), // [i] input operands ready 
+.op_data      (DUT_comp_mult_top.i_comp_mult_wrapper.op_data  ), // [i] input operands {x1,x2,y1,y2}
+.res_val      (DUT_comp_mult_top.i_comp_mult_wrapper.res_val  ), // [i] output result valid 
+.res_rdy      (DUT_comp_mult_top.i_comp_mult_wrapper.res_rdy  ), // [i] output result ready 
+.res_data     (DUT_comp_mult_top.i_comp_mult_wrapper.res_data ), // [i] output result {xr,yr}
+.exp_res_data (                                               )  // [o] expected output result {xr,yr}
+); 
 
 clk_rst_tb #(
 .PERIOD (5) // clock period / 2

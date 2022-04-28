@@ -25,8 +25,8 @@ input      [    REG_DW -1:0] rf_cfg      , // register file cfg data write
 output     [    REG_DW -1:0] rf_sts      , // register file sts data read 
 
 // memory interface 
-output                       mem_ce      , // chip enable (activ 1)
-output                       mem_we      , // write enable (activ 1)
+output reg                   mem_ce      , // chip enable (activ 1)
+output reg                   mem_we      , // write enable (activ 1)
 output reg [    SYS_AW -1:0] mem_addr    , // adresa
 output reg [    DWIDTH -1:0] mem_wr_data , // date scrise 
 input      [    DWIDTH -1:0] mem_rd_data   // date citite 
@@ -62,10 +62,12 @@ wire                      sel_sts_stop  ; // filled status         (done:  'h0..
 // multiplier interface 
 reg                       op_val        ; // operands valid 
 wire                      op_rdy        ; // operands ready  
-reg  [   2*2*DWIDTH -1:0] op_data       ; // operands {x1,x2,y1,y2}          
+wire [   2*2*DWIDTH -1:0] op_data       ; // operands {x1,x2,y1,y2}          
 wire                      res_val       ; // result valid                                            
 wire                      res_rdy       ; // result ready                                            
-wire [2*2*(DWIDTH+1)-1:0] res_data      ; // result {xr,yr}                   
+wire [2*2*(DWIDTH+1)-1:0] res_data      ; // result {xr,yr}    
+
+reg  [     3*DWIDTH -1:0] data_reg      ; // operands {x1,x2,y1}                  
 
 // fsm signals
 reg  [            2 -1:0] ctrl_state    ; // control FSM state 
@@ -76,17 +78,26 @@ wire                      byte_wr_done  ; // all bytes written
 wire                      finish        ; // finish flag 
 wire                      next_op       ; // next operand flag 
 
+
+reg                       mem_ce_d      ;
+reg                       mem_we_d      ;
+
+wire                      set_mem_ce    ;
+wire                      set_mem_we    ;
+
 reg  [            3 -1:0] byte_cnt      ;
                           
 reg  [       REG_DW -1:0] op_cnt        ; // operations counter
                           
+                          
+
                           
 // ---------------------------------complex multiplier instance --------------------
 
 comp_mult_wrapper #(
 .DWIDTH  (8       ), // data width
 .NO_MULT (NO_MULT )  // number of multipliers used (1, 2 or 4)
-) DUT_comp_mult_wrapper (
+) i_comp_mult_wrapper (
 // system IF 
 .clk      (clk     ), // [i] system clock 
 .rst_n    (rst_n   ), // [i] hw async reset, active low 
@@ -114,21 +125,21 @@ always @(posedge clk or negedge rst_n)
 if(~rst_n)        op1_addr  <= 'd0            ; else 
 if(sw_rst)        op1_addr  <= 'd0            ; else 
 if(sel_op1_addr)  op1_addr  <= rf_cfg         ; else
-if(res_val_rdy)   op1_addr  <= op1_addr + 'd1 ;
+if(res_val_rdy)   op1_addr  <= op1_addr + 'd2 ;
 
 
 always @(posedge clk or negedge rst_n)
 if(~rst_n)        op2_addr  <= 'd0            ; else 
 if(sw_rst)        op2_addr  <= 'd0            ; else 
 if(sel_op2_addr)  op2_addr  <= rf_cfg         ; else
-if(res_val_rdy)   op2_addr  <= op1_addr + 'd1 ;
+if(res_val_rdy)   op2_addr  <= op2_addr + 'd2 ;
 
 
 always @(posedge clk or negedge rst_n)
 if(~rst_n)        res_addr  <= 'd0            ; else 
 if(sw_rst)        res_addr  <= 'd0            ; else 
 if(sel_res_addr)  res_addr  <= rf_cfg         ; else
-if(res_val_rdy)   res_addr  <= res_addr + 'd1 ;
+if(res_val_rdy)   res_addr  <= res_addr + 'd6 ;
 
 
 always @(posedge clk or negedge rst_n)
@@ -194,12 +205,11 @@ assign finish       = byte_wr_done & (op_cnt == (no_op - 'd1));
 
 // TODO parametrizable 
 always @(posedge clk or negedge rst_n)
-if(~rst_n)               byte_cnt <= 3'd0            ; else
-if(sw_rst)               byte_cnt <= 3'd0            ; else
-if((ctrl_state == IDLE) | (ctrl_state == WORK)) 
-                         byte_cnt <= 3'd0            ; else 
-if((ctrl_state == RD_OPS) | (ctrl_state == WR_RES)) 
-                         byte_cnt <= byte_cnt + 3'd1 ; 
+if(~rst_n)        byte_cnt <= 3'd0            ; else
+if(sw_rst)        byte_cnt <= 3'd0            ; else
+if(byte_rd_done)  byte_cnt <= 3'd0            ; else 
+if(byte_wr_done)  byte_cnt <= 3'd0            ; else 
+if(mem_ce)        byte_cnt <= byte_cnt + 3'd1 ;      // increment on r/w 
 
 
 always @(posedge clk or negedge rst_n)
@@ -229,11 +239,28 @@ always @(*)
         default : mem_wr_data <= res_data[35:34] + 8'd0; // 35:34 filled 
     endcase 
 
-assign mem_ce = (ctrl_state == RD_OPS) |
-                (ctrl_state == WR_RES) ;
+
+assign set_mem_ce = ((ctrl_state == IDLE)   & cfg_start[0]) |
+                    ((ctrl_state == WR_RES) & next_op     ) | 
+                    ((ctrl_state == WORK)   & res_val_rdy ) ;
 
 
-assign mem_we = (ctrl_state == WR_RES) ;
+always @(posedge clk or negedge rst_n)
+if(~rst_n)        mem_ce <= 1'b0; else 
+if(sw_rst)        mem_ce <= 1'b0; else  
+if(set_mem_ce)    mem_ce <= 1'b1; else
+if(byte_rd_done | byte_wr_done) 
+                  mem_ce <= 1'b0; 
+
+
+assign set_mem_we = (ctrl_state == WORK) & res_val_rdy;
+
+always @(posedge clk or negedge rst_n)
+if(~rst_n)        mem_we <= 1'b0; else 
+if(sw_rst)        mem_we <= 1'b0; else  
+if(set_mem_we)    mem_we <= 1'b1; else 
+if(next_op | finish)   
+                  mem_we <= 1'b0; 
 
 
 always @(posedge clk or negedge rst_n)
@@ -244,16 +271,30 @@ if(op_val & op_rdy) op_val <= 1'b0;
 
 
 always @(posedge clk or negedge rst_n)
-if(~rst_n)          op_data <= 'd0; else 
-if(sw_rst)          op_data <= 'd0; else 
-if(ctrl_state == RD_OPS) begin 
+if(~rst_n) mem_ce_d <= 1'b0   ; else 
+if(sw_rst) mem_ce_d <= 1'b0   ; else  
+           mem_ce_d <= mem_ce ;
+           
+always @(posedge clk or negedge rst_n)
+if(~rst_n) mem_we_d <= 1'b0   ; else 
+if(sw_rst) mem_we_d <= 1'b0   ; else  
+           mem_we_d <= mem_we ;
+
+
+always @(posedge clk or negedge rst_n)
+if(~rst_n)          data_reg <= 'd0; else 
+if(sw_rst)          data_reg <= 'd0; else 
+if(mem_ce_d & ~mem_we_d) begin // on read 
     case(byte_cnt)
-        2'b00  :    op_data[4*DWIDTH-1-:DWIDTH] <= mem_rd_data; 
-        2'b01  :    op_data[3*DWIDTH-1-:DWIDTH] <= mem_rd_data; 
-        2'b10  :    op_data[2*DWIDTH-1-:DWIDTH] <= mem_rd_data; 
-        default:    op_data[1*DWIDTH-1-:DWIDTH] <= mem_rd_data; 
+        3'b001 :    data_reg[3*DWIDTH-1 : 2*DWIDTH] <= mem_rd_data; 
+        3'b010 :    data_reg[2*DWIDTH-1 : 1*DWIDTH] <= mem_rd_data; 
+        3'b011 :    data_reg[1*DWIDTH-1 : 0       ] <= mem_rd_data; 
+        //default:    op_data[1*DWIDTH-1-:DWIDTH] <= mem_rd_data; 
+        default:    data_reg                        <= data_reg; 
     endcase 
 end 
+
+assign op_data = {data_reg, mem_rd_data}; // stored data concat with last byte 
 
 
 assign res_rdy = 1'b1;

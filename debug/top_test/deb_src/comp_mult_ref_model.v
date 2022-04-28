@@ -8,7 +8,8 @@
 //---------------------------------------------------------------------
 
 module comp_mult_ref_model #(
-parameter DWIDTH = 8
+parameter DWIDTH  = 8,
+parameter VERBOSE = 1
 )(
 // system IF 
 input                           clk               , // system clock 
@@ -72,7 +73,7 @@ if(res_val & res_rdy) begin
         l_x1, l_y1, l_x2, l_y2, dut_xr, dut_yr, l_xr,l_yr);     
         $stop;
     end 
-    else
+    else if(VERBOSE)
         $display("%M %0t GOOD: (%0d + %0di) * (%0d + %0di) = (%0d + %0di), same as expected (%0d + %0di)", $time,
          l_x1, l_y1, l_x2, l_y2, dut_xr, dut_yr, l_xr,l_yr);
 end 

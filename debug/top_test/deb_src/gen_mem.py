@@ -31,6 +31,8 @@ for i in range(0, nr_op * 2, 2):
     xr = l_x1 * l_x2 - l_y1 * l_y2
     yr = l_x1 * l_y2 + l_y1 * l_x2
 
+    print(str(l_x1) + "+" + str(l_y1) + "i * " + str(l_x2) + "+" + str(l_y2) + "i = " + str(xr) + "+" + str(yr) + "i") 
+
     xr_e = (xr & 0x30000) >> 16 # sign extension 
     xr_h = (xr & 0x0FF00) >> 8  # high 
     xr_l = (xr & 0x000FF)       # low 

@@ -9,7 +9,8 @@
 // Descriere   : Model de memorie 1RW parametrizabil
 //------------------------------------------------------------------------------
 // Modificari  :
-// Oct. 1, 2019 (DN): Initial 
+// Oct. 1, 2019  (DN): Initial 
+// Apr. 22, 2022 (FG): Fixat Mismatch byte enable  
 //------------------------------------------------------------------------------
 
 module mem_1rw  #(
@@ -28,11 +29,16 @@ output reg  [8*WORD_BYTES -1 : 0] rd_data     // date citite
 
 reg         [8*WORD_BYTES -1 : 0] mem[MEM_DEPTH -1 : 0];
 
+
+wire [8*WORD_BYTES -1:0] ext_be ;
+
+assign ext_be = {8*WORD_BYTES{be}};
+
 // scriere memorie
 always @(posedge clk)
 if (ce & we) 
-  mem[addr] <=  (mem[addr] & (~be)) |       // pastreaza datele nescrise
-                (wr_data   &   be );        // modifica datele scrise
+  mem[addr] <=  (mem[addr] & (~ext_be)) |       // pastreaza datele nescrise
+                (wr_data   &   ext_be );        // modifica datele scrise
 
 // citire memorie
 always @(posedge clk)
