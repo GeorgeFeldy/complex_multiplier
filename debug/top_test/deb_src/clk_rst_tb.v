@@ -8,16 +8,16 @@ output reg rst_n
 initial begin 
     clk = 0;
     forever begin 
-    #5 clk <= ~clk; 
+    #PERIOD clk <= ~clk; 
     end 
 end 
 
 initial begin 
-        rst_n = 1'b1;
+        rst_n <= 1'b1;
         @(posedge clk);
-        rst_n = 1'b0;
+        rst_n <= 1'b0;
         repeat(3) @(posedge clk);
-        rst_n = 1'b1;
+        rst_n <= 1'b1;
         @(posedge clk);
 end 
 

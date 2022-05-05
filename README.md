@@ -1,8 +1,13 @@
 # complex_multiplier
 Verilog complex multiplier
 
-###  TODO: 
-    * Documentation
-    * Mem overlap assertions 
-    * More tests
-    * (HARD) parametrizable mem location width + data width 
+## Top level diagram
+
+![complex_multiplier_top](./doc/diagrams/top_diagram.png)
+
+## Complex multiplier block interface
+
+![complex_multiplier](./doc/diagrams/complex_multiplier.png)
+
+
+
