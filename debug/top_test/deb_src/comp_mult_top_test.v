@@ -97,22 +97,18 @@ initial begin
     fb = $fopen("../deb_src/mem.raw", "rb+");
     if($fseek(fb, RES_BA, 0) == -1) $display("ERROR: fseek");
     
-    
     for(i = RES_BA; i < RES_BA + NR_OP*6; i = i + 1) begin 
         
         $fwrite(fb, "%c", i_mem_1rw.mem[i]);
     
     end 
 
-    
     $fclose(fb);
     
     $display("END SIM");
     $stop;
     
 end 
-
-
 
 comp_mult_top #(
 .DWIDTH      (DWIDTH     ), // [p] operand element data width
