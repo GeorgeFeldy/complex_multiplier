@@ -124,7 +124,7 @@ initial begin
     
     // check for slave error 
     if(~apb_pslverr)
-        $display("%M ERROR: Expected slave error!");
+        $display("%M WARNING: Expected slave error!");
         
     apb_pwrite <= 1'b0;
     apb_psel   <= 1'b0;
@@ -158,7 +158,7 @@ end
 comp_mult_top #(
 .DWIDTH      (DWIDTH     ), // [p] operand element data width
 .NO_MULT     (NO_MULT    ), // [p] number of multipliers used (1, 2 or 4)
-.APB_BADDR   (APB_BADDR ), // [p] register file base address in system  
+.APB_BADDR   (APB_BADDR  ), // [p] register file base address in system  
 .SYS_AW      (SYS_AW     ), // [p] system address width 
 .REG_DW      (REG_DW     )  // [p] register file data width 
 ) DUT_comp_mult_top (

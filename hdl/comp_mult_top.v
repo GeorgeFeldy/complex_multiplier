@@ -110,7 +110,7 @@ reg  [       REG_DW -1:0] op_cnt        ; // total operations counter
 // ----------------------------------------- complex multiplier instance ---------------------------------------------------------
 
 comp_mult_wrapper #(
-.DWIDTH  (8       ), // data width
+.DWIDTH  (DWIDTH  ), // data width
 .NO_MULT (NO_MULT )  // number of multipliers used (1, 2 or 4)
 ) i_comp_mult_wrapper (
 // system IF 
@@ -269,7 +269,7 @@ if(next_op)         op_cnt <= op_cnt + 'd1 ;      // increment on operation done
 // detect any change in FSM for register update (avoid free running)
 assign ctrl_fsm_edge = cfg_start[0] & (ctrl_state == IDLE) | 
                        res_val      & (ctrl_state == WORK) | 
-                       byte_rd_done                        | 
+                       byte_rd_done                        |  
                        byte_wr_done                        |
                        next_op                             | 
                        finish                              ;
