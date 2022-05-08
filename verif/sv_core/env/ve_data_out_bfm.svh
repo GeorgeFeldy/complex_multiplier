@@ -37,7 +37,7 @@ class ve_data_out_bfm extends ve_base_unit;
             @(res_drv.drv_cb);
        
          end
-         else @(smp_drv.drv_cb);
+         else @(res_drv.drv_cb);
       end
    endtask: run
 

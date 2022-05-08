@@ -2,8 +2,13 @@ debug/core_debug/sim/work/
 debug/core_debug/sim/*
 debug/core_debug/sim/!*/
 debug/core_debug/sim/!*.*
+
 debug/top_debug/sim/work/
 debug/top_debug/sim/*
 debug/top_debug/sim/!*/
 debug/top_debug/sim/!*.*
 
+verif/sv_core/sim/work/
+verif/sv_core/sim/*
+verif/sv_core/sim/!*/
+verif/sv_core/sim/!*.*

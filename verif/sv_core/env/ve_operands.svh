@@ -1,4 +1,4 @@
-class ve_operands;
+class ve_operands #(parameter DWIDTH = 8);
 
    int id; // transaction unique id
 
@@ -9,7 +9,7 @@ class ve_operands;
    rand bit signed [DWIDTH-1:0] x2;
    rand bit signed [DWIDTH-1:0] y2;
       
-   rand unsigned int delay;
+   rand int unsigned delay;
    constraint delay_prob {delay dist {0:=50, [1:30]:=50}; }; // 50% chance of b2b
    
    function void post_randomize();
@@ -17,7 +17,7 @@ class ve_operands;
    endfunction : post_randomize
 
    function ve_operands copy();
-      op_copy = new();
+      ve_operands op_copy = new();
       
       op_copy.id = this.id;
       op_copy.x1 = this.x1;

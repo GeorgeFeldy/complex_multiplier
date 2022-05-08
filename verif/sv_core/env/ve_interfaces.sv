@@ -1,15 +1,20 @@
 
-interface rst_intf(
-   input  wire  clk    ,
-   output logic rst_n  ,
-   output logic sw_rst
-);
+interface rst_intf(input wire clk);
+
+    logic rst_n  ;
+    logic sw_rst ;
 
    clocking drv_cb@(posedge clk);
       output rst_n;
       output sw_rst;
    endclocking
    modport drv(clocking drv_cb, input clk);
+   
+   clocking rcv_cb@(posedge clk);
+      input rst_n;
+      input sw_rst;
+   endclocking
+   modport rcv(clocking rcv_cb, input clk);
 
    clocking mon_cb@(posedge clk);
       input rst_n;

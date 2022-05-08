@@ -1,6 +1,6 @@
 class ve_environment extends ve_base_unit;
 
-   unsigned int no_op;
+   int unsigned no_op;
 
    //a smart queue of all the units instantiated in the environment;
    //this is very useful for modularization, because you can take out any
@@ -39,11 +39,13 @@ class ve_environment extends ve_base_unit;
       this.i_op_intf  = i_op_intf  ;
       this.i_res_intf = i_res_intf ;
       
+      op_mbox=new();
+      
       //Reset BFM
       i_rst_bfm = new(i_rst_intf, "RESET_BFM", 0);
       units.push_back(i_rst_bfm);
 
-      op_mbox=new();
+     
       i_data_in_generator = new(op_mbox,
                                 no_op,
                                 "DATA_IN_GENERATOR",
@@ -62,10 +64,14 @@ class ve_environment extends ve_base_unit;
 
       i_data_out_generator = new("DATA_OUT_GENERATOR", 3);
       
+      units.push_back(i_data_out_generator);
+      
       i_data_out_bfm = new(i_res_intf, 
                            i_data_out_generator,
                            "DATA_OUT_BFM",
                            4);
+                           
+      units.push_back(i_data_out_bfm);
 
    endfunction: new
 

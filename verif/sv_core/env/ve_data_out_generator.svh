@@ -9,7 +9,7 @@ class ve_data_out_generator extends ve_base_unit;
    endfunction: new
 
    //LAB: implement a function 'generate_delay()' that randomizes and returns the 'delay'
-   function int generate_delay(unsigned int zero_prob, unsigned int max_delay);
+   function int generate_delay(int unsigned zero_prob, int unsigned max_delay);
         if(zero_prob > 100) zero_prob = 100; // limit probability 
         void'(std::randomize(delay) with {delay dist {0:=zero_prob, [1:max_delay]:=100-zero_prob}; }); // cast to void, randomize variable
         return delay;

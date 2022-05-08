@@ -15,8 +15,10 @@ class ve_data_in_generator extends ve_base_unit;
                 int       id
                );
    super.new(name,id);
-   curent_op = new();
-   no_op     = new(no_op);
+   
+   this.op_mbox   = op_mbox;
+   this.curent_op = new();
+   this.no_op     = no_op;
    
    endfunction : new
 
@@ -34,12 +36,12 @@ class ve_data_in_generator extends ve_base_unit;
 
    endtask : run
 
-   task get_packet(input int op_cnt, output ve_operands operand_trans);
+   task get_trans(input int op_cnt, output ve_operands operand_trans);
    
         operand_trans = new;
         operand_trans.randomize();
         operand_trans.id = op_cnt;
         
-   endtask : get_packet
+   endtask : get_trans
 
 endclass : ve_data_in_generator

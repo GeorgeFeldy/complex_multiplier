@@ -1,4 +1,4 @@
-class ve_result;
+class ve_result #(parameter DWIDTH = 8);
 
    int id; // transaction unique id
    
@@ -10,7 +10,7 @@ class ve_result;
    endfunction : post_randomize
 
    function ve_result copy();
-      op_copy = new();
+      ve_result op_copy = new();
       
       op_copy.id = this.id;
       op_copy.xr = this.xr;
