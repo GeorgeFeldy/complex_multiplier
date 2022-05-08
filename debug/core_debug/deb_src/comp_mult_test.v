@@ -19,7 +19,7 @@ wire                         rst_n        ; // hw async reset, active low
 reg                          sw_rst       ; // sw  sync reset, active high  
 reg                          op_val       ; // operands valid 
 wire                         op_rdy       ; // operands ready 
-reg  [      2*2*DWIDTH -1:0] op_data      ; // operands {x1,x2,y1,y2}          
+reg  [      2*2*DWIDTH -1:0] op_data      ; // operands {x1,y1,y1,y2}        
 wire                         res_val      ; // result valid 
 reg                          res_rdy      ; // result ready 
 wire [2*2*(DWIDTH + 1) -1:0] res_data     ; // result {xr,yr}

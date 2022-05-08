@@ -20,7 +20,7 @@ input                          sw_rst   , // sw  sync reset, active high
 // input operands val-rdy IF              
 input                          op_val   , // input operands valid 
 output                         op_rdy   , // input operands ready 
-input  [      2*2*DWIDTH -1:0] op_data  , // input operands {x1,x2,y1,y2}
+input  [      2*2*DWIDTH -1:0] op_data  , // input operands {x1,y1,x2,y2}
                                           
 // output results val-rdy IF              
 output                         res_val  , // output result valid 
@@ -38,7 +38,7 @@ generate
         .sw_rst   (sw_rst   ), // [i] sw  sync reset, active high  
         .op_val   (op_val   ), // [i] input operands valid 
         .op_rdy   (op_rdy   ), // [o] input operands ready 
-        .op_data  (op_data  ), // [i] input operands {x1,x2,y1,y2}
+        .op_data  (op_data  ), // [i] input operands {x1,y1,x2,y2}
         .res_val  (res_val  ), // [o] output result valid 
         .res_rdy  (res_rdy  ), // [i] output result ready 
         .res_data (res_data )  // [o] output result {xr,yr}
@@ -53,7 +53,7 @@ generate
         .sw_rst   (sw_rst   ), // [i] sw  sync reset, active high  
         .op_val   (op_val   ), // [i] input operands valid 
         .op_rdy   (op_rdy   ), // [o] input operands ready 
-        .op_data  (op_data  ), // [i] input operands {x1,x2,y1,y2}
+        .op_data  (op_data  ), // [i] input operands {x1,y1,x2,y2}
         .res_val  (res_val  ), // [o] output result valid 
         .res_rdy  (res_rdy  ), // [i] output result ready 
         .res_data (res_data )  // [o] output result {xr,yr}
@@ -67,7 +67,7 @@ generate
         .sw_rst   (sw_rst   ), // [i] sw  sync reset, active high  
         .op_val   (op_val   ), // [i] input operands valid 
         .op_rdy   (op_rdy   ), // [o] input operands ready 
-        .op_data  (op_data  ), // [i] input operands {x1,x2,y1,y2}
+        .op_data  (op_data  ), // [i] input operands {x1,y1,x2,y2}
         .res_val  (res_val  ), // [o] output result valid 
         .res_rdy  (res_rdy  ), // [i] output result ready 
         .res_data (res_data )  // [o] output result {xr,yr}

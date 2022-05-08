@@ -1,9 +1,9 @@
-debug/core_test/sim/work/
-debug/core_test/sim/*
-debug/core_test/sim/!*/
-debug/core_test/sim/!*.*
-debug/top_test/sim/work/
-debug/top_test/sim/*
-debug/top_test/sim/!*/
-debug/top_test/sim/!*.*
+debug/core_debug/sim/work/
+debug/core_debug/sim/*
+debug/core_debug/sim/!*/
+debug/core_debug/sim/!*.*
+debug/top_debug/sim/work/
+debug/top_debug/sim/*
+debug/top_debug/sim/!*/
+debug/top_debug/sim/!*.*
 

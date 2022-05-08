@@ -1,6 +1,9 @@
-[submodule "verif/env/apb_vip"]
-	path = verif/env/apb_vip
+[submodule "verif/uvm_top/apb_vip"]
+	path = verif/uvm_top/apb_vip
 	url = https://github.com/asveske/apb_vip.git
-[submodule "verif/env/uvm"]
-	path = verif/env/uvm
+[submodule "verif/uvm_top/spmem"]
+	path = verif/uvm_top/spmem
+	url = https://github.com/NikolaF-95/RAM_VIP.git
+[submodule "verif/uvm_top/uvm"]
+	path = verif/uvm_top/uvm
 	url = https://github.com/accellera/uvm.git
