@@ -17,26 +17,33 @@ wire                         rst_n        ; // hw async reset, active low
 reg                          sw_rst       ; // sw  sync reset, active high _2
 reg                          op_val       ; // operands valid 
 wire                         op_rdy       ; // operands ready 
-reg  [      2*2*DWIDTH -1:0] op_data      ; // operands {x1,y1,y1,y2}        
+reg  [      2*2*DWIDTH -1:0] op_data      ; // operands {x1,y1,y1,y2}     
+
+// wire                         res_val_ref  ; // result valid 
+// wire                         res_rdy_ref  ; // result ready 
+// wire [2*2*(DWIDTH + 1) -1:0] res_data_ref ; // result {xr,yr}   
 
 wire                         res_val_1    ; // result valid 
-reg                          res_rdy_1    ; // result ready 
+// wire                         res_rdy_1    ; // result ready 
 wire [2*2*(DWIDTH + 1) -1:0] res_data_1   ; // result {xr,yr}
 
 wire                         res_val_2    ; // result valid 
-reg                          res_rdy_2    ; // result ready 
+// wire                         res_rdy_2    ; // result ready 
 wire [2*2*(DWIDTH + 1) -1:0] res_data_2   ; // result {xr,yr}
 
 wire                         res_val_4    ; // result valid 
-reg                          res_rdy_4    ; // result ready 
+// wire                         res_rdy_4    ; // result ready 
 wire [2*2*(DWIDTH + 1) -1:0] res_data_4   ; // result {xr,yr}
 
-wire [2*2*(DWIDTH + 1) -1:0] exp_res_data ; // expected wire result {xr,yr}
+wire                         res_rdy_all;
                                         
 reg    [            32 -1:0] rand_nr      ; // random unsigned integer 
 wire                         rand_f       ; // random flag, active if rand_nr == xxxxxxxx3
                                           
 integer                      idx          ; 
+
+
+wire test_rdy = 0;
 
 
 clk_rst_tb #(
@@ -47,12 +54,13 @@ clk_rst_tb #(
 );
 
 
+assign res_rdy_all = res_val_1 & res_val_2 & res_val_4;
+
 // DUT 
 comp_mult_wrapper #(
 .DWIDTH  (DWIDTH  ), // data width
 .NO_MULT (4       )  // number of multipliers used (1, 2 or 4)
-) DUT_comp_mult_wrapper (
-// system IF 
+) DUT_comp_mult_wrapper_4 (
 .clk      (clk        ), // [i] system clock 
 .rst_n    (rst_n      ), // [i] hw async reset, active low 
 .sw_rst   (sw_rst     ), // [i] sw  sync reset, active high  
@@ -60,14 +68,14 @@ comp_mult_wrapper #(
 .op_rdy   (op_rdy     ), // [o] input operands ready 
 .op_data  (op_data    ), // [i] input operands {x1,x2,y1,y2}
 .res_val  (res_val_4  ), // [o] output result valid 
-.res_rdy  (res_rdy_4  ), // [i] output result ready 
+.res_rdy  (res_rdy_all), // [i] output result ready 
 .res_data (res_data_4 )  // [o] output result {xr,yr}
 ); 
 
 comp_mult_wrapper #(
 .DWIDTH  (DWIDTH  ), // data width
 .NO_MULT (2       )  // number of multipliers used (1, 2 or 4)
-) DUT_comp_mult_wrapper (
+) DUT_comp_mult_wrapper_2 (
 // system IF 
 .clk      (clk        ), // [i] system clock 
 .rst_n    (rst_n      ), // [i] hw async reset, active low 
@@ -76,14 +84,14 @@ comp_mult_wrapper #(
 .op_rdy   (op_rdy     ), // [o] input operands ready 
 .op_data  (op_data    ), // [i] input operands {x1,x2,y1,y2}
 .res_val  (res_val_2  ), // [o] output result valid 
-.res_rdy  (res_rdy_2  ), // [i] output result ready 
+.res_rdy  (res_rdy_all), // [i] output result ready 
 .res_data (res_data_2 )  // [o] output result {xr,yr}
 ); 
 
 comp_mult_wrapper #(
 .DWIDTH  (DWIDTH  ), // data width
 .NO_MULT (1       )  // number of multipliers used (1, 2 or 4)
-) DUT_comp_mult_wrapper (
+) DUT_comp_mult_wrapper_1 (
 // system IF 
 .clk      (clk        ), // [i] system clock 
 .rst_n    (rst_n      ), // [i] hw async reset, active low 
@@ -92,34 +100,38 @@ comp_mult_wrapper #(
 .op_rdy   (op_rdy     ), // [o] input operands ready 
 .op_data  (op_data    ), // [i] input operands {x1,x2,y1,y2}
 .res_val  (res_val_1  ), // [o] output result valid 
-.res_rdy  (res_rdy_1  ), // [i] output result ready 
+.res_rdy  (res_rdy_all), // [i] output result ready 
 .res_data (res_data_1 )  // [o] output result {xr,yr}
 ); 
 
 
-// Reference model & scoreboard 
-comp_mult_ref_model #(
-.DWIDTH  (DWIDTH  ) // data width
-) i_comp_mult_ref_model (
-// system IF 
-.clk          (clk         ), // [i] system clock 
-.rst_n        (rst_n       ), // [i] hw async reset, active low 
-.sw_rst       (sw_rst      ), // [i] sw  sync reset, active high  
-.op_val       (op_val      ), // [i] input operands valid 
-.op_rdy       (op_rdy      ), // [i] input operands ready 
-.op_data      (op_data     ), // [i] input operands {x1,x2,y1,y2}
-.res_val      (res_val_4   ), // [i] output result valid 
-.res_rdy      (res_rdy_4   ), // [i] output result ready 
-.res_data     (res_data_4  ), // [i] output result {xr,yr}
-.exp_res_data (exp_res_data)  // [o] expected output result {xr,yr}
+comp_mult_data_checker #(
+.DWIDTH (DWIDTH)
+) i_comp_mult_data_checker (                     
+.clk         (clk        ),  // [i] system clock 
+.rst_n       (rst_n      ),  // [i] hw async reset, active low 
+.sw_rst      (sw_rst     ),  // [i] sw  sync reset, active high              
+.op_val      (op_val     ),  // [i] input operands valid 
+.op_rdy      (op_rdy     ),  // [i] input operands ready 
+.op_data     (op_data    ),  // [i] input operands {x1, y1, x2, y2}
+.sample      (res_rdy_all),  // [i] output result valid 
+.res_data_4  (res_data_4 ),  // [i] output result {xr,yr}
+.res_data_2  (res_data_2 ),  // [i] output result {xr,yr}
+.res_data_1  (res_data_1 )   // [i] output result {xr,yr}
 ); 
 
-
-always @(posedge clk or negedge rst_n)
-if(~rst_n)     res_rdy <= 1'b0    ; else
-if(sw_rst)     res_rdy <= 1'b0    ; else
-if(rand_f)     res_rdy <= ~res_rdy;
-
+// // Reference model 
+// comp_mult_ref_model i_comp_mult_ref_model (
+// .clk          (clk         ), // [i] system clock 
+// .rst_n        (rst_n       ), // [i] hw async reset, active low 
+// .sw_rst       (sw_rst      ), // [i] sw  sync reset, active high  
+// .op_val       (op_val      ), // [i] input operands valid 
+// .op_rdy       (op_rdy      ), // [i] input operands ready 
+// .op_data      (op_data     ), // [i] input operands {x1,x2,y1,y2}
+// .res_val      (res_val_ref ), // [i] output result valid 
+// .res_rdy      (res_rdy_ref ), // [i] output result ready 
+// .res_data     (res_data_ref)  // [i] output result {xr,yr}
+// ); 
 
 initial begin 
     idx = 0;
@@ -155,18 +167,8 @@ initial begin
               $urandom_range(0,255),
               $urandom_range(0,255),
               $urandom_range(0,10));  
-    
-    
-    // idx = 0;
-    //while(idx < (2 ** 32) - 1) begin 
-    // while(idx < 4294967295) begin 
-    // 
-    //     send_data(idx[31:24],idx[23:16],idx[15:8],idx[7:0],0);
-    //     idx = idx + 1;
-    // end 
-    
-    
-    // send_data(8'd128,8'd128,8'd128,8'd128,0);  // fails 
+     
+    send_data(8'd128,8'd128,8'd128,8'd128,0);  // fails 
 
     $display("DONE");
     $stop;
@@ -216,12 +218,34 @@ vld_rdy_checker #(
 // valid-ready checker for result interface 
 vld_rdy_checker #(
 .DATA_WIDTH       (2*2*(DWIDTH + 1))
-) i_vld_rdy_checker_out (     
-.clk              (clk       ),
-.rst_n            (rst_n     ),
-.valid            (res_val   ),               
-.ready            (res_rdy   ),               
-.data             (res_data  )
+) i_vld_rdy_checker_out_4 (     
+.clk              (clk         ),
+.rst_n            (rst_n       ),
+.valid            (res_val_4   ),               
+.ready            (res_rdy_all ),               
+.data             (res_data_4  )
+);
+
+// valid-ready checker for result interface 
+vld_rdy_checker #(
+.DATA_WIDTH       (2*2*(DWIDTH + 1))
+) i_vld_rdy_checker_out_2 (     
+.clk              (clk         ),
+.rst_n            (rst_n       ),
+.valid            (res_val_2   ),               
+.ready            (res_rdy_all ),               
+.data             (res_data_2  )
+);
+
+// valid-ready checker for result interface 
+vld_rdy_checker #(
+.DATA_WIDTH       (2*2*(DWIDTH + 1))
+) i_vld_rdy_checker_out_1 (     
+.clk              (clk         ),
+.rst_n            (rst_n       ),
+.valid            (res_val_1   ),               
+.ready            (res_rdy_all ),               
+.data             (res_data_1  )
 );
 
 always @(posedge clk)
@@ -233,32 +257,3 @@ assign rand_f = &rand_nr[1:0];
 
 endmodule // comp_mult_test
 
-
-
-
-/*
-
-task send_data;
-
-input [8 -1:0] t_x1;  
-input [8 -1:0] t_y1;
-input [8 -1:0] t_x2;
-input [8 -1:0] t_y2;
-
-begin    
-  
-    set_op_val  = 1'b1;  
-    rst_op_val  = 1'b0;  
-    @(posedge clk);     
-    
-    op_data = {t_x1, t_y1, t_x2, t_y2};
-    
-    wait(op_val & op_rdy);
-    set_op_val = 1'b0;
-    rst_op_val = 1'b1;
-    @(posedge clk) ;
-    
-end             
-endtask
-
-*/
