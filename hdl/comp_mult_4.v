@@ -44,8 +44,8 @@ wire [2*DWIDTH -1:0] prod3  ; // signed output of x2 * y1
 wire [2*DWIDTH -1:0] prod4  ; // signed output of y1 * y2
 
 // results 
-reg  [2*DWIDTH-1:0] xr ; // stores x1 * x2 - y1 * y2, ignores overflow
-reg  [2*DWIDTH-1:0] yr ; // stores x1 * y2 + x2 * y1, ignores overflow
+reg  [2*DWIDTH-1 :0] xr ; // stores x1 * x2 - y1 * y2
+reg  [2*DWIDTH-1 :0] yr ; // stores x1 * y2 + x2 * y1
 
 
 // ----------------------------------- control path  ------------------------------
@@ -74,39 +74,33 @@ assign y1 = op_data[3*DWIDTH -1 -: DWIDTH];
 assign x2 = op_data[2*DWIDTH -1 -: DWIDTH]; 
 assign y2 = op_data[1*DWIDTH -1 -: DWIDTH]; 
 
-assign x1_ext = {{DWIDTH{x1[DWIDTH-1]}},x1}; // extend sign for x1 operand
-assign x2_ext = {{DWIDTH{x2[DWIDTH-1]}},x2}; // extend sign for x2 operand
-assign y1_ext = {{DWIDTH{y1[DWIDTH-1]}},y1}; // extend sign for y1 operand
-assign y2_ext = {{DWIDTH{y2[DWIDTH-1]}},y2}; // extend sign for y2 operand
-
-
-unsigned_mult #(
+signed_mult #(
 .DWIDTH (DWIDTH) // data width
-)i_unsigned_mult_0(
+)i_signed_mult_0(
  .op1    (x1     ), // [i] first  operand (x1) 
  .op2    (x2     ), // [i] second operand (x2) 
  .result (prod1  )  // [o] product x1 * x2
 );  
 
-unsigned_mult #(
+signed_mult #(
 .DWIDTH (DWIDTH) // data width
-)i_unsigned_mult_1(
+)i_signed_mult_1(
  .op1    (x1     ), // [i] first  operand (x1)
  .op2    (y2     ), // [i] second operand (y2) 
  .result (prod2  )  // [o] product x1 * y2 
 );  
 
-unsigned_mult #(
+signed_mult #(
 .DWIDTH (DWIDTH) // data width
-)i_unsigned_mult_2(
+)i_signed_mult_2(
  .op1    (x2     ), // [i] first  operand (x2)
  .op2    (y1     ), // [i] second operand (y1)
  .result (prod3  )  // [o] product x2 * y1
 );  
 
-unsigned_mult #(
+signed_mult #(
 .DWIDTH (DWIDTH) // data width
-)i_unsigned_mult_3(
+)i_signed_mult_3(
  .op1    (y1     ), // [i] first  operand (y1)
  .op2    (y2     ), // [i] second operand (y2)
  .result (prod4  )  // [o] product y1 * y2

@@ -8,7 +8,55 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-# do sim.do 
+vsim -voptargs=+acc work.comp_mult_test
+# vsim -voptargs=+acc work.comp_mult_test 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftmdee9h".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftmdee9h
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.comp_mult_test(fast)
+# Loading work.clk_rst_tb(fast)
+# Loading work.comp_mult_wrapper(fast)
+# Loading work.comp_mult_4(fast)
+# Loading work.unsigned_mult(fast)
+# Loading work.comp_mult_wrapper(fast__1)
+# Loading work.comp_mult_2(fast)
+# Loading work.unsigned_mult(fast__1)
+# Loading work.comp_mult_wrapper(fast__2)
+# Loading work.comp_mult_1(fast)
+# Loading work.comp_mult_data_checker(fast)
+# Loading work.vld_rdy_checker(fast)
+# Loading work.vld_rdy_checker(fast__1)
+run -all
+# comp_mult_test.i_comp_mult_data_checker 195 GOOD: (2 + 3i) * (4 + 2i) = (2 + 16i), same as expected (2 + 16i)
+# comp_mult_test.i_comp_mult_data_checker 255 GOOD: (3 + 3i) * (4 + 2i) = (6 + 18i), same as expected (6 + 18i)
+# comp_mult_test.i_comp_mult_data_checker 315 GOOD: (0 + 0i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# comp_mult_test.i_comp_mult_data_checker 375 COMP_MULT_4 ERROR: (-1 + -1i) * (-1 + -1i) = (0 + -1022i), expected (0 + 2i)
+# Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+restart
+# Loading work.comp_mult_test(fast)
+# Loading work.clk_rst_tb(fast)
+# Loading work.comp_mult_wrapper(fast)
+# Loading work.comp_mult_4(fast)
+# Loading work.unsigned_mult(fast)
+# Loading work.comp_mult_wrapper(fast__1)
+# Loading work.comp_mult_2(fast)
+# Loading work.unsigned_mult(fast__1)
+# Loading work.comp_mult_wrapper(fast__2)
+# Loading work.comp_mult_1(fast)
+# Loading work.comp_mult_data_checker(fast)
+# Loading work.vld_rdy_checker(fast)
+# Loading work.vld_rdy_checker(fast__1)
+add wave sim:/comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/*
+run -all
+# comp_mult_test.i_comp_mult_data_checker 195 GOOD: (2 + 3i) * (4 + 2i) = (2 + 16i), same as expected (2 + 16i)
+# comp_mult_test.i_comp_mult_data_checker 255 GOOD: (3 + 3i) * (4 + 2i) = (6 + 18i), same as expected (6 + 18i)
+# comp_mult_test.i_comp_mult_data_checker 315 GOOD: (0 + 0i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# comp_mult_test.i_comp_mult_data_checker 375 COMP_MULT_4 ERROR: (-1 + -1i) * (-1 + -1i) = (0 + -1022i), expected (0 + 2i)
+# Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+do sim.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Modifying modelsim.ini
 # Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
@@ -69,27 +117,1654 @@
 # Loading work.vld_rdy_checker
 # Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_4
 # Loading work.comp_mult_4
+# ** Error: (vsim-3033) ../../../hdl/comp_mult_4.v(83): Instantiation of 'signed_mult' failed. The design unit was not found.
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4
+#         Searched libraries:
+#             D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work
+# ** Error: (vsim-3033) ../../../hdl/comp_mult_4.v(91): Instantiation of 'signed_mult' failed. The design unit was not found.
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4
+#         Searched libraries:
+#             D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work
+# ** Error: (vsim-3033) ../../../hdl/comp_mult_4.v(99): Instantiation of 'signed_mult' failed. The design unit was not found.
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4
+#         Searched libraries:
+#             D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work
+# ** Error: (vsim-3033) ../../../hdl/comp_mult_4.v(107): Instantiation of 'signed_mult' failed. The design unit was not found.
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4
+#         Searched libraries:
+#             D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_2
+# Loading work.comp_mult_2
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.unsigned_mult
+# Loading work.unsigned_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_1
+# Loading work.comp_mult_1
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./sim.do PAUSED at line 15
+edit sim.do
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# 
+# Top level modules:
+# 	clk_rst_tb
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_ref_model
+# 
+# Top level modules:
+# 	comp_mult_ref_model
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_test
+# 
+# Top level modules:
+# 	comp_mult_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module vld_rdy_checker
+# 
+# Top level modules:
+# 	vld_rdy_checker
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# 
+# Top level modules:
+# 	comp_mult_1
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_2
+# 
+# Top level modules:
+# 	comp_mult_2
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_4
+# 
+# Top level modules:
+# 	comp_mult_4
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_wrapper
+# 
+# Top level modules:
+# 	comp_mult_wrapper
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module unsigned_mult
+# 
+# Top level modules:
+# 	unsigned_mult
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module signed_mult
+# 
+# Top level modules:
+# 	signed_mult
+# vsim -novopt work.comp_mult_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_test
+# Loading work.comp_mult_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Loading work.comp_mult_data_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.vld_rdy_checker
+# Loading work.vld_rdy_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.signed_mult
+# Loading work.signed_mult
 # Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.unsigned_mult
 # Loading work.unsigned_mult
 # Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_2
 # Loading work.comp_mult_2
 # Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_1
 # Loading work.comp_mult_1
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftd2rzhk".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftd2rzhk
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op1'. The port definition is at: ../../../hdl/unsigned_mult.v(14).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_0/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op2'. The port definition is at: ../../../hdl/unsigned_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_0/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (32 or 32) does not match connection size (16) for port 'result'. The port definition is at: ../../../hdl/unsigned_mult.v(16).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_0/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op1'. The port definition is at: ../../../hdl/unsigned_mult.v(14).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_1/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op2'. The port definition is at: ../../../hdl/unsigned_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_1/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (32 or 32) does not match connection size (16) for port 'result'. The port definition is at: ../../../hdl/unsigned_mult.v(16).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_1/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op1'. The port definition is at: ../../../hdl/unsigned_mult.v(14).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_2/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op2'. The port definition is at: ../../../hdl/unsigned_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_2/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (32 or 32) does not match connection size (16) for port 'result'. The port definition is at: ../../../hdl/unsigned_mult.v(16).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_2/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op1'. The port definition is at: ../../../hdl/unsigned_mult.v(14).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_3/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op2'. The port definition is at: ../../../hdl/unsigned_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_3/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/signed_mult.v(32): [PCDPC] - Port size (32 or 32) does not match connection size (16) for port 'result'. The port definition is at: ../../../hdl/unsigned_mult.v(16).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/i_signed_mult_3/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(122): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op1'. The port definition is at: ../../../hdl/unsigned_mult.v(14).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_unsigned_mult_0
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(122): [PCDPC] - Port size (32 or 32) does not match connection size (16) for port 'result'. The port definition is at: ../../../hdl/unsigned_mult.v(16).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_unsigned_mult_0
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(131): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op1'. The port definition is at: ../../../hdl/unsigned_mult.v(14).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(131): [PCDPC] - Port size (32 or 32) does not match connection size (16) for port 'result'. The port definition is at: ../../../hdl/unsigned_mult.v(16).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_unsigned_mult_1
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_1.v(140): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op1'. The port definition is at: ../../../hdl/unsigned_mult.v(14).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_1/GEN_1_MULT/i_comp_mult_1/i_unsigned_mult
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_1.v(140): [PCDPC] - Port size (16 or 16) does not match connection size (8) for port 'op2'. The port definition is at: ../../../hdl/unsigned_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_1/GEN_1_MULT/i_comp_mult_1/i_unsigned_mult
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_1.v(140): [PCDPC] - Port size (32 or 32) does not match connection size (16) for port 'result'. The port definition is at: ../../../hdl/unsigned_mult.v(16).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_1/GEN_1_MULT/i_comp_mult_1/i_unsigned_mult
 # ** Error: (vish-4014) No objects found matching '/comp_mult_test/DUT_comp_mult_wrapper/*'.
 # Error in macro ./wave.do line 1
 # (vish-4014) No objects found matching '/comp_mult_test/DUT_comp_mult_wrapper/*'.
 #     while executing
 # "add wave sim:/comp_mult_test/DUT_comp_mult_wrapper/*"
-add wave sim:/comp_mult_test/*
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# 
+# Top level modules:
+# 	clk_rst_tb
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_ref_model
+# 
+# Top level modules:
+# 	comp_mult_ref_model
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_test
+# 
+# Top level modules:
+# 	comp_mult_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module vld_rdy_checker
+# 
+# Top level modules:
+# 	vld_rdy_checker
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# 
+# Top level modules:
+# 	comp_mult_1
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_2
+# 
+# Top level modules:
+# 	comp_mult_2
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_4
+# 
+# Top level modules:
+# 	comp_mult_4
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_wrapper
+# 
+# Top level modules:
+# 	comp_mult_wrapper
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module unsigned_mult
+# 
+# Top level modules:
+# 	unsigned_mult
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module signed_mult
+# 
+# Top level modules:
+# 	signed_mult
+# vsim -novopt work.comp_mult_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_test
+# Loading work.comp_mult_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Loading work.comp_mult_data_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.vld_rdy_checker
+# Loading work.vld_rdy_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.signed_mult
+# Loading work.signed_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.unsigned_mult
+# Loading work.unsigned_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_2
+# Loading work.comp_mult_2
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_1
+# Loading work.comp_mult_1
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftaig60g".
+#           Attempting to use alternate WLF file "./wlft3cf610".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftaig60g
+#           Using alternate file: ./wlft3cf610
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(122): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_0
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(131): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_1
+# ** Error: (vish-4014) No objects found matching '/comp_mult_test/DUT_comp_mult_wrapper/*'.
+# Error in macro ./wave.do line 1
+# (vish-4014) No objects found matching '/comp_mult_test/DUT_comp_mult_wrapper/*'.
+#     while executing
+# "add wave sim:/comp_mult_test/DUT_comp_mult_wrapper/*"
+do wave.do
+# comp_mult_test.i_comp_mult_data_checker 195 GOOD: (2 + 3i) * (4 + 2i) = (2 + 16i), same as expected (2 + 16i)
+# comp_mult_test.i_comp_mult_data_checker 255 GOOD: (3 + 3i) * (4 + 2i) = (6 + 18i), same as expected (6 + 18i)
+# comp_mult_test.i_comp_mult_data_checker 315 GOOD: (0 + 0i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# comp_mult_test.i_comp_mult_data_checker 375 GOOD: (-1 + -1i) * (-1 + -1i) = (0 + 2i), same as expected (0 + 2i)
+# comp_mult_test.i_comp_mult_data_checker 435 GOOD: (127 + 127i) * (127 + 127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 495 GOOD: (-127 + -127i) * (-127 + -127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 555 GOOD: (100 + 100i) * (100 + 100i) = (0 + 20000i), same as expected (0 + 20000i)
+# comp_mult_test.i_comp_mult_data_checker 615 GOOD: (100 + 101i) * (102 + 103i) = (-203 + 20602i), same as expected (-203 + 20602i)
+# comp_mult_test.i_comp_mult_data_checker 675 COMP_MULT_4 ERROR: (98 + -14i) * (41 + 126i) = (-59754 + 77310i), expected (5782 + 11774i)
+# Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+# Simulation Breakpoint: Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+# MACRO ./wave.do PAUSED at line 2
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+add wave sim:/comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/*
+restart
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(122): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_0
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(131): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_1
 run -all
 # comp_mult_test.i_comp_mult_data_checker 195 GOOD: (2 + 3i) * (4 + 2i) = (2 + 16i), same as expected (2 + 16i)
 # comp_mult_test.i_comp_mult_data_checker 255 GOOD: (3 + 3i) * (4 + 2i) = (6 + 18i), same as expected (6 + 18i)
 # comp_mult_test.i_comp_mult_data_checker 315 GOOD: (0 + 0i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
-# comp_mult_test.i_comp_mult_data_checker 375 COMP_MULT_4 ERROR: (-1 + -1i) * (-1 + -1i) = (0 + -1022i), expected (0 + 2i)
+# comp_mult_test.i_comp_mult_data_checker 375 GOOD: (-1 + -1i) * (-1 + -1i) = (0 + 2i), same as expected (0 + 2i)
+# comp_mult_test.i_comp_mult_data_checker 435 GOOD: (127 + 127i) * (127 + 127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 495 GOOD: (-127 + -127i) * (-127 + -127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 555 GOOD: (100 + 100i) * (100 + 100i) = (0 + 20000i), same as expected (0 + 20000i)
+# comp_mult_test.i_comp_mult_data_checker 615 GOOD: (100 + 101i) * (102 + 103i) = (-203 + 20602i), same as expected (-203 + 20602i)
+# comp_mult_test.i_comp_mult_data_checker 675 COMP_MULT_4 ERROR: (98 + -14i) * (41 + 126i) = (-59754 + 77310i), expected (5782 + 11774i)
 # Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# 
+# Top level modules:
+# 	clk_rst_tb
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_ref_model
+# 
+# Top level modules:
+# 	comp_mult_ref_model
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_test
+# 
+# Top level modules:
+# 	comp_mult_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module vld_rdy_checker
+# 
+# Top level modules:
+# 	vld_rdy_checker
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# 
+# Top level modules:
+# 	comp_mult_1
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_2
+# 
+# Top level modules:
+# 	comp_mult_2
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_4
+# 
+# Top level modules:
+# 	comp_mult_4
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_wrapper
+# 
+# Top level modules:
+# 	comp_mult_wrapper
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module unsigned_mult
+# 
+# Top level modules:
+# 	unsigned_mult
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module signed_mult
+# 
+# Top level modules:
+# 	signed_mult
+# vsim -novopt work.comp_mult_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_test
+# Loading work.comp_mult_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Loading work.comp_mult_data_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.vld_rdy_checker
+# Loading work.vld_rdy_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.signed_mult
+# Loading work.signed_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.unsigned_mult
+# Loading work.unsigned_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_2
+# Loading work.comp_mult_2
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_1
+# Loading work.comp_mult_1
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftbx9k44".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftbx9k44
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(122): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_0
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(131): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_1
+# comp_mult_test.i_comp_mult_data_checker 195 GOOD: (2 + 3i) * (4 + 2i) = (2 + 16i), same as expected (2 + 16i)
+# comp_mult_test.i_comp_mult_data_checker 255 GOOD: (3 + 3i) * (4 + 2i) = (6 + 18i), same as expected (6 + 18i)
+# comp_mult_test.i_comp_mult_data_checker 315 GOOD: (0 + 0i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# comp_mult_test.i_comp_mult_data_checker 375 GOOD: (-1 + -1i) * (-1 + -1i) = (0 + 2i), same as expected (0 + 2i)
+# comp_mult_test.i_comp_mult_data_checker 435 GOOD: (127 + 127i) * (127 + 127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 495 GOOD: (-127 + -127i) * (-127 + -127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 555 GOOD: (100 + 100i) * (100 + 100i) = (0 + 20000i), same as expected (0 + 20000i)
+# comp_mult_test.i_comp_mult_data_checker 615 GOOD: (100 + 101i) * (102 + 103i) = (-203 + 20602i), same as expected (-203 + 20602i)
+# comp_mult_test.i_comp_mult_data_checker 675 COMP_MULT_4 ERROR: (98 + -14i) * (41 + 126i) = (-59754 + 77310i), expected (5782 + 11774i)
+# Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+# Simulation Breakpoint: Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# 
+# Top level modules:
+# 	clk_rst_tb
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_ref_model
+# 
+# Top level modules:
+# 	comp_mult_ref_model
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_test
+# 
+# Top level modules:
+# 	comp_mult_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module vld_rdy_checker
+# 
+# Top level modules:
+# 	vld_rdy_checker
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# 
+# Top level modules:
+# 	comp_mult_1
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_2
+# 
+# Top level modules:
+# 	comp_mult_2
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_4
+# 
+# Top level modules:
+# 	comp_mult_4
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_wrapper
+# 
+# Top level modules:
+# 	comp_mult_wrapper
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module unsigned_mult
+# 
+# Top level modules:
+# 	unsigned_mult
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module signed_mult
+# 
+# Top level modules:
+# 	signed_mult
+# vsim -novopt work.comp_mult_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_test
+# Loading work.comp_mult_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Loading work.comp_mult_data_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.vld_rdy_checker
+# Loading work.vld_rdy_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.signed_mult
+# Loading work.signed_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.unsigned_mult
+# Loading work.unsigned_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_2
+# Loading work.comp_mult_2
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_1
+# Loading work.comp_mult_1
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftx31bxf".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftx31bxf
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(122): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_0
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(131): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_1
+# comp_mult_test.i_comp_mult_data_checker 195 GOOD: (2 + 3i) * (4 + 2i) = (2 + 16i), same as expected (2 + 16i)
+# comp_mult_test.i_comp_mult_data_checker 255 GOOD: (3 + 3i) * (4 + 2i) = (6 + 18i), same as expected (6 + 18i)
+# comp_mult_test.i_comp_mult_data_checker 315 GOOD: (0 + 0i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# comp_mult_test.i_comp_mult_data_checker 375 GOOD: (-1 + -1i) * (-1 + -1i) = (0 + 2i), same as expected (0 + 2i)
+# comp_mult_test.i_comp_mult_data_checker 435 GOOD: (127 + 127i) * (127 + 127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 495 GOOD: (-127 + -127i) * (-127 + -127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 555 GOOD: (100 + 100i) * (100 + 100i) = (0 + 20000i), same as expected (0 + 20000i)
+# comp_mult_test.i_comp_mult_data_checker 615 GOOD: (100 + 101i) * (102 + 103i) = (-203 + 20602i), same as expected (-203 + 20602i)
+# comp_mult_test.i_comp_mult_data_checker 675 COMP_MULT_4 ERROR: (98 + -14i) * (41 + 126i) = (-59754 + 77310i), expected (5782 + 11774i)
+# Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+# Simulation Breakpoint: Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+# MACRO ./wave.do PAUSED at line 2
+# A time value could not be extracted from the current line
+add wave sim:/comp_mult_test/DUT_comp_mult_wrapper_4/GEN_4_MULTS/i_comp_mult_4/*
+restart
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(122): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_0
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(131): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_1
+run -all
+# comp_mult_test.i_comp_mult_data_checker 195 GOOD: (2 + 3i) * (4 + 2i) = (2 + 16i), same as expected (2 + 16i)
+# comp_mult_test.i_comp_mult_data_checker 255 GOOD: (3 + 3i) * (4 + 2i) = (6 + 18i), same as expected (6 + 18i)
+# comp_mult_test.i_comp_mult_data_checker 315 GOOD: (0 + 0i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# comp_mult_test.i_comp_mult_data_checker 375 GOOD: (-1 + -1i) * (-1 + -1i) = (0 + 2i), same as expected (0 + 2i)
+# comp_mult_test.i_comp_mult_data_checker 435 GOOD: (127 + 127i) * (127 + 127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 495 GOOD: (-127 + -127i) * (-127 + -127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 555 GOOD: (100 + 100i) * (100 + 100i) = (0 + 20000i), same as expected (0 + 20000i)
+# comp_mult_test.i_comp_mult_data_checker 615 GOOD: (100 + 101i) * (102 + 103i) = (-203 + 20602i), same as expected (-203 + 20602i)
+# comp_mult_test.i_comp_mult_data_checker 675 COMP_MULT_4 ERROR: (98 + -14i) * (41 + 126i) = (-59754 + 77310i), expected (5782 + 11774i)
+# Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# 
+# Top level modules:
+# 	clk_rst_tb
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_ref_model
+# 
+# Top level modules:
+# 	comp_mult_ref_model
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_test
+# 
+# Top level modules:
+# 	comp_mult_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module vld_rdy_checker
+# 
+# Top level modules:
+# 	vld_rdy_checker
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# 
+# Top level modules:
+# 	comp_mult_1
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_2
+# 
+# Top level modules:
+# 	comp_mult_2
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_4
+# 
+# Top level modules:
+# 	comp_mult_4
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_wrapper
+# 
+# Top level modules:
+# 	comp_mult_wrapper
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module unsigned_mult
+# 
+# Top level modules:
+# 	unsigned_mult
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module signed_mult
+# 
+# Top level modules:
+# 	signed_mult
+# vsim -novopt work.comp_mult_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_test
+# Loading work.comp_mult_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Loading work.comp_mult_data_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.vld_rdy_checker
+# Loading work.vld_rdy_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.signed_mult
+# Loading work.signed_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.unsigned_mult
+# Loading work.unsigned_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_2
+# Loading work.comp_mult_2
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_1
+# Loading work.comp_mult_1
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlft7ty48t".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft7ty48t
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(122): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_0
+# ** Warning: (vsim-3015) ../../../hdl/comp_mult_2.v(131): [PCDPC] - Port size (8 or 8) does not match connection size (16) for port 'op2'. The port definition is at: ../../../hdl/signed_mult.v(15).
+#         Region: /comp_mult_test/DUT_comp_mult_wrapper_2/GEN_2_MULTS/i_comp_mult_2/i_signed_mult_1
+# comp_mult_test.i_comp_mult_data_checker 195 COMP_MULT_4 ERROR: (2 + 3i) * (4 + 2i) = (8 + 16i), expected (2 + 16i)
+# Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+# Simulation Breakpoint: Break in Module comp_mult_data_checker at ../deb_src/comp_mult_data_checker.v line 88
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# 
+# Top level modules:
+# 	clk_rst_tb
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_ref_model
+# 
+# Top level modules:
+# 	comp_mult_ref_model
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_test
+# 
+# Top level modules:
+# 	comp_mult_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module vld_rdy_checker
+# 
+# Top level modules:
+# 	vld_rdy_checker
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# 
+# Top level modules:
+# 	comp_mult_1
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_2
+# 
+# Top level modules:
+# 	comp_mult_2
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_4
+# 
+# Top level modules:
+# 	comp_mult_4
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_wrapper
+# 
+# Top level modules:
+# 	comp_mult_wrapper
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module unsigned_mult
+# 
+# Top level modules:
+# 	unsigned_mult
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module signed_mult
+# 
+# Top level modules:
+# 	signed_mult
+# vsim -novopt work.comp_mult_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_test
+# Loading work.comp_mult_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Loading work.comp_mult_data_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.vld_rdy_checker
+# Loading work.vld_rdy_checker
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.signed_mult
+# Loading work.signed_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.unsigned_mult
+# Loading work.unsigned_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_2
+# Loading work.comp_mult_2
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\core_debug\sim\work.comp_mult_1
+# Loading work.comp_mult_1
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftyf26iq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftyf26iq
+# comp_mult_test.i_comp_mult_data_checker 195 GOOD: (2 + 3i) * (4 + 2i) = (2 + 16i), same as expected (2 + 16i)
+# comp_mult_test.i_comp_mult_data_checker 255 GOOD: (3 + 3i) * (4 + 2i) = (6 + 18i), same as expected (6 + 18i)
+# comp_mult_test.i_comp_mult_data_checker 315 GOOD: (0 + 0i) * (0 + 0i) = (0 + 0i), same as expected (0 + 0i)
+# comp_mult_test.i_comp_mult_data_checker 375 GOOD: (-1 + -1i) * (-1 + -1i) = (0 + 2i), same as expected (0 + 2i)
+# comp_mult_test.i_comp_mult_data_checker 435 GOOD: (127 + 127i) * (127 + 127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 495 GOOD: (-127 + -127i) * (-127 + -127i) = (0 + 32258i), same as expected (0 + 32258i)
+# comp_mult_test.i_comp_mult_data_checker 555 GOOD: (100 + 100i) * (100 + 100i) = (0 + 20000i), same as expected (0 + 20000i)
+# comp_mult_test.i_comp_mult_data_checker 615 GOOD: (100 + 101i) * (102 + 103i) = (-203 + 20602i), same as expected (-203 + 20602i)
+# comp_mult_test.i_comp_mult_data_checker 675 GOOD: (98 + -14i) * (41 + 126i) = (5782 + 11774i), same as expected (5782 + 11774i)
+# comp_mult_test.i_comp_mult_data_checker 785 GOOD: (-84 + 16i) * (95 + -9i) = (-7836 + 2276i), same as expected (-7836 + 2276i)
+# comp_mult_test.i_comp_mult_data_checker 865 GOOD: (9 + 107i) * (66 + 107i) = (-10855 + 8025i), same as expected (-10855 + 8025i)
+# comp_mult_test.i_comp_mult_data_checker 975 GOOD: (111 + 99i) * (-95 + 36i) = (-14109 + -5409i), same as expected (-14109 + -5409i)
+# comp_mult_test.i_comp_mult_data_checker 1035 GOOD: (-6 + 122i) * (121 + -42i) = (4398 + 15014i), same as expected (4398 + 15014i)
+# comp_mult_test.i_comp_mult_data_checker 1105 GOOD: (-12 + 62i) * (36 + 42i) = (-3036 + 1728i), same as expected (-3036 + 1728i)
+# comp_mult_test.i_comp_mult_data_checker 1165 GOOD: (123 + 72i) * (-83 + 76i) = (-15681 + 3372i), same as expected (-15681 + 3372i)
+# comp_mult_test.i_comp_mult_data_checker 1225 GOOD: (-92 + -93i) * (116 + 24i) = (-8440 + -12996i), same as expected (-8440 + -12996i)
+# comp_mult_test.i_comp_mult_data_checker 1295 GOOD: (85 + -84i) * (2 + 26i) = (2354 + 2042i), same as expected (2354 + 2042i)
+# comp_mult_test.i_comp_mult_data_checker 1355 GOOD: (29 + -115i) * (-4 + -114i) = (-13226 + -2846i), same as expected (-13226 + -2846i)
+# comp_mult_test.i_comp_mult_data_checker 1415 GOOD: (-24 + -112i) * (-31 + -45i) = (-4296 + 4552i), same as expected (-4296 + 4552i)
+# comp_mult_test.i_comp_mult_data_checker 1475 GOOD: (92 + 73i) * (-95 + -75i) = (-3265 + -13835i), same as expected (-3265 + -13835i)
+# comp_mult_test.i_comp_mult_data_checker 1565 GOOD: (-62 + 116i) * (16 + -103i) = (10956 + 8242i), same as expected (10956 + 8242i)
+# comp_mult_test.i_comp_mult_data_checker 1645 GOOD: (-91 + -102i) * (-25 + 91i) = (11557 + -5731i), same as expected (11557 + -5731i)
+# comp_mult_test.i_comp_mult_data_checker 1705 GOOD: (-6 + -64i) * (-41 + 2i) = (374 + 2612i), same as expected (374 + 2612i)
+# comp_mult_test.i_comp_mult_data_checker 1765 GOOD: (-46 + -15i) * (5 + -64i) = (-1190 + 2869i), same as expected (-1190 + 2869i)
+# comp_mult_test.i_comp_mult_data_checker 1845 GOOD: (-101 + -122i) * (7 + -31i) = (-4489 + 2277i), same as expected (-4489 + 2277i)
+# comp_mult_test.i_comp_mult_data_checker 1935 GOOD: (55 + -36i) * (17 + 99i) = (4499 + 4833i), same as expected (4499 + 4833i)
+# comp_mult_test.i_comp_mult_data_checker 2005 GOOD: (-1 + 122i) * (-40 + 58i) = (-7036 + -4938i), same as expected (-7036 + -4938i)
+# comp_mult_test.i_comp_mult_data_checker 2065 GOOD: (50 + -10i) * (12 + -25i) = (350 + -1370i), same as expected (350 + -1370i)
+# comp_mult_test.i_comp_mult_data_checker 2135 GOOD: (-112 + 31i) * (-20 + -89i) = (4999 + 9348i), same as expected (4999 + 9348i)
+# comp_mult_test.i_comp_mult_data_checker 2195 GOOD: (-29 + 119i) * (20 + 45i) = (-5935 + 1075i), same as expected (-5935 + 1075i)
+# comp_mult_test.i_comp_mult_data_checker 2255 GOOD: (12 + -3i) * (73 + -65i) = (681 + -999i), same as expected (681 + -999i)
+# comp_mult_test.i_comp_mult_data_checker 2365 GOOD: (69 + 127i) * (-109 + -128i) = (8735 + -22675i), same as expected (8735 + -22675i)
+# comp_mult_test.i_comp_mult_data_checker 2465 GOOD: (-82 + 39i) * (-31 + 6i) = (2308 + -1701i), same as expected (2308 + -1701i)
+# comp_mult_test.i_comp_mult_data_checker 2545 GOOD: (127 + 83i) * (-5 + 6i) = (-1133 + 347i), same as expected (-1133 + 347i)
+# comp_mult_test.i_comp_mult_data_checker 2645 GOOD: (122 + 26i) * (-59 + 8i) = (-7406 + -558i), same as expected (-7406 + -558i)
+# comp_mult_test.i_comp_mult_data_checker 2725 GOOD: (38 + 109i) * (-65 + -4i) = (-2034 + -7237i), same as expected (-2034 + -7237i)
+# comp_mult_test.i_comp_mult_data_checker 2845 GOOD: (19 + -8i) * (-67 + 90i) = (-553 + 2246i), same as expected (-553 + 2246i)
+# comp_mult_test.i_comp_mult_data_checker 2955 GOOD: (56 + 34i) * (-113 + -48i) = (-4696 + -6530i), same as expected (-4696 + -6530i)
+# comp_mult_test.i_comp_mult_data_checker 3015 GOOD: (114 + -124i) * (101 + 123i) = (26766 + 1498i), same as expected (26766 + 1498i)
+# comp_mult_test.i_comp_mult_data_checker 3075 GOOD: (98 + -30i) * (6 + 105i) = (3738 + 10110i), same as expected (3738 + 10110i)
+# comp_mult_test.i_comp_mult_data_checker 3195 GOOD: (109 + -36i) * (-34 + -18i) = (-4354 + -738i), same as expected (-4354 + -738i)
+# comp_mult_test.i_comp_mult_data_checker 3255 GOOD: (88 + 127i) * (-1 + 79i) = (-10121 + 6825i), same as expected (-10121 + 6825i)
+# comp_mult_test.i_comp_mult_data_checker 3315 GOOD: (39 + -100i) * (97 + -57i) = (-1917 + -11923i), same as expected (-1917 + -11923i)
+# comp_mult_test.i_comp_mult_data_checker 3395 GOOD: (34 + -84i) * (24 + -92i) = (-6912 + -5144i), same as expected (-6912 + -5144i)
+# comp_mult_test.i_comp_mult_data_checker 3455 GOOD: (-25 + -32i) * (-18 + 119i) = (4258 + -2399i), same as expected (4258 + -2399i)
+# comp_mult_test.i_comp_mult_data_checker 3525 GOOD: (-38 + -34i) * (75 + 116i) = (1094 + -6958i), same as expected (1094 + -6958i)
+# comp_mult_test.i_comp_mult_data_checker 3595 GOOD: (50 + 87i) * (3 + -109i) = (9633 + -5189i), same as expected (9633 + -5189i)
+# comp_mult_test.i_comp_mult_data_checker 3695 GOOD: (55 + 70i) * (43 + 20i) = (965 + 4110i), same as expected (965 + 4110i)
+# comp_mult_test.i_comp_mult_data_checker 3795 GOOD: (124 + 69i) * (-72 + -56i) = (-5064 + -11912i), same as expected (-5064 + -11912i)
+# comp_mult_test.i_comp_mult_data_checker 3875 GOOD: (103 + 100i) * (25 + -42i) = (6775 + -1826i), same as expected (6775 + -1826i)
+# comp_mult_test.i_comp_mult_data_checker 3935 GOOD: (73 + -79i) * (-4 + -77i) = (-6375 + -5305i), same as expected (-6375 + -5305i)
+# comp_mult_test.i_comp_mult_data_checker 3995 GOOD: (84 + -68i) * (-55 + 62i) = (-404 + 8948i), same as expected (-404 + 8948i)
+# comp_mult_test.i_comp_mult_data_checker 4085 GOOD: (-111 + -121i) * (-110 + 50i) = (18260 + 7760i), same as expected (18260 + 7760i)
+# comp_mult_test.i_comp_mult_data_checker 4145 GOOD: (6 + -67i) * (117 + -81i) = (-4725 + -8325i), same as expected (-4725 + -8325i)
+# comp_mult_test.i_comp_mult_data_checker 4255 GOOD: (47 + 123i) * (-92 + -109i) = (9083 + -16439i), same as expected (9083 + -16439i)
+# comp_mult_test.i_comp_mult_data_checker 4315 GOOD: (124 + -24i) * (-66 + -49i) = (-9360 + -4492i), same as expected (-9360 + -4492i)
+# comp_mult_test.i_comp_mult_data_checker 4375 GOOD: (-15 + -10i) * (-123 + 90i) = (2745 + -120i), same as expected (2745 + -120i)
+# comp_mult_test.i_comp_mult_data_checker 4435 GOOD: (-1 + -58i) * (21 + -125i) = (-7271 + -1093i), same as expected (-7271 + -1093i)
+# comp_mult_test.i_comp_mult_data_checker 4555 GOOD: (89 + 102i) * (-90 + 20i) = (-10050 + -7400i), same as expected (-10050 + -7400i)
+# comp_mult_test.i_comp_mult_data_checker 4665 GOOD: (62 + 94i) * (109 + 65i) = (648 + 14276i), same as expected (648 + 14276i)
+# comp_mult_test.i_comp_mult_data_checker 4785 GOOD: (-6 + -68i) * (2 + 52i) = (3524 + -448i), same as expected (3524 + -448i)
+# comp_mult_test.i_comp_mult_data_checker 4885 GOOD: (-55 + 30i) * (-122 + -83i) = (9200 + 905i), same as expected (9200 + 905i)
+# comp_mult_test.i_comp_mult_data_checker 4975 GOOD: (-32 + 24i) * (-122 + 95i) = (1624 + -5968i), same as expected (1624 + -5968i)
+# comp_mult_test.i_comp_mult_data_checker 5035 GOOD: (-72 + -77i) * (-11 + -73i) = (-4829 + 6103i), same as expected (-4829 + 6103i)
+# comp_mult_test.i_comp_mult_data_checker 5105 GOOD: (78 + 69i) * (79 + -51i) = (9681 + 1473i), same as expected (9681 + 1473i)
+# comp_mult_test.i_comp_mult_data_checker 5205 GOOD: (-100 + -79i) * (105 + 29i) = (-8209 + -11195i), same as expected (-8209 + -11195i)
+# comp_mult_test.i_comp_mult_data_checker 5275 GOOD: (-35 + 79i) * (-6 + -11i) = (1079 + -89i), same as expected (1079 + -89i)
+# comp_mult_test.i_comp_mult_data_checker 5375 GOOD: (-78 + 38i) * (77 + 119i) = (-10528 + -6356i), same as expected (-10528 + -6356i)
+# comp_mult_test.i_comp_mult_data_checker 5465 GOOD: (-89 + 0i) * (-107 + 17i) = (9523 + -1513i), same as expected (9523 + -1513i)
+# comp_mult_test.i_comp_mult_data_checker 5525 GOOD: (-64 + -50i) * (2 + -80i) = (-4128 + 5020i), same as expected (-4128 + 5020i)
+# comp_mult_test.i_comp_mult_data_checker 5635 GOOD: (111 + -80i) * (61 + 117i) = (16131 + 8107i), same as expected (16131 + 8107i)
+# comp_mult_test.i_comp_mult_data_checker 5695 GOOD: (-120 + -99i) * (-82 + 113i) = (21027 + -5442i), same as expected (21027 + -5442i)
+# comp_mult_test.i_comp_mult_data_checker 5795 GOOD: (-14 + 122i) * (79 + -86i) = (9386 + 10842i), same as expected (9386 + 10842i)
+# comp_mult_test.i_comp_mult_data_checker 5895 GOOD: (-79 + 99i) * (101 + -43i) = (-3722 + 13396i), same as expected (-3722 + 13396i)
+# comp_mult_test.i_comp_mult_data_checker 5955 GOOD: (-90 + -100i) * (81 + 52i) = (-2090 + -12780i), same as expected (-2090 + -12780i)
+# comp_mult_test.i_comp_mult_data_checker 6015 GOOD: (-36 + 8i) * (-40 + -126i) = (2448 + 4216i), same as expected (2448 + 4216i)
+# comp_mult_test.i_comp_mult_data_checker 6125 GOOD: (-16 + 9i) * (-128 + -109i) = (3029 + 592i), same as expected (3029 + 592i)
+# comp_mult_test.i_comp_mult_data_checker 6185 GOOD: (16 + -128i) * (-73 + -106i) = (-14736 + 7648i), same as expected (-14736 + 7648i)
+# comp_mult_test.i_comp_mult_data_checker 6245 GOOD: (-20 + 1i) * (49 + -113i) = (-867 + 2309i), same as expected (-867 + 2309i)
+# comp_mult_test.i_comp_mult_data_checker 6315 GOOD: (67 + -10i) * (78 + -113i) = (4096 + -8351i), same as expected (4096 + -8351i)
+# comp_mult_test.i_comp_mult_data_checker 6405 GOOD: (94 + 11i) * (28 + 91i) = (1631 + 8862i), same as expected (1631 + 8862i)
+# comp_mult_test.i_comp_mult_data_checker 6465 GOOD: (62 + -95i) * (119 + -34i) = (4148 + -13413i), same as expected (4148 + -13413i)
+# comp_mult_test.i_comp_mult_data_checker 6525 GOOD: (-102 + 112i) * (-113 + 96i) = (774 + -22448i), same as expected (774 + -22448i)
+# comp_mult_test.i_comp_mult_data_checker 6585 GOOD: (31 + -92i) * (61 + 32i) = (4835 + -4620i), same as expected (4835 + -4620i)
+# comp_mult_test.i_comp_mult_data_checker 6645 GOOD: (-56 + -93i) * (-116 + -69i) = (79 + 14652i), same as expected (79 + 14652i)
+# comp_mult_test.i_comp_mult_data_checker 6745 GOOD: (-55 + -12i) * (-68 + -11i) = (3608 + 1421i), same as expected (3608 + 1421i)
+# comp_mult_test.i_comp_mult_data_checker 6865 GOOD: (-36 + 28i) * (102 + -22i) = (-3056 + 3648i), same as expected (-3056 + 3648i)
+# comp_mult_test.i_comp_mult_data_checker 6925 GOOD: (-78 + -74i) * (76 + -117i) = (-14586 + 3502i), same as expected (-14586 + 3502i)
+# comp_mult_test.i_comp_mult_data_checker 7025 GOOD: (-127 + 110i) * (21 + 19i) = (-4757 + -103i), same as expected (-4757 + -103i)
+# comp_mult_test.i_comp_mult_data_checker 7085 GOOD: (53 + 34i) * (-127 + -57i) = (-4793 + -7339i), same as expected (-4793 + -7339i)
+# comp_mult_test.i_comp_mult_data_checker 7145 GOOD: (84 + -41i) * (80 + 42i) = (8442 + 248i), same as expected (8442 + 248i)
+# comp_mult_test.i_comp_mult_data_checker 7205 GOOD: (-109 + -99i) * (-21 + 59i) = (8130 + -4352i), same as expected (8130 + -4352i)
+# comp_mult_test.i_comp_mult_data_checker 7275 GOOD: (-37 + -32i) * (-106 + 100i) = (7122 + -308i), same as expected (7122 + -308i)
+# comp_mult_test.i_comp_mult_data_checker 7335 GOOD: (93 + 82i) * (-111 + 110i) = (-19343 + 1128i), same as expected (-19343 + 1128i)
+# comp_mult_test.i_comp_mult_data_checker 7395 GOOD: (75 + -62i) * (126 + -31i) = (7528 + -10137i), same as expected (7528 + -10137i)
+# comp_mult_test.i_comp_mult_data_checker 7455 GOOD: (62 + 86i) * (-107 + -99i) = (1880 + -15340i), same as expected (1880 + -15340i)
+# comp_mult_test.i_comp_mult_data_checker 7555 GOOD: (107 + 34i) * (-101 + 113i) = (-14649 + 8657i), same as expected (-14649 + 8657i)
+# comp_mult_test.i_comp_mult_data_checker 7655 GOOD: (-74 + 11i) * (6 + -76i) = (392 + 5690i), same as expected (392 + 5690i)
+# comp_mult_test.i_comp_mult_data_checker 7755 GOOD: (-36 + -33i) * (48 + -61i) = (-3741 + 612i), same as expected (-3741 + 612i)
+# comp_mult_test.i_comp_mult_data_checker 7865 GOOD: (36 + 39i) * (-66 + -123i) = (2421 + -7002i), same as expected (2421 + -7002i)
+# comp_mult_test.i_comp_mult_data_checker 7965 GOOD: (87 + -22i) * (-52 + 110i) = (-2104 + 10714i), same as expected (-2104 + 10714i)
+# comp_mult_test.i_comp_mult_data_checker 8025 GOOD: (-62 + 12i) * (-26 + 91i) = (520 + -5954i), same as expected (520 + -5954i)
+# comp_mult_test.i_comp_mult_data_checker 8145 GOOD: (-69 + 103i) * (109 + 68i) = (-14525 + 6535i), same as expected (-14525 + 6535i)
+# comp_mult_test.i_comp_mult_data_checker 8205 GOOD: (11 + -18i) * (-71 + 55i) = (209 + 1883i), same as expected (209 + 1883i)
+# comp_mult_test.i_comp_mult_data_checker 8305 GOOD: (125 + -53i) * (-21 + -75i) = (-6600 + -8262i), same as expected (-6600 + -8262i)
+# comp_mult_test.i_comp_mult_data_checker 8365 GOOD: (-90 + -68i) * (97 + 69i) = (-4038 + -12806i), same as expected (-4038 + -12806i)
+# comp_mult_test.i_comp_mult_data_checker 8455 GOOD: (46 + -119i) * (77 + -81i) = (-6097 + -12889i), same as expected (-6097 + -12889i)
+# comp_mult_test.i_comp_mult_data_checker 8535 GOOD: (38 + -16i) * (-1 + 113i) = (1770 + 4310i), same as expected (1770 + 4310i)
+# comp_mult_test.i_comp_mult_data_checker 8595 GOOD: (-2 + 8i) * (-70 + -89i) = (852 + -382i), same as expected (852 + -382i)
+# comp_mult_test.i_comp_mult_data_checker 8715 GOOD: (110 + 93i) * (-50 + -43i) = (-1501 + -9380i), same as expected (-1501 + -9380i)
+# comp_mult_test.i_comp_mult_data_checker 8785 GOOD: (100 + 48i) * (-85 + 34i) = (-10132 + -680i), same as expected (-10132 + -680i)
+# comp_mult_test.i_comp_mult_data_checker 8845 GOOD: (58 + 11i) * (-33 + -34i) = (-1540 + -2335i), same as expected (-1540 + -2335i)
+# comp_mult_test.i_comp_mult_data_checker 8905 GOOD: (66 + 65i) * (-29 + -62i) = (2116 + -5977i), same as expected (2116 + -5977i)
+# comp_mult_test.i_comp_mult_data_checker 8995 GOOD: (36 + -58i) * (19 + 17i) = (1670 + -490i), same as expected (1670 + -490i)
+# comp_mult_test.i_comp_mult_data_checker 9055 GOOD: (-14 + 37i) * (-73 + 71i) = (-1605 + -3695i), same as expected (-1605 + -3695i)
+# comp_mult_test.i_comp_mult_data_checker 9115 GOOD: (-62 + -71i) * (63 + 125i) = (4969 + -12223i), same as expected (4969 + -12223i)
+# comp_mult_test.i_comp_mult_data_checker 9205 GOOD: (61 + -118i) * (-97 + -119i) = (-19959 + 4187i), same as expected (-19959 + 4187i)
+# comp_mult_test.i_comp_mult_data_checker 9265 GOOD: (111 + 83i) * (91 + 71i) = (4208 + 15434i), same as expected (4208 + 15434i)
+# comp_mult_test.i_comp_mult_data_checker 9335 GOOD: (99 + -18i) * (-59 + -83i) = (-7335 + -7155i), same as expected (-7335 + -7155i)
+# comp_mult_test.i_comp_mult_data_checker 9395 GOOD: (111 + -82i) * (-98 + -21i) = (-12600 + 5705i), same as expected (-12600 + 5705i)
+# comp_mult_test.i_comp_mult_data_checker 9475 GOOD: (104 + -83i) * (90 + 25i) = (11435 + -4870i), same as expected (11435 + -4870i)
+# comp_mult_test.i_comp_mult_data_checker 9535 GOOD: (-47 + 89i) * (54 + 106i) = (-11972 + -176i), same as expected (-11972 + -176i)
+# comp_mult_test.i_comp_mult_data_checker 9595 GOOD: (59 + -73i) * (-47 + -115i) = (-11168 + -3354i), same as expected (-11168 + -3354i)
+# comp_mult_test.i_comp_mult_data_checker 9655 GOOD: (-76 + 23i) * (107 + -2i) = (-8086 + 2613i), same as expected (-8086 + 2613i)
+# comp_mult_test.i_comp_mult_data_checker 9775 GOOD: (-39 + 48i) * (-37 + -52i) = (3939 + 252i), same as expected (3939 + 252i)
+# comp_mult_test.i_comp_mult_data_checker 9835 GOOD: (-80 + 54i) * (34 + -121i) = (3814 + 11516i), same as expected (3814 + 11516i)
+# comp_mult_test.i_comp_mult_data_checker 9955 GOOD: (65 + 41i) * (-112 + -32i) = (-5968 + -6672i), same as expected (-5968 + -6672i)
+# comp_mult_test.i_comp_mult_data_checker 10015 GOOD: (-100 + 113i) * (43 + 92i) = (-14696 + -4341i), same as expected (-14696 + -4341i)
+# comp_mult_test.i_comp_mult_data_checker 10105 GOOD: (74 + -7i) * (-103 + -14i) = (-7720 + -315i), same as expected (-7720 + -315i)
+# comp_mult_test.i_comp_mult_data_checker 10195 GOOD: (-91 + -108i) * (-36 + -49i) = (-2016 + 8347i), same as expected (-2016 + 8347i)
+# comp_mult_test.i_comp_mult_data_checker 10255 GOOD: (-46 + 17i) * (-111 + 69i) = (3933 + -5061i), same as expected (3933 + -5061i)
+# comp_mult_test.i_comp_mult_data_checker 10345 GOOD: (75 + 76i) * (19 + 61i) = (-3211 + 6019i), same as expected (-3211 + 6019i)
+# comp_mult_test.i_comp_mult_data_checker 10415 GOOD: (126 + 98i) * (-82 + -89i) = (-1610 + -19250i), same as expected (-1610 + -19250i)
+# comp_mult_test.i_comp_mult_data_checker 10515 GOOD: (-49 + -91i) * (58 + 101i) = (6349 + -10227i), same as expected (6349 + -10227i)
+# comp_mult_test.i_comp_mult_data_checker 10595 GOOD: (-26 + 44i) * (93 + -22i) = (-1450 + 4664i), same as expected (-1450 + 4664i)
+# comp_mult_test.i_comp_mult_data_checker 10655 GOOD: (-110 + -31i) * (104 + 103i) = (-8247 + -14554i), same as expected (-8247 + -14554i)
+# comp_mult_test.i_comp_mult_data_checker 10735 GOOD: (-12 + -52i) * (-121 + 6i) = (1764 + 6220i), same as expected (1764 + 6220i)
+# comp_mult_test.i_comp_mult_data_checker 10795 GOOD: (-82 + -120i) * (43 + -19i) = (-5806 + -3602i), same as expected (-5806 + -3602i)
+# comp_mult_test.i_comp_mult_data_checker 10855 GOOD: (83 + -26i) * (48 + -43i) = (2866 + -4817i), same as expected (2866 + -4817i)
+# comp_mult_test.i_comp_mult_data_checker 10915 GOOD: (-68 + 127i) * (-124 + -90i) = (19862 + -9628i), same as expected (19862 + -9628i)
+# comp_mult_test.i_comp_mult_data_checker 10975 GOOD: (9 + -80i) * (-57 + 28i) = (1727 + 4812i), same as expected (1727 + 4812i)
+# comp_mult_test.i_comp_mult_data_checker 11075 GOOD: (-1 + -39i) * (-52 + 26i) = (1066 + 2002i), same as expected (1066 + 2002i)
+# comp_mult_test.i_comp_mult_data_checker 11195 GOOD: (54 + 127i) * (5 + 83i) = (-10271 + 5117i), same as expected (-10271 + 5117i)
+# comp_mult_test.i_comp_mult_data_checker 11255 GOOD: (19 + -73i) * (30 + 41i) = (3563 + -1411i), same as expected (3563 + -1411i)
+# comp_mult_test.i_comp_mult_data_checker 11335 GOOD: (49 + -25i) * (-83 + 120i) = (-1067 + 7955i), same as expected (-1067 + 7955i)
+# comp_mult_test.i_comp_mult_data_checker 11395 GOOD: (103 + 115i) * (-68 + -32i) = (-3324 + -11116i), same as expected (-3324 + -11116i)
+# comp_mult_test.i_comp_mult_data_checker 11455 GOOD: (-117 + 65i) * (66 + -30i) = (-5772 + 7800i), same as expected (-5772 + 7800i)
+# comp_mult_test.i_comp_mult_data_checker 11515 GOOD: (-28 + 65i) * (29 + 31i) = (-2827 + 1017i), same as expected (-2827 + 1017i)
+# comp_mult_test.i_comp_mult_data_checker 11595 GOOD: (1 + -85i) * (-104 + -93i) = (-8009 + 8747i), same as expected (-8009 + 8747i)
+# comp_mult_test.i_comp_mult_data_checker 11655 GOOD: (-89 + 50i) * (-88 + 114i) = (2132 + -14546i), same as expected (2132 + -14546i)
+# comp_mult_test.i_comp_mult_data_checker 11715 GOOD: (-94 + -35i) * (-117 + 35i) = (12223 + 805i), same as expected (12223 + 805i)
+# comp_mult_test.i_comp_mult_data_checker 11815 GOOD: (19 + -103i) * (51 + 46i) = (5707 + -4379i), same as expected (5707 + -4379i)
+# comp_mult_test.i_comp_mult_data_checker 11895 GOOD: (73 + -30i) * (80 + 31i) = (6770 + -137i), same as expected (6770 + -137i)
+# comp_mult_test.i_comp_mult_data_checker 11955 GOOD: (-112 + -116i) * (111 + -47i) = (-17884 + -7612i), same as expected (-17884 + -7612i)
+# comp_mult_test.i_comp_mult_data_checker 12065 GOOD: (-108 + -57i) * (53 + 32i) = (-3900 + -6477i), same as expected (-3900 + -6477i)
+# comp_mult_test.i_comp_mult_data_checker 12175 GOOD: (32 + 44i) * (-15 + 8i) = (-832 + -404i), same as expected (-832 + -404i)
+# comp_mult_test.i_comp_mult_data_checker 12295 GOOD: (78 + -65i) * (-51 + 65i) = (247 + 8385i), same as expected (247 + 8385i)
+# comp_mult_test.i_comp_mult_data_checker 12355 GOOD: (40 + -53i) * (-96 + -27i) = (-5271 + 4008i), same as expected (-5271 + 4008i)
+# comp_mult_test.i_comp_mult_data_checker 12415 GOOD: (-5 + 66i) * (-90 + 72i) = (-4302 + -6300i), same as expected (-4302 + -6300i)
+# comp_mult_test.i_comp_mult_data_checker 12475 GOOD: (-63 + 60i) * (31 + 100i) = (-7953 + -4440i), same as expected (-7953 + -4440i)
+# comp_mult_test.i_comp_mult_data_checker 12575 GOOD: (-54 + -60i) * (27 + -102i) = (-7578 + 3888i), same as expected (-7578 + 3888i)
+# comp_mult_test.i_comp_mult_data_checker 12665 GOOD: (-30 + 116i) * (-2 + -31i) = (3656 + 698i), same as expected (3656 + 698i)
+# comp_mult_test.i_comp_mult_data_checker 12725 GOOD: (111 + -1i) * (103 + -125i) = (11308 + -13978i), same as expected (11308 + -13978i)
+# comp_mult_test.i_comp_mult_data_checker 12785 GOOD: (-60 + 68i) * (-34 + 116i) = (-5848 + -9272i), same as expected (-5848 + -9272i)
+# comp_mult_test.i_comp_mult_data_checker 12875 GOOD: (7 + 64i) * (-25 + 78i) = (-5167 + -1054i), same as expected (-5167 + -1054i)
+# comp_mult_test.i_comp_mult_data_checker 12935 GOOD: (-88 + 62i) * (-51 + 52i) = (1264 + -7738i), same as expected (1264 + -7738i)
+# comp_mult_test.i_comp_mult_data_checker 13005 GOOD: (99 + 51i) * (-44 + 3i) = (-4509 + -1947i), same as expected (-4509 + -1947i)
+# comp_mult_test.i_comp_mult_data_checker 13095 GOOD: (117 + -45i) * (2 + -77i) = (-3231 + -9099i), same as expected (-3231 + -9099i)
+# comp_mult_test.i_comp_mult_data_checker 13195 GOOD: (68 + -124i) * (93 + 118i) = (20956 + -3508i), same as expected (20956 + -3508i)
+# comp_mult_test.i_comp_mult_data_checker 13295 GOOD: (65 + -12i) * (103 + 108i) = (7991 + 5784i), same as expected (7991 + 5784i)
+# comp_mult_test.i_comp_mult_data_checker 13355 GOOD: (-91 + -85i) * (84 + 105i) = (1281 + -16695i), same as expected (1281 + -16695i)
+# comp_mult_test.i_comp_mult_data_checker 13415 GOOD: (-18 + -65i) * (-125 + 110i) = (9400 + 6145i), same as expected (9400 + 6145i)
+# comp_mult_test.i_comp_mult_data_checker 13475 GOOD: (86 + 122i) * (-48 + -5i) = (-3518 + -6286i), same as expected (-3518 + -6286i)
+# comp_mult_test.i_comp_mult_data_checker 13535 GOOD: (55 + 110i) * (-117 + -10i) = (-5335 + -13420i), same as expected (-5335 + -13420i)
+# comp_mult_test.i_comp_mult_data_checker 13595 GOOD: (-21 + -57i) * (63 + -67i) = (-5142 + -2184i), same as expected (-5142 + -2184i)
+# comp_mult_test.i_comp_mult_data_checker 13685 GOOD: (126 + -64i) * (92 + -7i) = (11144 + -6770i), same as expected (11144 + -6770i)
+# comp_mult_test.i_comp_mult_data_checker 13745 GOOD: (51 + -108i) * (43 + -7i) = (1437 + -5001i), same as expected (1437 + -5001i)
+# comp_mult_test.i_comp_mult_data_checker 13805 GOOD: (21 + -66i) * (107 + -106i) = (-4749 + -9288i), same as expected (-4749 + -9288i)
+# comp_mult_test.i_comp_mult_data_checker 13865 GOOD: (-6 + 110i) * (16 + 35i) = (-3946 + 1550i), same as expected (-3946 + 1550i)
+# comp_mult_test.i_comp_mult_data_checker 13925 GOOD: (115 + 8i) * (127 + -5i) = (14645 + 441i), same as expected (14645 + 441i)
+# comp_mult_test.i_comp_mult_data_checker 14025 GOOD: (89 + 111i) * (-74 + -32i) = (-3034 + -11062i), same as expected (-3034 + -11062i)
+# comp_mult_test.i_comp_mult_data_checker 14085 GOOD: (121 + -38i) * (-74 + -108i) = (-13058 + -10256i), same as expected (-13058 + -10256i)
+# comp_mult_test.i_comp_mult_data_checker 14165 GOOD: (-96 + -19i) * (-32 + -53i) = (2065 + 5696i), same as expected (2065 + 5696i)
+# comp_mult_test.i_comp_mult_data_checker 14225 GOOD: (-4 + -67i) * (23 + -108i) = (-7328 + -1109i), same as expected (-7328 + -1109i)
+# comp_mult_test.i_comp_mult_data_checker 14285 GOOD: (53 + 27i) * (53 + 44i) = (1621 + 3763i), same as expected (1621 + 3763i)
+# comp_mult_test.i_comp_mult_data_checker 14345 GOOD: (89 + -88i) * (39 + -58i) = (-1633 + -8594i), same as expected (-1633 + -8594i)
+# comp_mult_test.i_comp_mult_data_checker 14445 GOOD: (-7 + -65i) * (-10 + 110i) = (7220 + -120i), same as expected (7220 + -120i)
+# comp_mult_test.i_comp_mult_data_checker 14525 GOOD: (-29 + -101i) * (-10 + -8i) = (-518 + 1242i), same as expected (-518 + 1242i)
+# comp_mult_test.i_comp_mult_data_checker 14585 GOOD: (-11 + 124i) * (-11 + -35i) = (4461 + -979i), same as expected (4461 + -979i)
+# comp_mult_test.i_comp_mult_data_checker 14645 GOOD: (-44 + -24i) * (0 + -47i) = (-1128 + 2068i), same as expected (-1128 + 2068i)
+# comp_mult_test.i_comp_mult_data_checker 14705 GOOD: (123 + 108i) * (-69 + -8i) = (-7623 + -8436i), same as expected (-7623 + -8436i)
+# comp_mult_test.i_comp_mult_data_checker 14775 GOOD: (-45 + 28i) * (-115 + 34i) = (4223 + -4750i), same as expected (4223 + -4750i)
+# comp_mult_test.i_comp_mult_data_checker 14875 GOOD: (-128 + -120i) * (97 + 5i) = (-11816 + -12280i), same as expected (-11816 + -12280i)
+# comp_mult_test.i_comp_mult_data_checker 14935 GOOD: (-8 + 12i) * (8 + 15i) = (-244 + -24i), same as expected (-244 + -24i)
+# comp_mult_test.i_comp_mult_data_checker 14995 GOOD: (106 + -100i) * (33 + 85i) = (11998 + 5710i), same as expected (11998 + 5710i)
+# comp_mult_test.i_comp_mult_data_checker 15105 GOOD: (-20 + -91i) * (0 + 71i) = (6461 + -1420i), same as expected (6461 + -1420i)
+# comp_mult_test.i_comp_mult_data_checker 15215 GOOD: (-113 + -44i) * (-119 + -46i) = (11423 + 10434i), same as expected (11423 + 10434i)
+# comp_mult_test.i_comp_mult_data_checker 15275 GOOD: (91 + 103i) * (21 + 70i) = (-5299 + 8533i), same as expected (-5299 + 8533i)
+# comp_mult_test.i_comp_mult_data_checker 15335 GOOD: (88 + 17i) * (-31 + 59i) = (-3731 + 4665i), same as expected (-3731 + 4665i)
+# comp_mult_test.i_comp_mult_data_checker 15455 GOOD: (-30 + -32i) * (50 + 125i) = (2500 + -5350i), same as expected (2500 + -5350i)
+# comp_mult_test.i_comp_mult_data_checker 15555 GOOD: (-7 + -7i) * (-25 + -70i) = (-315 + 665i), same as expected (-315 + 665i)
+# comp_mult_test.i_comp_mult_data_checker 15615 GOOD: (108 + -63i) * (-98 + 1i) = (-10521 + 6282i), same as expected (-10521 + 6282i)
+# comp_mult_test.i_comp_mult_data_checker 15725 GOOD: (-99 + -93i) * (-85 + 110i) = (18645 + -2985i), same as expected (18645 + -2985i)
+# comp_mult_test.i_comp_mult_data_checker 15805 GOOD: (-14 + -13i) * (95 + 119i) = (217 + -2901i), same as expected (217 + -2901i)
+# comp_mult_test.i_comp_mult_data_checker 15865 GOOD: (99 + 127i) * (-104 + 48i) = (-16392 + -8456i), same as expected (-16392 + -8456i)
+# comp_mult_test.i_comp_mult_data_checker 15925 GOOD: (-65 + -52i) * (-19 + 35i) = (3055 + -1287i), same as expected (3055 + -1287i)
+# comp_mult_test.i_comp_mult_data_checker 15985 GOOD: (39 + 75i) * (-41 + -85i) = (4776 + -6390i), same as expected (4776 + -6390i)
+# comp_mult_test.i_comp_mult_data_checker 16055 GOOD: (-33 + -19i) * (59 + -71i) = (-3296 + 1222i), same as expected (-3296 + 1222i)
+# comp_mult_test.i_comp_mult_data_checker 16115 GOOD: (25 + -6i) * (42 + 114i) = (1734 + 2598i), same as expected (1734 + 2598i)
+# comp_mult_test.i_comp_mult_data_checker 16205 GOOD: (85 + 12i) * (20 + 80i) = (740 + 7040i), same as expected (740 + 7040i)
+# comp_mult_test.i_comp_mult_data_checker 16275 GOOD: (126 + 54i) * (114 + -113i) = (20466 + -8082i), same as expected (20466 + -8082i)
+# comp_mult_test.i_comp_mult_data_checker 16385 GOOD: (10 + -116i) * (-120 + -56i) = (-7696 + 13360i), same as expected (-7696 + 13360i)
+# comp_mult_test.i_comp_mult_data_checker 16465 GOOD: (-31 + 68i) * (39 + -15i) = (-189 + 3117i), same as expected (-189 + 3117i)
+# comp_mult_test.i_comp_mult_data_checker 16525 GOOD: (-19 + -16i) * (63 + 19i) = (-893 + -1369i), same as expected (-893 + -1369i)
+# comp_mult_test.i_comp_mult_data_checker 16615 GOOD: (85 + 70i) * (70 + -63i) = (10360 + -455i), same as expected (10360 + -455i)
+# comp_mult_test.i_comp_mult_data_checker 16675 GOOD: (113 + -79i) * (119 + 23i) = (15264 + -6802i), same as expected (15264 + -6802i)
+# comp_mult_test.i_comp_mult_data_checker 16775 GOOD: (9 + -16i) * (-35 + 5i) = (-235 + 605i), same as expected (-235 + 605i)
+# comp_mult_test.i_comp_mult_data_checker 16865 GOOD: (73 + -76i) * (-107 + 7i) = (-7279 + 8643i), same as expected (-7279 + 8643i)
+# comp_mult_test.i_comp_mult_data_checker 16925 GOOD: (-1 + -22i) * (42 + -15i) = (-372 + -909i), same as expected (-372 + -909i)
+# comp_mult_test.i_comp_mult_data_checker 17045 GOOD: (-121 + 63i) * (-114 + -25i) = (15369 + -4157i), same as expected (15369 + -4157i)
+# comp_mult_test.i_comp_mult_data_checker 17165 GOOD: (-3 + 102i) * (-12 + -40i) = (4116 + -1104i), same as expected (4116 + -1104i)
+# comp_mult_test.i_comp_mult_data_checker 17285 GOOD: (-43 + 90i) * (0 + 93i) = (-8370 + -3999i), same as expected (-8370 + -3999i)
+# comp_mult_test.i_comp_mult_data_checker 17385 GOOD: (-8 + -118i) * (125 + 17i) = (1006 + -14886i), same as expected (1006 + -14886i)
+# comp_mult_test.i_comp_mult_data_checker 17495 GOOD: (32 + 85i) * (-42 + 127i) = (-12139 + 494i), same as expected (-12139 + 494i)
+# comp_mult_test.i_comp_mult_data_checker 17555 GOOD: (-11 + -92i) * (76 + -76i) = (-7828 + -6156i), same as expected (-7828 + -6156i)
+# comp_mult_test.i_comp_mult_data_checker 17655 GOOD: (21 + 77i) * (22 + -107i) = (8701 + -553i), same as expected (8701 + -553i)
+# comp_mult_test.i_comp_mult_data_checker 17715 GOOD: (69 + -1i) * (114 + 15i) = (7881 + 921i), same as expected (7881 + 921i)
+# comp_mult_test.i_comp_mult_data_checker 17805 GOOD: (-46 + -120i) * (62 + 62i) = (4588 + -10292i), same as expected (4588 + -10292i)
+# comp_mult_test.i_comp_mult_data_checker 17865 GOOD: (70 + -18i) * (30 + -50i) = (1200 + -4040i), same as expected (1200 + -4040i)
+# comp_mult_test.i_comp_mult_data_checker 17955 GOOD: (-105 + 107i) * (96 + 114i) = (-22278 + -1698i), same as expected (-22278 + -1698i)
+# comp_mult_test.i_comp_mult_data_checker 18075 GOOD: (-12 + -72i) * (-28 + 86i) = (6528 + 984i), same as expected (6528 + 984i)
+# comp_mult_test.i_comp_mult_data_checker 18175 GOOD: (63 + 36i) * (-87 + -3i) = (-5373 + -3321i), same as expected (-5373 + -3321i)
+# comp_mult_test.i_comp_mult_data_checker 18235 GOOD: (-67 + 120i) * (-35 + 14i) = (665 + -5138i), same as expected (665 + -5138i)
+# comp_mult_test.i_comp_mult_data_checker 18335 GOOD: (-17 + 6i) * (35 + 74i) = (-1039 + -1048i), same as expected (-1039 + -1048i)
+# comp_mult_test.i_comp_mult_data_checker 18395 GOOD: (50 + 46i) * (-122 + -118i) = (-672 + -11512i), same as expected (-672 + -11512i)
+# comp_mult_test.i_comp_mult_data_checker 18455 GOOD: (108 + 36i) * (3 + -67i) = (2736 + -7128i), same as expected (2736 + -7128i)
+# comp_mult_test.i_comp_mult_data_checker 18565 GOOD: (-78 + -61i) * (41 + 33i) = (-1185 + -5075i), same as expected (-1185 + -5075i)
+# comp_mult_test.i_comp_mult_data_checker 18685 GOOD: (110 + -7i) * (62 + -5i) = (6785 + -984i), same as expected (6785 + -984i)
+# comp_mult_test.i_comp_mult_data_checker 18775 GOOD: (116 + 111i) * (-108 + 115i) = (-25293 + 1352i), same as expected (-25293 + 1352i)
+# comp_mult_test.i_comp_mult_data_checker 18885 GOOD: (56 + -84i) * (-32 + 106i) = (7112 + 8624i), same as expected (7112 + 8624i)
+# comp_mult_test.i_comp_mult_data_checker 19005 GOOD: (90 + -26i) * (110 + -10i) = (9640 + -3760i), same as expected (9640 + -3760i)
+# comp_mult_test.i_comp_mult_data_checker 19065 GOOD: (45 + -7i) * (-99 + -99i) = (-5148 + -3762i), same as expected (-5148 + -3762i)
+# comp_mult_test.i_comp_mult_data_checker 19175 GOOD: (-9 + 7i) * (64 + -108i) = (180 + 1420i), same as expected (180 + 1420i)
+# comp_mult_test.i_comp_mult_data_checker 19235 GOOD: (88 + -9i) * (35 + 18i) = (3242 + 1269i), same as expected (3242 + 1269i)
+# comp_mult_test.i_comp_mult_data_checker 19305 GOOD: (33 + 82i) * (111 + -94i) = (11371 + 6000i), same as expected (11371 + 6000i)
+# comp_mult_test.i_comp_mult_data_checker 19365 GOOD: (-63 + -25i) * (112 + -69i) = (-8781 + 1547i), same as expected (-8781 + 1547i)
+# comp_mult_test.i_comp_mult_data_checker 19425 GOOD: (22 + 0i) * (46 + -8i) = (1012 + -176i), same as expected (1012 + -176i)
+# comp_mult_test.i_comp_mult_data_checker 19535 GOOD: (-2 + 35i) * (-113 + 28i) = (-754 + -4011i), same as expected (-754 + -4011i)
+# comp_mult_test.i_comp_mult_data_checker 19615 GOOD: (31 + -35i) * (-45 + -110i) = (-5245 + -1835i), same as expected (-5245 + -1835i)
+# comp_mult_test.i_comp_mult_data_checker 19705 GOOD: (-56 + -120i) * (124 + 24i) = (-4064 + -16224i), same as expected (-4064 + -16224i)
+# comp_mult_test.i_comp_mult_data_checker 19775 GOOD: (-49 + -61i) * (29 + 103i) = (4862 + -6816i), same as expected (4862 + -6816i)
+# comp_mult_test.i_comp_mult_data_checker 19875 GOOD: (-6 + 121i) * (-111 + 69i) = (-7683 + -13845i), same as expected (-7683 + -13845i)
+# comp_mult_test.i_comp_mult_data_checker 19985 GOOD: (115 + 115i) * (-14 + 82i) = (-11040 + 7820i), same as expected (-11040 + 7820i)
+# comp_mult_test.i_comp_mult_data_checker 20045 GOOD: (108 + -30i) * (-26 + 32i) = (-1848 + 4236i), same as expected (-1848 + 4236i)
+# comp_mult_test.i_comp_mult_data_checker 20105 GOOD: (50 + -13i) * (-113 + -48i) = (-6274 + -931i), same as expected (-6274 + -931i)
+# comp_mult_test.i_comp_mult_data_checker 20215 GOOD: (104 + -105i) * (124 + -1i) = (12791 + -13124i), same as expected (12791 + -13124i)
+# comp_mult_test.i_comp_mult_data_checker 20305 GOOD: (-125 + 41i) * (-18 + -27i) = (3357 + 2637i), same as expected (3357 + 2637i)
+# comp_mult_test.i_comp_mult_data_checker 20415 GOOD: (-3 + 32i) * (100 + 3i) = (-396 + 3191i), same as expected (-396 + 3191i)
+# comp_mult_test.i_comp_mult_data_checker 20475 GOOD: (-113 + 84i) * (-83 + -102i) = (17947 + 4554i), same as expected (17947 + 4554i)
+# comp_mult_test.i_comp_mult_data_checker 20535 GOOD: (-99 + 34i) * (29 + -82i) = (-83 + 9104i), same as expected (-83 + 9104i)
+# comp_mult_test.i_comp_mult_data_checker 20655 GOOD: (6 + 118i) * (-83 + -2i) = (-262 + -9806i), same as expected (-262 + -9806i)
+# comp_mult_test.i_comp_mult_data_checker 20715 GOOD: (119 + 92i) * (5 + -44i) = (4643 + -4776i), same as expected (4643 + -4776i)
+# comp_mult_test.i_comp_mult_data_checker 20775 GOOD: (-83 + 77i) * (-56 + 4i) = (4340 + -4644i), same as expected (4340 + -4644i)
+# comp_mult_test.i_comp_mult_data_checker 20845 GOOD: (65 + 1i) * (7 + 89i) = (366 + 5792i), same as expected (366 + 5792i)
+# comp_mult_test.i_comp_mult_data_checker 20915 GOOD: (75 + -115i) * (-41 + 68i) = (4745 + 9815i), same as expected (4745 + 9815i)
+# comp_mult_test.i_comp_mult_data_checker 20995 GOOD: (-29 + 96i) * (13 + 84i) = (-8441 + -1188i), same as expected (-8441 + -1188i)
+# comp_mult_test.i_comp_mult_data_checker 21085 GOOD: (41 + -60i) * (-127 + -21i) = (-6467 + 6759i), same as expected (-6467 + 6759i)
+# comp_mult_test.i_comp_mult_data_checker 21205 GOOD: (31 + -9i) * (115 + 47i) = (3988 + 422i), same as expected (3988 + 422i)
+# comp_mult_test.i_comp_mult_data_checker 21285 GOOD: (-43 + -30i) * (-36 + 92i) = (4308 + -2876i), same as expected (4308 + -2876i)
+# comp_mult_test.i_comp_mult_data_checker 21345 GOOD: (-64 + 108i) * (-77 + 23i) = (2444 + -9788i), same as expected (2444 + -9788i)
+# comp_mult_test.i_comp_mult_data_checker 21405 GOOD: (17 + -74i) * (-128 + 46i) = (1228 + 10254i), same as expected (1228 + 10254i)
+# comp_mult_test.i_comp_mult_data_checker 21525 GOOD: (20 + 99i) * (116 + -46i) = (6874 + 10564i), same as expected (6874 + 10564i)
+# comp_mult_test.i_comp_mult_data_checker 21605 GOOD: (122 + 80i) * (40 + -110i) = (13680 + -10220i), same as expected (13680 + -10220i)
+# comp_mult_test.i_comp_mult_data_checker 21665 GOOD: (72 + 19i) * (64 + -42i) = (5406 + -1808i), same as expected (5406 + -1808i)
+# comp_mult_test.i_comp_mult_data_checker 21725 GOOD: (84 + 98i) * (-10 + -124i) = (11312 + -11396i), same as expected (11312 + -11396i)
+# comp_mult_test.i_comp_mult_data_checker 21825 GOOD: (122 + -4i) * (-74 + 75i) = (-8728 + 9446i), same as expected (-8728 + 9446i)
+# comp_mult_test.i_comp_mult_data_checker 21915 GOOD: (45 + -46i) * (-12 + 16i) = (196 + 1272i), same as expected (196 + 1272i)
+# comp_mult_test.i_comp_mult_data_checker 21975 GOOD: (-117 + 5i) * (-112 + 60i) = (12804 + -7580i), same as expected (12804 + -7580i)
+# comp_mult_test.i_comp_mult_data_checker 22045 GOOD: (-37 + -17i) * (-68 + -58i) = (1530 + 3302i), same as expected (1530 + 3302i)
+# comp_mult_test.i_comp_mult_data_checker 22145 GOOD: (22 + -121i) * (19 + -76i) = (-8778 + -3971i), same as expected (-8778 + -3971i)
+# comp_mult_test.i_comp_mult_data_checker 22215 GOOD: (-117 + 0i) * (124 + 100i) = (-14508 + -11700i), same as expected (-14508 + -11700i)
+# comp_mult_test.i_comp_mult_data_checker 22275 GOOD: (-108 + 38i) * (-19 + -99i) = (5814 + 9970i), same as expected (5814 + 9970i)
+# comp_mult_test.i_comp_mult_data_checker 22335 GOOD: (-20 + 103i) * (-5 + -49i) = (5147 + 465i), same as expected (5147 + 465i)
+# comp_mult_test.i_comp_mult_data_checker 22395 GOOD: (-95 + 58i) * (-20 + 15i) = (1030 + -2585i), same as expected (1030 + -2585i)
+# comp_mult_test.i_comp_mult_data_checker 22515 GOOD: (-31 + 109i) * (-75 + 114i) = (-10101 + -11709i), same as expected (-10101 + -11709i)
+# comp_mult_test.i_comp_mult_data_checker 22585 GOOD: (107 + 35i) * (71 + -90i) = (10747 + -7145i), same as expected (10747 + -7145i)
+# comp_mult_test.i_comp_mult_data_checker 22645 GOOD: (80 + -38i) * (15 + -86i) = (-2068 + -7450i), same as expected (-2068 + -7450i)
+# comp_mult_test.i_comp_mult_data_checker 22705 GOOD: (6 + -31i) * (-117 + 74i) = (1592 + 4071i), same as expected (1592 + 4071i)
+# comp_mult_test.i_comp_mult_data_checker 22775 GOOD: (-107 + 29i) * (-40 + -36i) = (5324 + 2692i), same as expected (5324 + 2692i)
+# comp_mult_test.i_comp_mult_data_checker 22845 GOOD: (-29 + 91i) * (-69 + 70i) = (-4369 + -8309i), same as expected (-4369 + -8309i)
+# comp_mult_test.i_comp_mult_data_checker 22945 GOOD: (39 + 11i) * (-112 + 34i) = (-4742 + 94i), same as expected (-4742 + 94i)
+# comp_mult_test.i_comp_mult_data_checker 23025 GOOD: (-64 + 77i) * (78 + -109i) = (3401 + 12982i), same as expected (3401 + 12982i)
+# comp_mult_test.i_comp_mult_data_checker 23145 GOOD: (-13 + -102i) * (-43 + 1i) = (661 + 4373i), same as expected (661 + 4373i)
+# comp_mult_test.i_comp_mult_data_checker 23225 GOOD: (17 + 69i) * (-7 + -42i) = (2779 + -1197i), same as expected (2779 + -1197i)
+# comp_mult_test.i_comp_mult_data_checker 23285 GOOD: (64 + -65i) * (0 + 115i) = (7475 + 7360i), same as expected (7475 + 7360i)
+# comp_mult_test.i_comp_mult_data_checker 23385 GOOD: (53 + 40i) * (34 + -33i) = (3122 + -389i), same as expected (3122 + -389i)
+# comp_mult_test.i_comp_mult_data_checker 23485 GOOD: (-40 + 6i) * (95 + 87i) = (-4322 + -2910i), same as expected (-4322 + -2910i)
+# comp_mult_test.i_comp_mult_data_checker 23575 GOOD: (-49 + 25i) * (100 + 28i) = (-5600 + 1128i), same as expected (-5600 + 1128i)
+# comp_mult_test.i_comp_mult_data_checker 23695 GOOD: (68 + 97i) * (123 + 99i) = (-1239 + 18663i), same as expected (-1239 + 18663i)
+# comp_mult_test.i_comp_mult_data_checker 23755 GOOD: (122 + -73i) * (-128 + 7i) = (-15105 + 10198i), same as expected (-15105 + 10198i)
+# comp_mult_test.i_comp_mult_data_checker 23865 GOOD: (96 + 89i) * (92 + 73i) = (2335 + 15196i), same as expected (2335 + 15196i)
+# comp_mult_test.i_comp_mult_data_checker 23965 GOOD: (94 + -70i) * (7 + -127i) = (-8232 + -12428i), same as expected (-8232 + -12428i)
+# comp_mult_test.i_comp_mult_data_checker 24025 GOOD: (-58 + -124i) * (105 + -107i) = (-19358 + -6814i), same as expected (-19358 + -6814i)
+# comp_mult_test.i_comp_mult_data_checker 24135 GOOD: (-37 + 25i) * (-69 + 6i) = (2403 + -1947i), same as expected (2403 + -1947i)
+# comp_mult_test.i_comp_mult_data_checker 24255 GOOD: (22 + 37i) * (101 + 52i) = (298 + 4881i), same as expected (298 + 4881i)
+# comp_mult_test.i_comp_mult_data_checker 24315 GOOD: (-42 + 61i) * (35 + -53i) = (1763 + 4361i), same as expected (1763 + 4361i)
+# comp_mult_test.i_comp_mult_data_checker 24375 GOOD: (93 + 52i) * (-127 + -101i) = (-6559 + -15997i), same as expected (-6559 + -15997i)
+# comp_mult_test.i_comp_mult_data_checker 24435 GOOD: (63 + 22i) * (45 + 62i) = (1471 + 4896i), same as expected (1471 + 4896i)
+# comp_mult_test.i_comp_mult_data_checker 24545 GOOD: (-11 + 57i) * (124 + -98i) = (4222 + 8146i), same as expected (4222 + 8146i)
+# comp_mult_test.i_comp_mult_data_checker 24605 GOOD: (18 + 112i) * (-95 + 26i) = (-4622 + -10172i), same as expected (-4622 + -10172i)
+# comp_mult_test.i_comp_mult_data_checker 24725 GOOD: (44 + -123i) * (44 + -111i) = (-11717 + -10296i), same as expected (-11717 + -10296i)
+# comp_mult_test.i_comp_mult_data_checker 24785 GOOD: (-22 + -117i) * (-72 + 41i) = (6381 + 7522i), same as expected (6381 + 7522i)
+# comp_mult_test.i_comp_mult_data_checker 24905 GOOD: (-101 + 120i) * (-99 + -73i) = (18759 + -4507i), same as expected (18759 + -4507i)
+# comp_mult_test.i_comp_mult_data_checker 25015 GOOD: (-90 + 10i) * (-52 + -62i) = (5300 + 5060i), same as expected (5300 + 5060i)
+# comp_mult_test.i_comp_mult_data_checker 25075 GOOD: (107 + 33i) * (44 + -57i) = (6589 + -4647i), same as expected (6589 + -4647i)
+# comp_mult_test.i_comp_mult_data_checker 25175 GOOD: (-7 + 1i) * (61 + 6i) = (-433 + 19i), same as expected (-433 + 19i)
+# comp_mult_test.i_comp_mult_data_checker 25235 GOOD: (-108 + -100i) * (-124 + 101i) = (23492 + 1492i), same as expected (23492 + 1492i)
+# comp_mult_test.i_comp_mult_data_checker 25295 GOOD: (37 + 103i) * (-36 + 19i) = (-3289 + -3005i), same as expected (-3289 + -3005i)
+# comp_mult_test.i_comp_mult_data_checker 25395 GOOD: (67 + 35i) * (31 + -110i) = (5927 + -6285i), same as expected (5927 + -6285i)
+# comp_mult_test.i_comp_mult_data_checker 25455 GOOD: (-82 + 111i) * (-78 + 66i) = (-930 + -14070i), same as expected (-930 + -14070i)
+# comp_mult_test.i_comp_mult_data_checker 25535 GOOD: (31 + 19i) * (103 + -85i) = (4808 + -678i), same as expected (4808 + -678i)
+# comp_mult_test.i_comp_mult_data_checker 25595 GOOD: (-29 + 127i) * (-30 + 44i) = (-4718 + -5086i), same as expected (-4718 + -5086i)
+# comp_mult_test.i_comp_mult_data_checker 25655 GOOD: (-26 + 113i) * (-71 + -90i) = (12016 + -5683i), same as expected (12016 + -5683i)
+# comp_mult_test.i_comp_mult_data_checker 25715 GOOD: (-106 + 120i) * (-35 + 0i) = (3710 + -4200i), same as expected (3710 + -4200i)
+# comp_mult_test.i_comp_mult_data_checker 25775 GOOD: (-26 + 75i) * (35 + 113i) = (-9385 + -313i), same as expected (-9385 + -313i)
+# comp_mult_test.i_comp_mult_data_checker 25835 GOOD: (100 + -38i) * (12 + -7i) = (934 + -1156i), same as expected (934 + -1156i)
+# comp_mult_test.i_comp_mult_data_checker 25895 GOOD: (70 + -104i) * (59 + -104i) = (-6686 + -13416i), same as expected (-6686 + -13416i)
+# comp_mult_test.i_comp_mult_data_checker 25975 GOOD: (73 + 22i) * (-121 + 75i) = (-10483 + 2813i), same as expected (-10483 + 2813i)
+# comp_mult_test.i_comp_mult_data_checker 26035 GOOD: (2 + 22i) * (-57 + 33i) = (-840 + -1188i), same as expected (-840 + -1188i)
+# comp_mult_test.i_comp_mult_data_checker 26095 GOOD: (86 + 73i) * (-22 + -96i) = (5116 + -9862i), same as expected (5116 + -9862i)
+# comp_mult_test.i_comp_mult_data_checker 26175 GOOD: (64 + -2i) * (123 + 101i) = (8074 + 6218i), same as expected (8074 + 6218i)
+# comp_mult_test.i_comp_mult_data_checker 26265 GOOD: (93 + 108i) * (-27 + 95i) = (-12771 + 5919i), same as expected (-12771 + 5919i)
+# comp_mult_test.i_comp_mult_data_checker 26385 GOOD: (78 + -79i) * (48 + 104i) = (11960 + 4320i), same as expected (11960 + 4320i)
+# comp_mult_test.i_comp_mult_data_checker 26475 GOOD: (68 + 91i) * (93 + 29i) = (3685 + 10435i), same as expected (3685 + 10435i)
+# comp_mult_test.i_comp_mult_data_checker 26575 GOOD: (26 + -8i) * (51 + -78i) = (702 + -2436i), same as expected (702 + -2436i)
+# comp_mult_test.i_comp_mult_data_checker 26655 GOOD: (87 + -61i) * (100 + -90i) = (3210 + -13930i), same as expected (3210 + -13930i)
+# comp_mult_test.i_comp_mult_data_checker 26715 GOOD: (34 + 86i) * (58 + -86i) = (9368 + 2064i), same as expected (9368 + 2064i)
+# comp_mult_test.i_comp_mult_data_checker 26775 GOOD: (60 + -92i) * (-7 + -76i) = (-7412 + -3916i), same as expected (-7412 + -3916i)
+# comp_mult_test.i_comp_mult_data_checker 26855 GOOD: (-43 + -66i) * (119 + -87i) = (-10859 + -4113i), same as expected (-10859 + -4113i)
+# comp_mult_test.i_comp_mult_data_checker 26965 GOOD: (122 + 4i) * (-114 + 90i) = (-14268 + 10524i), same as expected (-14268 + 10524i)
+# comp_mult_test.i_comp_mult_data_checker 27075 GOOD: (-123 + -76i) * (-39 + 3i) = (5025 + 2595i), same as expected (5025 + 2595i)
+# comp_mult_test.i_comp_mult_data_checker 27185 GOOD: (42 + 70i) * (-110 + -108i) = (2940 + -12236i), same as expected (2940 + -12236i)
+# comp_mult_test.i_comp_mult_data_checker 27245 GOOD: (-19 + -68i) * (35 + -103i) = (-7669 + -423i), same as expected (-7669 + -423i)
+# comp_mult_test.i_comp_mult_data_checker 27305 GOOD: (-76 + 89i) * (-112 + -96i) = (17056 + -2672i), same as expected (17056 + -2672i)
+# comp_mult_test.i_comp_mult_data_checker 27385 GOOD: (-114 + -47i) * (-73 + -31i) = (6865 + 6965i), same as expected (6865 + 6965i)
+# comp_mult_test.i_comp_mult_data_checker 27445 GOOD: (109 + 76i) * (-44 + 12i) = (-5708 + -2036i), same as expected (-5708 + -2036i)
+# comp_mult_test.i_comp_mult_data_checker 27505 GOOD: (-69 + 49i) * (42 + 5i) = (-3143 + 1713i), same as expected (-3143 + 1713i)
+# comp_mult_test.i_comp_mult_data_checker 27565 GOOD: (-66 + 26i) * (-114 + -122i) = (10696 + 5088i), same as expected (10696 + 5088i)
+# comp_mult_test.i_comp_mult_data_checker 27625 GOOD: (46 + -107i) * (-122 + 76i) = (2520 + 16550i), same as expected (2520 + 16550i)
+# comp_mult_test.i_comp_mult_data_checker 27685 GOOD: (30 + -83i) * (1 + -24i) = (-1962 + -803i), same as expected (-1962 + -803i)
+# comp_mult_test.i_comp_mult_data_checker 27745 GOOD: (-64 + -112i) * (37 + 90i) = (7712 + -9904i), same as expected (7712 + -9904i)
+# comp_mult_test.i_comp_mult_data_checker 27805 GOOD: (22 + 6i) * (-35 + 24i) = (-914 + 318i), same as expected (-914 + 318i)
+# comp_mult_test.i_comp_mult_data_checker 27865 GOOD: (-70 + -3i) * (-20 + -125i) = (1025 + 8810i), same as expected (1025 + 8810i)
+# comp_mult_test.i_comp_mult_data_checker 27925 GOOD: (79 + -47i) * (-81 + -110i) = (-11569 + -4883i), same as expected (-11569 + -4883i)
+# comp_mult_test.i_comp_mult_data_checker 27985 GOOD: (120 + -109i) * (-3 + 82i) = (8578 + 10167i), same as expected (8578 + 10167i)
+# comp_mult_test.i_comp_mult_data_checker 28075 GOOD: (-96 + -124i) * (-70 + 67i) = (15028 + 2248i), same as expected (15028 + 2248i)
+# comp_mult_test.i_comp_mult_data_checker 28195 GOOD: (23 + -91i) * (-118 + 32i) = (198 + 11474i), same as expected (198 + 11474i)
+# comp_mult_test.i_comp_mult_data_checker 28255 GOOD: (96 + 21i) * (60 + 73i) = (4227 + 8268i), same as expected (4227 + 8268i)
+# comp_mult_test.i_comp_mult_data_checker 28315 GOOD: (-98 + 0i) * (95 + 98i) = (-9310 + -9604i), same as expected (-9310 + -9604i)
+# comp_mult_test.i_comp_mult_data_checker 28385 GOOD: (-112 + -35i) * (37 + -114i) = (-8134 + 11473i), same as expected (-8134 + 11473i)
+# comp_mult_test.i_comp_mult_data_checker 28465 GOOD: (-67 + -52i) * (-89 + 100i) = (11163 + -2072i), same as expected (11163 + -2072i)
+# comp_mult_test.i_comp_mult_data_checker 28545 GOOD: (23 + -36i) * (121 + -12i) = (2351 + -4632i), same as expected (2351 + -4632i)
+# comp_mult_test.i_comp_mult_data_checker 28605 GOOD: (122 + 40i) * (74 + 79i) = (5868 + 12598i), same as expected (5868 + 12598i)
+# comp_mult_test.i_comp_mult_data_checker 28725 GOOD: (-3 + -58i) * (49 + 122i) = (6929 + -3208i), same as expected (6929 + -3208i)
+# comp_mult_test.i_comp_mult_data_checker 28785 GOOD: (85 + -63i) * (-32 + 75i) = (2005 + 8391i), same as expected (2005 + 8391i)
+# comp_mult_test.i_comp_mult_data_checker 28905 GOOD: (38 + 34i) * (-25 + -81i) = (1804 + -3928i), same as expected (1804 + -3928i)
+# comp_mult_test.i_comp_mult_data_checker 28975 GOOD: (25 + 42i) * (25 + -95i) = (4615 + -1325i), same as expected (4615 + -1325i)
+# comp_mult_test.i_comp_mult_data_checker 29035 GOOD: (49 + -63i) * (14 + -117i) = (-6685 + -6615i), same as expected (-6685 + -6615i)
+# comp_mult_test.i_comp_mult_data_checker 29095 GOOD: (111 + -119i) * (-87 + -128i) = (-24889 + -3855i), same as expected (-24889 + -3855i)
+# comp_mult_test.i_comp_mult_data_checker 29205 GOOD: (-102 + -62i) * (-59 + -22i) = (4654 + 5902i), same as expected (4654 + 5902i)
+# comp_mult_test.i_comp_mult_data_checker 29325 GOOD: (127 + 88i) * (108 + 37i) = (10460 + 14203i), same as expected (10460 + 14203i)
+# comp_mult_test.i_comp_mult_data_checker 29395 GOOD: (-122 + 80i) * (90 + 56i) = (-15460 + 368i), same as expected (-15460 + 368i)
+# comp_mult_test.i_comp_mult_data_checker 29465 GOOD: (-69 + -16i) * (37 + 87i) = (-1161 + -6595i), same as expected (-1161 + -6595i)
+# comp_mult_test.i_comp_mult_data_checker 29575 GOOD: (-57 + 4i) * (-30 + -99i) = (2106 + 5523i), same as expected (2106 + 5523i)
+# comp_mult_test.i_comp_mult_data_checker 29635 GOOD: (-93 + 92i) * (46 + -78i) = (2898 + 11486i), same as expected (2898 + 11486i)
+# comp_mult_test.i_comp_mult_data_checker 29695 GOOD: (109 + 108i) * (26 + -7i) = (3590 + 2045i), same as expected (3590 + 2045i)
+# comp_mult_test.i_comp_mult_data_checker 29755 GOOD: (2 + -61i) * (2 + 25i) = (1529 + -72i), same as expected (1529 + -72i)
+# comp_mult_test.i_comp_mult_data_checker 29865 GOOD: (97 + 117i) * (-37 + 21i) = (-6046 + -2292i), same as expected (-6046 + -2292i)
+# comp_mult_test.i_comp_mult_data_checker 29955 GOOD: (108 + 106i) * (-23 + 62i) = (-9056 + 4258i), same as expected (-9056 + 4258i)
+# comp_mult_test.i_comp_mult_data_checker 30015 GOOD: (-80 + 74i) * (-122 + 67i) = (4802 + -14388i), same as expected (4802 + -14388i)
+# comp_mult_test.i_comp_mult_data_checker 30075 GOOD: (-57 + -17i) * (-54 + -39i) = (2415 + 3141i), same as expected (2415 + 3141i)
+# comp_mult_test.i_comp_mult_data_checker 30135 GOOD: (44 + 99i) * (91 + -47i) = (8657 + 6941i), same as expected (8657 + 6941i)
+# comp_mult_test.i_comp_mult_data_checker 30205 GOOD: (105 + 87i) * (-120 + 127i) = (-23649 + 2895i), same as expected (-23649 + 2895i)
+# comp_mult_test.i_comp_mult_data_checker 30265 GOOD: (102 + 8i) * (-95 + -57i) = (-9234 + -6574i), same as expected (-9234 + -6574i)
+# comp_mult_test.i_comp_mult_data_checker 30355 GOOD: (-17 + -109i) * (-68 + 46i) = (6170 + 6630i), same as expected (6170 + 6630i)
+# comp_mult_test.i_comp_mult_data_checker 30435 GOOD: (24 + -24i) * (-117 + 56i) = (-1464 + 4152i), same as expected (-1464 + 4152i)
+# comp_mult_test.i_comp_mult_data_checker 30495 GOOD: (-28 + -122i) * (-123 + -28i) = (28 + 15790i), same as expected (28 + 15790i)
+# comp_mult_test.i_comp_mult_data_checker 30585 GOOD: (-96 + 27i) * (87 + 112i) = (-11376 + -8403i), same as expected (-11376 + -8403i)
+# comp_mult_test.i_comp_mult_data_checker 30645 GOOD: (-109 + -38i) * (-7 + -119i) = (-3759 + 13237i), same as expected (-3759 + 13237i)
+# comp_mult_test.i_comp_mult_data_checker 30745 GOOD: (25 + 36i) * (16 + 73i) = (-2228 + 2401i), same as expected (-2228 + 2401i)
+# comp_mult_test.i_comp_mult_data_checker 30865 GOOD: (-97 + -25i) * (16 + 112i) = (1248 + -11264i), same as expected (1248 + -11264i)
+# comp_mult_test.i_comp_mult_data_checker 30955 GOOD: (20 + -83i) * (-114 + 17i) = (-869 + 9802i), same as expected (-869 + 9802i)
+# comp_mult_test.i_comp_mult_data_checker 31075 GOOD: (0 + 86i) * (-23 + -62i) = (5332 + -1978i), same as expected (5332 + -1978i)
+# comp_mult_test.i_comp_mult_data_checker 31135 GOOD: (112 + -44i) * (85 + -75i) = (6220 + -12140i), same as expected (6220 + -12140i)
+# comp_mult_test.i_comp_mult_data_checker 31195 GOOD: (23 + 126i) * (43 + -52i) = (7541 + 4222i), same as expected (7541 + 4222i)
+# comp_mult_test.i_comp_mult_data_checker 31255 GOOD: (85 + -77i) * (22 + 64i) = (6798 + 3746i), same as expected (6798 + 3746i)
+# comp_mult_test.i_comp_mult_data_checker 31315 GOOD: (-90 + -116i) * (-88 + 17i) = (9892 + 8678i), same as expected (9892 + 8678i)
+# comp_mult_test.i_comp_mult_data_checker 31375 GOOD: (125 + -87i) * (31 + -45i) = (-40 + -8322i), same as expected (-40 + -8322i)
+# comp_mult_test.i_comp_mult_data_checker 31475 GOOD: (15 + -123i) * (-95 + 74i) = (7677 + 12795i), same as expected (7677 + 12795i)
+# comp_mult_test.i_comp_mult_data_checker 31535 GOOD: (-78 + 76i) * (91 + 110i) = (-15458 + -1664i), same as expected (-15458 + -1664i)
+# comp_mult_test.i_comp_mult_data_checker 31625 GOOD: (57 + 67i) * (-82 + -42i) = (-1860 + -7888i), same as expected (-1860 + -7888i)
+# comp_mult_test.i_comp_mult_data_checker 31685 GOOD: (-14 + 40i) * (-16 + -32i) = (1504 + -192i), same as expected (1504 + -192i)
+# comp_mult_test.i_comp_mult_data_checker 31745 GOOD: (50 + -100i) * (49 + 8i) = (3250 + -4500i), same as expected (3250 + -4500i)
+# comp_mult_test.i_comp_mult_data_checker 31845 GOOD: (80 + -3i) * (39 + 101i) = (3423 + 7963i), same as expected (3423 + 7963i)
+# comp_mult_test.i_comp_mult_data_checker 31905 GOOD: (89 + -117i) * (-2 + 19i) = (2045 + 1925i), same as expected (2045 + 1925i)
+# comp_mult_test.i_comp_mult_data_checker 31995 GOOD: (41 + 30i) * (113 + -119i) = (8203 + -1489i), same as expected (8203 + -1489i)
+# comp_mult_test.i_comp_mult_data_checker 32105 GOOD: (74 + 66i) * (-95 + -101i) = (-364 + -13744i), same as expected (-364 + -13744i)
+# comp_mult_test.i_comp_mult_data_checker 32165 GOOD: (-6 + -76i) * (51 + 111i) = (8130 + -4542i), same as expected (8130 + -4542i)
+# comp_mult_test.i_comp_mult_data_checker 32285 GOOD: (-91 + -107i) * (-79 + 0i) = (7189 + 8453i), same as expected (7189 + 8453i)
+# comp_mult_test.i_comp_mult_data_checker 32345 GOOD: (-116 + -11i) * (124 + -8i) = (-14472 + -436i), same as expected (-14472 + -436i)
+# comp_mult_test.i_comp_mult_data_checker 32405 GOOD: (-92 + -123i) * (-46 + 21i) = (6815 + 3726i), same as expected (6815 + 3726i)
+# comp_mult_test.i_comp_mult_data_checker 32465 GOOD: (-21 + -48i) * (5 + -67i) = (-3321 + 1167i), same as expected (-3321 + 1167i)
+# comp_mult_test.i_comp_mult_data_checker 32555 GOOD: (9 + -113i) * (69 + -25i) = (-2204 + -8022i), same as expected (-2204 + -8022i)
+# comp_mult_test.i_comp_mult_data_checker 32635 GOOD: (27 + -103i) * (-23 + 79i) = (7516 + 4502i), same as expected (7516 + 4502i)
+# comp_mult_test.i_comp_mult_data_checker 32715 GOOD: (115 + -100i) * (30 + 29i) = (6350 + 335i), same as expected (6350 + 335i)
+# comp_mult_test.i_comp_mult_data_checker 32815 GOOD: (11 + 17i) * (-35 + -89i) = (1128 + -1574i), same as expected (1128 + -1574i)
+# comp_mult_test.i_comp_mult_data_checker 32915 GOOD: (-25 + -55i) * (15 + -58i) = (-3565 + 625i), same as expected (-3565 + 625i)
+# comp_mult_test.i_comp_mult_data_checker 32995 GOOD: (-46 + 120i) * (-46 + 0i) = (2116 + -5520i), same as expected (2116 + -5520i)
+# comp_mult_test.i_comp_mult_data_checker 33095 GOOD: (-15 + 87i) * (-31 + -92i) = (8469 + -1317i), same as expected (8469 + -1317i)
+# comp_mult_test.i_comp_mult_data_checker 33215 GOOD: (-100 + 87i) * (32 + 55i) = (-7985 + -2716i), same as expected (-7985 + -2716i)
+# comp_mult_test.i_comp_mult_data_checker 33275 GOOD: (33 + 73i) * (97 + 74i) = (-2201 + 9523i), same as expected (-2201 + 9523i)
+# comp_mult_test.i_comp_mult_data_checker 33335 GOOD: (74 + 79i) * (108 + 125i) = (-1883 + 17782i), same as expected (-1883 + 17782i)
+# comp_mult_test.i_comp_mult_data_checker 33455 GOOD: (-86 + -33i) * (-27 + -98i) = (-912 + 9319i), same as expected (-912 + 9319i)
+# comp_mult_test.i_comp_mult_data_checker 33515 GOOD: (7 + -14i) * (-29 + -112i) = (-1771 + -378i), same as expected (-1771 + -378i)
+# comp_mult_test.i_comp_mult_data_checker 33615 GOOD: (98 + -121i) * (19 + -27i) = (-1405 + -4945i), same as expected (-1405 + -4945i)
+# comp_mult_test.i_comp_mult_data_checker 33685 GOOD: (-33 + -125i) * (35 + 23i) = (1720 + -5134i), same as expected (1720 + -5134i)
+# comp_mult_test.i_comp_mult_data_checker 33795 GOOD: (-18 + 15i) * (-93 + 6i) = (1584 + -1503i), same as expected (1584 + -1503i)
+# comp_mult_test.i_comp_mult_data_checker 33855 GOOD: (-5 + 110i) * (68 + -106i) = (11320 + 8010i), same as expected (11320 + 8010i)
+# comp_mult_test.i_comp_mult_data_checker 33915 GOOD: (88 + 77i) * (-78 + 24i) = (-8712 + -3894i), same as expected (-8712 + -3894i)
+# comp_mult_test.i_comp_mult_data_checker 33975 GOOD: (-12 + -73i) * (90 + 84i) = (5052 + -7578i), same as expected (5052 + -7578i)
+# comp_mult_test.i_comp_mult_data_checker 34035 GOOD: (72 + 78i) * (-15 + -79i) = (5082 + -6858i), same as expected (5082 + -6858i)
+# comp_mult_test.i_comp_mult_data_checker 34105 GOOD: (-69 + -22i) * (6 + -94i) = (-2482 + 6354i), same as expected (-2482 + 6354i)
+# comp_mult_test.i_comp_mult_data_checker 34165 GOOD: (-73 + 97i) * (124 + -93i) = (-31 + 18817i), same as expected (-31 + 18817i)
+# comp_mult_test.i_comp_mult_data_checker 34285 GOOD: (105 + -46i) * (56 + -117i) = (498 + -14861i), same as expected (498 + -14861i)
+# comp_mult_test.i_comp_mult_data_checker 34345 GOOD: (46 + 87i) * (-67 + -21i) = (-1255 + -6795i), same as expected (-1255 + -6795i)
+# comp_mult_test.i_comp_mult_data_checker 34445 GOOD: (-71 + -109i) * (81 + -54i) = (-11637 + -4995i), same as expected (-11637 + -4995i)
+# comp_mult_test.i_comp_mult_data_checker 34535 GOOD: (-51 + -61i) * (-103 + -97i) = (-664 + 11230i), same as expected (-664 + 11230i)
+# comp_mult_test.i_comp_mult_data_checker 34595 GOOD: (-43 + -2i) * (117 + -71i) = (-5173 + 2819i), same as expected (-5173 + 2819i)
+# comp_mult_test.i_comp_mult_data_checker 34715 GOOD: (-25 + 1i) * (-10 + 97i) = (153 + -2435i), same as expected (153 + -2435i)
+# comp_mult_test.i_comp_mult_data_checker 34775 GOOD: (86 + -95i) * (90 + -92i) = (-1000 + -16462i), same as expected (-1000 + -16462i)
+# comp_mult_test.i_comp_mult_data_checker 34835 GOOD: (4 + 122i) * (84 + 90i) = (-10644 + 10608i), same as expected (-10644 + 10608i)
+# comp_mult_test.i_comp_mult_data_checker 34895 GOOD: (-30 + 71i) * (60 + 78i) = (-7338 + 1920i), same as expected (-7338 + 1920i)
+# comp_mult_test.i_comp_mult_data_checker 34955 GOOD: (110 + 43i) * (114 + 1i) = (12497 + 5012i), same as expected (12497 + 5012i)
+# comp_mult_test.i_comp_mult_data_checker 35015 GOOD: (-60 + 29i) * (-33 + -40i) = (3140 + 1443i), same as expected (3140 + 1443i)
+# comp_mult_test.i_comp_mult_data_checker 35115 GOOD: (6 + 76i) * (122 + -121i) = (9928 + 8546i), same as expected (9928 + 8546i)
+# comp_mult_test.i_comp_mult_data_checker 35225 GOOD: (-80 + 108i) * (105 + 122i) = (-21576 + 1580i), same as expected (-21576 + 1580i)
+# comp_mult_test.i_comp_mult_data_checker 35325 GOOD: (71 + -39i) * (-117 + -89i) = (-11778 + -1756i), same as expected (-11778 + -1756i)
+# comp_mult_test.i_comp_mult_data_checker 35385 GOOD: (103 + -85i) * (73 + -102i) = (-1151 + -16711i), same as expected (-1151 + -16711i)
+# comp_mult_test.i_comp_mult_data_checker 35455 GOOD: (-65 + 27i) * (119 + 38i) = (-8761 + 743i), same as expected (-8761 + 743i)
+# comp_mult_test.i_comp_mult_data_checker 35555 GOOD: (61 + 85i) * (-99 + 49i) = (-10204 + -5426i), same as expected (-10204 + -5426i)
+# comp_mult_test.i_comp_mult_data_checker 35675 GOOD: (-42 + -106i) * (-58 + 52i) = (7948 + 3964i), same as expected (7948 + 3964i)
+# comp_mult_test.i_comp_mult_data_checker 35775 GOOD: (121 + 40i) * (-126 + -99i) = (-11286 + -17019i), same as expected (-11286 + -17019i)
+# comp_mult_test.i_comp_mult_data_checker 35865 GOOD: (-121 + 78i) * (-127 + -118i) = (24571 + 4372i), same as expected (24571 + 4372i)
+# comp_mult_test.i_comp_mult_data_checker 35985 GOOD: (-2 + 63i) * (5 + 38i) = (-2404 + 239i), same as expected (-2404 + 239i)
+# comp_mult_test.i_comp_mult_data_checker 36045 GOOD: (-68 + 8i) * (53 + -87i) = (-2908 + 6340i), same as expected (-2908 + 6340i)
+# comp_mult_test.i_comp_mult_data_checker 36105 GOOD: (-90 + 71i) * (-70 + -112i) = (14252 + 5110i), same as expected (14252 + 5110i)
+# comp_mult_test.i_comp_mult_data_checker 36165 GOOD: (117 + 5i) * (2 + -104i) = (754 + -12158i), same as expected (754 + -12158i)
+# comp_mult_test.i_comp_mult_data_checker 36225 GOOD: (-6 + -31i) * (23 + 15i) = (327 + -803i), same as expected (327 + -803i)
+# comp_mult_test.i_comp_mult_data_checker 36345 GOOD: (-26 + -119i) * (60 + 43i) = (3557 + -8258i), same as expected (3557 + -8258i)
+# comp_mult_test.i_comp_mult_data_checker 36405 GOOD: (-125 + 97i) * (-121 + -98i) = (24631 + 513i), same as expected (24631 + 513i)
+# comp_mult_test.i_comp_mult_data_checker 36495 GOOD: (27 + -29i) * (50 + 59i) = (3061 + 143i), same as expected (3061 + 143i)
+# comp_mult_test.i_comp_mult_data_checker 36555 GOOD: (10 + 106i) * (19 + -19i) = (2204 + 1824i), same as expected (2204 + 1824i)
+# comp_mult_test.i_comp_mult_data_checker 36615 GOOD: (24 + 13i) * (-114 + -25i) = (-2411 + -2082i), same as expected (-2411 + -2082i)
+# comp_mult_test.i_comp_mult_data_checker 36675 GOOD: (-11 + -53i) * (-23 + -84i) = (-4199 + 2143i), same as expected (-4199 + 2143i)
+# comp_mult_test.i_comp_mult_data_checker 36765 GOOD: (3 + -108i) * (-117 + 91i) = (9477 + 12909i), same as expected (9477 + 12909i)
+# comp_mult_test.i_comp_mult_data_checker 36855 GOOD: (-102 + -90i) * (-126 + -123i) = (1782 + 23886i), same as expected (1782 + 23886i)
+# comp_mult_test.i_comp_mult_data_checker 36915 GOOD: (-54 + -74i) * (-127 + 19i) = (8264 + 8372i), same as expected (8264 + 8372i)
+# comp_mult_test.i_comp_mult_data_checker 36975 GOOD: (-121 + -112i) * (47 + 86i) = (3945 + -15670i), same as expected (3945 + -15670i)
+# comp_mult_test.i_comp_mult_data_checker 37085 GOOD: (114 + -100i) * (-71 + -72i) = (-15294 + -1108i), same as expected (-15294 + -1108i)
+# comp_mult_test.i_comp_mult_data_checker 37145 GOOD: (80 + -107i) * (117 + -48i) = (4224 + -16359i), same as expected (4224 + -16359i)
+# comp_mult_test.i_comp_mult_data_checker 37215 GOOD: (116 + 60i) * (-61 + 18i) = (-8156 + -1572i), same as expected (-8156 + -1572i)
+# comp_mult_test.i_comp_mult_data_checker 37315 GOOD: (-25 + 118i) * (45 + -1i) = (-1007 + 5335i), same as expected (-1007 + 5335i)
+# comp_mult_test.i_comp_mult_data_checker 37385 GOOD: (-25 + 125i) * (-21 + 114i) = (-13725 + -5475i), same as expected (-13725 + -5475i)
+# comp_mult_test.i_comp_mult_data_checker 37445 GOOD: (-3 + 12i) * (123 + -79i) = (579 + 1713i), same as expected (579 + 1713i)
+# comp_mult_test.i_comp_mult_data_checker 37535 GOOD: (109 + -80i) * (-20 + 37i) = (780 + 5633i), same as expected (780 + 5633i)
+# comp_mult_test.i_comp_mult_data_checker 37595 GOOD: (16 + -33i) * (-126 + -3i) = (-2115 + 4110i), same as expected (-2115 + 4110i)
+# comp_mult_test.i_comp_mult_data_checker 37655 GOOD: (-53 + 64i) * (78 + -16i) = (-3110 + 5840i), same as expected (-3110 + 5840i)
+# comp_mult_test.i_comp_mult_data_checker 37745 GOOD: (29 + -48i) * (111 + -92i) = (-1197 + -7996i), same as expected (-1197 + -7996i)
+# comp_mult_test.i_comp_mult_data_checker 37805 GOOD: (-32 + -19i) * (-57 + -45i) = (969 + 2523i), same as expected (969 + 2523i)
+# comp_mult_test.i_comp_mult_data_checker 37905 GOOD: (89 + -100i) * (-92 + 21i) = (-6088 + 11069i), same as expected (-6088 + 11069i)
+# comp_mult_test.i_comp_mult_data_checker 37965 GOOD: (83 + 65i) * (76 + -59i) = (10143 + 43i), same as expected (10143 + 43i)
+# comp_mult_test.i_comp_mult_data_checker 38045 GOOD: (32 + 48i) * (105 + 80i) = (-480 + 7600i), same as expected (-480 + 7600i)
+# comp_mult_test.i_comp_mult_data_checker 38155 GOOD: (-113 + -54i) * (44 + 107i) = (806 + -14467i), same as expected (806 + -14467i)
+# comp_mult_test.i_comp_mult_data_checker 38215 GOOD: (-24 + 44i) * (96 + -31i) = (-940 + 4968i), same as expected (-940 + 4968i)
+# comp_mult_test.i_comp_mult_data_checker 38305 GOOD: (-82 + 124i) * (72 + 116i) = (-20288 + -584i), same as expected (-20288 + -584i)
+# comp_mult_test.i_comp_mult_data_checker 38365 GOOD: (62 + 106i) * (78 + 6i) = (4200 + 8640i), same as expected (4200 + 8640i)
+# comp_mult_test.i_comp_mult_data_checker 38445 GOOD: (-66 + -31i) * (38 + -6i) = (-2694 + -782i), same as expected (-2694 + -782i)
+# comp_mult_test.i_comp_mult_data_checker 38505 GOOD: (-67 + 48i) * (-83 + 109i) = (329 + -11287i), same as expected (329 + -11287i)
+# comp_mult_test.i_comp_mult_data_checker 38615 GOOD: (95 + 82i) * (46 + -126i) = (14702 + -8198i), same as expected (14702 + -8198i)
+# comp_mult_test.i_comp_mult_data_checker 38675 GOOD: (-124 + -70i) * (49 + -70i) = (-10976 + 5250i), same as expected (-10976 + 5250i)
+# comp_mult_test.i_comp_mult_data_checker 38735 GOOD: (25 + 59i) * (-116 + -22i) = (-1602 + -7394i), same as expected (-1602 + -7394i)
+# comp_mult_test.i_comp_mult_data_checker 38845 GOOD: (-32 + 76i) * (-76 + -79i) = (8436 + -3248i), same as expected (8436 + -3248i)
+# comp_mult_test.i_comp_mult_data_checker 38905 GOOD: (-112 + -120i) * (9 + -21i) = (-3528 + 1272i), same as expected (-3528 + 1272i)
+# comp_mult_test.i_comp_mult_data_checker 38965 GOOD: (37 + 71i) * (-46 + 30i) = (-3832 + -2156i), same as expected (-3832 + -2156i)
+# comp_mult_test.i_comp_mult_data_checker 39025 GOOD: (-31 + -6i) * (77 + 78i) = (-1919 + -2880i), same as expected (-1919 + -2880i)
+# comp_mult_test.i_comp_mult_data_checker 39085 GOOD: (-117 + -10i) * (27 + -29i) = (-3449 + 3123i), same as expected (-3449 + 3123i)
+# comp_mult_test.i_comp_mult_data_checker 39145 GOOD: (-74 + 93i) * (37 + 104i) = (-12410 + -4255i), same as expected (-12410 + -4255i)
+# comp_mult_test.i_comp_mult_data_checker 39205 GOOD: (-35 + 9i) * (65 + -36i) = (-1951 + 1845i), same as expected (-1951 + 1845i)
+# comp_mult_test.i_comp_mult_data_checker 39295 GOOD: (-82 + 52i) * (60 + -78i) = (-864 + 9516i), same as expected (-864 + 9516i)
+# comp_mult_test.i_comp_mult_data_checker 39395 GOOD: (11 + -10i) * (42 + 51i) = (972 + 141i), same as expected (972 + 141i)
+# comp_mult_test.i_comp_mult_data_checker 39455 GOOD: (30 + -105i) * (-95 + 98i) = (7440 + 12915i), same as expected (7440 + 12915i)
+# comp_mult_test.i_comp_mult_data_checker 39515 GOOD: (-98 + -38i) * (-31 + 7i) = (3304 + 492i), same as expected (3304 + 492i)
+# comp_mult_test.i_comp_mult_data_checker 39575 GOOD: (68 + -68i) * (67 + 80i) = (9996 + 884i), same as expected (9996 + 884i)
+# comp_mult_test.i_comp_mult_data_checker 39645 GOOD: (-30 + -104i) * (9 + -30i) = (-3390 + -36i), same as expected (-3390 + -36i)
+# comp_mult_test.i_comp_mult_data_checker 39705 GOOD: (45 + -79i) * (-7 + 77i) = (5768 + 4018i), same as expected (5768 + 4018i)
+# comp_mult_test.i_comp_mult_data_checker 39775 GOOD: (-63 + -59i) * (-77 + 59i) = (8332 + 826i), same as expected (8332 + 826i)
+# comp_mult_test.i_comp_mult_data_checker 39835 GOOD: (78 + -64i) * (54 + 44i) = (7028 + -24i), same as expected (7028 + -24i)
+# comp_mult_test.i_comp_mult_data_checker 39895 GOOD: (-128 + -128i) * (47 + -119i) = (-21248 + 9216i), same as expected (-21248 + 9216i)
+# comp_mult_test.i_comp_mult_data_checker 40005 GOOD: (26 + 119i) * (-76 + 73i) = (-10663 + -7146i), same as expected (-10663 + -7146i)
+# comp_mult_test.i_comp_mult_data_checker 40105 GOOD: (98 + -13i) * (99 + -92i) = (8506 + -10303i), same as expected (8506 + -10303i)
+# comp_mult_test.i_comp_mult_data_checker 40185 GOOD: (-86 + -73i) * (78 + 30i) = (-4518 + -8274i), same as expected (-4518 + -8274i)
+# comp_mult_test.i_comp_mult_data_checker 40265 GOOD: (-93 + 29i) * (-34 + -83i) = (5569 + 6733i), same as expected (5569 + 6733i)
+# comp_mult_test.i_comp_mult_data_checker 40365 GOOD: (85 + 53i) * (102 + 119i) = (2363 + 15521i), same as expected (2363 + 15521i)
+# comp_mult_test.i_comp_mult_data_checker 40425 GOOD: (69 + 38i) * (112 + -90i) = (11148 + -1954i), same as expected (11148 + -1954i)
+# comp_mult_test.i_comp_mult_data_checker 40485 GOOD: (44 + -111i) * (-4 + -4i) = (-620 + 268i), same as expected (-620 + 268i)
+# comp_mult_test.i_comp_mult_data_checker 40545 GOOD: (33 + 63i) * (-76 + -92i) = (3288 + -7824i), same as expected (3288 + -7824i)
+# comp_mult_test.i_comp_mult_data_checker 40605 GOOD: (-98 + -92i) * (13 + -67i) = (-7438 + 5370i), same as expected (-7438 + 5370i)
+# comp_mult_test.i_comp_mult_data_checker 40665 GOOD: (95 + 31i) * (14 + -100i) = (4430 + -9066i), same as expected (4430 + -9066i)
+# comp_mult_test.i_comp_mult_data_checker 40725 GOOD: (-14 + 108i) * (-62 + 41i) = (-3560 + -7270i), same as expected (-3560 + -7270i)
+# comp_mult_test.i_comp_mult_data_checker 40805 GOOD: (125 + -43i) * (-23 + 11i) = (-2402 + 2364i), same as expected (-2402 + 2364i)
+# comp_mult_test.i_comp_mult_data_checker 40865 GOOD: (88 + 12i) * (44 + -80i) = (4832 + -6512i), same as expected (4832 + -6512i)
+# comp_mult_test.i_comp_mult_data_checker 40945 GOOD: (100 + -114i) * (113 + -55i) = (5030 + -18382i), same as expected (5030 + -18382i)
+# comp_mult_test.i_comp_mult_data_checker 41005 GOOD: (27 + 33i) * (3 + -123i) = (4140 + -3222i), same as expected (4140 + -3222i)
+# comp_mult_test.i_comp_mult_data_checker 41065 GOOD: (-122 + 96i) * (80 + 108i) = (-20128 + -5496i), same as expected (-20128 + -5496i)
+# comp_mult_test.i_comp_mult_data_checker 41125 GOOD: (-3 + 90i) * (-68 + -122i) = (11184 + -5754i), same as expected (11184 + -5754i)
+# comp_mult_test.i_comp_mult_data_checker 41225 GOOD: (37 + 9i) * (-58 + -45i) = (-1741 + -2187i), same as expected (-1741 + -2187i)
+# comp_mult_test.i_comp_mult_data_checker 41325 GOOD: (-37 + -56i) * (34 + 13i) = (-530 + -2385i), same as expected (-530 + -2385i)
+# comp_mult_test.i_comp_mult_data_checker 41385 GOOD: (20 + -23i) * (69 + 122i) = (4186 + 853i), same as expected (4186 + 853i)
+# comp_mult_test.i_comp_mult_data_checker 41485 GOOD: (-40 + 10i) * (45 + -7i) = (-1730 + 730i), same as expected (-1730 + 730i)
+# comp_mult_test.i_comp_mult_data_checker 41545 GOOD: (95 + 41i) * (88 + -124i) = (13444 + -8172i), same as expected (13444 + -8172i)
+# comp_mult_test.i_comp_mult_data_checker 41635 GOOD: (-95 + -3i) * (-75 + -5i) = (7110 + 700i), same as expected (7110 + 700i)
+# comp_mult_test.i_comp_mult_data_checker 41695 GOOD: (81 + 78i) * (57 + -57i) = (9063 + -171i), same as expected (9063 + -171i)
+# comp_mult_test.i_comp_mult_data_checker 41795 GOOD: (-88 + 97i) * (91 + -43i) = (-3837 + 12611i), same as expected (-3837 + 12611i)
+# comp_mult_test.i_comp_mult_data_checker 41875 GOOD: (80 + 111i) * (67 + -14i) = (6914 + 6317i), same as expected (6914 + 6317i)
+# comp_mult_test.i_comp_mult_data_checker 41935 GOOD: (45 + -69i) * (91 + 98i) = (10857 + -1869i), same as expected (10857 + -1869i)
+# comp_mult_test.i_comp_mult_data_checker 42015 GOOD: (-73 + 84i) * (-31 + 29i) = (-173 + -4721i), same as expected (-173 + -4721i)
+# comp_mult_test.i_comp_mult_data_checker 42075 GOOD: (-45 + 7i) * (-54 + 65i) = (1975 + -3303i), same as expected (1975 + -3303i)
+# comp_mult_test.i_comp_mult_data_checker 42195 GOOD: (94 + 111i) * (37 + 46i) = (-1628 + 8431i), same as expected (-1628 + 8431i)
+# comp_mult_test.i_comp_mult_data_checker 42275 GOOD: (84 + 80i) * (-108 + 40i) = (-12272 + -5280i), same as expected (-12272 + -5280i)
+# comp_mult_test.i_comp_mult_data_checker 42335 GOOD: (77 + -103i) * (89 + -80i) = (-1387 + -15327i), same as expected (-1387 + -15327i)
+# comp_mult_test.i_comp_mult_data_checker 42395 GOOD: (-86 + -127i) * (87 + -123i) = (-23103 + -471i), same as expected (-23103 + -471i)
+# comp_mult_test.i_comp_mult_data_checker 42485 GOOD: (78 + -118i) * (-106 + 95i) = (2942 + 19918i), same as expected (2942 + 19918i)
+# comp_mult_test.i_comp_mult_data_checker 42545 GOOD: (14 + 101i) * (66 + -104i) = (11428 + 5210i), same as expected (11428 + 5210i)
+# comp_mult_test.i_comp_mult_data_checker 42605 GOOD: (84 + 52i) * (122 + -1i) = (10300 + 6260i), same as expected (10300 + 6260i)
+# comp_mult_test.i_comp_mult_data_checker 42665 GOOD: (118 + 61i) * (-103 + -29i) = (-10385 + -9705i), same as expected (-10385 + -9705i)
+# comp_mult_test.i_comp_mult_data_checker 42725 GOOD: (126 + -109i) * (126 + 118i) = (28738 + 1134i), same as expected (28738 + 1134i)
+# comp_mult_test.i_comp_mult_data_checker 42785 GOOD: (81 + -87i) * (-40 + -121i) = (-13767 + -6321i), same as expected (-13767 + -6321i)
+# comp_mult_test.i_comp_mult_data_checker 42845 GOOD: (-81 + -36i) * (-23 + 55i) = (3843 + -3627i), same as expected (3843 + -3627i)
+# comp_mult_test.i_comp_mult_data_checker 42905 GOOD: (0 + -37i) * (-78 + -57i) = (-2109 + 2886i), same as expected (-2109 + 2886i)
+# comp_mult_test.i_comp_mult_data_checker 42995 GOOD: (48 + 29i) * (81 + -14i) = (4294 + 1677i), same as expected (4294 + 1677i)
+# comp_mult_test.i_comp_mult_data_checker 43055 GOOD: (122 + 32i) * (37 + 68i) = (2338 + 9480i), same as expected (2338 + 9480i)
+# comp_mult_test.i_comp_mult_data_checker 43115 GOOD: (47 + -90i) * (-77 + 78i) = (3401 + 10596i), same as expected (3401 + 10596i)
+# comp_mult_test.i_comp_mult_data_checker 43235 GOOD: (14 + 2i) * (8 + -123i) = (358 + -1706i), same as expected (358 + -1706i)
+# comp_mult_test.i_comp_mult_data_checker 43295 GOOD: (26 + -74i) * (36 + -73i) = (-4466 + -4562i), same as expected (-4466 + -4562i)
+# comp_mult_test.i_comp_mult_data_checker 43405 GOOD: (42 + -9i) * (-30 + -99i) = (-2151 + -3888i), same as expected (-2151 + -3888i)
+# comp_mult_test.i_comp_mult_data_checker 43465 GOOD: (-118 + 31i) * (-118 + 87i) = (11227 + -13924i), same as expected (11227 + -13924i)
+# comp_mult_test.i_comp_mult_data_checker 43525 GOOD: (-110 + -59i) * (59 + -32i) = (-8378 + 39i), same as expected (-8378 + 39i)
+# comp_mult_test.i_comp_mult_data_checker 43585 GOOD: (-86 + 22i) * (72 + -51i) = (-5070 + 5970i), same as expected (-5070 + 5970i)
+# comp_mult_test.i_comp_mult_data_checker 43645 GOOD: (-70 + -38i) * (18 + 34i) = (32 + -3064i), same as expected (32 + -3064i)
+# comp_mult_test.i_comp_mult_data_checker 43715 GOOD: (45 + -97i) * (54 + -25i) = (5 + -6363i), same as expected (5 + -6363i)
+# comp_mult_test.i_comp_mult_data_checker 43785 GOOD: (54 + 68i) * (74 + -116i) = (11884 + -1232i), same as expected (11884 + -1232i)
+# comp_mult_test.i_comp_mult_data_checker 43845 GOOD: (35 + -25i) * (41 + -40i) = (435 + -2425i), same as expected (435 + -2425i)
+# comp_mult_test.i_comp_mult_data_checker 43915 GOOD: (43 + 29i) * (-42 + 123i) = (-5373 + 4071i), same as expected (-5373 + 4071i)
+# comp_mult_test.i_comp_mult_data_checker 44015 GOOD: (-70 + 103i) * (55 + -43i) = (579 + 8675i), same as expected (579 + 8675i)
+# comp_mult_test.i_comp_mult_data_checker 44115 GOOD: (113 + 12i) * (-11 + 50i) = (-1843 + 5518i), same as expected (-1843 + 5518i)
+# comp_mult_test.i_comp_mult_data_checker 44195 GOOD: (118 + -48i) * (-67 + 12i) = (-7330 + 4632i), same as expected (-7330 + 4632i)
+# comp_mult_test.i_comp_mult_data_checker 44265 GOOD: (72 + -93i) * (94 + -83i) = (-951 + -14718i), same as expected (-951 + -14718i)
+# comp_mult_test.i_comp_mult_data_checker 44325 GOOD: (115 + 64i) * (10 + -121i) = (8894 + -13275i), same as expected (8894 + -13275i)
+# comp_mult_test.i_comp_mult_data_checker 44435 GOOD: (-89 + 18i) * (124 + -119i) = (-8894 + 12823i), same as expected (-8894 + 12823i)
+# comp_mult_test.i_comp_mult_data_checker 44555 GOOD: (-52 + -22i) * (-9 + 95i) = (2558 + -4742i), same as expected (2558 + -4742i)
+# comp_mult_test.i_comp_mult_data_checker 44615 GOOD: (-54 + -122i) * (53 + 92i) = (8362 + -11434i), same as expected (8362 + -11434i)
+# comp_mult_test.i_comp_mult_data_checker 44725 GOOD: (-24 + 100i) * (75 + -124i) = (10600 + 10476i), same as expected (10600 + 10476i)
+# comp_mult_test.i_comp_mult_data_checker 44785 GOOD: (59 + -21i) * (77 + -16i) = (4207 + -2561i), same as expected (4207 + -2561i)
+# comp_mult_test.i_comp_mult_data_checker 44845 GOOD: (-124 + 23i) * (56 + -86i) = (-4966 + 11952i), same as expected (-4966 + 11952i)
+# comp_mult_test.i_comp_mult_data_checker 44905 GOOD: (-88 + -122i) * (-74 + 21i) = (9074 + 7180i), same as expected (9074 + 7180i)
+# comp_mult_test.i_comp_mult_data_checker 45015 GOOD: (-56 + -112i) * (118 + -38i) = (-10864 + -11088i), same as expected (-10864 + -11088i)
+# comp_mult_test.i_comp_mult_data_checker 45105 GOOD: (-11 + 56i) * (-89 + -15i) = (1819 + -4819i), same as expected (1819 + -4819i)
+# comp_mult_test.i_comp_mult_data_checker 45195 GOOD: (-126 + -23i) * (120 + -25i) = (-15695 + 390i), same as expected (-15695 + 390i)
+# comp_mult_test.i_comp_mult_data_checker 45255 GOOD: (118 + 82i) * (115 + -94i) = (21278 + -1662i), same as expected (21278 + -1662i)
+# comp_mult_test.i_comp_mult_data_checker 45315 GOOD: (65 + 63i) * (-3 + -71i) = (4278 + -4804i), same as expected (4278 + -4804i)
+# comp_mult_test.i_comp_mult_data_checker 45375 GOOD: (118 + 104i) * (109 + 39i) = (8806 + 15938i), same as expected (8806 + 15938i)
+# comp_mult_test.i_comp_mult_data_checker 45445 GOOD: (23 + -11i) * (8 + 68i) = (932 + 1476i), same as expected (932 + 1476i)
+# comp_mult_test.i_comp_mult_data_checker 45535 GOOD: (39 + -81i) * (-58 + -11i) = (-3153 + 4269i), same as expected (-3153 + 4269i)
+# comp_mult_test.i_comp_mult_data_checker 45655 GOOD: (-15 + 11i) * (18 + 10i) = (-380 + 48i), same as expected (-380 + 48i)
+# comp_mult_test.i_comp_mult_data_checker 45715 GOOD: (110 + 19i) * (35 + 43i) = (3033 + 5395i), same as expected (3033 + 5395i)
+# comp_mult_test.i_comp_mult_data_checker 45805 GOOD: (101 + -35i) * (48 + -60i) = (2748 + -7740i), same as expected (2748 + -7740i)
+# comp_mult_test.i_comp_mult_data_checker 45905 GOOD: (7 + 76i) * (-55 + 121i) = (-9581 + -3333i), same as expected (-9581 + -3333i)
+# comp_mult_test.i_comp_mult_data_checker 46015 GOOD: (120 + 51i) * (-11 + 108i) = (-6828 + 12399i), same as expected (-6828 + 12399i)
+# comp_mult_test.i_comp_mult_data_checker 46135 GOOD: (2 + -4i) * (118 + 30i) = (356 + -412i), same as expected (356 + -412i)
+# comp_mult_test.i_comp_mult_data_checker 46225 GOOD: (15 + 68i) * (36 + -127i) = (9176 + 543i), same as expected (9176 + 543i)
+# comp_mult_test.i_comp_mult_data_checker 46335 GOOD: (-105 + -93i) * (-8 + -88i) = (-7344 + 9984i), same as expected (-7344 + 9984i)
+# comp_mult_test.i_comp_mult_data_checker 46395 GOOD: (-47 + -35i) * (-93 + -32i) = (3251 + 4759i), same as expected (3251 + 4759i)
+# comp_mult_test.i_comp_mult_data_checker 46485 GOOD: (-92 + -106i) * (67 + -23i) = (-8602 + -4986i), same as expected (-8602 + -4986i)
+# comp_mult_test.i_comp_mult_data_checker 46585 GOOD: (14 + -79i) * (102 + -107i) = (-7025 + -9556i), same as expected (-7025 + -9556i)
+# comp_mult_test.i_comp_mult_data_checker 46655 GOOD: (7 + 103i) * (-107 + 34i) = (-4251 + -10783i), same as expected (-4251 + -10783i)
+# comp_mult_test.i_comp_mult_data_checker 46715 GOOD: (-8 + 29i) * (56 + -119i) = (3003 + 2576i), same as expected (3003 + 2576i)
+# comp_mult_test.i_comp_mult_data_checker 46825 GOOD: (77 + -18i) * (-93 + -57i) = (-8187 + -2715i), same as expected (-8187 + -2715i)
+# comp_mult_test.i_comp_mult_data_checker 46945 GOOD: (-75 + -127i) * (-53 + 81i) = (14262 + 656i), same as expected (14262 + 656i)
+# comp_mult_test.i_comp_mult_data_checker 47035 GOOD: (118 + -79i) * (69 + 56i) = (12566 + 1157i), same as expected (12566 + 1157i)
+# comp_mult_test.i_comp_mult_data_checker 47105 GOOD: (42 + 85i) * (-124 + 38i) = (-8438 + -8944i), same as expected (-8438 + -8944i)
+# comp_mult_test.i_comp_mult_data_checker 47205 GOOD: (104 + 105i) * (-49 + 64i) = (-11816 + 1511i), same as expected (-11816 + 1511i)
+# comp_mult_test.i_comp_mult_data_checker 47265 GOOD: (104 + -110i) * (-23 + 48i) = (2888 + 7522i), same as expected (2888 + 7522i)
+# comp_mult_test.i_comp_mult_data_checker 47335 GOOD: (-114 + 80i) * (21 + -30i) = (6 + 5100i), same as expected (6 + 5100i)
+# comp_mult_test.i_comp_mult_data_checker 47425 GOOD: (-113 + -76i) * (-99 + -100i) = (3587 + 18824i), same as expected (3587 + 18824i)
+# comp_mult_test.i_comp_mult_data_checker 47485 GOOD: (-29 + -89i) * (24 + -36i) = (-3900 + -1092i), same as expected (-3900 + -1092i)
+# comp_mult_test.i_comp_mult_data_checker 47545 GOOD: (42 + 46i) * (-127 + -60i) = (-2574 + -8362i), same as expected (-2574 + -8362i)
+# comp_mult_test.i_comp_mult_data_checker 47605 GOOD: (52 + 99i) * (9 + 81i) = (-7551 + 5103i), same as expected (-7551 + 5103i)
+# comp_mult_test.i_comp_mult_data_checker 47665 GOOD: (15 + -6i) * (125 + 65i) = (2265 + 225i), same as expected (2265 + 225i)
+# comp_mult_test.i_comp_mult_data_checker 47725 GOOD: (-125 + -112i) * (-25 + 84i) = (12533 + -7700i), same as expected (12533 + -7700i)
+# comp_mult_test.i_comp_mult_data_checker 47805 GOOD: (74 + -118i) * (31 + -123i) = (-12220 + -12760i), same as expected (-12220 + -12760i)
+# comp_mult_test.i_comp_mult_data_checker 47885 GOOD: (-62 + 90i) * (-57 + -125i) = (14784 + 2620i), same as expected (14784 + 2620i)
+# comp_mult_test.i_comp_mult_data_checker 47945 GOOD: (17 + 7i) * (-110 + 5i) = (-1905 + -685i), same as expected (-1905 + -685i)
+# comp_mult_test.i_comp_mult_data_checker 48015 GOOD: (-49 + -124i) * (-70 + -92i) = (-7978 + 13188i), same as expected (-7978 + 13188i)
+# comp_mult_test.i_comp_mult_data_checker 48115 GOOD: (-57 + 26i) * (59 + 7i) = (-3545 + 1135i), same as expected (-3545 + 1135i)
+# comp_mult_test.i_comp_mult_data_checker 48175 GOOD: (-104 + 82i) * (100 + 77i) = (-16714 + 192i), same as expected (-16714 + 192i)
+# comp_mult_test.i_comp_mult_data_checker 48235 GOOD: (71 + 40i) * (71 + -2i) = (5121 + 2698i), same as expected (5121 + 2698i)
+# comp_mult_test.i_comp_mult_data_checker 48315 GOOD: (50 + -116i) * (69 + -104i) = (-8614 + -13204i), same as expected (-8614 + -13204i)
+# comp_mult_test.i_comp_mult_data_checker 48375 GOOD: (-65 + 2i) * (80 + -7i) = (-5186 + 615i), same as expected (-5186 + 615i)
+# comp_mult_test.i_comp_mult_data_checker 48435 GOOD: (-97 + 81i) * (100 + -104i) = (-1276 + 18188i), same as expected (-1276 + 18188i)
+# comp_mult_test.i_comp_mult_data_checker 48555 GOOD: (-81 + 104i) * (-95 + 22i) = (5407 + -11662i), same as expected (5407 + -11662i)
+# comp_mult_test.i_comp_mult_data_checker 48615 GOOD: (-108 + -58i) * (43 + 103i) = (1330 + -13618i), same as expected (1330 + -13618i)
+# comp_mult_test.i_comp_mult_data_checker 48675 GOOD: (-125 + 113i) * (62 + -71i) = (273 + 15881i), same as expected (273 + 15881i)
+# comp_mult_test.i_comp_mult_data_checker 48755 GOOD: (80 + 5i) * (113 + 16i) = (8960 + 1845i), same as expected (8960 + 1845i)
+# comp_mult_test.i_comp_mult_data_checker 48815 GOOD: (-36 + 2i) * (53 + -1i) = (-1906 + 142i), same as expected (-1906 + 142i)
+# comp_mult_test.i_comp_mult_data_checker 48875 GOOD: (53 + -10i) * (110 + -47i) = (5360 + -3591i), same as expected (5360 + -3591i)
+# comp_mult_test.i_comp_mult_data_checker 48935 GOOD: (-67 + -83i) * (-48 + 93i) = (10935 + -2247i), same as expected (10935 + -2247i)
+# comp_mult_test.i_comp_mult_data_checker 48995 GOOD: (80 + 105i) * (-21 + 58i) = (-7770 + 2435i), same as expected (-7770 + 2435i)
+# comp_mult_test.i_comp_mult_data_checker 49115 GOOD: (-45 + 44i) * (102 + -67i) = (-1642 + 7503i), same as expected (-1642 + 7503i)
+# comp_mult_test.i_comp_mult_data_checker 49235 GOOD: (120 + 42i) * (-55 + -94i) = (-2652 + -13590i), same as expected (-2652 + -13590i)
+# comp_mult_test.i_comp_mult_data_checker 49295 GOOD: (-125 + 26i) * (51 + -25i) = (-5725 + 4451i), same as expected (-5725 + 4451i)
+# comp_mult_test.i_comp_mult_data_checker 49355 GOOD: (100 + -94i) * (-26 + -71i) = (-9274 + -4656i), same as expected (-9274 + -4656i)
+# comp_mult_test.i_comp_mult_data_checker 49415 GOOD: (87 + -112i) * (-41 + -24i) = (-6255 + 2504i), same as expected (-6255 + 2504i)
+# comp_mult_test.i_comp_mult_data_checker 49475 GOOD: (-65 + 1i) * (-91 + -57i) = (5972 + 3614i), same as expected (5972 + 3614i)
+# comp_mult_test.i_comp_mult_data_checker 49555 GOOD: (0 + -102i) * (-49 + 29i) = (2958 + 4998i), same as expected (2958 + 4998i)
+# comp_mult_test.i_comp_mult_data_checker 49615 GOOD: (-51 + -83i) * (69 + 67i) = (2042 + -9144i), same as expected (2042 + -9144i)
+# comp_mult_test.i_comp_mult_data_checker 49675 GOOD: (-99 + 102i) * (6 + 68i) = (-7530 + -6120i), same as expected (-7530 + -6120i)
+# comp_mult_test.i_comp_mult_data_checker 49785 GOOD: (-114 + 106i) * (-28 + -59i) = (9446 + 3758i), same as expected (9446 + 3758i)
+# comp_mult_test.i_comp_mult_data_checker 49845 GOOD: (107 + 20i) * (14 + -40i) = (2298 + -4000i), same as expected (2298 + -4000i)
+# comp_mult_test.i_comp_mult_data_checker 49925 GOOD: (87 + -76i) * (1 + 81i) = (6243 + 6971i), same as expected (6243 + 6971i)
+# comp_mult_test.i_comp_mult_data_checker 49985 GOOD: (99 + 91i) * (51 + 83i) = (-2504 + 12858i), same as expected (-2504 + 12858i)
+# comp_mult_test.i_comp_mult_data_checker 50045 GOOD: (-102 + 68i) * (18 + -117i) = (6120 + 13158i), same as expected (6120 + 13158i)
+# comp_mult_test.i_comp_mult_data_checker 50125 GOOD: (42 + 123i) * (-89 + 8i) = (-4722 + -10611i), same as expected (-4722 + -10611i)
+# comp_mult_test.i_comp_mult_data_checker 50235 GOOD: (-2 + 76i) * (-70 + -72i) = (5612 + -5176i), same as expected (5612 + -5176i)
+# comp_mult_test.i_comp_mult_data_checker 50315 GOOD: (-18 + -16i) * (25 + 51i) = (366 + -1318i), same as expected (366 + -1318i)
+# comp_mult_test.i_comp_mult_data_checker 50425 GOOD: (-83 + 33i) * (-27 + -54i) = (4023 + 3591i), same as expected (4023 + 3591i)
+# comp_mult_test.i_comp_mult_data_checker 50545 GOOD: (-19 + 119i) * (-15 + 109i) = (-12686 + -3856i), same as expected (-12686 + -3856i)
+# comp_mult_test.i_comp_mult_data_checker 50665 GOOD: (-83 + -71i) * (5 + 116i) = (7821 + -9983i), same as expected (7821 + -9983i)
+# comp_mult_test.i_comp_mult_data_checker 50785 GOOD: (93 + 8i) * (-23 + -53i) = (-1715 + -5113i), same as expected (-1715 + -5113i)
+# comp_mult_test.i_comp_mult_data_checker 50865 GOOD: (-40 + -68i) * (127 + 25i) = (-3380 + -9636i), same as expected (-3380 + -9636i)
+# comp_mult_test.i_comp_mult_data_checker 50975 GOOD: (-97 + 71i) * (55 + -14i) = (-4341 + 5263i), same as expected (-4341 + 5263i)
+# comp_mult_test.i_comp_mult_data_checker 51065 GOOD: (27 + 35i) * (72 + -2i) = (2014 + 2466i), same as expected (2014 + 2466i)
+# comp_mult_test.i_comp_mult_data_checker 51125 GOOD: (45 + -62i) * (-44 + 58i) = (1616 + 5338i), same as expected (1616 + 5338i)
+# comp_mult_test.i_comp_mult_data_checker 51185 GOOD: (-27 + 71i) * (58 + -59i) = (2623 + 5711i), same as expected (2623 + 5711i)
+# comp_mult_test.i_comp_mult_data_checker 51245 GOOD: (33 + 24i) * (17 + -20i) = (1041 + -252i), same as expected (1041 + -252i)
+# comp_mult_test.i_comp_mult_data_checker 51305 GOOD: (-47 + -105i) * (59 + 126i) = (10457 + -12117i), same as expected (10457 + -12117i)
+# comp_mult_test.i_comp_mult_data_checker 51405 GOOD: (87 + -30i) * (-113 + -2i) = (-9891 + 3216i), same as expected (-9891 + 3216i)
+# comp_mult_test.i_comp_mult_data_checker 51465 GOOD: (-66 + 55i) * (-36 + 62i) = (-1034 + -6072i), same as expected (-1034 + -6072i)
+# comp_mult_test.i_comp_mult_data_checker 51545 GOOD: (92 + 2i) * (-87 + -125i) = (-7754 + -11674i), same as expected (-7754 + -11674i)
+# comp_mult_test.i_comp_mult_data_checker 51615 GOOD: (-1 + -30i) * (42 + -116i) = (-3522 + -1144i), same as expected (-3522 + -1144i)
+# comp_mult_test.i_comp_mult_data_checker 51695 GOOD: (-25 + -128i) * (90 + 76i) = (7478 + -13420i), same as expected (7478 + -13420i)
+# comp_mult_test.i_comp_mult_data_checker 51755 GOOD: (-6 + 48i) * (-100 + -83i) = (4584 + -4302i), same as expected (4584 + -4302i)
+# comp_mult_test.i_comp_mult_data_checker 51815 GOOD: (27 + 12i) * (95 + -39i) = (3033 + 87i), same as expected (3033 + 87i)
+# comp_mult_test.i_comp_mult_data_checker 51905 GOOD: (-127 + 46i) * (-24 + -71i) = (6314 + 7913i), same as expected (6314 + 7913i)
+# comp_mult_test.i_comp_mult_data_checker 51965 GOOD: (59 + 81i) * (-64 + 116i) = (-13172 + 1660i), same as expected (-13172 + 1660i)
+# comp_mult_test.i_comp_mult_data_checker 52025 GOOD: (87 + -8i) * (-11 + -41i) = (-1285 + -3479i), same as expected (-1285 + -3479i)
+# comp_mult_test.i_comp_mult_data_checker 52085 GOOD: (62 + 19i) * (84 + -68i) = (6500 + -2620i), same as expected (6500 + -2620i)
+# comp_mult_test.i_comp_mult_data_checker 52185 GOOD: (76 + -117i) * (13 + -64i) = (-6500 + -6385i), same as expected (-6500 + -6385i)
+# comp_mult_test.i_comp_mult_data_checker 52285 GOOD: (59 + -77i) * (-17 + 117i) = (8006 + 8212i), same as expected (8006 + 8212i)
+# comp_mult_test.i_comp_mult_data_checker 52345 GOOD: (-75 + -78i) * (59 + 90i) = (2595 + -11352i), same as expected (2595 + -11352i)
+# comp_mult_test.i_comp_mult_data_checker 52415 GOOD: (120 + 39i) * (-28 + 125i) = (-8235 + 13908i), same as expected (-8235 + 13908i)
+# comp_mult_test.i_comp_mult_data_checker 52535 GOOD: (26 + -91i) * (60 + 10i) = (2470 + -5200i), same as expected (2470 + -5200i)
+# comp_mult_test.i_comp_mult_data_checker 52655 GOOD: (66 + 60i) * (55 + -9i) = (4170 + 2706i), same as expected (4170 + 2706i)
+# comp_mult_test.i_comp_mult_data_checker 52715 GOOD: (87 + 29i) * (112 + 99i) = (6873 + 11861i), same as expected (6873 + 11861i)
+# comp_mult_test.i_comp_mult_data_checker 52795 GOOD: (11 + 3i) * (-10 + 81i) = (-353 + 861i), same as expected (-353 + 861i)
+# comp_mult_test.i_comp_mult_data_checker 52915 GOOD: (24 + -21i) * (-2 + 32i) = (624 + 810i), same as expected (624 + 810i)
+# comp_mult_test.i_comp_mult_data_checker 52975 GOOD: (-72 + 67i) * (34 + 5i) = (-2783 + 1918i), same as expected (-2783 + 1918i)
+# comp_mult_test.i_comp_mult_data_checker 53095 GOOD: (25 + -67i) * (-68 + -35i) = (-4045 + 3681i), same as expected (-4045 + 3681i)
+# comp_mult_test.i_comp_mult_data_checker 53205 GOOD: (-4 + -74i) * (16 + 42i) = (3044 + -1352i), same as expected (3044 + -1352i)
+# comp_mult_test.i_comp_mult_data_checker 53265 GOOD: (58 + 4i) * (54 + -9i) = (3168 + -306i), same as expected (3168 + -306i)
+# comp_mult_test.i_comp_mult_data_checker 53385 GOOD: (65 + 7i) * (33 + 97i) = (1466 + 6536i), same as expected (1466 + 6536i)
+# comp_mult_test.i_comp_mult_data_checker 53445 GOOD: (20 + 20i) * (-11 + -28i) = (340 + -780i), same as expected (340 + -780i)
+# comp_mult_test.i_comp_mult_data_checker 53565 GOOD: (74 + 17i) * (-103 + -90i) = (-6092 + -8411i), same as expected (-6092 + -8411i)
+# comp_mult_test.i_comp_mult_data_checker 53655 GOOD: (-88 + 25i) * (-13 + -97i) = (3569 + 8211i), same as expected (3569 + 8211i)
+# comp_mult_test.i_comp_mult_data_checker 53755 GOOD: (-36 + -42i) * (-6 + -85i) = (-3354 + 3312i), same as expected (-3354 + 3312i)
+# comp_mult_test.i_comp_mult_data_checker 53815 GOOD: (-118 + 120i) * (9 + 30i) = (-4662 + -2460i), same as expected (-4662 + -2460i)
+# comp_mult_test.i_comp_mult_data_checker 53875 GOOD: (80 + -26i) * (-26 + -125i) = (-5330 + -9324i), same as expected (-5330 + -9324i)
+# comp_mult_test.i_comp_mult_data_checker 53935 GOOD: (-109 + -7i) * (112 + 84i) = (-11620 + -9940i), same as expected (-11620 + -9940i)
+# comp_mult_test.i_comp_mult_data_checker 54045 GOOD: (-115 + -76i) * (48 + 117i) = (3372 + -17103i), same as expected (3372 + -17103i)
+# comp_mult_test.i_comp_mult_data_checker 54105 GOOD: (-107 + -68i) * (-22 + -111i) = (-5194 + 13373i), same as expected (-5194 + 13373i)
+# comp_mult_test.i_comp_mult_data_checker 54165 GOOD: (-84 + -127i) * (-55 + -58i) = (-2746 + 11857i), same as expected (-2746 + 11857i)
+# comp_mult_test.i_comp_mult_data_checker 54225 GOOD: (-28 + 121i) * (55 + 17i) = (-3597 + 6179i), same as expected (-3597 + 6179i)
+# comp_mult_test.i_comp_mult_data_checker 54285 GOOD: (-75 + 93i) * (-5 + 87i) = (-7716 + -6990i), same as expected (-7716 + -6990i)
+# comp_mult_test.i_comp_mult_data_checker 54345 GOOD: (-50 + 54i) * (-117 + -26i) = (7254 + -5018i), same as expected (7254 + -5018i)
+# comp_mult_test.i_comp_mult_data_checker 54415 GOOD: (-33 + -96i) * (-109 + -36i) = (141 + 11652i), same as expected (141 + 11652i)
+# comp_mult_test.i_comp_mult_data_checker 54475 GOOD: (100 + -113i) * (-19 + -93i) = (-12409 + -7153i), same as expected (-12409 + -7153i)
+# comp_mult_test.i_comp_mult_data_checker 54585 GOOD: (82 + 42i) * (11 + 101i) = (-3340 + 8744i), same as expected (-3340 + 8744i)
+# comp_mult_test.i_comp_mult_data_checker 54665 GOOD: (15 + 62i) * (40 + 117i) = (-6654 + 4235i), same as expected (-6654 + 4235i)
+# comp_mult_test.i_comp_mult_data_checker 54765 GOOD: (103 + -117i) * (-83 + -95i) = (-19664 + -74i), same as expected (-19664 + -74i)
+# comp_mult_test.i_comp_mult_data_checker 54855 GOOD: (56 + 15i) * (110 + 1i) = (6145 + 1706i), same as expected (6145 + 1706i)
+# comp_mult_test.i_comp_mult_data_checker 54915 GOOD: (44 + -101i) * (-128 + 119i) = (6387 + 18164i), same as expected (6387 + 18164i)
+# comp_mult_test.i_comp_mult_data_checker 54975 GOOD: (116 + 34i) * (43 + -39i) = (6314 + -3062i), same as expected (6314 + -3062i)
+# comp_mult_test.i_comp_mult_data_checker 55035 GOOD: (-26 + 9i) * (94 + -74i) = (-1778 + 2770i), same as expected (-1778 + 2770i)
+# comp_mult_test.i_comp_mult_data_checker 55095 GOOD: (79 + 50i) * (-78 + 85i) = (-10412 + 2815i), same as expected (-10412 + 2815i)
+# comp_mult_test.i_comp_mult_data_checker 55155 GOOD: (23 + -66i) * (40 + -59i) = (-2974 + -3997i), same as expected (-2974 + -3997i)
+# comp_mult_test.i_comp_mult_data_checker 55215 GOOD: (-95 + 66i) * (-86 + 46i) = (5134 + -10046i), same as expected (5134 + -10046i)
+# comp_mult_test.i_comp_mult_data_checker 55305 GOOD: (-50 + 33i) * (-79 + -8i) = (4214 + -2207i), same as expected (4214 + -2207i)
+# comp_mult_test.i_comp_mult_data_checker 55365 GOOD: (-83 + -76i) * (-9 + 52i) = (4699 + -3632i), same as expected (4699 + -3632i)
+# comp_mult_test.i_comp_mult_data_checker 55475 GOOD: (-116 + 86i) * (-58 + -91i) = (14554 + 5568i), same as expected (14554 + 5568i)
+# comp_mult_test.i_comp_mult_data_checker 55535 GOOD: (123 + -116i) * (-96 + -110i) = (-24568 + -2394i), same as expected (-24568 + -2394i)
+# comp_mult_test.i_comp_mult_data_checker 55595 GOOD: (52 + 16i) * (-71 + 108i) = (-5420 + 4480i), same as expected (-5420 + 4480i)
+# comp_mult_test.i_comp_mult_data_checker 55655 GOOD: (-120 + -32i) * (-51 + -96i) = (3048 + 13152i), same as expected (3048 + 13152i)
+# comp_mult_test.i_comp_mult_data_checker 55745 GOOD: (-91 + 93i) * (-10 + -14i) = (2212 + 344i), same as expected (2212 + 344i)
+# comp_mult_test.i_comp_mult_data_checker 55805 GOOD: (74 + -56i) * (-8 + 107i) = (5400 + 8366i), same as expected (5400 + 8366i)
+# comp_mult_test.i_comp_mult_data_checker 55865 GOOD: (101 + -123i) * (101 + 64i) = (18073 + -5959i), same as expected (18073 + -5959i)
+# comp_mult_test.i_comp_mult_data_checker 55965 GOOD: (-48 + -120i) * (-97 + -109i) = (-8424 + 16872i), same as expected (-8424 + 16872i)
+# comp_mult_test.i_comp_mult_data_checker 56085 GOOD: (19 + 74i) * (10 + -97i) = (7368 + -1103i), same as expected (7368 + -1103i)
+# comp_mult_test.i_comp_mult_data_checker 56185 GOOD: (-20 + 124i) * (38 + -113i) = (13252 + 6972i), same as expected (13252 + 6972i)
+# comp_mult_test.i_comp_mult_data_checker 56305 GOOD: (26 + 111i) * (-38 + 99i) = (-11977 + -1644i), same as expected (-11977 + -1644i)
+# comp_mult_test.i_comp_mult_data_checker 56395 GOOD: (-80 + 42i) * (-75 + 55i) = (3690 + -7550i), same as expected (3690 + -7550i)
+# comp_mult_test.i_comp_mult_data_checker 56485 GOOD: (65 + 11i) * (-93 + -42i) = (-5583 + -3753i), same as expected (-5583 + -3753i)
+# comp_mult_test.i_comp_mult_data_checker 56605 GOOD: (-27 + -20i) * (102 + 21i) = (-2334 + -2607i), same as expected (-2334 + -2607i)
+# comp_mult_test.i_comp_mult_data_checker 56665 GOOD: (101 + -4i) * (46 + 96i) = (5030 + 9512i), same as expected (5030 + 9512i)
+# comp_mult_test.i_comp_mult_data_checker 56725 GOOD: (101 + -2i) * (-78 + -113i) = (-8104 + -11257i), same as expected (-8104 + -11257i)
+# comp_mult_test.i_comp_mult_data_checker 56835 GOOD: (-93 + 43i) * (21 + 7i) = (-2254 + 252i), same as expected (-2254 + 252i)
+# comp_mult_test.i_comp_mult_data_checker 56895 GOOD: (69 + 127i) * (89 + 127i) = (-9988 + 20066i), same as expected (-9988 + 20066i)
+# comp_mult_test.i_comp_mult_data_checker 56955 GOOD: (104 + 50i) * (-84 + 126i) = (-15036 + 8904i), same as expected (-15036 + 8904i)
+# comp_mult_test.i_comp_mult_data_checker 57015 GOOD: (90 + 78i) * (98 + -82i) = (15216 + 264i), same as expected (15216 + 264i)
+# comp_mult_test.i_comp_mult_data_checker 57075 GOOD: (92 + -87i) * (-85 + 6i) = (-7298 + 7947i), same as expected (-7298 + 7947i)
+# comp_mult_test.i_comp_mult_data_checker 57195 GOOD: (-68 + -87i) * (-85 + 120i) = (16220 + -765i), same as expected (16220 + -765i)
+# comp_mult_test.i_comp_mult_data_checker 57255 GOOD: (1 + -35i) * (85 + -124i) = (-4255 + -3099i), same as expected (-4255 + -3099i)
+# comp_mult_test.i_comp_mult_data_checker 57325 GOOD: (-27 + 16i) * (-89 + 70i) = (1283 + -3314i), same as expected (1283 + -3314i)
+# comp_mult_test.i_comp_mult_data_checker 57385 GOOD: (52 + 36i) * (-25 + -82i) = (1652 + -5164i), same as expected (1652 + -5164i)
+# comp_mult_test.i_comp_mult_data_checker 57495 GOOD: (20 + -77i) * (73 + 86i) = (8082 + -3901i), same as expected (8082 + -3901i)
+# comp_mult_test.i_comp_mult_data_checker 57555 GOOD: (119 + 126i) * (-98 + 48i) = (-17710 + -6636i), same as expected (-17710 + -6636i)
+# comp_mult_test.i_comp_mult_data_checker 57625 GOOD: (-110 + -13i) * (108 + 82i) = (-10814 + -10424i), same as expected (-10814 + -10424i)
+# comp_mult_test.i_comp_mult_data_checker 57735 GOOD: (-40 + 34i) * (-78 + -118i) = (7132 + 2068i), same as expected (7132 + 2068i)
+# comp_mult_test.i_comp_mult_data_checker 57795 GOOD: (-56 + 45i) * (74 + 42i) = (-6034 + 978i), same as expected (-6034 + 978i)
+# comp_mult_test.i_comp_mult_data_checker 57895 GOOD: (-16 + -26i) * (-1 + 93i) = (2434 + -1462i), same as expected (2434 + -1462i)
+# comp_mult_test.i_comp_mult_data_checker 57955 GOOD: (52 + 124i) * (-84 + 95i) = (-16148 + -5476i), same as expected (-16148 + -5476i)
+# comp_mult_test.i_comp_mult_data_checker 58015 GOOD: (-103 + -64i) * (95 + -124i) = (-17721 + 6692i), same as expected (-17721 + 6692i)
+# comp_mult_test.i_comp_mult_data_checker 58105 GOOD: (1 + 115i) * (-73 + -34i) = (3837 + -8429i), same as expected (3837 + -8429i)
+# comp_mult_test.i_comp_mult_data_checker 58215 GOOD: (110 + -99i) * (9 + 95i) = (10395 + 9559i), same as expected (10395 + 9559i)
+# comp_mult_test.i_comp_mult_data_checker 58335 GOOD: (-93 + -29i) * (-109 + 0i) = (10137 + 3161i), same as expected (10137 + 3161i)
+# comp_mult_test.i_comp_mult_data_checker 58415 GOOD: (93 + 80i) * (-36 + -5i) = (-2948 + -3345i), same as expected (-2948 + -3345i)
+# comp_mult_test.i_comp_mult_data_checker 58515 GOOD: (109 + -80i) * (-122 + -16i) = (-14578 + 8016i), same as expected (-14578 + 8016i)
+# comp_mult_test.i_comp_mult_data_checker 58575 GOOD: (-94 + 118i) * (-1 + 62i) = (-7222 + -5946i), same as expected (-7222 + -5946i)
+# comp_mult_test.i_comp_mult_data_checker 58645 GOOD: (95 + 127i) * (20 + -53i) = (8631 + -2495i), same as expected (8631 + -2495i)
+# comp_mult_test.i_comp_mult_data_checker 58705 GOOD: (-89 + -84i) * (-102 + -34i) = (6222 + 11594i), same as expected (6222 + 11594i)
+# comp_mult_test.i_comp_mult_data_checker 58825 GOOD: (-61 + -123i) * (42 + 118i) = (11952 + -12364i), same as expected (11952 + -12364i)
+# comp_mult_test.i_comp_mult_data_checker 58885 GOOD: (-29 + -121i) * (-59 + 53i) = (8124 + 5602i), same as expected (8124 + 5602i)
+# comp_mult_test.i_comp_mult_data_checker 58975 GOOD: (-26 + 92i) * (-111 + 28i) = (310 + -10940i), same as expected (310 + -10940i)
+# comp_mult_test.i_comp_mult_data_checker 59055 GOOD: (37 + -63i) * (45 + -21i) = (342 + -3612i), same as expected (342 + -3612i)
+# comp_mult_test.i_comp_mult_data_checker 59115 GOOD: (-60 + 41i) * (71 + 123i) = (-9303 + -4469i), same as expected (-9303 + -4469i)
+# comp_mult_test.i_comp_mult_data_checker 59195 GOOD: (65 + -119i) * (56 + 109i) = (16611 + 421i), same as expected (16611 + 421i)
+# comp_mult_test.i_comp_mult_data_checker 59255 GOOD: (-84 + -53i) * (53 + 117i) = (1749 + -12637i), same as expected (1749 + -12637i)
+# comp_mult_test.i_comp_mult_data_checker 59315 GOOD: (82 + 123i) * (112 + -5i) = (9799 + 13366i), same as expected (9799 + 13366i)
+# comp_mult_test.i_comp_mult_data_checker 59385 GOOD: (-3 + 41i) * (-93 + 123i) = (-4764 + -4182i), same as expected (-4764 + -4182i)
+# comp_mult_test.i_comp_mult_data_checker 59445 GOOD: (-90 + 85i) * (1 + 35i) = (-3065 + -3065i), same as expected (-3065 + -3065i)
+# comp_mult_test.i_comp_mult_data_checker 59545 GOOD: (-112 + -18i) * (-97 + -125i) = (8614 + 15746i), same as expected (8614 + 15746i)
+# comp_mult_test.i_comp_mult_data_checker 59605 GOOD: (32 + 88i) * (91 + 38i) = (-432 + 9224i), same as expected (-432 + 9224i)
+# comp_mult_test.i_comp_mult_data_checker 59705 GOOD: (101 + 118i) * (-49 + 93i) = (-15923 + 3611i), same as expected (-15923 + 3611i)
+# comp_mult_test.i_comp_mult_data_checker 59765 GOOD: (-105 + -46i) * (8 + -18i) = (-1668 + 1522i), same as expected (-1668 + 1522i)
+# comp_mult_test.i_comp_mult_data_checker 59885 GOOD: (-84 + -25i) * (-3 + 43i) = (1327 + -3537i), same as expected (1327 + -3537i)
+# comp_mult_test.i_comp_mult_data_checker 59965 GOOD: (-14 + 63i) * (-53 + -16i) = (1750 + -3115i), same as expected (1750 + -3115i)
+# comp_mult_test.i_comp_mult_data_checker 60055 GOOD: (-10 + -114i) * (43 + 96i) = (10514 + -5862i), same as expected (10514 + -5862i)
+# comp_mult_test.i_comp_mult_data_checker 60155 GOOD: (84 + -91i) * (8 + 97i) = (9499 + 7420i), same as expected (9499 + 7420i)
+# comp_mult_test.i_comp_mult_data_checker 60215 GOOD: (-72 + 100i) * (-57 + -57i) = (9804 + -1596i), same as expected (9804 + -1596i)
+# comp_mult_test.i_comp_mult_data_checker 60275 GOOD: (-86 + -18i) * (22 + 63i) = (-758 + -5814i), same as expected (-758 + -5814i)
+# comp_mult_test.i_comp_mult_data_checker 60335 GOOD: (-21 + -81i) * (33 + 98i) = (7245 + -4731i), same as expected (7245 + -4731i)
+# comp_mult_test.i_comp_mult_data_checker 60455 GOOD: (-94 + 75i) * (105 + 33i) = (-12345 + 4773i), same as expected (-12345 + 4773i)
+# comp_mult_test.i_comp_mult_data_checker 60515 GOOD: (-9 + -39i) * (-36 + -79i) = (-2757 + 2115i), same as expected (-2757 + 2115i)
+# comp_mult_test.i_comp_mult_data_checker 60605 GOOD: (-18 + -44i) * (-9 + -128i) = (-5470 + 2700i), same as expected (-5470 + 2700i)
+# comp_mult_test.i_comp_mult_data_checker 60675 GOOD: (-47 + 71i) * (-117 + 105i) = (-1956 + -13242i), same as expected (-1956 + -13242i)
+# comp_mult_test.i_comp_mult_data_checker 60765 GOOD: (-58 + 68i) * (21 + -14i) = (-266 + 2240i), same as expected (-266 + 2240i)
+# comp_mult_test.i_comp_mult_data_checker 60825 GOOD: (-21 + 2i) * (-121 + -125i) = (2791 + 2383i), same as expected (2791 + 2383i)
+# comp_mult_test.i_comp_mult_data_checker 60925 GOOD: (40 + 17i) * (-117 + -32i) = (-4136 + -3269i), same as expected (-4136 + -3269i)
+# comp_mult_test.i_comp_mult_data_checker 61035 GOOD: (-54 + 72i) * (-23 + 112i) = (-6822 + -7704i), same as expected (-6822 + -7704i)
+# comp_mult_test.i_comp_mult_data_checker 61095 GOOD: (-47 + -87i) * (-4 + -28i) = (-2248 + 1664i), same as expected (-2248 + 1664i)
+# comp_mult_test.i_comp_mult_data_checker 61185 GOOD: (-98 + 60i) * (39 + 103i) = (-10002 + -7754i), same as expected (-10002 + -7754i)
+# comp_mult_test.i_comp_mult_data_checker 61245 GOOD: (-25 + -28i) * (61 + 70i) = (435 + -3458i), same as expected (435 + -3458i)
+# comp_mult_test.i_comp_mult_data_checker 61305 GOOD: (-110 + 3i) * (-21 + -121i) = (2673 + 13247i), same as expected (2673 + 13247i)
+# comp_mult_test.i_comp_mult_data_checker 61405 GOOD: (-64 + 54i) * (-9 + 24i) = (-720 + -2022i), same as expected (-720 + -2022i)
+# comp_mult_test.i_comp_mult_data_checker 61525 GOOD: (-17 + -34i) * (0 + -67i) = (-2278 + 1139i), same as expected (-2278 + 1139i)
+# comp_mult_test.i_comp_mult_data_checker 61645 GOOD: (-17 + -116i) * (20 + 18i) = (1748 + -2626i), same as expected (1748 + -2626i)
+# comp_mult_test.i_comp_mult_data_checker 61725 GOOD: (-53 + 15i) * (-51 + 14i) = (2493 + -1507i), same as expected (2493 + -1507i)
+# comp_mult_test.i_comp_mult_data_checker 61785 GOOD: (-33 + 93i) * (-48 + 84i) = (-6228 + -7236i), same as expected (-6228 + -7236i)
+# comp_mult_test.i_comp_mult_data_checker 61895 GOOD: (-57 + 88i) * (50 + -68i) = (3134 + 8276i), same as expected (3134 + 8276i)
+# comp_mult_test.i_comp_mult_data_checker 61955 GOOD: (-100 + 98i) * (-23 + -33i) = (5534 + 1046i), same as expected (5534 + 1046i)
+# comp_mult_test.i_comp_mult_data_checker 62055 GOOD: (51 + 81i) * (29 + -87i) = (8526 + -2088i), same as expected (8526 + -2088i)
+# comp_mult_test.i_comp_mult_data_checker 62135 GOOD: (50 + 1i) * (15 + -16i) = (766 + -785i), same as expected (766 + -785i)
+# comp_mult_test.i_comp_mult_data_checker 62195 GOOD: (53 + -70i) * (95 + 92i) = (11475 + -1774i), same as expected (11475 + -1774i)
+# comp_mult_test.i_comp_mult_data_checker 62305 GOOD: (-43 + 4i) * (-78 + 49i) = (3158 + -2419i), same as expected (3158 + -2419i)
+# comp_mult_test.i_comp_mult_data_checker 62365 GOOD: (-87 + 53i) * (-19 + 74i) = (-2269 + -7445i), same as expected (-2269 + -7445i)
+# comp_mult_test.i_comp_mult_data_checker 62425 GOOD: (112 + -72i) * (63 + -40i) = (4176 + -9016i), same as expected (4176 + -9016i)
+# comp_mult_test.i_comp_mult_data_checker 62485 GOOD: (122 + -102i) * (-18 + -79i) = (-10254 + -7802i), same as expected (-10254 + -7802i)
+# comp_mult_test.i_comp_mult_data_checker 62545 GOOD: (90 + -96i) * (-66 + -52i) = (-10932 + 1656i), same as expected (-10932 + 1656i)
+# comp_mult_test.i_comp_mult_data_checker 62625 GOOD: (-49 + -51i) * (-29 + -76i) = (-2455 + 5203i), same as expected (-2455 + 5203i)
+# comp_mult_test.i_comp_mult_data_checker 62715 GOOD: (-78 + -35i) * (101 + 52i) = (-6058 + -7591i), same as expected (-6058 + -7591i)
+# comp_mult_test.i_comp_mult_data_checker 62775 GOOD: (-101 + -27i) * (-83 + -99i) = (5710 + 12240i), same as expected (5710 + 12240i)
+# comp_mult_test.i_comp_mult_data_checker 62885 GOOD: (84 + 82i) * (-22 + 63i) = (-7014 + 3488i), same as expected (-7014 + 3488i)
+# comp_mult_test.i_comp_mult_data_checker 62995 GOOD: (-106 + 68i) * (-7 + -21i) = (2170 + 1750i), same as expected (2170 + 1750i)
+# comp_mult_test.i_comp_mult_data_checker 63085 GOOD: (-59 + 107i) * (-102 + 7i) = (5269 + -11327i), same as expected (5269 + -11327i)
+# comp_mult_test.i_comp_mult_data_checker 63155 GOOD: (-39 + -85i) * (-25 + 73i) = (7180 + -722i), same as expected (7180 + -722i)
+# comp_mult_test.i_comp_mult_data_checker 63215 GOOD: (64 + 95i) * (-65 + 109i) = (-14515 + 801i), same as expected (-14515 + 801i)
+# comp_mult_test.i_comp_mult_data_checker 63305 GOOD: (121 + 94i) * (92 + 50i) = (6432 + 14698i), same as expected (6432 + 14698i)
+# comp_mult_test.i_comp_mult_data_checker 63365 GOOD: (-104 + 42i) * (76 + -13i) = (-7358 + 4544i), same as expected (-7358 + 4544i)
+# comp_mult_test.i_comp_mult_data_checker 63425 GOOD: (22 + -44i) * (93 + 43i) = (3938 + -3146i), same as expected (3938 + -3146i)
+# comp_mult_test.i_comp_mult_data_checker 63485 GOOD: (60 + -27i) * (-92 + 45i) = (-4305 + 5184i), same as expected (-4305 + 5184i)
+# comp_mult_test.i_comp_mult_data_checker 63555 GOOD: (94 + -23i) * (95 + -105i) = (6515 + -12055i), same as expected (6515 + -12055i)
+# comp_mult_test.i_comp_mult_data_checker 63675 GOOD: (89 + 44i) * (-35 + 71i) = (-6239 + 4779i), same as expected (-6239 + 4779i)
+# comp_mult_test.i_comp_mult_data_checker 63735 GOOD: (79 + 8i) * (-20 + 80i) = (-2220 + 6160i), same as expected (-2220 + 6160i)
+# comp_mult_test.i_comp_mult_data_checker 63855 GOOD: (-36 + -64i) * (100 + -25i) = (-5200 + -5500i), same as expected (-5200 + -5500i)
+# comp_mult_test.i_comp_mult_data_checker 63955 GOOD: (14 + -75i) * (-6 + -121i) = (-9159 + -1244i), same as expected (-9159 + -1244i)
+# comp_mult_test.i_comp_mult_data_checker 64025 GOOD: (-61 + -99i) * (-126 + -36i) = (4122 + 14670i), same as expected (4122 + 14670i)
+# comp_mult_test.i_comp_mult_data_checker 64095 GOOD: (-24 + -22i) * (-97 + 21i) = (2790 + 1630i), same as expected (2790 + 1630i)
+# comp_mult_test.i_comp_mult_data_checker 64215 GOOD: (102 + 46i) * (-90 + 18i) = (-10008 + -2304i), same as expected (-10008 + -2304i)
+# comp_mult_test.i_comp_mult_data_checker 64275 GOOD: (-98 + -52i) * (63 + 102i) = (-870 + -13272i), same as expected (-870 + -13272i)
+# comp_mult_test.i_comp_mult_data_checker 64385 GOOD: (22 + -58i) * (-93 + 62i) = (1550 + 6758i), same as expected (1550 + 6758i)
+# comp_mult_test.i_comp_mult_data_checker 64445 GOOD: (-44 + -86i) * (63 + 121i) = (7634 + -10742i), same as expected (7634 + -10742i)
+# comp_mult_test.i_comp_mult_data_checker 64555 GOOD: (101 + 56i) * (-105 + -16i) = (-9709 + -7496i), same as expected (-9709 + -7496i)
+# comp_mult_test.i_comp_mult_data_checker 64635 GOOD: (-93 + 96i) * (-108 + -77i) = (17436 + -3207i), same as expected (17436 + -3207i)
+# comp_mult_test.i_comp_mult_data_checker 64725 GOOD: (18 + 123i) * (74 + -17i) = (3423 + 8796i), same as expected (3423 + 8796i)
+# comp_mult_test.i_comp_mult_data_checker 64785 GOOD: (-15 + -62i) * (-125 + 126i) = (9687 + 5860i), same as expected (9687 + 5860i)
+# comp_mult_test.i_comp_mult_data_checker 64905 GOOD: (-87 + 54i) * (-76 + -78i) = (10824 + 2682i), same as expected (10824 + 2682i)
+# comp_mult_test.i_comp_mult_data_checker 64965 GOOD: (-110 + 92i) * (-13 + 90i) = (-6850 + -11096i), same as expected (-6850 + -11096i)
+# comp_mult_test.i_comp_mult_data_checker 65075 GOOD: (105 + -55i) * (-84 + -40i) = (-11020 + 420i), same as expected (-11020 + 420i)
+# comp_mult_test.i_comp_mult_data_checker 65175 GOOD: (-10 + -86i) * (79 + 85i) = (6520 + -7644i), same as expected (6520 + -7644i)
+# comp_mult_test.i_comp_mult_data_checker 65265 GOOD: (25 + -52i) * (-31 + 110i) = (4945 + 4362i), same as expected (4945 + 4362i)
+# comp_mult_test.i_comp_mult_data_checker 65365 GOOD: (-119 + 85i) * (9 + -81i) = (5814 + 10404i), same as expected (5814 + 10404i)
+# comp_mult_test.i_comp_mult_data_checker 65475 GOOD: (5 + -108i) * (24 + 72i) = (7896 + -2232i), same as expected (7896 + -2232i)
+# comp_mult_test.i_comp_mult_data_checker 65535 GOOD: (22 + -86i) * (-82 + -40i) = (-5244 + 6172i), same as expected (-5244 + 6172i)
+# comp_mult_test.i_comp_mult_data_checker 65595 GOOD: (-64 + -66i) * (-32 + 126i) = (10364 + -5952i), same as expected (10364 + -5952i)
+# comp_mult_test.i_comp_mult_data_checker 65695 GOOD: (-50 + 103i) * (116 + -18i) = (-3946 + 12848i), same as expected (-3946 + 12848i)
+# comp_mult_test.i_comp_mult_data_checker 65785 GOOD: (-95 + 15i) * (22 + -76i) = (-950 + 7550i), same as expected (-950 + 7550i)
+# comp_mult_test.i_comp_mult_data_checker 65845 GOOD: (-29 + 42i) * (-110 + -57i) = (5584 + -2967i), same as expected (5584 + -2967i)
+# comp_mult_test.i_comp_mult_data_checker 65905 GOOD: (43 + -104i) * (-61 + 104i) = (8193 + 10816i), same as expected (8193 + 10816i)
+# comp_mult_test.i_comp_mult_data_checker 65985 GOOD: (33 + 9i) * (-52 + 2i) = (-1734 + -402i), same as expected (-1734 + -402i)
+# comp_mult_test.i_comp_mult_data_checker 66045 GOOD: (-95 + -24i) * (-125 + -77i) = (10027 + 10315i), same as expected (10027 + 10315i)
+# comp_mult_test.i_comp_mult_data_checker 66155 GOOD: (-25 + -25i) * (-60 + -89i) = (-725 + 3725i), same as expected (-725 + 3725i)
+# comp_mult_test.i_comp_mult_data_checker 66225 GOOD: (48 + -127i) * (-49 + -97i) = (-14671 + 1567i), same as expected (-14671 + 1567i)
+# comp_mult_test.i_comp_mult_data_checker 66315 GOOD: (5 + -100i) * (84 + 73i) = (7720 + -8035i), same as expected (7720 + -8035i)
+# comp_mult_test.i_comp_mult_data_checker 66395 GOOD: (108 + -26i) * (-63 + 36i) = (-5868 + 5526i), same as expected (-5868 + 5526i)
+# comp_mult_test.i_comp_mult_data_checker 66515 GOOD: (-49 + -67i) * (58 + 16i) = (-1770 + -4670i), same as expected (-1770 + -4670i)
+# comp_mult_test.i_comp_mult_data_checker 66575 GOOD: (44 + -41i) * (-18 + -67i) = (-3539 + -2210i), same as expected (-3539 + -2210i)
+# comp_mult_test.i_comp_mult_data_checker 66675 GOOD: (26 + 99i) * (-14 + 20i) = (-2344 + -866i), same as expected (-2344 + -866i)
+# comp_mult_test.i_comp_mult_data_checker 66735 GOOD: (-69 + 73i) * (-20 + -55i) = (5395 + 2335i), same as expected (5395 + 2335i)
+# comp_mult_test.i_comp_mult_data_checker 66855 GOOD: (-20 + -47i) * (-17 + 82i) = (4194 + -841i), same as expected (4194 + -841i)
+# comp_mult_test.i_comp_mult_data_checker 66975 GOOD: (117 + -67i) * (39 + 100i) = (11263 + 9087i), same as expected (11263 + 9087i)
+# comp_mult_test.i_comp_mult_data_checker 67095 GOOD: (-64 + -84i) * (-18 + 22i) = (3000 + 104i), same as expected (3000 + 104i)
+# comp_mult_test.i_comp_mult_data_checker 67215 GOOD: (-13 + -82i) * (-49 + 125i) = (10887 + 2393i), same as expected (10887 + 2393i)
+# comp_mult_test.i_comp_mult_data_checker 67275 GOOD: (-19 + -105i) * (54 + 93i) = (8739 + -7437i), same as expected (8739 + -7437i)
+# comp_mult_test.i_comp_mult_data_checker 67385 GOOD: (0 + -20i) * (101 + 51i) = (1020 + -2020i), same as expected (1020 + -2020i)
+# comp_mult_test.i_comp_mult_data_checker 67475 GOOD: (98 + -114i) * (-43 + -95i) = (-15044 + -4408i), same as expected (-15044 + -4408i)
+# comp_mult_test.i_comp_mult_data_checker 67575 GOOD: (107 + 60i) * (32 + 50i) = (424 + 7270i), same as expected (424 + 7270i)
+# comp_mult_test.i_comp_mult_data_checker 67685 GOOD: (-19 + 117i) * (24 + -49i) = (5277 + 3739i), same as expected (5277 + 3739i)
+# comp_mult_test.i_comp_mult_data_checker 67795 GOOD: (35 + -108i) * (67 + 25i) = (5045 + -6361i), same as expected (5045 + -6361i)
+# comp_mult_test.i_comp_mult_data_checker 67855 GOOD: (6 + -38i) * (31 + -118i) = (-4298 + -1886i), same as expected (-4298 + -1886i)
+# comp_mult_test.i_comp_mult_data_checker 67925 GOOD: (-92 + 40i) * (95 + 88i) = (-12260 + -4296i), same as expected (-12260 + -4296i)
+# comp_mult_test.i_comp_mult_data_checker 67995 GOOD: (-103 + 114i) * (42 + -100i) = (7074 + 15088i), same as expected (7074 + 15088i)
+# comp_mult_test.i_comp_mult_data_checker 68055 GOOD: (86 + 6i) * (-66 + 119i) = (-6390 + 9838i), same as expected (-6390 + 9838i)
+# comp_mult_test.i_comp_mult_data_checker 68115 GOOD: (30 + -126i) * (40 + 98i) = (13548 + -2100i), same as expected (13548 + -2100i)
+# comp_mult_test.i_comp_mult_data_checker 68175 GOOD: (7 + 3i) * (-88 + -85i) = (-361 + -859i), same as expected (-361 + -859i)
+# comp_mult_test.i_comp_mult_data_checker 68275 GOOD: (-123 + -65i) * (22 + -77i) = (-7711 + 8041i), same as expected (-7711 + 8041i)
+# comp_mult_test.i_comp_mult_data_checker 68335 GOOD: (-80 + -76i) * (-67 + -55i) = (1180 + 9492i), same as expected (1180 + 9492i)
+# comp_mult_test.i_comp_mult_data_checker 68415 GOOD: (33 + 105i) * (-82 + -10i) = (-1656 + -8940i), same as expected (-1656 + -8940i)
+# comp_mult_test.i_comp_mult_data_checker 68475 GOOD: (76 + 74i) * (-61 + -42i) = (-1528 + -7706i), same as expected (-1528 + -7706i)
+# comp_mult_test.i_comp_mult_data_checker 68535 GOOD: (-12 + 93i) * (-43 + 88i) = (-7668 + -5055i), same as expected (-7668 + -5055i)
+# comp_mult_test.i_comp_mult_data_checker 68595 GOOD: (60 + -58i) * (116 + -40i) = (4640 + -9128i), same as expected (4640 + -9128i)
+# comp_mult_test.i_comp_mult_data_checker 68655 GOOD: (105 + 114i) * (-87 + 99i) = (-20421 + 477i), same as expected (-20421 + 477i)
+# comp_mult_test.i_comp_mult_data_checker 68715 GOOD: (-22 + 48i) * (-51 + -60i) = (4002 + -1128i), same as expected (4002 + -1128i)
+# comp_mult_test.i_comp_mult_data_checker 68825 GOOD: (-20 + -124i) * (29 + -128i) = (-16452 + -1036i), same as expected (-16452 + -1036i)
+# comp_mult_test.i_comp_mult_data_checker 68895 GOOD: (1 + -112i) * (-103 + -62i) = (-7047 + 11474i), same as expected (-7047 + 11474i)
+# comp_mult_test.i_comp_mult_data_checker 68985 GOOD: (-120 + 117i) * (126 + 4i) = (-15588 + 14262i), same as expected (-15588 + 14262i)
+# comp_mult_test.i_comp_mult_data_checker 69095 GOOD: (5 + 83i) * (25 + -95i) = (8010 + 1600i), same as expected (8010 + 1600i)
+# comp_mult_test.i_comp_mult_data_checker 69155 GOOD: (53 + -42i) * (93 + -88i) = (1233 + -8570i), same as expected (1233 + -8570i)
+# comp_mult_test.i_comp_mult_data_checker 69255 GOOD: (78 + -32i) * (69 + -115i) = (1702 + -11178i), same as expected (1702 + -11178i)
+# comp_mult_test.i_comp_mult_data_checker 69315 GOOD: (-10 + -111i) * (-2 + 97i) = (10787 + -748i), same as expected (10787 + -748i)
+# comp_mult_test.i_comp_mult_data_checker 69415 GOOD: (61 + 22i) * (-34 + -70i) = (-534 + -5018i), same as expected (-534 + -5018i)
+# comp_mult_test.i_comp_mult_data_checker 69485 GOOD: (-52 + -114i) * (72 + -111i) = (-16398 + -2436i), same as expected (-16398 + -2436i)
+# comp_mult_test.i_comp_mult_data_checker 69555 GOOD: (47 + -126i) * (-32 + 124i) = (14120 + 9860i), same as expected (14120 + 9860i)
+# comp_mult_test.i_comp_mult_data_checker 69635 GOOD: (-70 + -58i) * (76 + -20i) = (-6480 + -3008i), same as expected (-6480 + -3008i)
+# comp_mult_test.i_comp_mult_data_checker 69695 GOOD: (104 + -98i) * (117 + -89i) = (3446 + -20722i), same as expected (3446 + -20722i)
+# comp_mult_test.i_comp_mult_data_checker 69785 GOOD: (111 + -95i) * (-103 + 0i) = (-11433 + 9785i), same as expected (-11433 + 9785i)
+# comp_mult_test.i_comp_mult_data_checker 69875 GOOD: (-16 + 12i) * (-38 + -115i) = (1988 + 1384i), same as expected (1988 + 1384i)
+# comp_mult_test.i_comp_mult_data_checker 69965 GOOD: (-70 + -23i) * (19 + 122i) = (1476 + -8977i), same as expected (1476 + -8977i)
+# comp_mult_test.i_comp_mult_data_checker 70025 GOOD: (-86 + -43i) * (-4 + -107i) = (-4257 + 9374i), same as expected (-4257 + 9374i)
+# comp_mult_test.i_comp_mult_data_checker 70085 GOOD: (13 + -107i) * (105 + -68i) = (-5911 + -12119i), same as expected (-5911 + -12119i)
+# comp_mult_test.i_comp_mult_data_checker 70205 GOOD: (3 + -56i) * (-115 + -90i) = (-5385 + 6170i), same as expected (-5385 + 6170i)
+# comp_mult_test.i_comp_mult_data_checker 70315 GOOD: (52 + 29i) * (21 + -92i) = (3760 + -4175i), same as expected (3760 + -4175i)
+# comp_mult_test.i_comp_mult_data_checker 70405 GOOD: (73 + 95i) * (102 + -10i) = (8396 + 8960i), same as expected (8396 + 8960i)
+# comp_mult_test.i_comp_mult_data_checker 70505 GOOD: (46 + -67i) * (34 + -126i) = (-6878 + -8074i), same as expected (-6878 + -8074i)
+# comp_mult_test.i_comp_mult_data_checker 70565 GOOD: (-87 + 12i) * (70 + -87i) = (-5046 + 8409i), same as expected (-5046 + 8409i)
+# comp_mult_test.i_comp_mult_data_checker 70625 GOOD: (-59 + 76i) * (120 + 112i) = (-15592 + 2512i), same as expected (-15592 + 2512i)
+# comp_mult_test.i_comp_mult_data_checker 70745 GOOD: (-3 + -16i) * (-66 + -29i) = (-266 + 1143i), same as expected (-266 + 1143i)
+# comp_mult_test.i_comp_mult_data_checker 70835 GOOD: (14 + -31i) * (-39 + -6i) = (-732 + 1125i), same as expected (-732 + 1125i)
+# comp_mult_test.i_comp_mult_data_checker 70905 GOOD: (-102 + 49i) * (-15 + 44i) = (-626 + -5223i), same as expected (-626 + -5223i)
+# comp_mult_test.i_comp_mult_data_checker 70965 GOOD: (1 + -66i) * (-56 + -117i) = (-7778 + 3579i), same as expected (-7778 + 3579i)
+# comp_mult_test.i_comp_mult_data_checker 71075 GOOD: (30 + 123i) * (73 + 107i) = (-10971 + 12189i), same as expected (-10971 + 12189i)
+# comp_mult_test.i_comp_mult_data_checker 71145 GOOD: (-91 + -81i) * (-85 + -112i) = (-1337 + 17077i), same as expected (-1337 + 17077i)
+# comp_mult_test.i_comp_mult_data_checker 71205 GOOD: (-52 + 30i) * (96 + -6i) = (-4812 + 3192i), same as expected (-4812 + 3192i)
+# comp_mult_test.i_comp_mult_data_checker 71315 GOOD: (43 + -97i) * (63 + -80i) = (-5051 + -9551i), same as expected (-5051 + -9551i)
+# comp_mult_test.i_comp_mult_data_checker 71435 GOOD: (60 + -77i) * (-15 + 58i) = (3566 + 4635i), same as expected (3566 + 4635i)
+# comp_mult_test.i_comp_mult_data_checker 71545 GOOD: (-18 + -1i) * (123 + -72i) = (-2286 + 1173i), same as expected (-2286 + 1173i)
+# comp_mult_test.i_comp_mult_data_checker 71605 GOOD: (-124 + 119i) * (62 + -60i) = (-548 + 14818i), same as expected (-548 + 14818i)
+# comp_mult_test.i_comp_mult_data_checker 71725 GOOD: (-111 + 9i) * (-109 + 122i) = (11001 + -14523i), same as expected (11001 + -14523i)
+# comp_mult_test.i_comp_mult_data_checker 71785 GOOD: (81 + -70i) * (-117 + 37i) = (-6887 + 11187i), same as expected (-6887 + 11187i)
+# comp_mult_test.i_comp_mult_data_checker 71845 GOOD: (119 + 54i) * (-90 + -68i) = (-7038 + -12952i), same as expected (-7038 + -12952i)
+# comp_mult_test.i_comp_mult_data_checker 71915 GOOD: (-35 + 55i) * (-76 + -7i) = (3045 + -3935i), same as expected (3045 + -3935i)
+# comp_mult_test.i_comp_mult_data_checker 71975 GOOD: (102 + 21i) * (-50 + -66i) = (-3714 + -7782i), same as expected (-3714 + -7782i)
+# comp_mult_test.i_comp_mult_data_checker 72045 GOOD: (-89 + 127i) * (-57 + -93i) = (16884 + 1038i), same as expected (16884 + 1038i)
+# comp_mult_test.i_comp_mult_data_checker 72105 GOOD: (-15 + 56i) * (96 + 73i) = (-5528 + 4281i), same as expected (-5528 + 4281i)
+# comp_mult_test.i_comp_mult_data_checker 72165 GOOD: (-51 + -26i) * (125 + 38i) = (-5387 + -5188i), same as expected (-5387 + -5188i)
+# comp_mult_test.i_comp_mult_data_checker 72255 GOOD: (103 + -98i) * (76 + -91i) = (-1090 + -16821i), same as expected (-1090 + -16821i)
+# comp_mult_test.i_comp_mult_data_checker 72375 GOOD: (-106 + 49i) * (-21 + 50i) = (-224 + -6329i), same as expected (-224 + -6329i)
+# comp_mult_test.i_comp_mult_data_checker 72445 GOOD: (-12 + -85i) * (61 + 108i) = (8448 + -6481i), same as expected (8448 + -6481i)
+# comp_mult_test.i_comp_mult_data_checker 72505 GOOD: (-2 + 78i) * (88 + -3i) = (58 + 6870i), same as expected (58 + 6870i)
+# comp_mult_test.i_comp_mult_data_checker 72565 GOOD: (-62 + 73i) * (42 + 59i) = (-6911 + -592i), same as expected (-6911 + -592i)
+# comp_mult_test.i_comp_mult_data_checker 72625 GOOD: (49 + -112i) * (-102 + -103i) = (-16534 + 6377i), same as expected (-16534 + 6377i)
+# comp_mult_test.i_comp_mult_data_checker 72705 GOOD: (-41 + -80i) * (36 + -119i) = (-10996 + 1999i), same as expected (-10996 + 1999i)
+# comp_mult_test.i_comp_mult_data_checker 72765 GOOD: (-58 + -36i) * (-48 + -68i) = (336 + 5672i), same as expected (336 + 5672i)
+# comp_mult_test.i_comp_mult_data_checker 72875 GOOD: (-115 + 86i) * (-87 + 66i) = (4329 + -15072i), same as expected (4329 + -15072i)
+# comp_mult_test.i_comp_mult_data_checker 72975 GOOD: (-25 + -25i) * (88 + -59i) = (-3675 + -725i), same as expected (-3675 + -725i)
+# comp_mult_test.i_comp_mult_data_checker 73045 GOOD: (-104 + 71i) * (17 + 74i) = (-7022 + -6489i), same as expected (-7022 + -6489i)
+# comp_mult_test.i_comp_mult_data_checker 73105 GOOD: (-53 + 104i) * (77 + -106i) = (6943 + 13626i), same as expected (6943 + 13626i)
+# comp_mult_test.i_comp_mult_data_checker 73165 GOOD: (-66 + 98i) * (38 + -92i) = (6508 + 9796i), same as expected (6508 + 9796i)
+# comp_mult_test.i_comp_mult_data_checker 73235 GOOD: (47 + -54i) * (-21 + -60i) = (-4227 + -1686i), same as expected (-4227 + -1686i)
+# comp_mult_test.i_comp_mult_data_checker 73295 GOOD: (77 + 97i) * (53 + 18i) = (2335 + 6527i), same as expected (2335 + 6527i)
+# comp_mult_test.i_comp_mult_data_checker 73355 GOOD: (-3 + -88i) * (75 + 121i) = (10423 + -6963i), same as expected (10423 + -6963i)
+# comp_mult_test.i_comp_mult_data_checker 73475 GOOD: (107 + 84i) * (2 + -36i) = (3238 + -3684i), same as expected (3238 + -3684i)
+# comp_mult_test.i_comp_mult_data_checker 73545 GOOD: (5 + -51i) * (-29 + -62i) = (-3307 + 1169i), same as expected (-3307 + 1169i)
+# comp_mult_test.i_comp_mult_data_checker 73645 GOOD: (-20 + -80i) * (-90 + 127i) = (11960 + 4660i), same as expected (11960 + 4660i)
+# comp_mult_test.i_comp_mult_data_checker 73705 GOOD: (-109 + 19i) * (-3 + -101i) = (2246 + 10952i), same as expected (2246 + 10952i)
+# comp_mult_test.i_comp_mult_data_checker 73765 GOOD: (-43 + -17i) * (-22 + -100i) = (-754 + 4674i), same as expected (-754 + 4674i)
+# comp_mult_test.i_comp_mult_data_checker 73845 GOOD: (15 + -79i) * (83 + 126i) = (11199 + -4667i), same as expected (11199 + -4667i)
+# comp_mult_test.i_comp_mult_data_checker 73905 GOOD: (-94 + -93i) * (66 + 39i) = (-2577 + -9804i), same as expected (-2577 + -9804i)
+# comp_mult_test.i_comp_mult_data_checker 73995 GOOD: (-63 + -55i) * (-92 + -36i) = (3816 + 7328i), same as expected (3816 + 7328i)
+# comp_mult_test.i_comp_mult_data_checker 74055 GOOD: (-57 + 10i) * (21 + -112i) = (-77 + 6594i), same as expected (-77 + 6594i)
+# comp_mult_test.i_comp_mult_data_checker 74115 GOOD: (-103 + -61i) * (-51 + 78i) = (10011 + -4923i), same as expected (10011 + -4923i)
+# comp_mult_test.i_comp_mult_data_checker 74175 GOOD: (63 + -20i) * (71 + -110i) = (2273 + -8350i), same as expected (2273 + -8350i)
+# comp_mult_test.i_comp_mult_data_checker 74255 GOOD: (83 + 17i) * (-45 + 43i) = (-4466 + 2804i), same as expected (-4466 + 2804i)
+# comp_mult_test.i_comp_mult_data_checker 74345 GOOD: (120 + -51i) * (-82 + -79i) = (-13869 + -5298i), same as expected (-13869 + -5298i)
+# comp_mult_test.i_comp_mult_data_checker 74445 GOOD: (48 + -76i) * (33 + 39i) = (4548 + -636i), same as expected (4548 + -636i)
+# comp_mult_test.i_comp_mult_data_checker 74505 GOOD: (-9 + 100i) * (24 + 34i) = (-3616 + 2094i), same as expected (-3616 + 2094i)
+# comp_mult_test.i_comp_mult_data_checker 74625 GOOD: (-79 + -85i) * (-58 + -123i) = (-5873 + 14647i), same as expected (-5873 + 14647i)
+# comp_mult_test.i_comp_mult_data_checker 74685 GOOD: (-19 + -71i) * (-96 + -6i) = (1398 + 6930i), same as expected (1398 + 6930i)
+# comp_mult_test.i_comp_mult_data_checker 74775 GOOD: (-114 + 69i) * (35 + 104i) = (-11166 + -9441i), same as expected (-11166 + -9441i)
+# comp_mult_test.i_comp_mult_data_checker 74835 GOOD: (3 + 124i) * (18 + 99i) = (-12222 + 2529i), same as expected (-12222 + 2529i)
+# comp_mult_test.i_comp_mult_data_checker 74905 GOOD: (-78 + 106i) * (72 + 49i) = (-10810 + 3810i), same as expected (-10810 + 3810i)
+# comp_mult_test.i_comp_mult_data_checker 74965 GOOD: (-85 + 10i) * (4 + 57i) = (-910 + -4805i), same as expected (-910 + -4805i)
+# comp_mult_test.i_comp_mult_data_checker 75085 GOOD: (-41 + 19i) * (123 + 9i) = (-5214 + 1968i), same as expected (-5214 + 1968i)
+# comp_mult_test.i_comp_mult_data_checker 75155 GOOD: (116 + 91i) * (-113 + 15i) = (-14473 + -8543i), same as expected (-14473 + -8543i)
+# comp_mult_test.i_comp_mult_data_checker 75215 GOOD: (-41 + 13i) * (91 + -56i) = (-3003 + 3479i), same as expected (-3003 + 3479i)
+# comp_mult_test.i_comp_mult_data_checker 75275 GOOD: (-87 + -70i) * (92 + 103i) = (-794 + -15401i), same as expected (-794 + -15401i)
+# comp_mult_test.i_comp_mult_data_checker 75375 GOOD: (75 + -116i) * (-19 + -128i) = (-16273 + -7396i), same as expected (-16273 + -7396i)
+# comp_mult_test.i_comp_mult_data_checker 75435 GOOD: (-41 + 76i) * (-75 + -60i) = (7635 + -3240i), same as expected (7635 + -3240i)
+# comp_mult_test.i_comp_mult_data_checker 75525 GOOD: (-87 + -50i) * (120 + -123i) = (-16590 + 4701i), same as expected (-16590 + 4701i)
+# comp_mult_test.i_comp_mult_data_checker 75595 GOOD: (-58 + -4i) * (-6 + -26i) = (244 + 1532i), same as expected (244 + 1532i)
+# comp_mult_test.i_comp_mult_data_checker 75715 GOOD: (-15 + 77i) * (-123 + -4i) = (2153 + -9411i), same as expected (2153 + -9411i)
+# comp_mult_test.i_comp_mult_data_checker 75805 GOOD: (115 + 108i) * (121 + -28i) = (16939 + 9848i), same as expected (16939 + 9848i)
+# comp_mult_test.i_comp_mult_data_checker 75905 GOOD: (-21 + -94i) * (124 + 68i) = (3788 + -13084i), same as expected (3788 + -13084i)
+# comp_mult_test.i_comp_mult_data_checker 75995 GOOD: (-86 + -118i) * (7 + -87i) = (-10868 + 6656i), same as expected (-10868 + 6656i)
+# comp_mult_test.i_comp_mult_data_checker 76095 GOOD: (72 + -123i) * (75 + -50i) = (-750 + -12825i), same as expected (-750 + -12825i)
+# comp_mult_test.i_comp_mult_data_checker 76155 GOOD: (27 + -1i) * (84 + 65i) = (2333 + 1671i), same as expected (2333 + 1671i)
+# comp_mult_test.i_comp_mult_data_checker 76265 GOOD: (-13 + 103i) * (-30 + 127i) = (-12691 + -4741i), same as expected (-12691 + -4741i)
+# comp_mult_test.i_comp_mult_data_checker 76345 GOOD: (24 + -63i) * (13 + 69i) = (4659 + 837i), same as expected (4659 + 837i)
+# comp_mult_test.i_comp_mult_data_checker 76405 GOOD: (-34 + -92i) * (-102 + -117i) = (-7296 + 13362i), same as expected (-7296 + 13362i)
+# comp_mult_test.i_comp_mult_data_checker 76515 GOOD: (-32 + -122i) * (-11 + -43i) = (-4894 + 2718i), same as expected (-4894 + 2718i)
+# comp_mult_test.i_comp_mult_data_checker 76635 GOOD: (-59 + 45i) * (-27 + -85i) = (5418 + 3800i), same as expected (5418 + 3800i)
+# comp_mult_test.i_comp_mult_data_checker 76705 GOOD: (4 + -57i) * (-104 + 73i) = (3745 + 6220i), same as expected (3745 + 6220i)
+# comp_mult_test.i_comp_mult_data_checker 76805 GOOD: (-126 + -23i) * (-6 + 58i) = (2090 + -7170i), same as expected (2090 + -7170i)
+# comp_mult_test.i_comp_mult_data_checker 76865 GOOD: (-125 + -5i) * (90 + 112i) = (-10690 + -14450i), same as expected (-10690 + -14450i)
+# comp_mult_test.i_comp_mult_data_checker 76925 GOOD: (38 + 62i) * (-100 + -39i) = (-1382 + -7682i), same as expected (-1382 + -7682i)
+# comp_mult_test.i_comp_mult_data_checker 77035 GOOD: (-30 + -92i) * (-4 + 34i) = (3248 + -652i), same as expected (3248 + -652i)
+# comp_mult_test.i_comp_mult_data_checker 77115 GOOD: (-70 + -105i) * (-100 + -2i) = (6790 + 10640i), same as expected (6790 + 10640i)
+# comp_mult_test.i_comp_mult_data_checker 77195 GOOD: (82 + -12i) * (113 + 23i) = (9542 + 530i), same as expected (9542 + 530i)
+# comp_mult_test.i_comp_mult_data_checker 77265 GOOD: (62 + -22i) * (20 + 28i) = (1856 + 1296i), same as expected (1856 + 1296i)
+# comp_mult_test.i_comp_mult_data_checker 77385 GOOD: (122 + 49i) * (-47 + 12i) = (-6322 + -839i), same as expected (-6322 + -839i)
+# comp_mult_test.i_comp_mult_data_checker 77485 GOOD: (58 + 125i) * (98 + -39i) = (10559 + 9988i), same as expected (10559 + 9988i)
+# comp_mult_test.i_comp_mult_data_checker 77575 GOOD: (-80 + -112i) * (-18 + -111i) = (-10992 + 10896i), same as expected (-10992 + 10896i)
+# comp_mult_test.i_comp_mult_data_checker 77635 GOOD: (43 + -54i) * (-81 + 11i) = (-2889 + 4847i), same as expected (-2889 + 4847i)
+# comp_mult_test.i_comp_mult_data_checker 77705 GOOD: (22 + 120i) * (-114 + -48i) = (3252 + -14736i), same as expected (3252 + -14736i)
+# comp_mult_test.i_comp_mult_data_checker 77765 GOOD: (77 + -29i) * (82 + -4i) = (6198 + -2686i), same as expected (6198 + -2686i)
+# comp_mult_test.i_comp_mult_data_checker 77855 GOOD: (44 + -99i) * (74 + -41i) = (-803 + -9130i), same as expected (-803 + -9130i)
+# comp_mult_test.i_comp_mult_data_checker 77915 GOOD: (18 + -50i) * (-63 + -57i) = (-3984 + 2124i), same as expected (-3984 + 2124i)
+# comp_mult_test.i_comp_mult_data_checker 77975 GOOD: (-111 + -43i) * (47 + -28i) = (-6421 + 1087i), same as expected (-6421 + 1087i)
+# comp_mult_test.i_comp_mult_data_checker 78055 GOOD: (5 + -54i) * (49 + 35i) = (2135 + -2471i), same as expected (2135 + -2471i)
+# comp_mult_test.i_comp_mult_data_checker 78155 GOOD: (24 + 32i) * (-83 + -46i) = (-520 + -3760i), same as expected (-520 + -3760i)
+# comp_mult_test.i_comp_mult_data_checker 78215 GOOD: (-78 + 63i) * (-89 + 52i) = (3666 + -9663i), same as expected (3666 + -9663i)
+# comp_mult_test.i_comp_mult_data_checker 78275 GOOD: (40 + -32i) * (117 + 101i) = (7912 + 296i), same as expected (7912 + 296i)
+# comp_mult_test.i_comp_mult_data_checker 78345 GOOD: (111 + -29i) * (-46 + 20i) = (-4526 + 3554i), same as expected (-4526 + 3554i)
+# comp_mult_test.i_comp_mult_data_checker 78415 GOOD: (-24 + 94i) * (36 + 67i) = (-7162 + 1776i), same as expected (-7162 + 1776i)
+# comp_mult_test.i_comp_mult_data_checker 78505 GOOD: (-116 + 39i) * (-9 + 78i) = (-1998 + -9399i), same as expected (-1998 + -9399i)
+# comp_mult_test.i_comp_mult_data_checker 78595 GOOD: (-12 + -8i) * (-18 + 0i) = (216 + 144i), same as expected (216 + 144i)
+# comp_mult_test.i_comp_mult_data_checker 78685 GOOD: (-39 + -53i) * (98 + 57i) = (-801 + -7417i), same as expected (-801 + -7417i)
+# comp_mult_test.i_comp_mult_data_checker 78785 GOOD: (33 + 56i) * (8 + -57i) = (3456 + -1433i), same as expected (3456 + -1433i)
+# comp_mult_test.i_comp_mult_data_checker 78845 GOOD: (-31 + -84i) * (74 + 28i) = (58 + -7084i), same as expected (58 + -7084i)
+# comp_mult_test.i_comp_mult_data_checker 78915 GOOD: (-5 + 59i) * (44 + -31i) = (1609 + 2751i), same as expected (1609 + 2751i)
+# comp_mult_test.i_comp_mult_data_checker 78975 GOOD: (-32 + 59i) * (34 + 9i) = (-1619 + 1718i), same as expected (-1619 + 1718i)
+# comp_mult_test.i_comp_mult_data_checker 79045 GOOD: (-35 + -64i) * (-76 + -12i) = (1892 + 5284i), same as expected (1892 + 5284i)
+# comp_mult_test.i_comp_mult_data_checker 79105 GOOD: (2 + -7i) * (-3 + 52i) = (358 + 125i), same as expected (358 + 125i)
+# comp_mult_test.i_comp_mult_data_checker 79185 GOOD: (3 + 34i) * (53 + 54i) = (-1677 + 1964i), same as expected (-1677 + 1964i)
+# comp_mult_test.i_comp_mult_data_checker 79245 GOOD: (-20 + 41i) * (-96 + 6i) = (1674 + -4056i), same as expected (1674 + -4056i)
+# comp_mult_test.i_comp_mult_data_checker 79355 GOOD: (-40 + -67i) * (46 + -65i) = (-6195 + -482i), same as expected (-6195 + -482i)
+# comp_mult_test.i_comp_mult_data_checker 79415 GOOD: (-87 + -113i) * (-86 + -76i) = (-1106 + 16330i), same as expected (-1106 + 16330i)
+# comp_mult_test.i_comp_mult_data_checker 79525 GOOD: (-24 + 105i) * (-93 + 14i) = (762 + -10101i), same as expected (762 + -10101i)
+# comp_mult_test.i_comp_mult_data_checker 79585 GOOD: (-26 + 2i) * (51 + -99i) = (-1128 + 2676i), same as expected (-1128 + 2676i)
+# comp_mult_test.i_comp_mult_data_checker 79645 GOOD: (91 + 120i) * (-71 + 120i) = (-20861 + 2400i), same as expected (-20861 + 2400i)
+# comp_mult_test.i_comp_mult_data_checker 79705 GOOD: (-6 + 41i) * (70 + 9i) = (-789 + 2816i), same as expected (-789 + 2816i)
+# DONE
+# Break in Module comp_mult_test at ../deb_src/comp_mult_test.v line 174
+# Simulation Breakpoint: Break in Module comp_mult_test at ../deb_src/comp_mult_test.v line 174
+# MACRO ./wave.do PAUSED at line 2
+# Break key hit 
 # Break key hit 
