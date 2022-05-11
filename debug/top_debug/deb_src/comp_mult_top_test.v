@@ -111,23 +111,27 @@ initial begin
     end 
     
     //set to write mode, clear status reg 
-    apb_pwrite <= 1'b0;
-    apb_psel   <= 1'b1;
-    apb_paddr  <= APB_BADDR+5; // sts reg addr 
-    apb_pwdata <= 16'd0;
-    @(posedge clk);
+    // apb_pwrite <= 1'b1;
+    // apb_psel   <= 1'b1;
+    // apb_paddr  <= APB_BADDR+5; // sts stop addr 
+    // apb_pwdata <= 16'd0;
+    // @(posedge clk);
     
     // write to invalid address 
+    apb_pwrite <= 1'b1;
     apb_paddr  <= APB_BADDR+69; // sts reg addr 
     apb_pwdata <= 16'hDEAD;
     @(posedge clk);
     
     // check for slave error 
+    apb_pwrite <= 1'b0;
+    apb_psel   <= 1'b0;
+    
+    @(posedge clk);
     if(~apb_pslverr)
         $display("%M WARNING: Expected slave error!");
         
-    apb_pwrite <= 1'b0;
-    apb_psel   <= 1'b0;
+
     repeat(3) @(posedge clk);
     
     // check data based on expected written in memory (Python ref model)

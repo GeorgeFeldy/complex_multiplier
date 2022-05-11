@@ -30,70 +30,27 @@
 # Top level modules:
 # 	comp_mult_top
 # vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_top_test
 # Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_top
 # Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_wrapper
 # Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.mem_1rw
 # Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_ref_model
 # Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.clk_rst_tb
 # Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_4
 # Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.uint8_mult
 # Loading work.uint8_mult
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftcz1yrr".
+#           Attempting to use alternate WLF file "./wlftwn5hxj".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftcz1yrr
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftah8e5v".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftah8e5v
+#           Using alternate file: ./wlftwn5hxj
 # comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
 # comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
 # comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
@@ -104,580 +61,7 @@ do sim.do
 # comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
 # comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
 # comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlft5i2kdc".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft5i2kdc
-# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
-# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
-# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
-# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
-# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
-# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
-# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
-# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
-# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
-# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
-# comp_mult_top_test ERROR: Expected slave error!
-# comp_mult_top_test OP 0 ----- OK    , e == e
-# comp_mult_top_test OP 0 ----- OK    , 11 == 11
-# comp_mult_top_test OP 0 ----- OK    , 0 == 0
-# comp_mult_top_test OP 0 ----- OK    , cc == cc
-# comp_mult_top_test OP 0 ----- OK    , 2 == 2
-# comp_mult_top_test OP 0 ----- OK    , 0 == 0
-# comp_mult_top_test OP 1 ----- OK    , 20 == 20
-# comp_mult_top_test OP 1 ----- OK    , 16 == 16
-# comp_mult_top_test OP 1 ----- OK    , 0 == 0
-# comp_mult_top_test OP 1 ----- OK    , 1c == 1c
-# comp_mult_top_test OP 1 ----- OK    , f6 == f6
-# comp_mult_top_test OP 1 ----- OK    , 3 == 3
-# comp_mult_top_test OP 2 ----- OK    , 97 == 97
-# comp_mult_top_test OP 2 ----- OK    , b == b
-# comp_mult_top_test OP 2 ----- OK    , 0 == 0
-# comp_mult_top_test OP 2 ----- OK    , fd == fd
-# comp_mult_top_test OP 2 ----- OK    , f4 == f4
-# comp_mult_top_test OP 2 ----- OK    , 3 == 3
-# comp_mult_top_test OP 3 ----- OK    , e4 == e4
-# comp_mult_top_test OP 3 ----- OK    , fe == fe
-# comp_mult_top_test OP 3 ----- OK    , 3 == 3
-# comp_mult_top_test OP 3 ----- OK    , a == a
-# comp_mult_top_test OP 3 ----- OK    , b2 == b2
-# comp_mult_top_test OP 3 ----- OK    , 3 == 3
-# comp_mult_top_test OP 4 ----- OK    , 56 == 56
-# comp_mult_top_test OP 4 ----- OK    , f8 == f8
-# comp_mult_top_test OP 4 ----- OK    , 3 == 3
-# comp_mult_top_test OP 4 ----- OK    , fc == fc
-# comp_mult_top_test OP 4 ----- OK    , fc == fc
-# comp_mult_top_test OP 4 ----- OK    , 3 == 3
-# comp_mult_top_test OP 5 ----- OK    , 91 == 91
-# comp_mult_top_test OP 5 ----- OK    , fa == fa
-# comp_mult_top_test OP 5 ----- OK    , 3 == 3
-# comp_mult_top_test OP 5 ----- OK    , 9d == 9d
-# comp_mult_top_test OP 5 ----- OK    , c0 == c0
-# comp_mult_top_test OP 5 ----- OK    , 3 == 3
-# comp_mult_top_test OP 6 ----- OK    , 1 == 1
-# comp_mult_top_test OP 6 ----- OK    , 4 == 4
-# comp_mult_top_test OP 6 ----- OK    , 0 == 0
-# comp_mult_top_test OP 6 ----- OK    , f2 == f2
-# comp_mult_top_test OP 6 ----- OK    , f9 == f9
-# comp_mult_top_test OP 6 ----- OK    , 3 == 3
-# comp_mult_top_test OP 7 ----- OK    , 4a == 4a
-# comp_mult_top_test OP 7 ----- OK    , 2 == 2
-# comp_mult_top_test OP 7 ----- OK    , 0 == 0
-# comp_mult_top_test OP 7 ----- OK    , 24 == 24
-# comp_mult_top_test OP 7 ----- OK    , ed == ed
-# comp_mult_top_test OP 7 ----- OK    , 3 == 3
-# comp_mult_top_test OP 8 ----- OK    , b8 == b8
-# comp_mult_top_test OP 8 ----- OK    , f8 == f8
-# comp_mult_top_test OP 8 ----- OK    , 3 == 3
-# comp_mult_top_test OP 8 ----- OK    , f8 == f8
-# comp_mult_top_test OP 8 ----- OK    , 5 == 5
-# comp_mult_top_test OP 8 ----- OK    , 0 == 0
-# comp_mult_top_test OP 9 ----- OK    , a2 == a2
-# comp_mult_top_test OP 9 ----- OK    , 2a == 2a
-# comp_mult_top_test OP 9 ----- OK    , 0 == 0
-# comp_mult_top_test OP 9 ----- OK    , 66 == 66
-# comp_mult_top_test OP 9 ----- OK    , e9 == e9
-# comp_mult_top_test OP 9 ----- OK    , 3 == 3
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 142
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 142
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlfti6911y".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfti6911y
-# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
-# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
-# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
-# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
-# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
-# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
-# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
-# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
-# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
-# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
-# comp_mult_top_test ERROR: Expected slave error!
-# comp_mult_top_test OP 0 ----- OK    , e == e
-# comp_mult_top_test OP 0 ----- OK    , 11 == 11
-# comp_mult_top_test OP 0 ----- OK    , 0 == 0
-# comp_mult_top_test OP 0 ----- OK    , cc == cc
-# comp_mult_top_test OP 0 ----- OK    , 2 == 2
-# comp_mult_top_test OP 0 ----- OK    , 0 == 0
-# comp_mult_top_test OP 1 ----- OK    , 20 == 20
-# comp_mult_top_test OP 1 ----- OK    , 16 == 16
-# comp_mult_top_test OP 1 ----- OK    , 0 == 0
-# comp_mult_top_test OP 1 ----- OK    , 1c == 1c
-# comp_mult_top_test OP 1 ----- OK    , f6 == f6
-# comp_mult_top_test OP 1 ----- OK    , 3 == 3
-# comp_mult_top_test OP 2 ----- OK    , 97 == 97
-# comp_mult_top_test OP 2 ----- OK    , b == b
-# comp_mult_top_test OP 2 ----- OK    , 0 == 0
-# comp_mult_top_test OP 2 ----- OK    , fd == fd
-# comp_mult_top_test OP 2 ----- OK    , f4 == f4
-# comp_mult_top_test OP 2 ----- OK    , 3 == 3
-# comp_mult_top_test OP 3 ----- OK    , e4 == e4
-# comp_mult_top_test OP 3 ----- OK    , fe == fe
-# comp_mult_top_test OP 3 ----- OK    , 3 == 3
-# comp_mult_top_test OP 3 ----- OK    , a == a
-# comp_mult_top_test OP 3 ----- OK    , b2 == b2
-# comp_mult_top_test OP 3 ----- OK    , 3 == 3
-# comp_mult_top_test OP 4 ----- OK    , 56 == 56
-# comp_mult_top_test OP 4 ----- OK    , f8 == f8
-# comp_mult_top_test OP 4 ----- OK    , 3 == 3
-# comp_mult_top_test OP 4 ----- OK    , fc == fc
-# comp_mult_top_test OP 4 ----- OK    , fc == fc
-# comp_mult_top_test OP 4 ----- OK    , 3 == 3
-# comp_mult_top_test OP 5 ----- OK    , 91 == 91
-# comp_mult_top_test OP 5 ----- OK    , fa == fa
-# comp_mult_top_test OP 5 ----- OK    , 3 == 3
-# comp_mult_top_test OP 5 ----- OK    , 9d == 9d
-# comp_mult_top_test OP 5 ----- OK    , c0 == c0
-# comp_mult_top_test OP 5 ----- OK    , 3 == 3
-# comp_mult_top_test OP 6 ----- OK    , 1 == 1
-# comp_mult_top_test OP 6 ----- OK    , 4 == 4
-# comp_mult_top_test OP 6 ----- OK    , 0 == 0
-# comp_mult_top_test OP 6 ----- OK    , f2 == f2
-# comp_mult_top_test OP 6 ----- OK    , f9 == f9
-# comp_mult_top_test OP 6 ----- OK    , 3 == 3
-# comp_mult_top_test OP 7 ----- OK    , 4a == 4a
-# comp_mult_top_test OP 7 ----- OK    , 2 == 2
-# comp_mult_top_test OP 7 ----- OK    , 0 == 0
-# comp_mult_top_test OP 7 ----- OK    , 24 == 24
-# comp_mult_top_test OP 7 ----- OK    , ed == ed
-# comp_mult_top_test OP 7 ----- OK    , 3 == 3
-# comp_mult_top_test OP 8 ----- OK    , b8 == b8
-# comp_mult_top_test OP 8 ----- OK    , f8 == f8
-# comp_mult_top_test OP 8 ----- OK    , 3 == 3
-# comp_mult_top_test OP 8 ----- OK    , f8 == f8
-# comp_mult_top_test OP 8 ----- OK    , 5 == 5
-# comp_mult_top_test OP 8 ----- OK    , 0 == 0
-# comp_mult_top_test OP 9 ----- OK    , a2 == a2
-# comp_mult_top_test OP 9 ----- OK    , 2a == 2a
-# comp_mult_top_test OP 9 ----- OK    , 0 == 0
-# comp_mult_top_test OP 9 ----- OK    , 66 == 66
-# comp_mult_top_test OP 9 ----- OK    , e9 == e9
-# comp_mult_top_test OP 9 ----- OK    , 3 == 3
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 144
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 144
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlft8xwj0x".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft8xwj0x
-# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
-# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
-# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
-# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
-# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
-# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
-# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
-# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
-# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
-# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
-# comp_mult_top_test ERROR: Expected slave error!
-# comp_mult_top_test OP 0 ----- OK    , e == e
-# comp_mult_top_test OP 0 ----- OK    , 11 == 11
-# comp_mult_top_test OP 0 ----- OK    , 0 == 0
-# comp_mult_top_test OP 0 ----- OK    , cc == cc
-# comp_mult_top_test OP 0 ----- OK    , 2 == 2
-# comp_mult_top_test OP 0 ----- OK    , 0 == 0
-# comp_mult_top_test OP 1 ----- OK    , 20 == 20
-# comp_mult_top_test OP 1 ----- OK    , 16 == 16
-# comp_mult_top_test OP 1 ----- OK    , 0 == 0
-# comp_mult_top_test OP 1 ----- OK    , 1c == 1c
-# comp_mult_top_test OP 1 ----- OK    , f6 == f6
-# comp_mult_top_test OP 1 ----- OK    , 3 == 3
-# comp_mult_top_test OP 2 ----- OK    , 97 == 97
-# comp_mult_top_test OP 2 ----- OK    , b == b
-# comp_mult_top_test OP 2 ----- OK    , 0 == 0
-# comp_mult_top_test OP 2 ----- OK    , fd == fd
-# comp_mult_top_test OP 2 ----- OK    , f4 == f4
-# comp_mult_top_test OP 2 ----- OK    , 3 == 3
-# comp_mult_top_test OP 3 ----- OK    , e4 == e4
-# comp_mult_top_test OP 3 ----- OK    , fe == fe
-# comp_mult_top_test OP 3 ----- OK    , 3 == 3
-# comp_mult_top_test OP 3 ----- OK    , a == a
-# comp_mult_top_test OP 3 ----- OK    , b2 == b2
-# comp_mult_top_test OP 3 ----- OK    , 3 == 3
-# comp_mult_top_test OP 4 ----- OK    , 56 == 56
-# comp_mult_top_test OP 4 ----- OK    , f8 == f8
-# comp_mult_top_test OP 4 ----- OK    , 3 == 3
-# comp_mult_top_test OP 4 ----- OK    , fc == fc
-# comp_mult_top_test OP 4 ----- OK    , fc == fc
-# comp_mult_top_test OP 4 ----- OK    , 3 == 3
-# comp_mult_top_test OP 5 ----- OK    , 91 == 91
-# comp_mult_top_test OP 5 ----- OK    , fa == fa
-# comp_mult_top_test OP 5 ----- OK    , 3 == 3
-# comp_mult_top_test OP 5 ----- OK    , 9d == 9d
-# comp_mult_top_test OP 5 ----- OK    , c0 == c0
-# comp_mult_top_test OP 5 ----- OK    , 3 == 3
-# comp_mult_top_test OP 6 ----- OK    , 1 == 1
-# comp_mult_top_test OP 6 ----- OK    , 4 == 4
-# comp_mult_top_test OP 6 ----- OK    , 0 == 0
-# comp_mult_top_test OP 6 ----- OK    , f2 == f2
-# comp_mult_top_test OP 6 ----- OK    , f9 == f9
-# comp_mult_top_test OP 6 ----- OK    , 3 == 3
-# comp_mult_top_test OP 7 ----- OK    , 4a == 4a
-# comp_mult_top_test OP 7 ----- OK    , 2 == 2
-# comp_mult_top_test OP 7 ----- OK    , 0 == 0
-# comp_mult_top_test OP 7 ----- OK    , 24 == 24
-# comp_mult_top_test OP 7 ----- OK    , ed == ed
-# comp_mult_top_test OP 7 ----- OK    , 3 == 3
-# comp_mult_top_test OP 8 ----- OK    , b8 == b8
-# comp_mult_top_test OP 8 ----- OK    , f8 == f8
-# comp_mult_top_test OP 8 ----- OK    , 3 == 3
-# comp_mult_top_test OP 8 ----- OK    , f8 == f8
-# comp_mult_top_test OP 8 ----- OK    , 5 == 5
-# comp_mult_top_test OP 8 ----- OK    , 0 == 0
-# comp_mult_top_test OP 9 ----- OK    , a2 == a2
-# comp_mult_top_test OP 9 ----- OK    , 2a == 2a
-# comp_mult_top_test OP 9 ----- OK    , 0 == 0
-# comp_mult_top_test OP 9 ----- OK    , 66 == 66
-# comp_mult_top_test OP 9 ----- OK    , e9 == e9
-# comp_mult_top_test OP 9 ----- OK    , 3 == 3
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 144
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 144
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# ** Error: ../../../hdl/comp_mult_top.v(209): near "<=": syntax error, unexpected "<=", expecting "IDENTIFIER" or "TYPE_IDENTIFIER" or '#' or '('
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# ** Error: D:/Programe/modeltech6.6/win32/vlog failed.
-# Error in macro ./sim.do line 6
-# D:/Programe/modeltech6.6/win32/vlog failed.
-#     while executing
-# "vlog -reportprogress 300 -work work ../../../hdl/*.v"
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# ** Error: ../../../hdl/comp_mult_top.v(271): Too many indices into "res_val"
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# ** Error: D:/Programe/modeltech6.6/win32/vlog failed.
-# Error in macro ./sim.do line 6
-# D:/Programe/modeltech6.6/win32/vlog failed.
-#     while executing
-# "vlog -reportprogress 300 -work work ../../../hdl/*.v"
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftdsmqzx".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftdsmqzx
-# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
-# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
-# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
-# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
-# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
-# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
-# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
-# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
-# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
-# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
-# comp_mult_top_test ERROR: Expected slave error!
-# comp_mult_top_test OP 0 ----- OK    , e == e
-# comp_mult_top_test OP 0 ----- OK    , 11 == 11
-# comp_mult_top_test OP 0 ----- OK    , 0 == 0
-# comp_mult_top_test OP 0 ----- OK    , cc == cc
-# comp_mult_top_test OP 0 ----- OK    , 2 == 2
-# comp_mult_top_test OP 0 ----- OK    , 0 == 0
-# comp_mult_top_test OP 1 ----- OK    , 20 == 20
-# comp_mult_top_test OP 1 ----- OK    , 16 == 16
-# comp_mult_top_test OP 1 ----- OK    , 0 == 0
-# comp_mult_top_test OP 1 ----- OK    , 1c == 1c
-# comp_mult_top_test OP 1 ----- OK    , f6 == f6
-# comp_mult_top_test OP 1 ----- OK    , 3 == 3
-# comp_mult_top_test OP 2 ----- OK    , 97 == 97
-# comp_mult_top_test OP 2 ----- OK    , b == b
-# comp_mult_top_test OP 2 ----- OK    , 0 == 0
-# comp_mult_top_test OP 2 ----- OK    , fd == fd
-# comp_mult_top_test OP 2 ----- OK    , f4 == f4
-# comp_mult_top_test OP 2 ----- OK    , 3 == 3
-# comp_mult_top_test OP 3 ----- OK    , e4 == e4
-# comp_mult_top_test OP 3 ----- OK    , fe == fe
-# comp_mult_top_test OP 3 ----- OK    , 3 == 3
-# comp_mult_top_test OP 3 ----- OK    , a == a
-# comp_mult_top_test OP 3 ----- OK    , b2 == b2
-# comp_mult_top_test OP 3 ----- OK    , 3 == 3
-# comp_mult_top_test OP 4 ----- OK    , 56 == 56
-# comp_mult_top_test OP 4 ----- OK    , f8 == f8
-# comp_mult_top_test OP 4 ----- OK    , 3 == 3
-# comp_mult_top_test OP 4 ----- OK    , fc == fc
-# comp_mult_top_test OP 4 ----- OK    , fc == fc
-# comp_mult_top_test OP 4 ----- OK    , 3 == 3
-# comp_mult_top_test OP 5 ----- OK    , 91 == 91
-# comp_mult_top_test OP 5 ----- OK    , fa == fa
-# comp_mult_top_test OP 5 ----- OK    , 3 == 3
-# comp_mult_top_test OP 5 ----- OK    , 9d == 9d
-# comp_mult_top_test OP 5 ----- OK    , c0 == c0
-# comp_mult_top_test OP 5 ----- OK    , 3 == 3
-# comp_mult_top_test OP 6 ----- OK    , 1 == 1
-# comp_mult_top_test OP 6 ----- OK    , 4 == 4
-# comp_mult_top_test OP 6 ----- OK    , 0 == 0
-# comp_mult_top_test OP 6 ----- OK    , f2 == f2
-# comp_mult_top_test OP 6 ----- OK    , f9 == f9
-# comp_mult_top_test OP 6 ----- OK    , 3 == 3
-# comp_mult_top_test OP 7 ----- OK    , 4a == 4a
-# comp_mult_top_test OP 7 ----- OK    , 2 == 2
-# comp_mult_top_test OP 7 ----- OK    , 0 == 0
-# comp_mult_top_test OP 7 ----- OK    , 24 == 24
-# comp_mult_top_test OP 7 ----- OK    , ed == ed
-# comp_mult_top_test OP 7 ----- OK    , 3 == 3
-# comp_mult_top_test OP 8 ----- OK    , b8 == b8
-# comp_mult_top_test OP 8 ----- OK    , f8 == f8
-# comp_mult_top_test OP 8 ----- OK    , 3 == 3
-# comp_mult_top_test OP 8 ----- OK    , f8 == f8
-# comp_mult_top_test OP 8 ----- OK    , 5 == 5
-# comp_mult_top_test OP 8 ----- OK    , 0 == 0
-# comp_mult_top_test OP 9 ----- OK    , a2 == a2
-# comp_mult_top_test OP 9 ----- OK    , 2a == 2a
-# comp_mult_top_test OP 9 ----- OK    , 0 == 0
-# comp_mult_top_test OP 9 ----- OK    , 66 == 66
-# comp_mult_top_test OP 9 ----- OK    , e9 == e9
-# comp_mult_top_test OP 9 ----- OK    , 3 == 3
-# END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 152
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 152
-# MACRO ./wave.do PAUSED at line 2
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module clk_rst_tb
-# -- Compiling module comp_mult_ref_model
-# -- Compiling module comp_mult_top_test
-# -- Compiling module mem_1rw
-# 
-# Top level modules:
-# 	comp_mult_top_test
-# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
-# -- Compiling module comp_mult_1
-# -- Compiling module comp_mult_2
-# -- Compiling module comp_mult_4
-# -- Compiling module comp_mult_top
-# -- Compiling module comp_mult_wrapper
-# -- Compiling module uint8_mult
-# 
-# Top level modules:
-# 	comp_mult_top
-# vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
-# Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
-# Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
-# Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
-# Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
-# Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
-# Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
-# Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
-# Loading work.uint8_mult
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlft0djz3t".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft0djz3t
-# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
-# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
-# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
-# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
-# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
-# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
-# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
-# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
-# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
-# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
-# comp_mult_top_test ERROR: Expected slave error!
+# comp_mult_top_test WARNING: Expected slave error!
 # comp_mult_top_test OP 0 ----- OK    , e == e
 # comp_mult_top_test OP 0 ----- OK    , 11 == 11
 # comp_mult_top_test OP 0 ----- OK    , 0 == 0
@@ -764,88 +148,334 @@ do sim.do
 # Top level modules:
 # 	comp_mult_top
 # vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_top_test
 # Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_top
 # Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_wrapper
 # Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.mem_1rw
 # Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_ref_model
 # Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.clk_rst_tb
 # Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_4
 # Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.uint8_mult
 # Loading work.uint8_mult
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftfbzwb3".
+#           Attempting to use alternate WLF file "./wlftb3jscx".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftfbzwb3
-# comp_mult_top_test ERROR: Expected slave error!
+#           Using alternate file: ./wlftb3jscx
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
+# comp_mult_top_test WARNING: Expected slave error!
 # comp_mult_top_test OP 0 ----- OK    , e == e
 # comp_mult_top_test OP 0 ----- OK    , 11 == 11
 # comp_mult_top_test OP 0 ----- OK    , 0 == 0
 # comp_mult_top_test OP 0 ----- OK    , cc == cc
-# comp_mult_top_test OP 0 ----- FAILED, 0 != 2
+# comp_mult_top_test OP 0 ----- OK    , 2 == 2
 # comp_mult_top_test OP 0 ----- OK    , 0 == 0
-# comp_mult_top_test OP 1 ----- FAILED, 0 != 20
-# comp_mult_top_test OP 1 ----- FAILED, 0 != 16
+# comp_mult_top_test OP 1 ----- OK    , 20 == 20
+# comp_mult_top_test OP 1 ----- OK    , 16 == 16
 # comp_mult_top_test OP 1 ----- OK    , 0 == 0
-# comp_mult_top_test OP 1 ----- FAILED, 0 != 1c
-# comp_mult_top_test OP 1 ----- FAILED, 0 != f6
-# comp_mult_top_test OP 1 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 2 ----- FAILED, 0 != 97
-# comp_mult_top_test OP 2 ----- FAILED, 0 != b
+# comp_mult_top_test OP 1 ----- OK    , 1c == 1c
+# comp_mult_top_test OP 1 ----- OK    , f6 == f6
+# comp_mult_top_test OP 1 ----- OK    , 3 == 3
+# comp_mult_top_test OP 2 ----- OK    , 97 == 97
+# comp_mult_top_test OP 2 ----- OK    , b == b
 # comp_mult_top_test OP 2 ----- OK    , 0 == 0
-# comp_mult_top_test OP 2 ----- FAILED, 0 != fd
-# comp_mult_top_test OP 2 ----- FAILED, 0 != f4
-# comp_mult_top_test OP 2 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 3 ----- FAILED, 0 != e4
-# comp_mult_top_test OP 3 ----- FAILED, 0 != fe
-# comp_mult_top_test OP 3 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 3 ----- FAILED, 0 != a
-# comp_mult_top_test OP 3 ----- FAILED, 0 != b2
-# comp_mult_top_test OP 3 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 4 ----- FAILED, 0 != 56
-# comp_mult_top_test OP 4 ----- FAILED, 0 != f8
-# comp_mult_top_test OP 4 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 4 ----- FAILED, 0 != fc
-# comp_mult_top_test OP 4 ----- FAILED, 0 != fc
-# comp_mult_top_test OP 4 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 5 ----- FAILED, 0 != 91
-# comp_mult_top_test OP 5 ----- FAILED, 0 != fa
-# comp_mult_top_test OP 5 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 5 ----- FAILED, 0 != 9d
-# comp_mult_top_test OP 5 ----- FAILED, 0 != c0
-# comp_mult_top_test OP 5 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 6 ----- FAILED, 0 != 1
-# comp_mult_top_test OP 6 ----- FAILED, 0 != 4
+# comp_mult_top_test OP 2 ----- OK    , fd == fd
+# comp_mult_top_test OP 2 ----- OK    , f4 == f4
+# comp_mult_top_test OP 2 ----- OK    , 3 == 3
+# comp_mult_top_test OP 3 ----- OK    , e4 == e4
+# comp_mult_top_test OP 3 ----- OK    , fe == fe
+# comp_mult_top_test OP 3 ----- OK    , 3 == 3
+# comp_mult_top_test OP 3 ----- OK    , a == a
+# comp_mult_top_test OP 3 ----- OK    , b2 == b2
+# comp_mult_top_test OP 3 ----- OK    , 3 == 3
+# comp_mult_top_test OP 4 ----- OK    , 56 == 56
+# comp_mult_top_test OP 4 ----- OK    , f8 == f8
+# comp_mult_top_test OP 4 ----- OK    , 3 == 3
+# comp_mult_top_test OP 4 ----- OK    , fc == fc
+# comp_mult_top_test OP 4 ----- OK    , fc == fc
+# comp_mult_top_test OP 4 ----- OK    , 3 == 3
+# comp_mult_top_test OP 5 ----- OK    , 91 == 91
+# comp_mult_top_test OP 5 ----- OK    , fa == fa
+# comp_mult_top_test OP 5 ----- OK    , 3 == 3
+# comp_mult_top_test OP 5 ----- OK    , 9d == 9d
+# comp_mult_top_test OP 5 ----- OK    , c0 == c0
+# comp_mult_top_test OP 5 ----- OK    , 3 == 3
+# comp_mult_top_test OP 6 ----- OK    , 1 == 1
+# comp_mult_top_test OP 6 ----- OK    , 4 == 4
 # comp_mult_top_test OP 6 ----- OK    , 0 == 0
-# comp_mult_top_test OP 6 ----- FAILED, 0 != f2
-# comp_mult_top_test OP 6 ----- FAILED, 0 != f9
-# comp_mult_top_test OP 6 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 7 ----- FAILED, 0 != 4a
-# comp_mult_top_test OP 7 ----- FAILED, 0 != 2
+# comp_mult_top_test OP 6 ----- OK    , f2 == f2
+# comp_mult_top_test OP 6 ----- OK    , f9 == f9
+# comp_mult_top_test OP 6 ----- OK    , 3 == 3
+# comp_mult_top_test OP 7 ----- OK    , 4a == 4a
+# comp_mult_top_test OP 7 ----- OK    , 2 == 2
 # comp_mult_top_test OP 7 ----- OK    , 0 == 0
-# comp_mult_top_test OP 7 ----- FAILED, 0 != 24
-# comp_mult_top_test OP 7 ----- FAILED, 0 != ed
-# comp_mult_top_test OP 7 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 8 ----- FAILED, 0 != b8
-# comp_mult_top_test OP 8 ----- FAILED, 0 != f8
-# comp_mult_top_test OP 8 ----- FAILED, 0 != 3
-# comp_mult_top_test OP 8 ----- FAILED, 0 != f8
-# comp_mult_top_test OP 8 ----- FAILED, 0 != 5
+# comp_mult_top_test OP 7 ----- OK    , 24 == 24
+# comp_mult_top_test OP 7 ----- OK    , ed == ed
+# comp_mult_top_test OP 7 ----- OK    , 3 == 3
+# comp_mult_top_test OP 8 ----- OK    , b8 == b8
+# comp_mult_top_test OP 8 ----- OK    , f8 == f8
+# comp_mult_top_test OP 8 ----- OK    , 3 == 3
+# comp_mult_top_test OP 8 ----- OK    , f8 == f8
+# comp_mult_top_test OP 8 ----- OK    , 5 == 5
 # comp_mult_top_test OP 8 ----- OK    , 0 == 0
-# comp_mult_top_test OP 9 ----- FAILED, 0 != a2
-# comp_mult_top_test OP 9 ----- FAILED, 0 != 2a
+# comp_mult_top_test OP 9 ----- OK    , a2 == a2
+# comp_mult_top_test OP 9 ----- OK    , 2a == 2a
 # comp_mult_top_test OP 9 ----- OK    , 0 == 0
-# comp_mult_top_test OP 9 ----- FAILED, 0 != 66
-# comp_mult_top_test OP 9 ----- FAILED, 0 != e9
-# comp_mult_top_test OP 9 ----- FAILED, 0 != 3
+# comp_mult_top_test OP 9 ----- OK    , 66 == 66
+# comp_mult_top_test OP 9 ----- OK    , e9 == e9
+# comp_mult_top_test OP 9 ----- OK    , 3 == 3
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 154
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 154
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlftsj9nqi".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftsj9nqi
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
+# comp_mult_top_test WARNING: Expected slave error!
+# comp_mult_top_test OP 0 ----- OK    , e == e
+# comp_mult_top_test OP 0 ----- OK    , 11 == 11
+# comp_mult_top_test OP 0 ----- OK    , 0 == 0
+# comp_mult_top_test OP 0 ----- OK    , cc == cc
+# comp_mult_top_test OP 0 ----- OK    , 2 == 2
+# comp_mult_top_test OP 0 ----- OK    , 0 == 0
+# comp_mult_top_test OP 1 ----- OK    , 20 == 20
+# comp_mult_top_test OP 1 ----- OK    , 16 == 16
+# comp_mult_top_test OP 1 ----- OK    , 0 == 0
+# comp_mult_top_test OP 1 ----- OK    , 1c == 1c
+# comp_mult_top_test OP 1 ----- OK    , f6 == f6
+# comp_mult_top_test OP 1 ----- OK    , 3 == 3
+# comp_mult_top_test OP 2 ----- OK    , 97 == 97
+# comp_mult_top_test OP 2 ----- OK    , b == b
+# comp_mult_top_test OP 2 ----- OK    , 0 == 0
+# comp_mult_top_test OP 2 ----- OK    , fd == fd
+# comp_mult_top_test OP 2 ----- OK    , f4 == f4
+# comp_mult_top_test OP 2 ----- OK    , 3 == 3
+# comp_mult_top_test OP 3 ----- OK    , e4 == e4
+# comp_mult_top_test OP 3 ----- OK    , fe == fe
+# comp_mult_top_test OP 3 ----- OK    , 3 == 3
+# comp_mult_top_test OP 3 ----- OK    , a == a
+# comp_mult_top_test OP 3 ----- OK    , b2 == b2
+# comp_mult_top_test OP 3 ----- OK    , 3 == 3
+# comp_mult_top_test OP 4 ----- OK    , 56 == 56
+# comp_mult_top_test OP 4 ----- OK    , f8 == f8
+# comp_mult_top_test OP 4 ----- OK    , 3 == 3
+# comp_mult_top_test OP 4 ----- OK    , fc == fc
+# comp_mult_top_test OP 4 ----- OK    , fc == fc
+# comp_mult_top_test OP 4 ----- OK    , 3 == 3
+# comp_mult_top_test OP 5 ----- OK    , 91 == 91
+# comp_mult_top_test OP 5 ----- OK    , fa == fa
+# comp_mult_top_test OP 5 ----- OK    , 3 == 3
+# comp_mult_top_test OP 5 ----- OK    , 9d == 9d
+# comp_mult_top_test OP 5 ----- OK    , c0 == c0
+# comp_mult_top_test OP 5 ----- OK    , 3 == 3
+# comp_mult_top_test OP 6 ----- OK    , 1 == 1
+# comp_mult_top_test OP 6 ----- OK    , 4 == 4
+# comp_mult_top_test OP 6 ----- OK    , 0 == 0
+# comp_mult_top_test OP 6 ----- OK    , f2 == f2
+# comp_mult_top_test OP 6 ----- OK    , f9 == f9
+# comp_mult_top_test OP 6 ----- OK    , 3 == 3
+# comp_mult_top_test OP 7 ----- OK    , 4a == 4a
+# comp_mult_top_test OP 7 ----- OK    , 2 == 2
+# comp_mult_top_test OP 7 ----- OK    , 0 == 0
+# comp_mult_top_test OP 7 ----- OK    , 24 == 24
+# comp_mult_top_test OP 7 ----- OK    , ed == ed
+# comp_mult_top_test OP 7 ----- OK    , 3 == 3
+# comp_mult_top_test OP 8 ----- OK    , b8 == b8
+# comp_mult_top_test OP 8 ----- OK    , f8 == f8
+# comp_mult_top_test OP 8 ----- OK    , 3 == 3
+# comp_mult_top_test OP 8 ----- OK    , f8 == f8
+# comp_mult_top_test OP 8 ----- OK    , 5 == 5
+# comp_mult_top_test OP 8 ----- OK    , 0 == 0
+# comp_mult_top_test OP 9 ----- OK    , a2 == a2
+# comp_mult_top_test OP 9 ----- OK    , 2a == 2a
+# comp_mult_top_test OP 9 ----- OK    , 0 == 0
+# comp_mult_top_test OP 9 ----- OK    , 66 == 66
+# comp_mult_top_test OP 9 ----- OK    , e9 == e9
+# comp_mult_top_test OP 9 ----- OK    , 3 == 3
+# END SIM
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 155
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 155
+# MACRO ./wave.do PAUSED at line 2
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module clk_rst_tb
+# -- Compiling module comp_mult_ref_model
+# -- Compiling module comp_mult_top_test
+# -- Compiling module mem_1rw
+# 
+# Top level modules:
+# 	comp_mult_top_test
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling module comp_mult_1
+# -- Compiling module comp_mult_2
+# -- Compiling module comp_mult_4
+# -- Compiling module comp_mult_top
+# -- Compiling module comp_mult_wrapper
+# -- Compiling module uint8_mult
+# 
+# Top level modules:
+# 	comp_mult_top
+# vsim -novopt work.comp_mult_top_test 
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_top_test
+# Loading work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_top
+# Loading work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_wrapper
+# Loading work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.mem_1rw
+# Loading work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_ref_model
+# Loading work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.clk_rst_tb
+# Loading work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_4
+# Loading work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.uint8_mult
+# Loading work.uint8_mult
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by:   Hostname:   ProcessID: 0
+#           Attempting to use alternate WLF file "./wlfts3bw1f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfts3bw1f
+# comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
+# comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
+# comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
+# comp_mult_top_test.i_comp_mult_ref_model 645 GOOD: (-119 + -113i) * (85 + 87i) = (-284 + -19958i), same as expected (-284 + -19958i)
+# comp_mult_top_test.i_comp_mult_ref_model 765 GOOD: (-38 + 13i) * (40 + 34i) = (-1962 + -772i), same as expected (-1962 + -772i)
+# comp_mult_top_test.i_comp_mult_ref_model 885 GOOD: (86 + -113i) * (85 + -77i) = (-1391 + -16227i), same as expected (-1391 + -16227i)
+# comp_mult_top_test.i_comp_mult_ref_model 1005 GOOD: (62 + 41i) * (0 + -25i) = (1025 + -1550i), same as expected (1025 + -1550i)
+# comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
+# comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
+# comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
+# comp_mult_top_test WARNING: Expected slave error!
+# comp_mult_top_test OP 0 ----- OK    , e == e
+# comp_mult_top_test OP 0 ----- OK    , 11 == 11
+# comp_mult_top_test OP 0 ----- OK    , 0 == 0
+# comp_mult_top_test OP 0 ----- OK    , cc == cc
+# comp_mult_top_test OP 0 ----- OK    , 2 == 2
+# comp_mult_top_test OP 0 ----- OK    , 0 == 0
+# comp_mult_top_test OP 1 ----- OK    , 20 == 20
+# comp_mult_top_test OP 1 ----- OK    , 16 == 16
+# comp_mult_top_test OP 1 ----- OK    , 0 == 0
+# comp_mult_top_test OP 1 ----- OK    , 1c == 1c
+# comp_mult_top_test OP 1 ----- OK    , f6 == f6
+# comp_mult_top_test OP 1 ----- OK    , 3 == 3
+# comp_mult_top_test OP 2 ----- OK    , 97 == 97
+# comp_mult_top_test OP 2 ----- OK    , b == b
+# comp_mult_top_test OP 2 ----- OK    , 0 == 0
+# comp_mult_top_test OP 2 ----- OK    , fd == fd
+# comp_mult_top_test OP 2 ----- OK    , f4 == f4
+# comp_mult_top_test OP 2 ----- OK    , 3 == 3
+# comp_mult_top_test OP 3 ----- OK    , e4 == e4
+# comp_mult_top_test OP 3 ----- OK    , fe == fe
+# comp_mult_top_test OP 3 ----- OK    , 3 == 3
+# comp_mult_top_test OP 3 ----- OK    , a == a
+# comp_mult_top_test OP 3 ----- OK    , b2 == b2
+# comp_mult_top_test OP 3 ----- OK    , 3 == 3
+# comp_mult_top_test OP 4 ----- OK    , 56 == 56
+# comp_mult_top_test OP 4 ----- OK    , f8 == f8
+# comp_mult_top_test OP 4 ----- OK    , 3 == 3
+# comp_mult_top_test OP 4 ----- OK    , fc == fc
+# comp_mult_top_test OP 4 ----- OK    , fc == fc
+# comp_mult_top_test OP 4 ----- OK    , 3 == 3
+# comp_mult_top_test OP 5 ----- OK    , 91 == 91
+# comp_mult_top_test OP 5 ----- OK    , fa == fa
+# comp_mult_top_test OP 5 ----- OK    , 3 == 3
+# comp_mult_top_test OP 5 ----- OK    , 9d == 9d
+# comp_mult_top_test OP 5 ----- OK    , c0 == c0
+# comp_mult_top_test OP 5 ----- OK    , 3 == 3
+# comp_mult_top_test OP 6 ----- OK    , 1 == 1
+# comp_mult_top_test OP 6 ----- OK    , 4 == 4
+# comp_mult_top_test OP 6 ----- OK    , 0 == 0
+# comp_mult_top_test OP 6 ----- OK    , f2 == f2
+# comp_mult_top_test OP 6 ----- OK    , f9 == f9
+# comp_mult_top_test OP 6 ----- OK    , 3 == 3
+# comp_mult_top_test OP 7 ----- OK    , 4a == 4a
+# comp_mult_top_test OP 7 ----- OK    , 2 == 2
+# comp_mult_top_test OP 7 ----- OK    , 0 == 0
+# comp_mult_top_test OP 7 ----- OK    , 24 == 24
+# comp_mult_top_test OP 7 ----- OK    , ed == ed
+# comp_mult_top_test OP 7 ----- OK    , 3 == 3
+# comp_mult_top_test OP 8 ----- OK    , b8 == b8
+# comp_mult_top_test OP 8 ----- OK    , f8 == f8
+# comp_mult_top_test OP 8 ----- OK    , 3 == 3
+# comp_mult_top_test OP 8 ----- OK    , f8 == f8
+# comp_mult_top_test OP 8 ----- OK    , 5 == 5
+# comp_mult_top_test OP 8 ----- OK    , 0 == 0
+# comp_mult_top_test OP 9 ----- OK    , a2 == a2
+# comp_mult_top_test OP 9 ----- OK    , 2a == 2a
+# comp_mult_top_test OP 9 ----- OK    , 0 == 0
+# comp_mult_top_test OP 9 ----- OK    , 66 == 66
+# comp_mult_top_test OP 9 ----- OK    , e9 == e9
+# comp_mult_top_test OP 9 ----- OK    , 3 == 3
 # END SIM
 # Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 157
 # Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 157
@@ -872,27 +502,27 @@ do sim.do
 # Top level modules:
 # 	comp_mult_top
 # vsim -novopt work.comp_mult_top_test 
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top_test
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_top_test
 # Loading work.comp_mult_top_test
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_top
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_top
 # Loading work.comp_mult_top
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_wrapper
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_wrapper
 # Loading work.comp_mult_wrapper
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.mem_1rw
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.mem_1rw
 # Loading work.mem_1rw
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_ref_model
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_ref_model
 # Loading work.comp_mult_ref_model
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.clk_rst_tb
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.clk_rst_tb
 # Loading work.clk_rst_tb
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.comp_mult_4
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.comp_mult_4
 # Loading work.comp_mult_4
-# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_test\sim\work.uint8_mult
+# Refreshing D:\Facultate\SECI_1\LDH\complex_multiplier\debug\top_debug\sim\work.uint8_mult
 # Loading work.uint8_mult
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlftzr6zgf".
+#           Attempting to use alternate WLF file "./wlftqx86j6".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftzr6zgf
+#           Using alternate file: ./wlftqx86j6
 # comp_mult_top_test.i_comp_mult_ref_model 285 GOOD: (13 + 68i) * (22 + -60i) = (4366 + 716i), same as expected (4366 + 716i)
 # comp_mult_top_test.i_comp_mult_ref_model 405 GOOD: (104 + 68i) * (27 + -42i) = (5664 + -2532i), same as expected (5664 + -2532i)
 # comp_mult_top_test.i_comp_mult_ref_model 525 GOOD: (-26 + -33i) * (9 + 97i) = (2967 + -2819i), same as expected (2967 + -2819i)
@@ -903,7 +533,6 @@ do sim.do
 # comp_mult_top_test.i_comp_mult_ref_model 1125 GOOD: (111 + -58i) * (22 + -32i) = (586 + -4828i), same as expected (586 + -4828i)
 # comp_mult_top_test.i_comp_mult_ref_model 1245 GOOD: (-104 + 96i) * (17 + 1i) = (-1864 + 1528i), same as expected (-1864 + 1528i)
 # comp_mult_top_test.i_comp_mult_ref_model 1365 GOOD: (80 + -69i) * (114 + 26i) = (10914 + -5786i), same as expected (10914 + -5786i)
-# comp_mult_top_test ERROR: Expected slave error!
 # comp_mult_top_test OP 0 ----- OK    , e == e
 # comp_mult_top_test OP 0 ----- OK    , 11 == 11
 # comp_mult_top_test OP 0 ----- OK    , 0 == 0
@@ -965,6 +594,6 @@ do sim.do
 # comp_mult_top_test OP 9 ----- OK    , e9 == e9
 # comp_mult_top_test OP 9 ----- OK    , 3 == 3
 # END SIM
-# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 154
-# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 154
+# Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 158
+# Simulation Breakpoint: Break in Module comp_mult_top_test at ../deb_src/comp_mult_top_test.v line 158
 # MACRO ./wave.do PAUSED at line 2

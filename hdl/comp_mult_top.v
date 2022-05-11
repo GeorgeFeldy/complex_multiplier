@@ -88,7 +88,6 @@ reg  [     3*DWIDTH -1:0] data_reg      ; // operands {x1,x2,y1}
 // FSM signals
 reg  [            2 -1:0] ctrl_state    ; // control FSM state 
 
-wire                      ctrl_fsm_edge ; // fsm state change 
 
 wire                      byte_rd_done  ; // all bytes read 
 wire                      byte_wr_done  ; // all bytes written                           
@@ -187,7 +186,7 @@ if(wr_no_op)      no_op     <= apb_pwdata     ;      // load data on register se
 // start configuration register                                                     
 always @(posedge clk or negedge rst_n)              
 if(~rst_n)        cfg_start <= 'd0            ; else // hw async reset, active low 
-if(cfg_start)     cfg_start <= 'd0            ; else // autoreset next cycle   
+if(cfg_start[0])  cfg_start <= 'd0            ; else // autoreset next cycle   
 if(wr_cfg_start)  cfg_start <= apb_pwdata     ;      // load data on register select 
                                               
 // status stop register                       
@@ -196,17 +195,12 @@ if(~rst_n)        sts_stop  <= 'd0            ; else // hw async reset, active l
 if(wr_sts_stop)   sts_stop  <= apb_pwdata     ; else // load data on register select (clear from CPU)
 if(finish)        sts_stop  <= {{REG_DW-1{1'b0}}, 1'b1} ; // set LSB on finish 
 
-// status FSM state register                       
-always @(posedge clk or negedge rst_n)        
-if(~rst_n)        sts_state <= 'd0            ; else // hw async reset, active low 
-if(ctrl_fsm_edge) sts_state <= {{REG_DW-2{1'b0}}, ctrl_state} ; // low bits FSM cstate 
-
 
 // return status registers on read (based on address selection)
 always @(posedge clk or negedge rst_n)
-if(~rst_n)        apb_prdata <= 'd0           ; else // hw async reset, active low 
-if(rd_sts_stop)   apb_prdata <= sts_stop      ; else // return status stop reg 
-if(rd_sts_state)  apb_prdata <= sts_state     ;      // return status state reg 
+if(~rst_n)        apb_prdata <= 'd0                            ; else // hw async reset, active low 
+if(rd_sts_stop)   apb_prdata <= sts_stop                       ; else // return status stop reg 
+if(rd_sts_state)  apb_prdata <= {{REG_DW-2{1'b0}}, ctrl_state} ;      // return status state reg 
 
 
 // ---------------------------------------------------- FSM ----------------------------------------------------------------------
@@ -265,16 +259,6 @@ if(sw_rst)          op_cnt <= 'd0          ; else // sw  sync reset, active high
 if(finish)          op_cnt <= 'd0          ; else // reset op count on done (all operations done)
 if(next_op)         op_cnt <= op_cnt + 'd1 ;      // increment on operation done otherwise 
 
-
-// detect any change in FSM for register update (avoid free running)
-assign ctrl_fsm_edge = cfg_start[0] & (ctrl_state == IDLE) | 
-                       res_val      & (ctrl_state == WORK) | 
-                       byte_rd_done                        |  
-                       byte_wr_done                        |
-                       next_op                             | 
-                       finish                              ;
-
-
 // ------------------------------------------- complex multiplier interface ------------------------------------------------------
 
 // operands valid registers 
@@ -328,12 +312,12 @@ always @(*)
 // LITTLE ENDIAN
 always @(*)
     case(byte_cnt)
-        3'b000  : mem_wr_data <= res_data[25:18];        // yr[ 7:0 ]         
-        3'b001  : mem_wr_data <= res_data[33:26];        // yr[15:8 ]         
-        3'b010  : mem_wr_data <= res_data[35:34] + 8'd0; // yr[17:16] filled to 8b
-        3'b011  : mem_wr_data <= res_data[ 7:0 ];        // xr[ 7:0 ]
-        3'b100  : mem_wr_data <= res_data[15:8 ];        // xr[15:8 ]
-        default : mem_wr_data <= res_data[17:16] + 8'd0; // xr[17:16] filled to 8b
+        3'b000  : mem_wr_data <= res_data[25:18];          // yr[ 7:0 ]         
+        3'b001  : mem_wr_data <= res_data[33:26];          // yr[15:8 ]         
+        3'b010  : mem_wr_data <= {6'd0, res_data[35:34]};  // yr[17:16] filled to 8b
+        3'b011  : mem_wr_data <= res_data[ 7:0 ];          // xr[ 7:0 ]
+        3'b100  : mem_wr_data <= res_data[15:8 ];          // xr[15:8 ]
+        default : mem_wr_data <= {6'd0, res_data[17:16]};  // xr[17:16] filled to 8b
     endcase 
 
 
