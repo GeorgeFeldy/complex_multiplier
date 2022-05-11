@@ -1,10 +1,10 @@
 # vsim -do run.do -c work.comp_mult_test 
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by:   Hostname:   ProcessID: 0
-#           Attempting to use alternate WLF file "./wlfta5m9fr".
+#           Attempting to use alternate WLF file "./wlftctr6s7".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfta5m9fr
-# ** Note: (vsim-3812) Design is being optimized...
+#           Using alternate file: ./wlftctr6s7
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  ModelSim SE 6.6d Nov  1 2010 
 # //
 # //  Copyright 1991-2010 Mentor Graphics Corporation
@@ -1025,7 +1025,7 @@
 # comp_mult_test.i_comp_mult_ref_model 92965 GOOD: (7 + -27i) * (-38 + -103i) = (-3047 + 305i), same as expected (-3047 + 305i)
 # comp_mult_test.i_comp_mult_ref_model 93045 GOOD: (16 + -15i) * (-123 + -53i) = (-2763 + 997i), same as expected (-2763 + 997i)
 # DONE
-# Break at ../deb_src/comp_mult_test.v line 120
-# Stopped at ../deb_src/comp_mult_test.v line 120 
-# Simulation Breakpoint: Break at ../deb_src/comp_mult_test.v line 120
+# Break at ../deb_src/comp_mult_test.v line 130
+# Stopped at ../deb_src/comp_mult_test.v line 130 
+# Simulation Breakpoint: Break at ../deb_src/comp_mult_test.v line 130
 # MACRO ./run.do PAUSED at line 1

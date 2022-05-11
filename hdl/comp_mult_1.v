@@ -143,9 +143,9 @@ case({op_ld_d1, op_ld_d2, op_ld_d3, op_ld_d4})
 default: mult_op2 = 'd0    ;
 endcase
 
-uint8_mult #(
+unsigned_mult #(
 .DWIDTH (2*DWIDTH) // data width, doubled for sign extension 
-)i_uint8_mult_0(
+) i_unsigned_mult (
  .op1    (mult_op1), // [i] sign extended first  operand 
  .op2    (mult_op2), // [i] sign extended second operand 
  .result (prod_ext)  // [o] product 

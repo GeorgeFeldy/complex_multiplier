@@ -127,18 +127,18 @@ assign mult0_op2 = op_ld_d1 ? x2_ext : y2_ext ; // select second operand of mult
 assign mult1_op2 = op_ld_d1 ? y2_ext : x2_ext ; // select second operand of mult1 based on data load 
 
 
-uint8_mult #(
+unsigned_mult #(
 .DWIDTH (2*DWIDTH) // data width, doubled for sign extension 
-)i_uint8_mult_0(
+)i_unsigned_mult_0(
  .op1    (x1_ext    ), // [i] sign extended first  operand (x1)
  .op2    (mult0_op2 ), // [i] sign extended second operand (either x2 or y2)
  .result (prod1_ext )  // [o] product x1 * x2, x1 * y2 
 );  
 
 
-uint8_mult #(
+unsigned_mult #(
 .DWIDTH (2*DWIDTH) // data width, doubled for sign extension 
-)i_uint8_mult_1(
+)i_unsigned_mult_1(
  .op1    (y1_ext    ), // [i] sign extended first  operand (y1)
  .op2    (mult1_op2 ), // [i] sign extended second operand (either x2 or y2)
  .result (prod2_ext )  // [o] product y1 * y2, x2 * y1 

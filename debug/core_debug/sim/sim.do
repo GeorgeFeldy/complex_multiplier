@@ -10,7 +10,7 @@ vlog -reportprogress 300 -work work ../../../hdl/comp_mult_1.v
 vlog -reportprogress 300 -work work ../../../hdl/comp_mult_2.v
 vlog -reportprogress 300 -work work ../../../hdl/comp_mult_4.v
 vlog -reportprogress 300 -work work ../../../hdl/comp_mult_wrapper.v
-vlog -reportprogress 300 -work work ../../../hdl/uint8_mult.v
+vlog -reportprogress 300 -work work ../../../hdl/unsigned_mult.v
 
 vsim -novopt work.comp_mult_test
 

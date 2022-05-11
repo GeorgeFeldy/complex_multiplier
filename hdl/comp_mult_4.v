@@ -37,22 +37,11 @@ wire [  DWIDTH -1:0] x2 ; // op2, real part
 wire [  DWIDTH -1:0] y1 ; // op1, imaginary part
 wire [  DWIDTH -1:0] y2 ; // op2, imaginary part
 
-wire [2*DWIDTH -1:0] x1_ext ; // sign extended op1, real part
-wire [2*DWIDTH -1:0] x2_ext ; // sign extended op2, real part 
-wire [2*DWIDTH -1:0] y1_ext ; // sign extended op1, imaginary part
-wire [2*DWIDTH -1:0] y2_ext ; // sign extended op2, imaginary part
-
 // product wires 
 wire [2*DWIDTH -1:0] prod1  ; // signed output of x1 * x2
 wire [2*DWIDTH -1:0] prod2  ; // signed output of x1 * y2 
 wire [2*DWIDTH -1:0] prod3  ; // signed output of x2 * y1
 wire [2*DWIDTH -1:0] prod4  ; // signed output of y1 * y2
-
-wire [4*DWIDTH -1:0] prod1_ext  ; // extended output of x1 * x2
-wire [4*DWIDTH -1:0] prod2_ext  ; // extended output of x1 * y2 
-wire [4*DWIDTH -1:0] prod3_ext  ; // extended output of x2 * y1
-wire [4*DWIDTH -1:0] prod4_ext  ; // extended output of y1 * y2
-
 
 // results 
 reg  [2*DWIDTH-1:0] xr ; // stores x1 * x2 - y1 * y2, ignores overflow
@@ -91,43 +80,37 @@ assign y1_ext = {{DWIDTH{y1[DWIDTH-1]}},y1}; // extend sign for y1 operand
 assign y2_ext = {{DWIDTH{y2[DWIDTH-1]}},y2}; // extend sign for y2 operand
 
 
-uint8_mult #(
-.DWIDTH (2*DWIDTH) // data width, doubled for sign extension 
-)i_uint8_mult_0(
- .op1    (x1_ext     ), // [i] sign extended first  operand (x1) 
- .op2    (x2_ext     ), // [i] sign extended second operand (x2) 
- .result (prod1_ext  )  // [o] product x1 * x2
+unsigned_mult #(
+.DWIDTH (DWIDTH) // data width
+)i_unsigned_mult_0(
+ .op1    (x1     ), // [i] first  operand (x1) 
+ .op2    (x2     ), // [i] second operand (x2) 
+ .result (prod1  )  // [o] product x1 * x2
 );  
 
-uint8_mult #(
-.DWIDTH (2*DWIDTH) // data width, doubled for sign extension 
-)i_uint8_mult_1(
- .op1    (x1_ext     ), // [i] sign extended first  operand (x1)
- .op2    (y2_ext     ), // [i] sign extended second operand (y2) 
- .result (prod2_ext  )  // [o] product x1 * y2 
+unsigned_mult #(
+.DWIDTH (DWIDTH) // data width
+)i_unsigned_mult_1(
+ .op1    (x1     ), // [i] first  operand (x1)
+ .op2    (y2     ), // [i] second operand (y2) 
+ .result (prod2  )  // [o] product x1 * y2 
 );  
 
-uint8_mult #(
-.DWIDTH (2*DWIDTH) // data width, doubled for sign extension 
-)i_uint8_mult_2(
- .op1    (x2_ext     ), // [i] sign extended first  operand (x2)
- .op2    (y1_ext     ), // [i] sign extended second operand (y1)
- .result (prod3_ext  )  // [o] product x2 * y1
+unsigned_mult #(
+.DWIDTH (DWIDTH) // data width
+)i_unsigned_mult_2(
+ .op1    (x2     ), // [i] first  operand (x2)
+ .op2    (y1     ), // [i] second operand (y1)
+ .result (prod3  )  // [o] product x2 * y1
 );  
 
-uint8_mult #(
-.DWIDTH (2*DWIDTH) // data width, doubled for sign extension 
-)i_uint8_mult_3(
- .op1    (y1_ext     ), // [i] sign extended first  operand (y1)
- .op2    (y2_ext     ), // [i] sign extended second operand (y2)
- .result (prod4_ext  )  // [o] product y1 * y2
+unsigned_mult #(
+.DWIDTH (DWIDTH) // data width
+)i_unsigned_mult_3(
+ .op1    (y1     ), // [i] first  operand (y1)
+ .op2    (y2     ), // [i] second operand (y2)
+ .result (prod4  )  // [o] product y1 * y2
 );  
-
-assign prod1 = prod1_ext[2*DWIDTH-1:0]; // trucate to 2 x original width for signed prod1
-assign prod2 = prod2_ext[2*DWIDTH-1:0]; // trucate to 2 x original width for signed prod2
-assign prod3 = prod3_ext[2*DWIDTH-1:0]; // trucate to 2 x original width for signed prod3
-assign prod4 = prod4_ext[2*DWIDTH-1:0]; // trucate to 2 x original width for signed prod4
-
 
 
 always @(posedge clk or negedge rst_n)

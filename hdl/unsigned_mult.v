@@ -7,7 +7,7 @@
 // Description : Unsigned multiplier 
 //---------------------------------------------------------------------
 
-module uint8_mult #(
+module unsigned_mult #(
 parameter DWIDTH = 8 // data width
 )(
 
@@ -19,4 +19,4 @@ output [2*DWIDTH -1:0] result   // product
 
 assign result = op1 * op2;  // combinatorial multiplier
 
-endmodule // uint8_mult
+endmodule // unsigned_mult

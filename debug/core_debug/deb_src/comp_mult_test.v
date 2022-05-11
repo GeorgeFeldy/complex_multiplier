@@ -11,18 +11,25 @@ module comp_mult_test;
 
 localparam PERIOD  = 5; // clk period / 2
 localparam DWIDTH  = 8; // data width
-localparam NO_MULT = 1; // number of multipliers used (1, 2 or 4)
-
 
 wire                         clk          ; // system clock 
 wire                         rst_n        ; // hw async reset, active low 
-reg                          sw_rst       ; // sw  sync reset, active high  
+reg                          sw_rst       ; // sw  sync reset, active high _2
 reg                          op_val       ; // operands valid 
 wire                         op_rdy       ; // operands ready 
 reg  [      2*2*DWIDTH -1:0] op_data      ; // operands {x1,y1,y1,y2}        
-wire                         res_val      ; // result valid 
-reg                          res_rdy      ; // result ready 
-wire [2*2*(DWIDTH + 1) -1:0] res_data     ; // result {xr,yr}
+
+wire                         res_val_1    ; // result valid 
+reg                          res_rdy_1    ; // result ready 
+wire [2*2*(DWIDTH + 1) -1:0] res_data_1   ; // result {xr,yr}
+
+wire                         res_val_2    ; // result valid 
+reg                          res_rdy_2    ; // result ready 
+wire [2*2*(DWIDTH + 1) -1:0] res_data_2   ; // result {xr,yr}
+
+wire                         res_val_4    ; // result valid 
+reg                          res_rdy_4    ; // result ready 
+wire [2*2*(DWIDTH + 1) -1:0] res_data_4   ; // result {xr,yr}
 
 wire [2*2*(DWIDTH + 1) -1:0] exp_res_data ; // expected wire result {xr,yr}
                                         
@@ -31,6 +38,7 @@ wire                         rand_f       ; // random flag, active if rand_nr ==
                                           
 integer                      idx          ; 
 
+
 clk_rst_tb #(
 .PERIOD (PERIOD) // clock period / 2
 ) i_clk_rst_tb (
@@ -38,22 +46,56 @@ clk_rst_tb #(
 .rst_n (rst_n)  // [o] async hw reset active low 
 );
 
+
 // DUT 
 comp_mult_wrapper #(
 .DWIDTH  (DWIDTH  ), // data width
-.NO_MULT (NO_MULT )  // number of multipliers used (1, 2 or 4)
+.NO_MULT (4       )  // number of multipliers used (1, 2 or 4)
 ) DUT_comp_mult_wrapper (
 // system IF 
-.clk      (clk     ), // [i] system clock 
-.rst_n    (rst_n   ), // [i] hw async reset, active low 
-.sw_rst   (sw_rst  ), // [i] sw  sync reset, active high  
-.op_val   (op_val  ), // [i] input operands valid 
-.op_rdy   (op_rdy  ), // [o] input operands ready 
-.op_data  (op_data ), // [i] input operands {x1,x2,y1,y2}
-.res_val  (res_val ), // [o] output result valid 
-.res_rdy  (res_rdy ), // [i] output result ready 
-.res_data (res_data)  // [o] output result {xr,yr}
+.clk      (clk        ), // [i] system clock 
+.rst_n    (rst_n      ), // [i] hw async reset, active low 
+.sw_rst   (sw_rst     ), // [i] sw  sync reset, active high  
+.op_val   (op_val     ), // [i] input operands valid 
+.op_rdy   (op_rdy     ), // [o] input operands ready 
+.op_data  (op_data    ), // [i] input operands {x1,x2,y1,y2}
+.res_val  (res_val_4  ), // [o] output result valid 
+.res_rdy  (res_rdy_4  ), // [i] output result ready 
+.res_data (res_data_4 )  // [o] output result {xr,yr}
 ); 
+
+comp_mult_wrapper #(
+.DWIDTH  (DWIDTH  ), // data width
+.NO_MULT (2       )  // number of multipliers used (1, 2 or 4)
+) DUT_comp_mult_wrapper (
+// system IF 
+.clk      (clk        ), // [i] system clock 
+.rst_n    (rst_n      ), // [i] hw async reset, active low 
+.sw_rst   (sw_rst     ), // [i] sw  sync reset, active high  
+.op_val   (op_val     ), // [i] input operands valid 
+.op_rdy   (op_rdy     ), // [o] input operands ready 
+.op_data  (op_data    ), // [i] input operands {x1,x2,y1,y2}
+.res_val  (res_val_2  ), // [o] output result valid 
+.res_rdy  (res_rdy_2  ), // [i] output result ready 
+.res_data (res_data_2 )  // [o] output result {xr,yr}
+); 
+
+comp_mult_wrapper #(
+.DWIDTH  (DWIDTH  ), // data width
+.NO_MULT (1       )  // number of multipliers used (1, 2 or 4)
+) DUT_comp_mult_wrapper (
+// system IF 
+.clk      (clk        ), // [i] system clock 
+.rst_n    (rst_n      ), // [i] hw async reset, active low 
+.sw_rst   (sw_rst     ), // [i] sw  sync reset, active high  
+.op_val   (op_val     ), // [i] input operands valid 
+.op_rdy   (op_rdy     ), // [o] input operands ready 
+.op_data  (op_data    ), // [i] input operands {x1,x2,y1,y2}
+.res_val  (res_val_1  ), // [o] output result valid 
+.res_rdy  (res_rdy_1  ), // [i] output result ready 
+.res_data (res_data_1 )  // [o] output result {xr,yr}
+); 
+
 
 // Reference model & scoreboard 
 comp_mult_ref_model #(
@@ -66,9 +108,9 @@ comp_mult_ref_model #(
 .op_val       (op_val      ), // [i] input operands valid 
 .op_rdy       (op_rdy      ), // [i] input operands ready 
 .op_data      (op_data     ), // [i] input operands {x1,x2,y1,y2}
-.res_val      (res_val     ), // [i] output result valid 
-.res_rdy      (res_rdy     ), // [i] output result ready 
-.res_data     (res_data    ), // [i] output result {xr,yr}
+.res_val      (res_val_4   ), // [i] output result valid 
+.res_rdy      (res_rdy_4   ), // [i] output result ready 
+.res_data     (res_data_4  ), // [i] output result {xr,yr}
 .exp_res_data (exp_res_data)  // [o] expected output result {xr,yr}
 ); 
 
@@ -113,7 +155,17 @@ initial begin
               $urandom_range(0,255),
               $urandom_range(0,255),
               $urandom_range(0,10));  
-
+    
+    
+    // idx = 0;
+    //while(idx < (2 ** 32) - 1) begin 
+    // while(idx < 4294967295) begin 
+    // 
+    //     send_data(idx[31:24],idx[23:16],idx[15:8],idx[7:0],0);
+    //     idx = idx + 1;
+    // end 
+    
+    
     // send_data(8'd128,8'd128,8'd128,8'd128,0);  // fails 
 
     $display("DONE");
