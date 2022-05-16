@@ -12,3 +12,5 @@ verif/sv_core/sim/work/
 verif/sv_core/sim/*
 verif/sv_core/sim/!*/
 verif/sv_core/sim/!*.*
+debug/core_debug/sim/transcript
+debug/core_debug/sim/transcript

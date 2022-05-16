@@ -116,8 +116,8 @@ assign mult1_op2 = op_ld_d1 ? y2 : x2 ; // select second operand of mult1 based 
 signed_mult #(
 .DWIDTH (DWIDTH) // data width, doubled for sign extension 
 )i_signed_mult_0(
- .op1    (x1        ), // [i] sign extended first  operand (x1)
- .op2    (mult0_op2 ), // [i] sign extended second operand (either x2 or y2)
+ .op1    (x1        ), // [i] first  operand (x1)
+ .op2    (mult0_op2 ), // [i] second operand (either x2 or y2)
  .result (prod1     )  // [o] product x1 * x2, x1 * y2 
 );  
 
@@ -125,8 +125,8 @@ signed_mult #(
 signed_mult #(
 .DWIDTH (DWIDTH) // data width, doubled for sign extension 
 )i_signed_mult_1(
- .op1    (y1        ), // [i] sign extended first  operand (y1)
- .op2    (mult1_op2 ), // [i] sign extended second operand (either x2 or y2)
+ .op1    (y1        ), // [i] first  operand (y1)
+ .op2    (mult1_op2 ), // [i] second operand (either x2 or y2)
  .result (prod2     )  // [o] product y1 * y2, x2 * y1 
 );  
 

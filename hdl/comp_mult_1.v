@@ -134,8 +134,8 @@ endcase
 signed_mult #(
 .DWIDTH (DWIDTH) // data width, doubled for sign extension 
 ) i_signed_mult (
- .op1    (mult_op1), // [i] sign extended first  operand 
- .op2    (mult_op2), // [i] sign extended second operand 
+ .op1    (mult_op1), // [i] first  operand 
+ .op2    (mult_op2), // [i] second operand 
  .result (prod    )  // [o] product 
 );  
 
