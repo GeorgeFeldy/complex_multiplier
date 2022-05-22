@@ -114,19 +114,19 @@ end
 
 
 always @(*)
-case({op_ld_d1, op_ld_d2, op_ld_d3, op_ld_d4})
-4'b1000: mult_op1 = x1  ;
-4'b0100: mult_op1 = y1  ;
-4'b0010: mult_op1 = x1  ;
+casex({op_ld_d1, op_ld_d2, op_ld_d3, op_ld_d4})
+4'b1xxx: mult_op1 = x1  ;
+4'b01xx: mult_op1 = y1  ;
+4'b001x: mult_op1 = x1  ;
 4'b0001: mult_op1 = x2  ;
 default: mult_op1 = 'd0 ;
 endcase 
 
 always @(*)
-case({op_ld_d1, op_ld_d2, op_ld_d3, op_ld_d4})
-4'b1000: mult_op2 = x2  ;
-4'b0100: mult_op2 = y2  ;
-4'b0010: mult_op2 = y2  ;
+casex({op_ld_d1, op_ld_d2, op_ld_d3, op_ld_d4})
+4'b1xxx: mult_op2 = x2  ;
+4'b01xx: mult_op2 = y2  ;
+4'b001x: mult_op2 = y2  ;
 4'b0001: mult_op2 = y1  ;
 default: mult_op2 = 'd0 ;
 endcase
