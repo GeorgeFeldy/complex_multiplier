@@ -1,18 +1,18 @@
 # complex_multiplier
 Verilog complex multiplier
 
-This design multiplies 2 complex numbers (algebraic form: x + i * y)
+This design multiplies 2 complex numbers (algebraic form: x + i \* y)
 Each number's real and imaginary part are represented as signed integers with parametrisable width.
 
 With:
-  - z1 = x1 + i * y1
-  - z2 = x2 + i * y2
+  - z1 = x1 + i \* y1
+  - z2 = x2 + i \* y2
 
 It computes the output's real and imaginary parts using: 
-  - xr = x1 * x2 - y1 * y2
-  - yr = x1 * y2 + x2 * y1
+  - xr = x1 \* x2 - y1 \* y2
+  - yr = x1 \* y2 + x2 \* y1
 
-Where the output complex number is: zr = xr + i * yr.
+Where the output complex number is: zr = xr + i \* yr.
 
 ## Complex multiplier block 
 
