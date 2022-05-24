@@ -8,39 +8,42 @@
 //--------------------------------------------------------------------------------------------------------------------------------
 
 module comp_mult_top #(
-parameter DWIDTH    = 8     , // operand element data width
 parameter NO_MULT   = 4     , // number of multipliers used (1, 2 or 4)
 parameter APB_BADDR = 0     , // register file base address in system  
 parameter SYS_AW    = 16    , // system address width 
 parameter REG_DW    = 16      // register file data width      
 )(
-input                    clk             , // system clock 
-input                    rst_n           , // hw async reset, active low 
-input                    sw_rst          , // sw  sync reset, active high  
-           
-input      [ SYS_AW-1:0] apb_paddr       , // APB address
-input                    apb_pwrite      , // APB write indication
-input      [REG_DW -1:0] apb_pwdata      , // APB write data
-input                    apb_psel        , // APB selection
-output                   apb_pready      , // APB ready
-output reg [REG_DW -1:0] apb_prdata      , // APB Read data
-output reg               apb_pslverr     , // APB Slave error
+input                    clk         , // system clock 
+input                    rst_n       , // hw async reset, active low 
+       
+// AMBA APB interface 
+input      [ SYS_AW-1:0] apb_paddr   , // APB address
+input                    apb_psel    , // APB selection
+input                    apb_penable , // APB enable
+input                    apb_pwrite  , // APB write indication
+input      [REG_DW -1:0] apb_pwdata  , // APB write data
+output                   apb_pready  , // APB ready
+output reg [REG_DW -1:0] apb_prdata  , // APB Read data
+output reg               apb_pslverr , // APB Slave error
      
-// registers interface                                     
-//input    [SYS_AW -1:0] rf_addr         , // register file r/w address
-//input                  rf_wr           , // register file write enable 
-//input    [REG_DW -1:0] rd_cfg          , // register file cfg data write 
-//output   [REG_DW -1:0] rf_sts          , // register file sts data read 
-                                         
-// memory interface                      
-output reg               mem_ce          , // chip enable (activ 1)
-output reg               mem_we          , // write enable (activ 1)
-output reg [SYS_AW -1:0] mem_addr        , // adresa
-output reg [DWIDTH -1:0] mem_wr_data     , // date scrise 
-input      [DWIDTH -1:0] mem_rd_data       // date citite 
+// registers interface                                 
+//input    [SYS_AW -1:0] rf_addr     , // register file r/w address
+//input                  rf_wr       , // register file write enable 
+//input    [REG_DW -1:0] rd_cfg      , // register file cfg data write 
+//output   [REG_DW -1:0] rf_sts      , // register file sts data read 
+                                     
+// memory interface                  
+output reg               mem_ce      , // chip enable (active high)
+output reg               mem_we      , // write enable (active high)
+output reg [SYS_AW -1:0] mem_addr    , // address
+output reg [     8 -1:0] mem_wr_data , // write data  
+input      [     8 -1:0] mem_rd_data   // read data 
 );
 
 // ------------------------------------------------ local parameters -------------------------------------------------------------
+
+// operand data width
+localparam DWIDTH = 8 ;
 
 // FSM states 
 localparam IDLE   = 2'b00; // idle state 
@@ -56,9 +59,8 @@ reg  [       REG_DW -1:0] op1_addr      ; // operand 1 current read address
 reg  [       REG_DW -1:0] op2_addr      ; // operand 2 current read address
 reg  [       REG_DW -1:0] res_addr      ; // result current write address
 reg  [       REG_DW -1:0] no_op         ; // number of operations (max                                   
-reg  [       REG_DW -1:0] cfg_start     ; // filled start register (start: 'h0..01)
+reg  [       REG_DW -1:0] cfg_start     ; // filled start register (start: 'h0..01) (sw_rst: 'h0..1x)
 reg  [       REG_DW -1:0] sts_stop      ; // filled status         (done:  'h0..01) 
-reg  [       REG_DW -1:0] sts_state     ; // status current state 
              
 // register load flags              
 wire                      wr_op1_addr   ; // select for wr operand 1 current read address
@@ -86,7 +88,10 @@ wire                      set_res_rdy   ; // res rdy set condition
 reg  [     3*DWIDTH -1:0] data_reg      ; // operands {x1,x2,y1}                  
 
 // FSM signals
-reg  [            2 -1:0] ctrl_state    ; // control FSM state 
+reg  [            2 -1:0] sts_cstate    ; // control FSM state 
+
+wire                      start         ; // start signal from registers 
+wire                      sw_rst        ; // soft reset (sync, active high) from registers 
 
 
 wire                      byte_rd_done  ; // all bytes read 
@@ -131,15 +136,15 @@ comp_mult_wrapper #(
 assign apb_pready = 1'b1; // always ready 
 
 // register write selection based on offset from base address 
-assign wr_op1_addr  = apb_psel &  apb_pwrite & (apb_paddr == APB_BADDR + 0); 
-assign wr_op2_addr  = apb_psel &  apb_pwrite & (apb_paddr == APB_BADDR + 1); 
-assign wr_res_addr  = apb_psel &  apb_pwrite & (apb_paddr == APB_BADDR + 2); 
-assign wr_no_op     = apb_psel &  apb_pwrite & (apb_paddr == APB_BADDR + 3); 
-assign wr_cfg_start = apb_psel &  apb_pwrite & (apb_paddr == APB_BADDR + 4); 
-assign wr_sts_stop  = apb_psel &  apb_pwrite & (apb_paddr == APB_BADDR + 5);  
+assign wr_op1_addr  = apb_psel & apb_penable &  apb_pwrite & (apb_paddr == APB_BADDR + 0); 
+assign wr_op2_addr  = apb_psel & apb_penable &  apb_pwrite & (apb_paddr == APB_BADDR + 1); 
+assign wr_res_addr  = apb_psel & apb_penable &  apb_pwrite & (apb_paddr == APB_BADDR + 2); 
+assign wr_no_op     = apb_psel & apb_penable &  apb_pwrite & (apb_paddr == APB_BADDR + 3); 
+assign wr_cfg_start = apb_psel & apb_penable &  apb_pwrite & (apb_paddr == APB_BADDR + 4); 
+assign wr_sts_stop  = apb_psel & apb_penable &  apb_pwrite & (apb_paddr == APB_BADDR + 5);  
 
-assign rd_sts_stop  = apb_psel & ~apb_pwrite & (apb_paddr == APB_BADDR + 5);  
-assign rd_sts_state = apb_psel & ~apb_pwrite & (apb_paddr == APB_BADDR + 6);  
+assign rd_sts_stop  = apb_psel & apb_penable & ~apb_pwrite & (apb_paddr == APB_BADDR + 5);  
+assign rd_sts_state = apb_psel & apb_penable & ~apb_pwrite & (apb_paddr == APB_BADDR + 6);  
 
 
 // regs selection flag, active if one of regs has been selected 
@@ -157,88 +162,91 @@ assign sel_regs = wr_op1_addr  |
 always @(posedge clk or negedge rst_n)
 if(~rst_n)        apb_pslverr <= 'd0         ; else  // hw async reset, active low 
 if(apb_pslverr)   apb_pslverr <= 'd0         ; else  // reset next cycle after set 
-if(apb_psel)      apb_pslverr <= ~sel_regs   ;       // slave error active on psel but invalid address                  
+if(apb_penable)   apb_pslverr <= ~sel_regs   ;       // slave error active on penable but invalid address                  
 
 
 // op1 address register  
 always @(posedge clk or negedge rst_n)
-if(~rst_n)        op1_addr  <= 'd0            ; else // hw async reset, active low 
-if(wr_op1_addr)   op1_addr  <= apb_pwdata     ; else // load data on register select 
-if(byte_rd_done)  op1_addr  <= op1_addr + 'd2 ;
+if(~rst_n)          op1_addr  <= 'd0            ; else // hw async reset, active low 
+if(wr_op1_addr)     op1_addr  <= apb_pwdata     ; else // load data on register select 
+if(byte_rd_done)    op1_addr  <= op1_addr + 'd2 ;
 
 // op2 address register  
 always @(posedge clk or negedge rst_n)
-if(~rst_n)        op2_addr  <= 'd0            ; else // hw async reset, active low 
-if(wr_op2_addr)   op2_addr  <= apb_pwdata     ; else // load data on register select 
-if(byte_rd_done)  op2_addr  <= op2_addr + 'd2 ;
+if(~rst_n)          op2_addr  <= 'd0            ; else // hw async reset, active low 
+if(wr_op2_addr)     op2_addr  <= apb_pwdata     ; else // load data on register select 
+if(byte_rd_done)    op2_addr  <= op2_addr + 'd2 ;
 
 // result address register  
 always @(posedge clk or negedge rst_n)
-if(~rst_n)        res_addr  <= 'd0            ; else // hw async reset, active low 
-if(wr_res_addr)   res_addr  <= apb_pwdata     ; else // load data on register select 
-if(byte_wr_done)  res_addr  <= res_addr + 'd6 ;
+if(~rst_n)          res_addr  <= 'd0            ; else // hw async reset, active low 
+if(wr_res_addr)     res_addr  <= apb_pwdata     ; else // load data on register select 
+if(byte_wr_done)    res_addr  <= res_addr + 'd6 ;
 
 // operations number register
 always @(posedge clk or negedge rst_n)
-if(sw_rst)        no_op     <= 'd0            ; else // sw  sync reset, active high  
-if(wr_no_op)      no_op     <= apb_pwdata     ;      // load data on register select 
+if(~rst_n)          no_op     <= 'd0            ; else // sw  sync reset, active high  
+if(wr_no_op)        no_op     <= apb_pwdata     ;      // load data on register select 
                                                     
 // start configuration register                                                     
 always @(posedge clk or negedge rst_n)              
-if(~rst_n)        cfg_start <= 'd0            ; else // hw async reset, active low 
-if(cfg_start[0])  cfg_start <= 'd0            ; else // autoreset next cycle   
-if(wr_cfg_start)  cfg_start <= apb_pwdata     ;      // load data on register select 
+if(~rst_n)          cfg_start <= 'd0            ; else // hw async reset, active low 
+if(~sw_rst & start) cfg_start <= 'd0            ; else // autoreset next cycle   
+if(wr_cfg_start)    cfg_start <= apb_pwdata     ;      // load data on register select 
                                               
 // status stop register                       
 always @(posedge clk or negedge rst_n)        
-if(~rst_n)        sts_stop  <= 'd0            ; else // hw async reset, active low 
-if(wr_sts_stop)   sts_stop  <= apb_pwdata     ; else // load data on register select (clear from CPU)
-if(finish)        sts_stop  <= {{REG_DW-1{1'b0}}, 1'b1} ; // set LSB on finish 
+if(~rst_n)          sts_stop  <= 'd0            ; else // hw async reset, active low 
+if(wr_sts_stop)     sts_stop  <= apb_pwdata     ; else // load data on register select (clear from CPU)
+if(finish)          sts_stop  <= {{REG_DW-1{1'b0}}, 1'b1} ; // set LSB on finish 
 
 
 // return status registers on read (based on address selection)
 always @(posedge clk or negedge rst_n)
-if(~rst_n)        apb_prdata <= 'd0                            ; else // hw async reset, active low 
-if(rd_sts_stop)   apb_prdata <= sts_stop                       ; else // return status stop reg 
-if(rd_sts_state)  apb_prdata <= {{REG_DW-2{1'b0}}, ctrl_state} ;      // return status state reg 
+if(~rst_n)          apb_prdata <= 'd0                            ; else // hw async reset, active low 
+if(rd_sts_stop)     apb_prdata <= sts_stop                       ; else // return status stop reg 
+if(rd_sts_state)    apb_prdata <= {{REG_DW-2{1'b0}}, sts_cstate} ;      // return status state reg 
 
 
 // ---------------------------------------------------- FSM ----------------------------------------------------------------------
 
+assign start  = cfg_start[0] & (no_op > 'd0);
+assign sw_rst = cfg_start[1];
+
 always @(posedge clk or negedge rst_n)
 if(~rst_n) 
-    ctrl_state <= IDLE;     // IDLE state on hw reset
-else if(sw_rst)             
-    ctrl_state <= IDLE;     // IDLE state on sw reset 
+    sts_cstate <= IDLE;     // IDLE state on hw reset
+else if(sw_rst) 
+    sts_cstate <= IDLE; 
 else begin 
-    case(ctrl_state)
-        IDLE    : if(cfg_start[0])         // transition to read operands on start bit 
-                    ctrl_state <= RD_OPS;   
+    case(sts_cstate)
+        IDLE    : if(start)                // transition to read operands on start bit 
+                    sts_cstate <= RD_OPS;   
                   else
-                    ctrl_state <= IDLE;
+                    sts_cstate <= IDLE;
                     
         RD_OPS  : if(byte_rd_done)  
-                    ctrl_state <= WORK;    // transition to wait result state on op read 
+                    sts_cstate <= WORK;    // transition to wait result state on op read 
                   else 
-                    ctrl_state <= RD_OPS;
+                    sts_cstate <= RD_OPS;
                         
         WORK    : if(res_val)
-                    ctrl_state <= WR_RES;  // transition to write result state on result val & rdy 
+                    sts_cstate <= WR_RES;  // transition to write result state on result val & rdy 
                   else 
-                    ctrl_state <= WORK;
+                    sts_cstate <= WORK;
      // WR_RES                          
         default : if(finish) 
-                    ctrl_state <= IDLE;    // transition to idle state when done 
+                    sts_cstate <= IDLE;    // transition to idle state when done 
                   else if(next_op)
-                    ctrl_state <= RD_OPS;  // else transition to read operands for the next cycle
+                    sts_cstate <= RD_OPS;  // else transition to read operands for the next cycle
                   else 
-                    ctrl_state <= WR_RES;
+                    sts_cstate <= WR_RES;
     endcase 
 end   
 
 // FSM inputs
-assign byte_rd_done = (ctrl_state == RD_OPS) & (byte_cnt == 3'd3);  // flag active when all operands have been read 
-assign byte_wr_done = (ctrl_state == WR_RES) & (byte_cnt == 3'd5);  // flag active when all result bytes have been written      
+assign byte_rd_done = (sts_cstate == RD_OPS) & (byte_cnt == 3'd3);  // flag active when all operands have been read 
+assign byte_wr_done = (sts_cstate == WR_RES) & (byte_cnt == 3'd5);  // flag active when all result bytes have been written      
 assign next_op      = byte_wr_done & (op_cnt != (no_op - 'd1));     // operation done, initiate next                                          
 assign finish       = byte_wr_done & (op_cnt == (no_op - 'd1));     // all operations done
 
@@ -246,7 +254,6 @@ assign finish       = byte_wr_done & (op_cnt == (no_op - 'd1));     // all opera
 // read/write byte counter (TODO: parametrizable) 
 always @(posedge clk or negedge rst_n)
 if(~rst_n)          byte_cnt <= 3'd0            ; else // hw async reset, active low 
-if(sw_rst)          byte_cnt <= 3'd0            ; else // sw  sync reset, active high  
 if(byte_rd_done)    byte_cnt <= 3'd0            ; else // reset on all operands read 
 if(byte_wr_done)    byte_cnt <= 3'd0            ; else // reset on all result bytes written 
 if(mem_ce)          byte_cnt <= byte_cnt + 3'd1 ;      // increment on r/w 
@@ -255,7 +262,6 @@ if(mem_ce)          byte_cnt <= byte_cnt + 3'd1 ;      // increment on r/w
 // operations counter 
 always @(posedge clk or negedge rst_n)
 if(~rst_n)          op_cnt <= 'd0          ; else // hw async reset, active low 
-if(sw_rst)          op_cnt <= 'd0          ; else // sw  sync reset, active high  
 if(finish)          op_cnt <= 'd0          ; else // reset op count on done (all operations done)
 if(next_op)         op_cnt <= op_cnt + 'd1 ;      // increment on operation done otherwise 
 
@@ -264,7 +270,6 @@ if(next_op)         op_cnt <= op_cnt + 'd1 ;      // increment on operation done
 // operands valid registers 
 always @(posedge clk or negedge rst_n)
 if(~rst_n)          op_val <= 1'b0; else  // hw async reset, active low 
-if(sw_rst)          op_val <= 1'b0; else  // sw  sync reset, active high  
 if(byte_rd_done)    op_val <= 1'b1; else  // set operand valid on read done 
 if(op_val & op_rdy) op_val <= 1'b0;       // reset when operands are sampled 
 
@@ -272,7 +277,6 @@ if(op_val & op_rdy) op_val <= 1'b0;       // reset when operands are sampled
 // store first 3 operand bytes 
 always @(posedge clk or negedge rst_n)
 if(~rst_n)          data_reg <= 'd0; else  // hw async reset, active low 
-if(sw_rst)          data_reg <= 'd0; else  // sw  sync reset, active high  
 if(mem_ce_d & ~mem_we_d) begin             // on read 
     case(byte_cnt)
         3'b001 :    data_reg[3*DWIDTH-1 : 2*DWIDTH] <= mem_rd_data; // x1
@@ -286,11 +290,10 @@ end
 assign op_data = {data_reg, mem_rd_data}; // stored data concat with last byte {(x1, y1, x2), y2}
 
 
-assign set_res_rdy = (ctrl_state == WR_RES) & (byte_cnt == 3'd4); // result ready set condition 
+assign set_res_rdy = (sts_cstate == WR_RES) & (byte_cnt == 3'd4); // result ready set condition 
 
 always @(posedge clk or negedge rst_n)
-if(~rst_n)       res_rdy <= 1'b0; else  // hw async reset, active low 
-if(sw_rst)       res_rdy <= 1'b0; else  // sw  sync reset, active high  
+if(~rst_n)       res_rdy <= 1'b0; else  // hw async reset, active low  
 if(set_res_rdy)  res_rdy <= 1'b1; else  // set on above condition 
 if(byte_wr_done) res_rdy <= 1'b0;       // reset when write done (next cycle)
 
@@ -300,10 +303,10 @@ if(byte_wr_done) res_rdy <= 1'b0;       // reset when write done (next cycle)
 // compute memory address (TODO: parametrizable) 
 // LITTLE ENDIAN 
 always @(*) 
-    if(ctrl_state == RD_OPS)
+    if(sts_cstate == RD_OPS)
         if(byte_cnt < 3'd2) mem_addr = op1_addr + byte_cnt       ; else // if cnt  < 2, start from op1 base addr  
                             mem_addr = op2_addr + byte_cnt - 'd2 ;      // if cnt >= 2, start from op2 base addr, adjust offset 
-    else // ctrl_state == WR_RES
+    else // sts_cstate == WR_RES
                             mem_addr = res_addr + byte_cnt;             // start from res base addr (6 bytes)
 
 
@@ -322,25 +325,23 @@ always @(*)
 
 
 // mem chip enable set condition 
-assign set_mem_ce = ((ctrl_state == IDLE)   & cfg_start[0]) |  // on   IDLE -> RD_OPS
-                    ((ctrl_state == WR_RES) & next_op     ) |  // or WR_RES -> RD_OPS
-                    ((ctrl_state == WORK)   & res_val     ) ;  // or   WORK -> WR_RES 
+assign set_mem_ce = ((sts_cstate == IDLE)   & start   ) |  // on   IDLE -> RD_OPS
+                    ((sts_cstate == WR_RES) & next_op ) |  // or WR_RES -> RD_OPS
+                    ((sts_cstate == WORK)   & res_val ) ;  // or   WORK -> WR_RES 
 
 // mem chip enable set/reset register  
 always @(posedge clk or negedge rst_n)
 if(~rst_n)        mem_ce <= 1'b0; else // hw async reset, active low 
-if(sw_rst)        mem_ce <= 1'b0; else // sw  sync reset, active high   
 if(set_mem_ce)    mem_ce <= 1'b1; else // reset on above logic 
 if(byte_rd_done | byte_wr_done) 
                   mem_ce <= 1'b0;      // reset on both read / write state done 
 
 
 // mem write enable set condition
-assign set_mem_we = (ctrl_state == WORK) & res_val; // set on WORK -> WR_RES 
+assign set_mem_we = (sts_cstate == WORK) & res_val; // set on WORK -> WR_RES 
 
 always @(posedge clk or negedge rst_n)
-if(~rst_n)        mem_we <= 1'b0; else    // hw async reset, active low 
-if(sw_rst)        mem_we <= 1'b0; else    // sw  sync reset, active high   
+if(~rst_n)        mem_we <= 1'b0; else    // hw async reset, active low  
 if(set_mem_we)    mem_we <= 1'b1; else    // set on above condition
 if(byte_wr_done)  mem_we <= 1'b0;         // reset when write done 
 
@@ -352,6 +353,7 @@ if(~rst_n) mem_ce_d <= 1'b0   ; else      // hw async reset, active low
 if(sw_rst) mem_ce_d <= 1'b0   ; else      // sw  sync reset, active high   
            mem_ce_d <= mem_ce ;        
            
+           
 // mem write enable delayed 1 cycle 
 // (used in read data selection to take place only on reads) 
 always @(posedge clk or negedge rst_n)    
@@ -359,5 +361,7 @@ if(~rst_n) mem_we_d <= 1'b0   ; else      // hw async reset, active low
 if(sw_rst) mem_we_d <= 1'b0   ; else      // sw  sync reset, active high   
            mem_we_d <= mem_we ;
 
+
+// `include "comp_mult_top_assertions.sv"
 
 endmodule // comp_mult_top

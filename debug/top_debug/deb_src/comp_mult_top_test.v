@@ -8,26 +8,24 @@
 
 module comp_mult_top_test; 
 
-localparam DWIDTH     = 8    ; // operand element data width
 localparam NO_MULT    = 4    ; // number of multipliers used (1, 2 or 4)
 localparam APB_BADDR  = 1024 ; // register file base address in system  
 localparam SYS_AW     = 16   ; // system address width 
 localparam REG_DW     = 16   ; // register file data width 
                       
-localparam OP1_BA     = 16'd100 ;
-localparam OP2_BA     = 16'd200 ;
-localparam RES_BA     = 16'd300 ;
-localparam NR_OP      = 10      ;
+localparam OP1_BA     = 16'd500  ;
+localparam OP2_BA     = 16'd1500 ;
+localparam RES_BA     = 16'd4500 ;
+localparam EXP_RES_BA = 16'd6500 ;
+localparam NR_OP      = 16'd300  ;
                     
-localparam EXP_RES_BA = 16'd400;
-
 localparam VERBOSE = 1;
 
 wire                clk         ; // system clock 
-wire                rst_n       ; // hw async reset, active low 
-reg                 sw_rst      ; // sw  sync reset, active high     
+wire                rst_n       ; // hw async reset, active low    
            
 reg   [ SYS_AW-1:0] apb_paddr   ; // APB address
+reg                 apb_penable ; // APB enable
 reg                 apb_pwrite  ; // APB write indication
 reg   [REG_DW -1:0] apb_pwdata  ; // APB write data
 reg                 apb_psel    ; // APB selection
@@ -38,8 +36,8 @@ wire                apb_pslverr ; // APB Slave error
 wire                mem_ce      ; // chip enable (activ 1)
 wire                mem_we      ; // write enable (activ 1)
 wire  [SYS_AW -1:0] mem_addr    ; // adresa
-wire  [DWIDTH -1:0] mem_wr_data ; // date scrise 
-wire  [DWIDTH -1:0] mem_rd_data ; // date citite 
+wire  [     8 -1:0] mem_wr_data ; // date scrise 
+wire  [     8 -1:0] mem_rd_data ; // date citite 
 
 integer i;  // iter idx 
 integer fb; // file binary
@@ -52,59 +50,62 @@ initial begin
     apb_psel   <= 'd0;
 end 
 
-initial begin 
-    sw_rst = 1'b0;
-    @(posedge rst_n);
-    @(posedge clk);
-    repeat(3) @(posedge clk);
-    sw_rst = 1'b1; 
-    repeat(5) @(posedge clk);
-    sw_rst = 1'b0;
-end 
 
 initial begin 
-    @(negedge sw_rst);
-    repeat(2) @(posedge clk);
+
+    @(posedge rst_n);
+    repeat(3) @(posedge clk);
     
-    apb_pwrite <= 1'b1;
-    apb_psel   <= 1'b1;
-    
-    apb_paddr  <= APB_BADDR;   // op1 addr 
-    apb_pwdata <= OP1_BA;
+    apb_paddr   <= APB_BADDR+4; // cfg sw rst 
+    apb_pwdata  <= 'b10;
     @(posedge clk);
     
-    apb_paddr  <= APB_BADDR+1; // op2 addr 
-    apb_pwdata <= OP2_BA;
+    apb_psel    <= 1'b1;
+    
+    @(posedge clk);           
+    apb_pwrite  <= 1'b1;
+    apb_penable <= 1'b1;
+                
+    @(posedge clk);           
+    apb_pwrite  <= 1'b1;
+    apb_penable <= 1'b1;
+    
+    apb_paddr   <= APB_BADDR;   // op1 addr 
+    apb_pwdata  <= OP1_BA;
     @(posedge clk);
     
-    apb_paddr  <= APB_BADDR+2; // res addr 
-    apb_pwdata <= RES_BA;
+    apb_paddr   <= APB_BADDR+1; // op2 addr 
+    apb_pwdata  <= OP2_BA;
     @(posedge clk);
     
-    apb_paddr  <= APB_BADDR+3; // nr op addr 
-    apb_pwdata <= NR_OP;
+    apb_paddr   <= APB_BADDR+2; // res addr 
+    apb_pwdata  <= RES_BA;
     @(posedge clk);
     
-    apb_paddr  <= APB_BADDR+4; // cfg start addr 
-    apb_pwdata <= 16'd1;
+    apb_paddr   <= APB_BADDR+3; // nr op addr 
+    apb_pwdata  <= NR_OP;
+    @(posedge clk);
+    
+    apb_paddr   <= APB_BADDR+4; // cfg start addr 
+    apb_pwdata  <= 'b01;        // disable sw rst and start process 
     @(posedge clk);
     
     //set to read mode 
-    apb_pwrite <= 1'b0;
-    apb_paddr  <= APB_BADDR+5; // sts stop addr 
+    apb_pwrite  <= 1'b0;
+    apb_paddr   <= APB_BADDR+5; // sts stop addr 
     @(posedge clk);
     
     // poll every 5 cycles for stop bit 
     while(~apb_prdata[0]) begin 
         
-        apb_psel <= 1'b0; 
+        apb_penable <= 1'b0; 
         repeat(4) @(posedge clk);
-        apb_psel <= 1'b1;
+        apb_penable <= 1'b1;
         @(posedge clk);
         
         // read current state after poll 
-        apb_paddr  <= APB_BADDR+6; // sts status addr 
-        apb_psel <= 1'b1;
+        apb_paddr   <= APB_BADDR+6; // sts status addr 
+        apb_penable <= 1'b1;
         @(posedge clk);
         
         apb_paddr  <= APB_BADDR+5; // sts stop addr 
@@ -124,8 +125,9 @@ initial begin
     @(posedge clk);
     
     // check for slave error 
-    apb_pwrite <= 1'b0;
-    apb_psel   <= 1'b0;
+    apb_pwrite  <= 1'b0;
+    apb_penable <= 1'b0;
+    apb_psel    <= 1'b0;
     
     @(posedge clk);
     if(~apb_pslverr)
@@ -160,16 +162,15 @@ initial begin
 end 
 
 comp_mult_top #(
-.DWIDTH      (DWIDTH     ), // [p] operand element data width
 .NO_MULT     (NO_MULT    ), // [p] number of multipliers used (1, 2 or 4)
 .APB_BADDR   (APB_BADDR  ), // [p] register file base address in system  
 .SYS_AW      (SYS_AW     ), // [p] system address width 
 .REG_DW      (REG_DW     )  // [p] register file data width 
 ) DUT_comp_mult_top (
 .clk         (clk        ), // [i] system clock 
-.rst_n       (rst_n      ), // [i] hw async reset, active low 
-.sw_rst      (sw_rst     ), // [i] sw  sync reset, active high                                   
+.rst_n       (rst_n      ), // [i] hw async reset, active low                                
 .apb_paddr   (apb_paddr  ), // [i] APB address
+.apb_penable (apb_penable), // [i] APB enable
 .apb_pwrite  (apb_pwrite ), // [i] APB write indication
 .apb_pwdata  (apb_pwdata ), // [i] APB write data
 .apb_psel    (apb_psel   ), // [i] APB selection
@@ -199,8 +200,8 @@ mem_1rw #(
 );
 
 comp_mult_ref_model #(
-.DWIDTH  (DWIDTH  ), // data width
-.VERBOSE (VERBOSE )  // display passed 
+.DWIDTH  (8       ), // data width
+.VERBOSE (0       )  // display passed 
 ) i_comp_mult_ref_model (
 // system IF 
 .clk          (clk                                            ), // [i] system clock 

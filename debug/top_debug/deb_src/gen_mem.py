@@ -6,10 +6,11 @@ seed = 123 # keep seed
 
 awidth = 16 
 
-op1_ba     = 100  # first operand base address
-op2_ba     = 200  # second operand base address
-exp_res_ba = 400  # expected result base address
-nr_op      = 10   # total number of operations 
+op1_ba     = 500    # first operand base address
+op2_ba     = 1500  # second operand base address
+#op2_ba     = 4500  # result ba 
+exp_res_ba = 6500  # expected result base address
+nr_op      = 300   # total number of operations 
 
 random.seed(seed, version=2) # set to constant seed 
 

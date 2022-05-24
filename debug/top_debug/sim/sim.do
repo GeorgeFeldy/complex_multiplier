@@ -1,9 +1,9 @@
 vlib work
 vmap work work
 
-vlog -reportprogress 300 -work work ../deb_src/*.v
+vlog -reportprogress 300 -work work ../deb_src/*.v 
 
-vlog -reportprogress 300 -work work ../../../hdl/*.v
+vlog -reportprogress 300 -work work ../../../hdl/*.v +incdir+../../../hdl/
 
 vsim -novopt work.comp_mult_top_test
 
